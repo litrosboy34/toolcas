@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Background Remover - Toolcas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glow-bg { background-color: #0b0f19; }
+    </style>
+    
+    <!-- DİNAMİK FAQ SEO SCHEMA (Arama motorları için otomatik oluşturulacak) -->
+    <script type="application/ld+json" id="faq-schema"></script>
+</head>
+<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen">
+
+    <!-- Arka Plan Işıltıları -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none overflow-hidden opacity-20 z-0">
+        <div class="absolute top-[-10%] left-[30%] w-[500px] h-[500px] bg-indigo-600 rounded-full blur-[130px]"></div>
+    </div>
+
+    <!-- Üst Menü -->
+    <header class="relative z-10 border-b border-gray-800/80 bg-[#0b0f19]/70 backdrop-blur-md sticky top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="../index.html" class="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                TOOLCAS
+            </a>
+            <nav class="space-x-6 text-sm font-medium text-gray-400">
+                <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="../index.html#tools" class="hover:text-white transition-colors">All Tools</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Ana İçerik Alanı -->
+    <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
+        
+        <!-- 1. Araç Başlığı ve Kısa Açıklama -->
+        <div class="text-center mb-12">
+            <h1 id="tool-title" class="text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight">Background Remover</h1>
+            <p id="tool-desc" class="text-base text-gray-400 max-w-2xl mx-auto">Remove backgrounds from your images instantly and automatically using advanced artificial intelligence.</p>
+        </div>
+
+        <!-- 2. Çalışan AI Araç Alanı (Sürükle Bırak Kutu Tasarımı) -->
+        <section class="max-w-2xl mx-auto p-8 bg-gray-900/40 border border-gray-800 rounded-2xl shadow-2xl backdrop-blur-sm mb-16 text-center">
+            <div class="border-2 border-dashed border-gray-700 hover:border-indigo-500/50 rounded-xl p-10 cursor-pointer transition-all bg-gray-950/30 group">
+                <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">📁</div>
+                <p id="upload-text" class="text-sm font-medium text-gray-300">Drag and drop your image here, or <span class="text-indigo-400">browse</span></p>
+                <p class="text-xs text-gray-500 mt-2">Supports PNG, JPG, WEBP up to 10MB</p>
+            </div>
+        </section>
+
+        <!-- 3. Nasıl Kullanılır & Özellikler (Stripe Tarzı İki Kolon Yapı) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-gray-900 pt-12 mb-16">
+            <div>
+                <h2 id="how-to-title" class="text-xl font-bold text-white mb-4">How to Use?</h2>
+                <ol id="how-to-steps" class="space-y-3 text-sm text-gray-400 list-decimal list-inside">
+                    <li>Upload your photo to the system.</li>
+                    <li>AI will detect and remove the background automatically.</li>
+                    <li>Download your transparent PNG image instantly.</li>
+                </ol>
+            </div>
+            <div>
+                <h2 id="features-title" class="text-xl font-bold text-white mb-4">Key Features</h2>
+                <ul id="features-list" class="space-y-3 text-sm text-gray-400 list-disc list-inside">
+                    <li>100% automated and extremely fast response.</li>
+                    <li>High precision cutting around hair and complex edges.</li>
+                    <li>Maintains full original image resolution.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. Detaylı SEO İçerik Alanı -->
+        <section class="border-t border-gray-900 pt-12 mb-16">
+            <h2 id="seo-content-title" class="text-2xl font-bold text-white mb-6">About AI Background Remover</h2>
+            <div id="seo-content-body" class="text-sm text-gray-400 leading-relaxed space-y-4">
+                <p>Our AI-powered tool provides an industrial-grade solution for content creators, designers, and e-commerce stores looking for clean, professional cuts. Without requiring any manual editing skills, the system processes pixels in milliseconds.</p>
+                <p>Whether you are preparing catalog assets or customizing personal projects, this background extractor preserves fine elements like hair strands and fabric threads, ensuring flawless transparent outputs every single time.</p>
+            </div>
+        </section>
+
+        <!-- 5. Minimum 6-10 Adet FAQ Bölümü -->
+        <section id="faq-section" class="border-t border-gray-900 pt-12">
+            <h2 id="faq-section-title" class="text-2xl font-bold text-white mb-8 text-center">Frequently Asked Questions</h2>
+            <div id="faq-container" class="space-y-4 max-w-3xl mx-auto"></div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-900 bg-[#070a12] text-xs text-gray-500 py-8 text-center relative z-10">
+        &copy; 2026 Toolcas Inc. All rights reserved.
+    </footer>
+
+    <!-- JAVASCRIPT: IP TABANLI DİL ALGILAMA VE DİNAMİK FAQ ŞEMA YAZICISI -->
+    <script>
+        // Dile Göre Değişecek Tüm İçerik Paketleri (İngilizce ve Türkçe)
+        const localizations = {
+            en: {
+                title: 'AI Background Remover',
+                desc: 'Remove backgrounds from your images instantly and automatically using advanced artificial intelligence.',
+                upload: 'Drag and drop your image here, or <span class="text-indigo-400">browse</span>',
+                howTo: 'How to Use?',
+                steps: ['Upload your photo to the system.', 'AI will detect and remove the background automatically.', 'Download your transparent PNG image instantly.'],
+                features: 'Key Features',
+                featList: ['100% automated and extremely fast response.', 'High precision cutting around hair and complex edges.', 'Maintains full original image resolution.'],
+                seoTitle: 'About AI Background Remover',
+                seoBody: '<p>Our AI-powered tool provides an industrial-grade solution for content creators, designers, and e-commerce stores looking for clean, professional cuts.</p><p>Whether you are preparing catalog assets or customizing personal projects, this background extractor preserves fine elements like hair strands.</p>',
+                faqTitle: 'Frequently Asked Questions',
+                faqs: [
+                    { q: 'Is this tool completely free?', a: 'Yes, our background remover tool is 100% free to use with no hidden charges.' },
+                    { q: 'How does the AI process the image?', a: 'It utilizes deep learning vision models trained to isolate foreground subjects from their surroundings.' },
+                    { q: 'Are my images securely handled?', a: 'Absolutely. All uploaded files are automatically deleted from our production systems right after processing.' },
+                    { q: 'Can I use the outputs for commercial use?', a: 'Yes, you hold full rights over the images processed through Toolcas.' },
+                    { q: 'Does it support bulk uploads?', a: 'Currently, the free tool processes one image at a time to ensure optimal speed for all users.' },
+                    { q: 'What formats are supported?', a: 'We support standard web formats including PNG, JPG, JPEG, and WEBP images.' },
+                    { q: 'Is there a file size limit?', a: 'Yes, the max allowable file size for a single upload is limited to 10MB.' }
+                ]
+            },
+            tr: {
+                title: 'AI Arka Plan Silici',
+                desc: 'Gelişmiş yapay zeka kullanarak görsellerinizin arka planını anında ve otomatik olarak kaldırın.',
+                upload: 'Görselinizi buraya sürükleyip bırakın veya <span class="text-indigo-400">göz atın</span>',
+                howTo: 'Nasıl Kullanılır?',
+                steps: ['Fotoğrafınızı sisteme yükleyin.', 'Yapay zeka arka planı otomatik olarak algılayıp silecektir.', 'Şeffaf PNG görselinizi anında indirin.'],
+                features: 'Öne Çıkan Özellikler',
+                featList: ['%100 otomatik ve son derece hızlı sonuç.', 'Saç telleri ve karmaşık kenarlarda yüksek hassasiyetli kesim.', 'Orijinal görsel çözünürlüğünü tamamen korur.'],
+                seoTitle: 'AI Arka Plan Silici Hakkında',
+                seoBody: '<p>Yapay zeka destekli aracımız, temiz ve profesyonel kesimler arayan içerik üreticileri, tasarımcılar ve e-ticaret siteleri için endüstriyel standartta çözümler sunar.</p><p>İster katalog çekimleri hazırlıyor olun, ister kişisel projelerinizi özelleştiriyor olun, sistemimiz her seferinde kusursuz çıktılar sunar.</p>',
+                faqTitle: 'Sıkça Sorulan Sorular',
+                faqs: [
+                    { q: 'Bu araç tamamen ücretsiz mi?', a: 'Evet, arka plan silme aracımızı hiçbir gizli ücret ödemeden tamamen ücretsiz kullanabilirsiniz.' },
+                    { q: 'Yapay zeka bu işlemi nasıl yapıyor?', a: 'Ön plandaki nesneleri arka plandan ayırt etmek üzere eğitilmiş derin öğrenme tabanlı görsel modelleri kullanır.' },
+                    { q: 'Görsellerim güvende mi?', a: 'Kesinlikle. Yüklediğiniz tüm dosyalar işleminiz bittiği an sunucularımızdan kalıcı olarak silinir.' },
+                    { q: 'Çıktıları ticari amaçla kullanabilir miyim?', a: 'Evet, Toolcas üzerinden işlediğiniz tüm görsellerin tam telif hakkı size aittir.' },
+                    { q: 'Toplu yükleme desteği var mı?', a: 'Şu an için tüm kullanıcılara eşit hız sağlamak adına görseller tek tek işlenmektedir.' },
+                    { q: 'Hangi dosya formatları destekleniyor?', a: 'Standart web formatları olan PNG, JPG, JPEG ve WEBP dosyalarını destekliyoruz.' },
+                    { q: 'Dosya boyutu sınırı var mı?', a: 'Evet, tek seferde yükleyebileceğiniz maksimum dosya boyutu 10MB ile sınırlıdır.' }
+                ]
+            }
+        };
+
+        // Otomatik Dil Algılama Algoritması (Cloudflare ve Tarayıcı Entegreli)
+        async function loadToolPage() {
+            let activeLang = 'en';
+            try {
+                const response = await fetch('https://1.1.1.1/cdn-cgi/trace');
+                const text = await response.text();
+                const locLine = text.split('\n').find(line => line.startsWith('loc='));
+                if (locLine) {
+                    const country = locLine.split('=')[1].trim();
+                    if (country === 'TR') activeLang = 'tr';
+                    else {
+                        const browserLang = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
+                        if (localizations[browserLang]) activeLang = browserLang;
+                    }
+                }
+            } catch (e) {
+                const browserLang = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
+                if (localizations[browserLang]) activeLang = browserLang;
+            }
+
+            document.documentElement.lang = activeLang;
+            renderPageData(activeLang);
+        }
+
+        // Sayfa İçeriğini ve SEO Şemasını Dolduran Fonksiyon
+        function renderPageData(lang) {
+            const data = localizations[lang] || localizations.en;
+
+            // Düz Metin Alanları
+            document.getElementById('tool-title').innerText = data.title;
+            document.getElementById('tool-desc').innerText = data.desc;
+            document.getElementById('upload-text').innerHTML = data.upload;
+            document.getElementById('how-to-title').innerText = data.howTo;
+            document.getElementById('features-title').innerText = data.features;
+            document.getElementById('seo-content-title').innerText = data.seoTitle;
+            document.getElementById('seo-content-body').innerHTML = data.seoBody;
+            document.getElementById('faq-section-title').innerText = data.faqTitle;
+
+            // Listeler (Nasıl Kullanılır & Özellikler)
+            const stepsContainer = document.getElementById('how-to-steps');
+            stepsContainer.innerHTML = '';
+            data.steps.forEach(step => stepsContainer.innerHTML += `<li>${step}</li>`);
+
+            const featContainer = document.getElementById('features-list');
+            featContainer.innerHTML = '';
+            data.featList.forEach(feat => featContainer.innerHTML += `<li>${feat}</li>`);
+
+            // FAQ Akordiyon Alanı
+            const faqContainer = document.getElementById('faq-container');
+            faqContainer.innerHTML = '';
+            
+            // SEO Schema İçin Boş Dizi
+            const schemaMainEntity = [];
+
+            data.faqs.forEach((faq, index) => {
+                // HTML Akordiyon Ekleme
+                faqContainer.innerHTML += `
+                    <div class="bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden cursor-pointer shadow-sm" onclick="toggleFaqDetail(${index})">
+                        <div class="p-5 flex justify-between items-center select-none">
+                            <h3 class="text-sm font-semibold text-white flex items-center">
+                                <span class="text-indigo-400 mr-2">Q:</span> ${faq.q}
+                            </h3>
+                            <span id="faq-arr-${index}" class="text-xs text-gray-500 transition-transform duration-200">▼</span>
+                        </div>
+                        <div id="faq-answer-${index}" class="px-5 pb-5 pt-1 border-t border-gray-800/40 bg-gray-900/10 hidden">
+                            <p class="text-xs text-gray-400 pl-5">${faq.a}</p>
+                        </div>
+                    </div>
+                `;
+
+                // SEO Şeması Doldurma
+                schemaMainEntity.push({
+                    "@type": "Question",
+                    "name": faq.q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq.a
+                    }
+                });
+            });
+
+            // Google ve Arama Motorları İçin Otomatik FAQ Schema JSON-LD basımı
+            const schemaObj = {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": schemaMainEntity
+            };
+            document.getElementById('faq-schema').textContent = JSON.stringify(schemaObj);
+        }
+
+        // Tıklayınca Açılan FAQ Fonksiyonu
+        function toggleFaqDetail(index) {
+            const answerBlock = document.getElementById(`faq-answer-${index}`);
+            const arrowBlock = document.getElementById(`faq-arr-${index}`);
+            answerBlock.classList.toggle('hidden');
+            arrowBlock.classList.toggle('rotate-180');
+            arrowBlock.classList.toggle('text-indigo-400');
+        }
+
+        // Sayfayı Ateşle
+        loadToolPage();
+    </script>
+</body>
+</html>
