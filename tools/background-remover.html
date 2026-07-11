@@ -101,7 +101,7 @@
                 faqs: [
                     { q: 'Is this tool completely free?', a: 'Yes, our background remover tool is 100% free to use with no hidden charges.' },
                     { q: 'How does the AI process the image?', a: 'It utilizes deep learning vision models trained to isolate foreground subjects from their surroundings.' },
-                    { q: 'Are my images securely handled?', a: 'Absolutely. All uploaded files are automatically deleted from our production systems right after processing.' },
+                    { q: 'Are my images securely handled?', a: 'Absolutely. We do not store your files at all. Images are processed entirely in-memory (RAM) and are never written to any persistent disk or server storage.' },
                     { q: 'Can I use the outputs for commercial use?', a: 'Yes, you hold full rights over the images processed through Toolcas.' },
                     { q: 'Does it support bulk uploads?', a: 'Currently, the free tool processes one image at a time to ensure optimal speed for all users.' },
                     { q: 'What formats are supported?', a: 'We support standard web formats including PNG, JPG, JPEG, and WEBP images.' },
@@ -124,7 +124,7 @@
                 faqs: [
                     { q: 'Bu araç tamamen ücretsiz mi?', a: 'Evet, arka plan silme aracımızı hiçbir gizli ücret ödemeden tamamen ücretsiz kullanabilirsiniz.' },
                     { q: 'Yapay zeka bu işlemi nasıl yapıyor?', a: 'Ön plandaki nesneleri arka plandan ayırt etmek üzere eğitilmiş derin öğrenme tabanlı görsel modelleri kullanır.' },
-                    { q: 'Görsellerim güvende mi?', a: 'Kesinlikle. Yüklediğiniz tüm dosyalar işleminiz bittiği an sunucularımızdan kalıcı olarak silinir.' },
+                    { q: 'Görsellerim güvende mi?', a: 'Kesinlikle. Yüklediğiniz dosyaları hiçbir şekilde sunucularımızda tutmuyoruz. Görseller tamamen anlık bellek (RAM) üzerinde işlenir ve asla diske veya herhangi bir depolama alanına kaydedilmez.' },
                     { q: 'Çıktıları ticari amaçla kullanabilir miyim?', a: 'Evet, Toolcas üzerinden işlediğiniz tüm görsellerin tam telif hakkı size aittir.' },
                     { q: 'Toplu yükleme desteği var mı?', a: 'Şu an için tüm kullanıcılara eşit hız sağlamak adına görseller tek tek işlenmektedir.' },
                     { q: 'Hangi dosya formatları destekleniyor?', a: 'Standart web formatları olan PNG, JPG, JPEG ve WEBP dosyalarını destekliyoruz.' },
@@ -203,7 +203,6 @@
                         </div>
                     </div>`;
 
-                // Arama motorları için JSON-LD şeması dolduruluyor
                 schemaMainEntity.push({
                     "@type": "Question",
                     "name": faq.q,
@@ -214,7 +213,6 @@
                 });
             });
 
-            // Yapılandırılmış veriyi HTML'e bas
             const schemaObj = {
                 "@context": "https://schema.org",
                 "@type": "FAQPage",
