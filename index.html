@@ -12,7 +12,7 @@
 </head>
 <body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen">
 
-    <!-- Arka Plan Modern Blur Efektleri -->
+    <!-- Modern Arka Plan Efektleri -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] pointer-events-none overflow-hidden opacity-20 z-0">
         <div class="absolute top-[-10%] left-[20%] w-[600px] h-[600px] bg-indigo-600 rounded-full blur-[150px]"></div>
         <div class="absolute top-[-5%] right-[20%] w-[400px] h-[400px] bg-purple-600 rounded-full blur-[130px]"></div>
@@ -39,15 +39,15 @@
         </div>
     </header>
 
-    <!-- Ana Sayfa İçeriği -->
+    <!-- Ana İçerik -->
     <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         
-        <!-- Büyük Hero Alanı -->
+        <!-- Hero Başlık Alanı -->
         <div class="text-center max-w-3xl mx-auto">
             <h1 id="hero-title" class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight"></h1>
             <p id="hero-sub" class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto font-normal"></p>
 
-            <!-- Devasa Akıllı Arama Kutusu -->
+            <!-- Arama Kutusu -->
             <div class="relative max-w-2xl mx-auto p-1.5 bg-gray-900/60 border border-gray-800 rounded-2xl shadow-2xl backdrop-blur-sm focus-within:border-indigo-500/50 transition-all">
                 <div class="flex items-center">
                     <div class="pl-3 pr-2 text-gray-500">
@@ -89,7 +89,7 @@
         </div>
     </footer>
 
-    <!-- DİL VE ÇALIŞMA SCRIPT MOTORU -->
+    <!-- AKILLI DİL VE FİLTRELEME MOTORU -->
     <script>
         const languages = {
             en: {
@@ -109,37 +109,10 @@
                 catsTitle: 'Kategorilere Göz Atın',
                 faqTitle: 'Sıkça Sorulan Sorular',
                 noResults: 'Aradığınız kriterlere uygun araç bulunamadı.'
-            },
-            de: {
-                heroTitle: 'Entdecken Sie die Kraft der KI mit einem Klick',
-                heroSub: 'Greifen Sie mit Toolcas kostenlos, unbegrenzt und schnell auf Hunderte von KI-Tools zu.',
-                searchPlaceholder: 'Welches KI-Tool benötigen Sie?',
-                toolsTitle: 'Beliebte KI-Tools',
-                catsTitle: 'Kategorien durchsuchen',
-                faqTitle: 'Häufig gestellte Fragen',
-                noResults: 'Keine Tools gefunden.'
-            },
-            es: {
-                heroTitle: 'Descubre el Poder de la IA con un Solo Clic',
-                heroSub: 'Acceda a cientos de herramientas de IA de forma gratuita, ilimitada y rápida con Toolcas.',
-                searchPlaceholder: '¿Qué herramienta de IA necesitas?',
-                toolsTitle: 'Herramientas de IA Populares',
-                catsTitle: 'Examinar Categorías',
-                faqTitle: 'Preguntas Frecuentes',
-                noResults: 'No se encontraron herramientas.'
-            },
-            fr: {
-                heroTitle: 'Découvrez la puissance de l\'IA en un clic',
-                heroSub: 'Accédez à des centaines d\'outils d\'IA gratuitement, en illimité et rapidement avec Toolcas.',
-                searchPlaceholder: 'De quel outil d\'IA avez-vous besoin ?',
-                toolsTitle: 'Outils d\'IA Populaires',
-                catsTitle: 'Parcourir les Catégories',
-                faqTitle: 'Foire Aux Questions',
-                noResults: 'Aucun outil trouvé.'
             }
         };
 
-        const countryToLangMap = { 'TR': 'tr', 'DE': 'de', 'ES': 'es', 'FR': 'fr' };
+        const countryToLangMap = { 'TR': 'tr' };
 
         const toolsData = [
             { name: 'Background Remover', slug: 'background-remover', desc: 'Remove backgrounds from images instantly.', icon: '✂️' },
