@@ -89,55 +89,77 @@
         </div>
     </footer>
 
-    <!-- AKILLI DİL VE FİLTRELEME MOTORU -->
+    <!-- EKSİKSİZ AKILLI DİL VE FİLTRELEME MOTORU -->
     <script>
+        // Tüm dinamik veriler dil paketlerinin içine taşındı
         const languages = {
             en: {
+                navTools: 'Tools', navCats: 'Categories', navFaq: 'FAQ', navBlog: 'Blog',
                 heroTitle: 'Discover the Power of AI with One Click',
                 heroSub: 'Access hundreds of AI tools for free, unlimited, and fast from a single platform with Toolcas.',
                 searchPlaceholder: 'Which AI tool do you need? (e.g., Background remover...)',
                 toolsTitle: 'Popular AI Tools',
                 catsTitle: 'Browse Categories',
                 faqTitle: 'Frequently Asked Questions',
-                noResults: 'No tools found matching your criteria.'
+                noResults: 'No tools found matching your criteria.',
+                catSuffix: 'Tools',
+                tools: [
+                    { name: 'Background Remover', slug: 'background-remover', desc: 'Remove backgrounds from images instantly.', icon: '✂️' },
+                    { name: 'AI Image Generator', slug: 'ai-image-generator', desc: 'Create beautiful images from text prompts.', icon: '🎨' },
+                    { name: 'AI Content Writer', slug: 'ai-content-writer', desc: 'Generate high-quality articles in seconds.', icon: '📝' },
+                    { name: 'PDF Summarizer', slug: 'pdf-summarizer', desc: 'Summarize long PDF documents using AI.', icon: '📊' }
+                ],
+                categories: [
+                    { name: 'AI Writing', count: 12, icon: '✍️' },
+                    { name: 'AI Image', count: 18, icon: '🖼️' },
+                    { name: 'AI Video', count: 8, icon: '🎥' },
+                    { name: 'AI Audio', count: 6, icon: '🎵' },
+                    { name: 'AI PDF', count: 15, icon: '📄' },
+                    { name: 'AI Coding', count: 10, icon: '💻' }
+                ],
+                faqs: [
+                    { q: 'Is Toolcas completely free?', a: 'Yes, you can use all the core tools on our platform without any charges.' },
+                    { q: 'Are my files stored in the system?', a: 'No, we value your privacy. All files are permanently deleted from our servers shortly after processing.' },
+                    { q: 'Is there a daily usage limit?', a: 'Currently, we offer a generous free limit to all our users.' }
+                ]
             },
             tr: {
+                navTools: 'Araçlar', navCats: 'Kategoriler', navFaq: 'SSS', navBlog: 'Blog',
                 heroTitle: 'Yapay Zekanın Gücünü Tek Tıkla Keşfedin',
                 heroSub: 'Toolcas ile yüzlerce yapay zeka aracına tek bir platformdan ücretsiz, sınırsız ve hızlıca erişin.',
                 searchPlaceholder: 'Hangi AI aracına ihtiyacınız var? (Örn: Arka plan silme...)',
                 toolsTitle: 'Popüler AI Araçları',
                 catsTitle: 'Kategorilere Göz Atın',
                 faqTitle: 'Sıkça Sorulan Sorular',
-                noResults: 'Aradığınız kriterlere uygun araç bulunamadı.'
+                noResults: 'Aradığınız kriterlere uygun araç bulunamadı.',
+                catSuffix: 'Araç',
+                tools: [
+                    { name: 'Arka Plan Silici', slug: 'background-remover', desc: 'Görsellerin arka planını anında kaldırın.', icon: '✂️' },
+                    { name: 'AI Görsel Oluşturucu', slug: 'ai-image-generator', desc: 'Metin komutlarından harika görseller yaratın.', icon: '🎨' },
+                    { name: 'AI İçerik Yazarı', slug: 'ai-content-writer', desc: 'Saniyeler içinde yüksek kaliteli makaleler üretin.', icon: '📝' },
+                    { name: 'PDF Özetleyici', slug: 'pdf-summarizer', desc: 'Yapay zeka ile uzun PDF dokümanlarını özetleyin.', icon: '📊' }
+                ],
+                categories: [
+                    { name: 'AI Yazarlık', count: 12, icon: '✍️' },
+                    { name: 'AI Görsel', count: 18, icon: '🖼️' },
+                    { name: 'AI Video', count: 8, icon: '🎥' },
+                    { name: 'AI Ses', count: 6, icon: '🎵' },
+                    { name: 'AI PDF', count: 15, icon: '📄' },
+                    { name: 'AI Kodlama', count: 10, icon: '💻' }
+                ],
+                faqs: [
+                    { q: 'Toolcas tamamen ücretsiz mi?', a: 'Evet, platformumuzdaki temel tüm araçları herhangi bir ücret ödemeden kullanabilirsiniz.' },
+                    { q: 'Dosyalarım sistemde saklanıyor mu?', a: 'Hayır, gizliliğinize önem veriyoruz. İşlem bittikten kısa süre sonra tüm dosyalar sunucularımızdan silinir.' },
+                    { q: 'Günlük kullanım sınırı var mı?', a: 'Şu an için tüm kullanıcılarımıza cömert bir ücretsiz limit sunuyoruz.' }
+                ]
             }
         };
 
         const countryToLangMap = { 'TR': 'tr' };
-
-        const toolsData = [
-            { name: 'Background Remover', slug: 'background-remover', desc: 'Remove backgrounds from images instantly.', icon: '✂️' },
-            { name: 'AI Image Generator', slug: 'ai-image-generator', desc: 'Create beautiful images from text prompts.', icon: '🎨' },
-            { name: 'AI Content Writer', slug: 'ai-content-writer', desc: 'Generate high-quality articles in seconds.', icon: '📝' },
-            { name: 'PDF Summarizer', slug: 'pdf-summarizer', desc: 'Summarize long PDF documents using AI.', icon: '📊' }
-        ];
-
-        const categoriesData = [
-            { name: 'AI Writing', count: 12, icon: '✍️' },
-            { name: 'AI Image', count: 18, icon: '🖼️' },
-            { name: 'AI Video', count: 8, icon: '🎥' },
-            { name: 'AI Audio', count: 6, icon: '🎵' },
-            { name: 'AI PDF', count: 15, icon: '📄' },
-            { name: 'AI Coding', count: 10, icon: '💻' }
-        ];
-
-        const faqData = [
-            { q: 'Toolcas tamamen ücretsiz mi?', a: 'Evet, platformumuzdaki temel tüm araçları herhangi bir ücret ödemeden kullanabilirsiniz.' },
-            { q: 'Dosyalarım sistemde saklanıyor mu?', a: 'Hayır, gizliliğinize önem veriyoruz. İşlem bittikten kısa süre sonra tüm dosyalar sunucularımızdan silinir.' },
-            { q: 'Günlük kullanım sınırı var mı?', a: 'Şu an için tüm kullanıcılarımıza cömert bir ücretsiz limit sunuyoruz.' }
-        ];
+        let currentTools = []; // Arama filtresi için aktif araç listesini tutar
 
         async function initSite() {
-            let activeLang = 'en';
+            let activeLang = 'en'; // Ana dil varsayılan İngilizce
             try {
                 const res = await fetch('https://1.1.1.1/cdn-cgi/trace');
                 const text = await res.text();
@@ -161,6 +183,15 @@
 
         function renderAll(lang) {
             const d = languages[lang] || languages.en;
+            currentTools = d.tools; // Aktif araçları dile göre eşitle
+
+            // Menü Elemanları
+            document.getElementById('nav-tools').innerText = d.navTools;
+            document.getElementById('nav-categories').innerText = d.navCats;
+            document.getElementById('nav-faq').innerText = d.navFaq;
+            document.getElementById('nav-blog').innerText = d.navBlog;
+
+            // Hero ve Statik Başlıklar
             document.getElementById('hero-title').innerText = d.heroTitle;
             document.getElementById('hero-sub').innerText = d.heroSub;
             document.getElementById('search-input').placeholder = d.searchPlaceholder;
@@ -169,22 +200,25 @@
             document.getElementById('section-faq-title').innerText = d.faqTitle;
             document.getElementById('no-results').innerText = d.noResults;
 
-            renderTools(toolsData);
+            // Araç Listesini Bas
+            renderTools(currentTools);
 
+            // Kategorileri Bas
             const catGrid = document.getElementById('categories-grid');
             catGrid.innerHTML = '';
-            categoriesData.forEach(c => {
+            d.categories.forEach(c => {
                 catGrid.innerHTML += `
                     <div class="p-4 bg-gray-900/20 border border-gray-800/60 rounded-xl text-center hover:bg-gray-900/50 transition-all cursor-pointer">
                         <div class="text-2xl mb-2">${c.icon}</div>
                         <div class="text-sm font-semibold text-gray-200">${c.name}</div>
-                        <div class="text-xs text-gray-500 mt-1">${c.count} Tools</div>
+                        <div class="text-xs text-gray-500 mt-1">${c.count} ${d.catSuffix}</div>
                     </div>`;
             });
 
+            // SSS Alanını Bas
             const faqCont = document.getElementById('faq-container');
             faqCont.innerHTML = '';
-            faqData.forEach((f, i) => {
+            d.faqs.forEach((f, i) => {
                 faqCont.innerHTML += `
                     <div class="bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(${i})">
                         <div class="p-6 flex justify-between items-center select-none">
@@ -221,9 +255,10 @@
             document.getElementById(`faq-arrow-${i}`).classList.toggle('rotate-180');
         }
 
+        // Dil duyarlı canlı arama dinleyicisi
         document.getElementById('search-input').addEventListener('input', function(e) {
             const q = e.target.value.toLowerCase();
-            renderTools(toolsData.filter(t => t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q)));
+            renderTools(currentTools.filter(t => t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q)));
         });
 
         initSite();
