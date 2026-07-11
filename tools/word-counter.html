@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Word & Character Counter - Toolcas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glow-bg { background-color: #0b0f19; }
+    </style>
+    
+    <!-- Dinamik FAQ SEO Şeması İçin Yuva -->
+    <script type="application/ld+json" id="faq-schema"></script>
+</head>
+<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen">
+
+    <!-- Arka Plan Modern Blur Efekti -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none overflow-hidden opacity-20 z-0">
+        <div class="absolute top-[-10%] left-[30%] w-[500px] h-[500px] bg-indigo-600 rounded-full blur-[130px]"></div>
+    </div>
+
+    <!-- Üst Menü (Navbar) -->
+    <header class="relative z-10 border-b border-gray-800/80 bg-[#0b0f19]/70 backdrop-blur-md sticky top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="../index.html" class="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                TOOLCAS
+            </a>
+            <nav class="space-x-6 text-sm font-medium text-gray-400">
+                <a href="../index.html" id="nav-home" class="hover:text-white transition-colors">Home</a>
+                <a href="../index.html#tools" id="nav-all-tools" class="hover:text-white transition-colors">All Tools</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Ana İçerik Alanı -->
+    <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
+        
+        <!-- 1. Araç Başlığı ve Kısa Açıklama -->
+        <div class="text-center mb-12">
+            <h1 id="tool-title" class="text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight"></h1>
+            <p id="tool-desc" class="text-base text-gray-400 max-w-2xl mx-auto"></p>
+        </div>
+
+        <!-- 2. Çalışan AI Araç Alanı -->
+        <section class="max-w-3xl mx-auto p-6 bg-gray-900/40 border border-gray-800 rounded-2xl shadow-2xl backdrop-blur-sm mb-16">
+            <div class="space-y-4">
+                <!-- Canlı Sayaç Metrikleri -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-2">
+                    <div class="bg-gray-950/60 border border-gray-800 p-4 rounded-xl text-center">
+                        <span id="stat-words-label" class="block text-xs text-gray-500 uppercase font-bold tracking-wider">Words</span>
+                        <span id="cnt-words" class="text-2xl font-black text-indigo-400">0</span>
+                    </div>
+                    <div class="bg-gray-950/60 border border-gray-800 p-4 rounded-xl text-center">
+                        <span id="stat-chars-label" class="block text-xs text-gray-500 uppercase font-bold tracking-wider">Characters</span>
+                        <span id="cnt-chars" class="text-2xl font-black text-purple-400">0</span>
+                    </div>
+                    <div class="bg-gray-950/60 border border-gray-800 p-4 rounded-xl text-center">
+                        <span id="stat-sentences-label" class="block text-xs text-gray-500 uppercase font-bold tracking-wider">Sentences</span>
+                        <span id="cnt-sentences" class="text-2xl font-black text-emerald-400">0</span>
+                    </div>
+                    <div class="bg-gray-950/60 border border-gray-800 p-4 rounded-xl text-center">
+                        <span id="stat-reading-label" class="block text-xs text-gray-500 uppercase font-bold tracking-wider">Read Time</span>
+                        <span id="cnt-reading" class="text-lg font-black text-amber-400 flex items-center justify-center h-8">0s</span>
+                    </div>
+                </div>
+
+                <!-- Metin Giriş Alanı -->
+                <textarea id="text-input" oninput="analyzeText()" rows="8" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-indigo-500 resize-none transition-colors" placeholder="Type or paste your content here to calculate dense statistics instantly..."></p></textarea>
+                
+                <div class="flex justify-end">
+                    <button onclick="clearText()" id="btn-clear" class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium text-xs py-2.5 px-6 rounded-lg transition-colors"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adsense Orta Alanı Buraya Gelecek -->
+
+        <!-- 3. Nasıl Kullanılır & Özellikler (İki Kolon Yapı) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-gray-900 pt-12 mb-16">
+            <div>
+                <h2 id="how-to-title" class="text-xl font-bold text-white mb-4"></h2>
+                <ol id="how-to-steps" class="space-y-3 text-sm text-gray-400 list-decimal list-inside"></ol>
+            </div>
+            <div>
+                <h2 id="features-title" class="text-xl font-bold text-white mb-4"></h2>
+                <ul id="features-list" class="space-y-3 text-sm text-gray-400 list-disc list-inside"></ul>
+            </div>
+        </section>
+
+        <!-- 4. Detaylı SEO İçerik Alanı -->
+        <section class="border-t border-gray-900 pt-12 mb-16">
+            <h2 id="seo-content-title" class="text-2xl font-bold text-white mb-6"></h2>
+            <div id="seo-content-body" class="text-sm text-gray-400 leading-relaxed space-y-4"></div>
+        </section>
+
+        <!-- 5. Minimum 6-10 Adet FAQ Bölümü -->
+        <section id="faq-section" class="border-t border-gray-900 pt-12">
+            <h2 id="faq-section-title" class="text-2xl font-bold text-white mb-8 text-center"></h2>
+            <div id="faq-container" class="space-y-4 max-w-3xl mx-auto"></div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-900 bg-[#070a12] text-xs text-gray-500 py-8 text-center relative z-10">
+        &copy; 2026 Toolcas Inc. All rights reserved.
+    </footer>
+
+    <!-- DİL MOTORU VE SAYAÇ MANTIĞI -->
+    <script>
+        const localizations = {
+            en: {
+                navHome: 'Home', navAllTools: 'All Tools',
+                title: 'AI Word & Character Counter',
+                desc: 'Analyze your copy parameters instantly. Monitor total words, exact characters, reading pacing, and sentence counts in real time.',
+                placeholder: 'Type or paste your content here to calculate dense statistics instantly...',
+                btnClear: 'Clear Workspace',
+                lblWords: 'Words', lblChars: 'Characters', lblSentences: 'Sentences', lblReading: 'Read Time',
+                howTo: 'How to Use?',
+                steps: ['Input or paste your text documents directly into the responsive workspace node.', 'Watch the metadata registers update live with every single keystroke.', 'Track estimated human reading speed allocations before running deployments.'],
+                features: 'Analytical Coverage',
+                featList: ['Calculates parameters 100% locally on device browser hardware.', 'Accurately bypasses double spacing irregularities to avoid artificial inflation.', 'Evaluates structural text payload weight metrics under 2ms.'],
+                seoTitle: 'Precision Copywriting and Character Auditing Engine',
+                seoBody: '<p>Content delivery networks, metadata parameters, and social platform nodes depend on strict layout boundaries. A single overflowing character can truncate search results or ruin interface layouts. Utilizing client-side execution nodes guarantees that sensitive draft configurations are never transmitted across open network infrastructures.</p>',
+                faqTitle: 'Frequently Asked Questions',
+                faqs: [
+                    { q: 'Is there a character processing limit?', a: 'No, the memory structure handles massive documents cleanly directly inside your local browser.' },
+                    { q: 'How is reading time calculated?', a: 'It utilizes standard global cognitive metrics assuming an average reading pace of 200 words per minute.' },
+                    { q: 'Are my inputs sent to remote networks?', a: 'Never. All counting operations happen instantly inside local volatile memory allocations.' },
+                    { q: 'Does it support markdown elements?', a: 'Yes, all plaintext and specialized formatting tokens are audited raw.' },
+                    { q: 'Does it count spaces as characters?', a: 'Yes, it tracks overall string structural metrics, which includes space nodes.' },
+                    { q: 'Is it fully responsive on mobile devices?', a: 'Absolutely, the counting interface scales dynamically on all mobile browsers.' },
+                    { q: 'Can I use it for meta description checking?', a: 'Yes, it is optimal for monitoring strict 160-character SEO thresholds.' }
+                ]
+            },
+            tr: {
+                navHome: 'Ana Sayfa', navAllTools: 'Tüm Araçlar',
+                title: 'AI Kelime ve Karakter Sayıcı',
+                desc: 'Metin parametrelerinizi anında analiz edin. Toplam kelime, net karakter, tahmini okuma süresi ve cümle sayılarını canlı takip edin.',
+                placeholder: 'Yoğun istatistikleri anında hesaplamak için içeriğinizi buraya yazın veya yapıştırın...',
+                btnClear: 'Alanı Temizle',
+                lblWords: 'Kelime', lblChars: 'Karakter', lblSentences: 'Cümle', lblReading: 'Okuma Süresi',
+                howTo: 'Nasıl Kullanılır?',
+                steps: ['Metin belgelerinizi doğrudan esnek çalışma alanına yazın veya yapıştırın.', 'Her tuş vuruşunda meta veri kayıtlarının canlı olarak güncellenmesini izleyin.', 'Yayınlamadan önce tahmini insan okuma hızı tahsislerini takip edin.'],
+                features: 'Analitik Kapsam',
+                featList: ['Parametreleri %100 yerel olarak cihaz tarayıcı donanımında hesaplar.', 'Yapay şişirmeyi önlemek için çift boşluk düzensizliklerini doğru şekilde atlar.', 'Yapısal metin yükü ağırlık ölçümlerini 2 ms altında değerlendirir.'],
+                seoTitle: 'Hassas Metin Yazarlığı ve Karakter Denetim Motoru',
+                seoBody: '<p>İçerik dağıtım ağları, meta veri parametreleri ve sosyal platform düğümleri katı yerleşim sınırlarına bağlıdır. Tek bir taşan karakter arama sonuçlarını kesebilir veya arayüz düzenlerini bozabilir. İstemci tarafı yürütme düğümlerinin kullanılması, hassas taslak yapılandırmalarının asla açık ağ altyapıları üzerinden iletilmemesini garanti eder.</p>',
+                faqTitle: 'Sıkça Sorulan Sorular',
+                faqs: [
+                    { q: 'Karakter işleme sınırı var mı?', a: 'Hayır, bellek yapısı devasa belgeleri doğrudan yerel tarayıcınızın içinde temiz bir şekilde işler.' },
+                    { q: 'Okuma süresi nasıl hesaplanıyor?', a: 'Dakikada ortalama 200 kelimelik bir okuma hızı varsayarak standart küresel bilişsel ölçümleri kullanır.' },
+                    { q: 'Girdilerim uzak ağlara gönderiliyor mu?', a: 'Asla. Tüm sayma işlemleri anlık olarak yerel geçici bellek tahsislerinde gerçekleşir.' },
+                    { q: 'Markdown öğelerini destekliyor mu?', a: 'Evet, tüm düz metin ve özel biçimlendirme simgeleri ham olarak denetlenir.' },
+                    { q: 'Boşlukları karakter olarak sayıyor mu?', a: 'Evet, boşluk düğümlerini içeren genel dize yapısal ölçümlerini izler.' },
+                    { q: 'Mobil cihazlarda tamamen uyumlu mu?', a: 'Kesinlikle, sayma arayüzü tüm mobil tarayıcılarda dinamik olarak ölçeklenir.' },
+                    { q: 'Meta açıklama kontrolü için kullanabilir miyim?', a: 'Evet, katı 160 karakterlik SEO sınırlarını izlemek için en uygun araçtır.' }
+                ]
+            }
+        };
+
+        async function loadToolPage() {
+            let activeLang = 'en';
+            try {
+                const response = await fetch('https://1.1.1.1/cdn-cgi/trace');
+                const text = await response.text();
+                const locLine = text.split('\n').find(line => line.startsWith('loc='));
+                if (locLine) {
+                    const country = locLine.split('=')[1].trim();
+                    if (country === 'TR') activeLang = 'tr';
+                    else {
+                        const browserLang = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
+                        if (localizations[browserLang]) activeLang = browserLang;
+                    }
+                }
+            } catch (e) {
+                const browserLang = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
+                if (localizations[browserLang]) activeLang = browserLang;
+            }
+
+            document.documentElement.lang = activeLang;
+            renderPageData(activeLang);
+            analyzeText();
+        }
+
+        function renderPageData(lang) {
+            const data = localizations[lang] || localizations.en;
+
+            document.getElementById('nav-home').innerText = data.navHome;
+            document.getElementById('nav-all-tools').innerText = data.navAllTools;
+            document.getElementById('tool-title').innerText = data.title;
+            document.getElementById('tool-desc').innerText = data.desc;
+            document.getElementById('text-input').placeholder = data.placeholder;
+            document.getElementById('btn-clear').innerText = data.btnClear;
+            
+            document.getElementById('stat-words-label').innerText = data.lblWords;
+            document.getElementById('stat-chars-label').innerText = data.lblChars;
+            document.getElementById('stat-sentences-label').innerText = data.lblSentences;
+            document.getElementById('stat-reading-label').innerText = data.lblReading;
+
+            document.getElementById('how-to-title').innerText = data.howTo;
+            document.getElementById('features-title').innerText = data.features;
+            document.getElementById('seo-content-title').innerText = data.seoTitle;
+            document.getElementById('seo-content-body').innerHTML = data.seoBody;
+            document.getElementById('faq-section-title').innerText = data.faqTitle;
+
+            const stepsContainer = document.getElementById('how-to-steps');
+            stepsContainer.innerHTML = '';
+            data.steps.forEach(step => stepsContainer.innerHTML += `<li>${step}</li>`);
+
+            const featContainer = document.getElementById('features-list');
+            featContainer.innerHTML = '';
+            data.featList.forEach(feat => featContainer.innerHTML += `<li>${feat}</li>`);
+
+            const faqContainer = document.getElementById('faq-container');
+            faqContainer.innerHTML = '';
+            const schemaMainEntity = [];
+
+            data.faqs.forEach((faq, index) => {
+                faqContainer.innerHTML += `
+                    <div class="bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden cursor-pointer shadow-sm" onclick="toggleFaqDetail(${index})">
+                        <div class="p-5 flex justify-between items-center select-none">
+                            <h3 class="text-sm font-semibold text-white flex items-center">
+                                <span class="text-indigo-400 mr-2">Q:</span> ${faq.q}
+                            </h3>
+                            <span id="faq-arr-${index}" class="text-xs text-gray-500 transition-transform duration-200">▼</span>
+                        </div>
+                        <div id="faq-answer-${index}" class="px-5 pb-5 pt-1 border-t border-gray-800/40 bg-gray-900/10 hidden">
+                            <p class="text-xs text-gray-400 pl-5">${faq.a}</p>
+                        </div>
+                    </div>`;
+
+                schemaMainEntity.push({
+                    "@type": "Question",
+                    "name": faq.q,
+                    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+                });
+            });
+
+            const schemaObj = {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": schemaMainEntity
+            };
+            document.getElementById('faq-schema').textContent = JSON.stringify(schemaObj);
+        }
+
+        function toggleFaqDetail(index) {
+            document.getElementById(`faq-answer-${index}`).classList.toggle('hidden');
+            document.getElementById(`faq-arr-${index}`).classList.toggle('rotate-180');
+        }
+
+        // Hesaplama Fonksiyonu
+        function analyzeText() {
+            const txt = document.getElementById('text-input').value;
+            
+            // Karakter
+            const charCount = txt.length;
+            
+            // Kelime
+            const cleanTxt = txt.trim().replace(/\s+/g, ' ');
+            const wordCount = cleanTxt === '' ? 0 : cleanTxt.split(' ').length;
+            
+            // Cümle
+            const sentenceCount = txt.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
+            
+            // Okuma Süresi (Ortalama 200 kelime/dk)
+            const totalSeconds = Math.ceil((wordCount / 200) * 60);
+            let timeStr = "0s";
+            if (wordCount > 0) {
+                if (totalSeconds < 60) {
+                    timeStr = `${totalSeconds}s`;
+                } else {
+                    const mins = Math.floor(totalSeconds / 60);
+                    const secs = totalSeconds % 60;
+                    timeStr = secs > 0 ? `${mins}m ${secs}s` : `${mins}m`;
+                }
+            }
+
+            document.getElementById('cnt-words').innerText = wordCount;
+            document.getElementById('cnt-chars').innerText = charCount;
+            document.getElementById('cnt-sentences').innerText = sentenceCount;
+            document.getElementById('cnt-reading').innerText = timeStr;
+        }
+
+        function clearText() {
+            document.getElementById('text-input').value = '';
+            analyzeText();
+        }
+
+        loadToolPage();
+    </script>
+</body>
+</html>
