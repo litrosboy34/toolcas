@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Post Generator - Toolcas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-white">
+  <nav class="border-b border-gray-800 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-cyan-500 rounded-2xl flex items-center justify-center text-2xl font-bold">T</div>
+        <span class="text-3xl font-semibold">Toolcas</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="max-w-2xl mx-auto pt-20 px-6">
+    <h1 class="text-4xl font-bold mb-2">LinkedIn Post Generator</h1>
+    <p class="text-gray-400 mb-8">Konu gir, AI sana profesyonel post yazsın</p>
+
+    <div class="bg-gray-900 p-8 rounded-3xl">
+      <textarea id="topic" placeholder="Konu yaz (örn: AI in marketing)" class="w-full h-32 bg-gray-800 border border-gray-700 rounded-2xl p-6 text-lg focus:outline-none focus:border-cyan-400"></textarea>
+      
+      <div class="flex gap-4 mt-6">
+        <select id="tone" class="bg-gray-800 border border-gray-700 rounded-2xl px-6 py-4 flex-1">
+          <option value="professional">Profesyonel</option>
+          <option value="casual">Rahat</option>
+          <option value="motivational">Motivasyonel</option>
+        </select>
+        <button onclick="generatePost()" class="bg-cyan-500 hover:bg-cyan-600 px-10 py-4 rounded-2xl font-medium flex-1">
+          Post Oluştur
+        </button>
+      </div>
+
+      <div id="result" class="mt-8 hidden bg-gray-800 border border-gray-700 rounded-3xl p-8">
+        <h3 class="font-semibold mb-4">Oluşturulan Post:</h3>
+        <p id="postText" class="text-gray-300 leading-relaxed"></p>
+        <button onclick="copyPost()" class="mt-6 text-cyan-400 hover:text-cyan-300 text-sm">📋 Kopyala</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function generatePost() {
+      const topic = document.getElementById('topic').value;
+      if (!topic) {
+        alert('Lütfen konu girin');
+        return;
+      }
+      const tone = document.getElementById('tone').value;
+      
+      const post = `🚀 ${topic}\n\nBu hafta AI'nin iş dünyasını nasıl değiştirdiğini gördük. ${tone === 'professional' ? 'Profesyonel olarak' : tone === 'casual' ? 'Rahat bir şekilde' : 'Motivasyonel olarak'} söylemek gerekirse... \n\n#AI #${topic.replace(/ /g, '')}`;
+      
+      document.getElementById('postText').textContent = post;
+      document.getElementById('result').classList.remove('hidden');
+    }
+
+    function copyPost() {
+      const text = document.getElementById('postText').textContent;
+      navigator.clipboard.writeText(text);
+      alert('Kopyalandı!');
+    }
+  </script>
+</body>
+</html>
