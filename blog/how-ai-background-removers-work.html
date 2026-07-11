@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How AI Background Removers Work - Toolcas Blog</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glow-bg { background-color: #0b0f19; }
+    </style>
+</head>
+<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen">
+
+    <!-- Arka Plan Modern Blur Efekti -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none overflow-hidden opacity-20 z-0">
+        <div class="absolute top-[-10%] right-[30%] w-[500px] h-[500px] bg-purple-600 rounded-full blur-[130px]"></div>
+    </div>
+
+    <!-- Üst Menü (Navbar) -->
+    <header class="relative z-10 border-b border-gray-800/80 bg-[#0b0f19]/70 backdrop-blur-md sticky top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="../index.html" class="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                TOOLCAS
+            </a>
+            <nav class="space-x-6 text-sm font-medium text-gray-400">
+                <a href="../index.html" id="nav-home" class="hover:text-white transition-colors">Home</a>
+                <a href="index.html" id="nav-blog" class="hover:text-white transition-colors">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Detay İçeriği -->
+    <main class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
+        <article>
+            <!-- Üst Bilgi ve Meta Veriler -->
+            <header class="mb-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <span id="post-tag" class="px-2.5 py-0.5 text-[11px] font-semibold bg-indigo-500/10 text-indigo-400 rounded-md uppercase tracking-wider"></span>
+                    <span id="post-date" class="text-xs text-gray-500"></span>
+                </div>
+                <h1 id="post-title" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4 leading-tight"></h1>
+            </header>
+
+            <!-- Dinamik Makale Gövdesi -->
+            <div id="post-body" class="text-gray-300 text-sm leading-relaxed space-y-6 border-t border-gray-900 pt-8"></div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-900 bg-[#070a12] text-xs text-gray-500 py-8 text-center relative z-10">
+        &copy; 2026 Toolcas Inc. All rights reserved.
+    </footer>
+
+    <!-- DİL VE İÇERİK MOTORU -->
+    <script>
+        const localizations = {
+            en: {
+                navHome: 'Home',
+                navBlog: 'Blog',
+                tag: 'Technology',
+                date: 'July 10, 2026',
+                title: 'How AI Background Removers Work Behind the Scenes',
+                body: `
+                    <p class="text-base text-gray-400">Have you ever wondered how single-purpose web tools isolate a person, product, or animal from an image in the blink of an eye? The secret lies within advanced machine learning architectures specifically optimized for computer vision tasks.</p>
+                    
+                    <h2 class="text-xl font-bold text-white mt-8 mb-4">1. The Core Architecture: Semantic Segmentation</h2>
+                    <p>Unlike basic editing software that relies on color contrast or magic wand tolerances, artificial intelligence treats the image as a collection of semantic units. Deep Convolutional Neural Networks (CNNs) analyze the matrix of pixels to understand not just where colors change, but what objects are actually present in the viewport.</p>
+                    
+                    <h2 class="text-xl font-bold text-white mt-8 mb-4">2. Trimap Generation and Alpha Matting</h2>
+                    <p>Once the AI recognizes the core subject, it creates an internal map split into three distinct zones: definite foreground, definite background, and an unknown transition zone (usually around complex areas like hair, fur, or semi-transparent fabrics). The system then applies alpha matting algorithms to compute the exact transparency values for each pixel in this transition zone, resulting in a perfectly clean cutout.</p>
+                    
+                    <h2 class="text-xl font-bold text-white mt-8 mb-4">3. Why Cloud Processing Changes Everything</h2>
+                    <p>Running these heavy neural networks locally on a standard mobile browser or older computer would take minutes and drain significant battery. By leveraging secure, serverless cloud processing infrastructures, web platforms can accept an uploaded image, pass it through optimized model pipelines, and return a clean alpha-channel transparent PNG file within milliseconds.</p>
+                `
+            },
+            tr: {
+                navHome: 'Ana Sayfa',
+                navBlog: 'Blog',
+                tag: 'Teknoloji',
+                date: '10 Temmuz 2026',
+                title: 'AI Arka Plan Siliciler Arka Planda Nasıl Çalışır?',
+                body: `
+                    <p class="text-base text-gray-400">Tek amaçlı web araçlarının bir insanı, ürünü veya hayvanı göz açıp kapayıncaya kadar görselden nasıl ayırdığını hiç merak ettiniz mi? Sır, bilgisayarlı görü görevleri için özel olarak optimize edilmiş gelişmiş makine öğrenimi mimarilerinde saklıdır.</p>
+                    
+                    <h2 class="text-xl font-bold text-white mt-8 mb-4">1. Temel Mimari: Anlamsal Bölütleme (Semantic Segmentation)</h2>
+                    <p>Renk kontrastına veya sihirli değnek toleranslarına dayanan temel düzenleme yazılımlarının aksine, yapay zeka görseli anlamsal birimlerin bir koleksiyonu olarak ele alır. Derin Evrişimli Sinir Ağları (CNN'ler), yalnızca renklerin nerede değiştiğini değil, ekranda gerçekte hangi nesnelerin bulunduğunu anlamak için piksel matrisini analiz eder.</p>
+                    
+                    <h2 class="text-xl font-bold text-white mt-8 mb-4">2. Trimap Oluşturma ve Alfa Matlaştırma</h2>
+                    <p>Yapay zeka ana nesneyi tanıdıktan sonra, üç belirgin bölgeye ayrılmış dahili bir harita oluşturur: kesin ön plan, kesin arka plan ve bilinmeyen bir geçiş bölgesi (genellikle saç, kürk veya yarı saydam kumaşlar gibi karmaşık alanların çevresi). Sistem daha sonra bu geçiş bölgesindeki her piksel için tam şeffaflık değerlerini hesaplamak amacıyla alfa matlaştırma algoritmaları uygular ve sonuçta kusursuz temizlikte bir kesim elde edilir.</p>
+                    
+                    <h2 class="text-xl font-bold text-white mt-8 mb-4">3. Bulut İşleme Neden Her Şeyi Değiştiriyor?</h2>
+                    <p>Bu ağır sinir ağlarını standart bir mobil tarayıcıda veya eski bir bilgisayarda yerel olarak çalıştırmak dakikalar alabilir ve ciddi pil tüketimine yol açabilirdi. Güvenli ve sunucusuz bulut işleme altyapılarından yararlanan web platformları, yüklenen bir görseli kabul edebilir, optimize edilmiş model hatlarından geçirebilir ve milisaniyeler içinde temiz bir alfa kanallı şeffaf PNG dosyası döndürebilir.</p>
+                `
+            }
+        };
+
+        async function initPost() {
+            let activeLang = 'en';
+            try {
+                const response = await fetch('https://1.1.1.1/cdn-cgi/trace');
+                const text = await response.text();
+                const locLine = text.split('\n').find(line => line.startsWith('loc='));
+                if (locLine) {
+                    const country = locLine.split('=')[1].trim();
+                    if (country === 'TR') activeLang = 'tr';
+                    else {
+                        const browserLang = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
+                        if (localizations[browserLang]) activeLang = browserLang;
+                    }
+                }
+            } catch (e) {
+                const browserLang = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
+                if (localizations[browserLang]) activeLang = browserLang;
+            }
+
+            document.documentElement.lang = activeLang;
+            renderPost(activeLang);
+        }
+
+        function renderPost(lang) {
+            const data = localizations[lang] || localizations.en;
+
+            // Navigasyon
+            document.getElementById('nav-home').innerText = data.navHome;
+            document.getElementById('nav-blog').innerText = data.navBlog;
+
+            // Makale İçeriği
+            document.getElementById('post-tag').innerText = data.tag;
+            document.getElementById('post-date').innerText = data.date;
+            document.getElementById('post-title').innerText = data.title;
+            document.getElementById('post-body').innerHTML = data.body;
+        }
+
+        initPost();
+    </script>
+</body>
+</html>
