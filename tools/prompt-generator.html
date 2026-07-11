@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Generator - Toolcas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glow-bg { background-color: #0b0f19; }
+    </style>
+    <script type="application/ld+json" id="faq-schema"></script>
+</head>
+<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen">
+
+    <!-- Arka Plan Modern Blur Efekti -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none overflow-hidden opacity-20 z-0">
+        <div class="absolute top-[-10%] left-[30%] w-[500px] h-[500px] bg-purple-600 rounded-full blur-[130px]"></div>
+    </div>
+
+    <!-- Üst Menü (Navbar) -->
+    <header class="relative z-10 border-b border-gray-800/80 bg-[#0b0f19]/70 backdrop-blur-md sticky top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="../index.html" class="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                TOOLCAS
+            </a>
+            <nav class="space-x-6 text-sm font-medium text-gray-400">
+                <a href="../index.html" id="nav-home" class="hover:text-white transition-colors">Home</a>
+                <a href="../index.html#tools" id="nav-all-tools" class="hover:text-white transition-colors">All Tools</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Ana İçerik Alanı -->
+    <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
+        
+        <!-- Araç Başlığı -->
+        <div class="text-center mb-12">
+            <h1 id="tool-title" class="text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight"></h1>
+            <p id="tool-desc" class="text-base text-gray-400 max-w-2xl mx-auto"></p>
+        </div>
+
+        <!-- Çalışan AI Araç Alanı -->
+        <section class="max-w-2xl mx-auto p-6 bg-gray-900/40 border border-gray-800 rounded-2xl shadow-2xl backdrop-blur-sm mb-16">
+            <div class="space-y-4">
+                <div>
+                    <label id="label-engine" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2"></label>
+                    <select id="prompt-engine" class="w-full bg-gray-950 border border-gray-800 rounded-lg px-4 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-indigo-500">
+                        <option value="chatgpt">ChatGPT / Claude (Text AI)</option>
+                        <option value="midjourney">Midjourney (Image AI)</option>
+                        <option value="stable">Stable Diffusion (Realistic Art)</option>
+                    </select>
+                </div>
+                <div>
+                    <label id="label-input" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2"></label>
+                    <textarea id="user-idea" rows="3" class="w-full bg-gray-950 border border-gray-800 rounded-lg px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-indigo-500 resizable-none" placeholder="e.g., cyberpunk cat sitting on a neon roof"></textarea>
+                </div>
+                <button onclick="generatePrompt()" id="btn-generate" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm py-3 px-4 rounded-lg transition-colors shadow-lg shadow-indigo-600/10"></button>
+                
+                <!-- Çıktı Alanı -->
+                <div id="output-box" class="mt-6 p-4 bg-gray-950/60 border border-gray-800/80 rounded-lg hidden relative">
+                    <p class="text-xs font-semibold uppercase tracking-wider text-indigo-400 mb-2">Generated Prompt</p>
+                    <p id="generated-text" class="text-sm text-gray-300 pr-12 whitespace-pre-line"></p>
+                    <button onclick="copyPrompt()" class="absolute top-4 right-4 text-xs bg-gray-900 hover:bg-gray-800 text-gray-400 hover:text-white px-2.5 py-1 rounded border border-gray-800 transition-colors">Copy</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nasıl Kullanılır & Özellikler -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-gray-900 pt-12 mb-16">
+            <div>
+                <h2 id="how-to-title" class="text-xl font-bold text-white mb-4"></h2>
+                <ol id="how-to-steps" class="space-y-3 text-sm text-gray-400 list-decimal list-inside"></ol>
+            </div>
+            <div>
+                <h2 id="features-title" class="text-xl font-bold text-white mb-4"></h2>
+                <ul id="features-list" class="space-y-3 text-sm text-gray-400 list-disc list-inside"></ul>
+            </div>
+        </section>
+
+        <!-- SEO İçerik Alanı -->
+        <section class="border-t border-gray-900 pt-12 mb-16">
+            <h2 id="seo-content-title" class="text-2xl font-bold text-white mb-6"></h2>
+            <div id="seo-content-body" class="text-sm text-gray-400 leading-relaxed space-y-4"></div>
+        </section>
+
+        <!-- FAQ Bölümü -->
+        <section id="faq-section" class="border-t border-gray-900 pt-12">
+            <h2 id="faq-section-title" class="text-2xl font-bold text-white mb-8 text-center"></h2>
+            <div id="faq-container" class="space-y-4 max-w-3xl mx-auto"></div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-gray-900 bg-[#070a12] text-xs text-gray-500 py-8 text-center relative z-10">
+        &copy; 2026 Toolcas Inc. All rights reserved.
+    </footer>
+
+    <script>
+        const localizations = {
+            en: {
+                navHome: 'Home', navAllTools: 'All Tools',
+                title: 'AI Prompt Generator',
+                desc: 'Convert your simple ideas into highly detailed, professional engineering prompts for ChatGPT, Midjourney, and more.',
+                labelEngine: 'Select AI Engine',
+                labelInput: 'Your Simple Idea',
+                btnGenerate: 'Optimize Prompt ✨',
+                howTo: 'How to Use?',
+                steps: ['Choose your target AI architecture (e.g., Midjourney).', 'Type your basic, raw idea or concept.', 'Click optimize to generate the perfect structured prompt.'],
+                features: 'Key Features',
+                featList: ['Optimized tokens for precise AI understanding.', 'Adds parameters, lighting styles, and modifiers instantly.', 'Zero-retention: your text inputs are never cached or saved.'],
+                seoTitle: 'Maximize Your AI Results With Structured Prompts',
+                seoBody: '<p>Getting high-quality outputs from neural networks requires clear guidelines. Our AI Prompt Builder bridges the gap by automatically embedding crucial architectural nodes, lighting directions, and style formats into your raw concepts.</p>',
+                faqTitle: 'Frequently Asked Questions',
+                faqs: [
+                    { q: 'What is prompt engineering?', a: 'It is the practice of structuring text inputs so they can be accurately interpreted by generative AI models.' },
+                    { q: 'Is my input data saved?', a: 'No. All structures are processed entirely in volatile memory (RAM) and wiped instantly. We keep zero records.' }
+                ]
+            },
+            tr: {
+                navHome: 'Ana Sayfa', navAllTools: 'Tüm Araçlar',
+                title: 'AI Prompt Oluşturucu',
+                desc: 'Basit fikirlerinizi ChatGPT, Midjourney ve diğer sistemler için son derece detaylı, profesyonel mühendislik komutlarına dönüştürün.',
+                labelEngine: 'AI Motoru Seçin',
+                labelInput: 'Basit Fikriniz',
+                btnGenerate: 'Promptu Optimize Et ✨',
+                howTo: 'Nasıl Kullanılır?',
+                steps: ['Hedef yapay zeka mimarisini seçin (Örn: Midjourney).', 'Ham fikrinizi veya konseptinizi kısaca yazın.', 'Mükemmel yapılandırılmış promptu üretmek için optimize et butonuna basın.'],
+                features: 'Öne Çıkan Özellikler',
+                featList: ['Yapay zekanın tam anlaması için optimize edilmiş belirteçler (tokens).', 'Işık stillerini, parametreleri ve modifikatörleri anında ekler.', 'Sıfır depolama: metin girdileriniz asla önbelleğe alınmaz veya kaydedilmez.'],
+                seoTitle: 'Yapılandırılmış Komutlarla AI Sonuçlarınızı Maksimuma Çıkarın',
+                seoBody: '<p>Yapay zeka modellerinden kaliteli çıktılar almak net yönergeler gerektirir. Prompt oluşturucumuz, ham fikirlerinize otomatik olarak stil formatları ve kritik komut düğümleri ekleyerek aradaki köprüyü kurar.</p>',
+                faqTitle: 'Sıkça Sorulan Sorular',
+                faqs: [
+                    { q: 'Prompt mühendisliği nedir?', a: 'Yapay zeka modellerinin girdileri en doğru şekilde yorumlayabilmesi için metinleri yapılandırma işlemidir.' },
+                    { q: 'Girdiğim veriler kaydediliyor mu?', a: 'Hayır. Tüm işlemler anlık olarak geçici bellek (RAM) üzerinde yapılır ve anında temizlenir. Asla kayıt tutulmaz.' }
+                ]
+            }
+        };
+
+        const engineTemplates = {
+            chatgpt: "Act as an expert. Process the following concept with clear step-by-step logic, removing ambiguity and providing academic-level clarity: ",
+            midjourney: "Detailed cinematic shot, volumetric lighting, photorealistic, 8k resolution, Unreal Engine 5 render, highly detailed composition, --ar 16:9 --v 6.0 --style raw ",
+            stable: "Masterpiece, ultra high res, sharp focus, intricate details, highly atmospheric, award-winning digital art, style of professional concept art: "
+        };
+
+        async function loadPage() {
+            let activeLang = 'en';
+            try {
+                const response = await fetch('https://1.1.1.1/cdn-cgi/trace');
+                const text = await response.text();
+                const locLine = text.split('\n').find(line => line.startsWith('loc='));
+                if (locLine && locLine.split('=')[1].trim() === 'TR') activeLang = 'tr';
+            } catch (e) {}
+            document.documentElement.lang = activeLang;
+            renderPage(activeLang);
+        }
+
+        function renderPage(lang) {
+            const data = localizations[lang] || localizations.en;
+            document.getElementById('nav-home').innerText = data.navHome;
+            document.getElementById('nav-all-tools').innerText = data.navAllTools;
+            document.getElementById('tool-title').innerText = data.title;
+            document.getElementById('tool-desc').innerText = data.desc;
+            document.getElementById('label-engine').innerText = data.labelEngine;
+            document.getElementById('label-input').innerText = data.labelInput;
+            document.getElementById('btn-generate').innerText = data.btnGenerate;
+            document.getElementById('how-to-title').innerText = data.howTo;
+            document.getElementById('features-title').innerText = data.features;
+            document.getElementById('seo-content-title').innerText = data.seoTitle;
+            document.getElementById('seo-content-body').innerHTML = data.seoBody;
+            document.getElementById('faq-section-title').innerText = data.faqTitle;
+
+            const stepsContainer = document.getElementById('how-to-steps');
+            stepsContainer.innerHTML = '';
+            data.steps.forEach(step => stepsContainer.innerHTML += `<li>${step}</li>`);
+
+            const featContainer = document.getElementById('features-list');
+            featContainer.innerHTML = '';
+            data.featList.forEach(feat => featContainer.innerHTML += `<li>${feat}</li>`);
+
+            const faqContainer = document.getElementById('faq-container');
+            faqContainer.innerHTML = '';
+            const schemaMainEntity = [];
+            data.faqs.forEach((faq, index) => {
+                faqContainer.innerHTML += `
+                    <div class="bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden cursor-pointer shadow-sm" onclick="toggleFaq(${index})">
+                        <div class="p-5 flex justify-between items-center select-none">
+                            <h3 class="text-sm font-semibold text-white flex items-center"><span class="text-indigo-400 mr-2">Q:</span> ${faq.q}</h3>
+                            <span id="faq-arr-${index}" class="text-xs text-gray-500 transition-transform">▼</span>
+                        </div>
+                        <div id="faq-answer-${index}" class="px-5 pb-5 pt-1 border-t border-gray-800/40 bg-gray-900/10 hidden">
+                            <p class="text-xs text-gray-400 pl-5">${faq.a}</p>
+                        </div>
+                    </div>`;
+                schemaMainEntity.push({
+                    "@type": "Question",
+                    "name": faq.q,
+                    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+                });
+            });
+            document.getElementById('faq-schema').textContent = JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": schemaMainEntity});
+        }
+
+        function toggleFaq(index) {
+            document.getElementById(`faq-answer-${index}`).classList.toggle('hidden');
+            document.getElementById(`faq-arr-${index}`).classList.toggle('rotate-180');
+        }
+
+        function generatePrompt() {
+            const engine = document.getElementById('prompt-engine').value;
+            const idea = document.getElementById('user-idea').value.trim();
+            if(!idea) return;
+
+            let result = "";
+            if(engine === 'midjourney') {
+                result = `${idea}, ${engineTemplates.midjourney}`;
+            } else {
+                result = `${engineTemplates[engine]}${idea}`;
+            }
+
+            document.getElementById('generated-text').innerText = result;
+            document.getElementById('output-box').classList.remove('hidden');
+        }
+
+        function copyPrompt() {
+            const text = document.getElementById('generated-text').innerText;
+            navigator.clipboard.writeText(text);
+        }
+
+        loadPage();
+    </script>
+</body>
+</html>
