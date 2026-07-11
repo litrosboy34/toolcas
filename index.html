@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toolcas - Free AI Tools</title>
+    <title>Toolcas - Free AI Tools Platform</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .glow-bg {
-            background-color: #0b0f19;
-        }
+        .glow-bg { background-color: #0b0f19; }
     </style>
 </head>
 <body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen">
 
-    <!-- Arka Plan Işıltıları -->
+    <!-- Arka Plan Modern Blur Efektleri -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] pointer-events-none overflow-hidden opacity-20 z-0">
         <div class="absolute top-[-10%] left-[20%] w-[600px] h-[600px] bg-indigo-600 rounded-full blur-[150px]"></div>
         <div class="absolute top-[-5%] right-[20%] w-[400px] h-[400px] bg-purple-600 rounded-full blur-[130px]"></div>
@@ -24,12 +22,10 @@
     <header class="relative z-10 border-b border-gray-800/80 bg-[#0b0f19]/70 backdrop-blur-md sticky top-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <span class="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                <a href="index.html" class="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
                     TOOLCAS
-                </span>
-                <span class="px-2 py-0.5 text-[10px] font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 rounded-full uppercase">
-                    AI Platform
-                </span>
+                </a>
+                <span class="px-2 py-0.5 text-[10px] font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 rounded-full uppercase">AI</span>
             </div>
             <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
                 <a href="#tools" id="nav-tools" class="hover:text-white transition-colors">Tools</a>
@@ -38,59 +34,46 @@
                 <a href="blog/index.html" id="nav-blog" class="hover:text-white transition-colors">Blog</a>
             </nav>
             <div>
-                <button class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-500 shadow-lg shadow-indigo-600/20 transition-all">
-                    Launch App
-                </button>
+                <button class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-500 shadow-lg shadow-indigo-600/20 transition-all">Launch App</button>
             </div>
         </div>
     </header>
 
-    <!-- Ana İçerik -->
+    <!-- Ana Sayfa İçeriği -->
     <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         
-        <!-- Hero Başlık Alanı -->
+        <!-- Büyük Hero Alanı -->
         <div class="text-center max-w-3xl mx-auto">
-            <h1 id="hero-title" class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-                Discover the Power of AI with One Click
-            </h1>
-            <p id="hero-sub" class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto font-normal">
-                Access hundreds of AI tools for free, unlimited, and fast from a single platform with Toolcas.
-            </p>
+            <h1 id="hero-title" class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight"></h1>
+            <p id="hero-sub" class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto font-normal"></p>
 
-            <!-- Arama Kutusu -->
+            <!-- Devasa Akıllı Arama Kutusu -->
             <div class="relative max-w-2xl mx-auto p-1.5 bg-gray-900/60 border border-gray-800 rounded-2xl shadow-2xl backdrop-blur-sm focus-within:border-indigo-500/50 transition-all">
                 <div class="flex items-center">
                     <div class="pl-3 pr-2 text-gray-500">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                     </div>
-                    <input
-                        type="text"
-                        id="search-input"
-                        placeholder="Which AI tool do you need?"
-                        class="w-full bg-transparent border-none text-white placeholder-gray-500 focus:outline-none text-base py-3 px-2"
-                    />
+                    <input type="text" id="search-input" class="w-full bg-transparent border-none text-white placeholder-gray-500 focus:outline-none text-base py-3 px-2"/>
                 </div>
             </div>
         </div>
 
-        <!-- Araçlar Listesi -->
+        <!-- Popüler AI Araçları -->
         <section id="tools" class="mt-28">
-            <h2 id="section-tools-title" class="text-2xl font-bold tracking-tight text-white mb-8">Popular AI Tools</h2>
+            <h2 id="section-tools-title" class="text-2xl font-bold tracking-tight text-white mb-8"></h2>
             <div id="tools-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
-            <p id="no-results" class="text-center text-gray-500 py-12 hidden">No tools found.</p>
+            <p id="no-results" class="text-center text-gray-500 py-12 hidden"></p>
         </section>
 
         <!-- Kategoriler -->
         <section id="categories" class="mt-24">
-            <h2 id="section-cats-title" class="text-2xl font-bold tracking-tight text-white mb-8 text-center">Browse Categories</h2>
+            <h2 id="section-cats-title" class="text-2xl font-bold tracking-tight text-white mb-8 text-center"></h2>
             <div id="categories-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"></div>
         </section>
 
-        <!-- FAQ (Sık Sorulan Sorular) -->
+        <!-- Sık Sorulan Sorular -->
         <section id="faq" class="mt-28 max-w-4xl mx-auto">
-            <h2 id="section-faq-title" class="text-2xl font-bold tracking-tight text-white mb-10 text-center">Frequently Asked Questions</h2>
+            <h2 id="section-faq-title" class="text-2xl font-bold tracking-tight text-white mb-10 text-center"></h2>
             <div id="faq-container" class="space-y-4"></div>
         </section>
     </main>
@@ -106,9 +89,8 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT: GELİŞMİŞ IP VE COĞRAFİ KONUM TABANLI OTOMATİK DİL MOTORU -->
+    <!-- DİL VE ÇALIŞMA SCRIPT MOTORU -->
     <script>
-        // 1. Dil Paketleri (İstediğin dillerin hepsi eklendi)
         const languages = {
             en: {
                 heroTitle: 'Discover the Power of AI with One Click',
@@ -130,17 +112,17 @@
             },
             de: {
                 heroTitle: 'Entdecken Sie die Kraft der KI mit einem Klick',
-                heroSub: 'Greifen Sie mit Toolcas kostenlos, unbegrenzt und schnell auf Hunderte von KI-Tools von einer einzigen平台 aus zu.',
-                searchPlaceholder: 'Welches KI-Tool benötigen Sie? (z.B. Hintergrund entfernen...)',
+                heroSub: 'Greifen Sie mit Toolcas kostenlos, unbegrenzt und schnell auf Hunderte von KI-Tools zu.',
+                searchPlaceholder: 'Welches KI-Tool benötigen Sie?',
                 toolsTitle: 'Beliebte KI-Tools',
                 catsTitle: 'Kategorien durchsuchen',
                 faqTitle: 'Häufig gestellte Fragen',
-                noResults: 'Keine Tools gefunden, die Ihren Kriterien entsprechen.'
+                noResults: 'Keine Tools gefunden.'
             },
             es: {
                 heroTitle: 'Descubre el Poder de la IA con un Solo Clic',
-                heroSub: 'Acceda a cientos de herramientas de IA de forma gratuita, ilimitada y rápida desde una única plataforma con Toolcas.',
-                searchPlaceholder: '¿Qué herramienta de IA necesitas? (Ej: Eliminar fondo...)',
+                heroSub: 'Acceda a cientos de herramientas de IA de forma gratuita, ilimitada y rápida con Toolcas.',
+                searchPlaceholder: '¿Qué herramienta de IA necesitas?',
                 toolsTitle: 'Herramientas de IA Populares',
                 catsTitle: 'Examinar Categorías',
                 faqTitle: 'Preguntas Frecuentes',
@@ -148,7 +130,7 @@
             },
             fr: {
                 heroTitle: 'Découvrez la puissance de l\'IA en un clic',
-                heroSub: 'Accédez à des centaines d\'outils d\'IA gratuitement, en illimité et rapidement depuis une seule plateforme avec Toolcas.',
+                heroSub: 'Accédez à des centaines d\'outils d\'IA gratuitement, en illimité et rapidement avec Toolcas.',
                 searchPlaceholder: 'De quel outil d\'IA avez-vous besoin ?',
                 toolsTitle: 'Outils d\'IA Populaires',
                 catsTitle: 'Parcourir les Catégories',
@@ -157,15 +139,8 @@
             }
         };
 
-        // Ülke kodlarını dillere eşleyen harita
-        const countryToLangMap = {
-            'TR': 'tr',
-            'DE': 'de',
-            'ES': 'es',
-            'FR': 'fr'
-        };
+        const countryToLangMap = { 'TR': 'tr', 'DE': 'de', 'ES': 'es', 'FR': 'fr' };
 
-        // Veri Setleri
         const toolsData = [
             { name: 'Background Remover', slug: 'background-remover', desc: 'Remove backgrounds from images instantly.', icon: '✂️' },
             { name: 'AI Image Generator', slug: 'ai-image-generator', desc: 'Create beautiful images from text prompts.', icon: '🎨' },
@@ -184,143 +159,101 @@
 
         const faqData = [
             { q: 'Toolcas tamamen ücretsiz mi?', a: 'Evet, platformumuzdaki temel tüm araçları herhangi bir ücret ödemeden kullanabilirsiniz.' },
-            { q: 'Dosyalarım sistemde saklanıyor mu?', a: 'Hayır, gizliliğinize önem veriyoruz. İşlem bittikten kısa süre sonra tüm dosyalar sunucularımızdan tamamen silinir.' },
+            { q: 'Dosyalarım sistemde saklanıyor mu?', a: 'Hayır, gizliliğinize önem veriyoruz. İşlem bittikten kısa süre sonra tüm dosyalar sunucularımızdan silinir.' },
             { q: 'Günlük kullanım sınırı var mı?', a: 'Şu an için tüm kullanıcılarımıza cömert bir ücretsiz limit sunuyoruz.' }
         ];
 
-        // --- KRİTİK ADIM: IP VE TARAYICI TABANLI DİL SEÇİM MOTORU ---
-        async function initializeLanguageAndSite() {
-            let detectedLang = 'en'; // Varsayılan İngilizce
-
+        async function initSite() {
+            let activeLang = 'en';
             try {
-                // 1. Aşama: Cloudflare API ile Gerçek Zamanlı Ülke/IP Kontrolü
-                const response = await fetch('https://1.1.1.1/cdn-cgi/trace');
-                const text = await response.text();
-                
-                // Gelen ham text verisinden "loc=TR" veya "loc=DE" bilgisini cımbızla çekiyoruz
-                const locLine = text.split('\n').find(line => line.startsWith('loc='));
-                if (locLine) {
-                    const countryCode = locLine.split('=')[1].trim(); // Örn: TR, DE, US
-                    if (countryToLangMap[countryCode]) {
-                        detectedLang = countryToLangMap[countryCode];
-                    } else {
-                        // 2. Aşama: Ülke listede yoksa kullanıcının tarayıcı diline bakıyoruz
-                        const userLang = navigator.language || navigator.userLanguage;
-                        const shortLang = userLang.substring(0, 2).toLowerCase();
-                        if (languages[shortLang]) {
-                            detectedLang = shortLang;
-                        }
+                const res = await fetch('https://1.1.1.1/cdn-cgi/trace');
+                const text = await res.text();
+                const loc = text.split('\n').find(l => l.startsWith('loc='));
+                if (loc) {
+                    const code = loc.split('=')[1].trim();
+                    if (countryToLangMap[code]) activeLang = countryToLangMap[code];
+                    else {
+                        const browser = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
+                        if (languages[browser]) activeLang = browser;
                     }
                 }
-            } catch (error) {
-                // API'de hata çıkarsa (internet kesintisi, adblocker engeli vb.) direkt tarayıcı diline düş
-                const userLang = navigator.language || navigator.userLanguage;
-                const shortLang = userLang.substring(0, 2).toLowerCase();
-                if (languages[shortLang]) detectedLang = shortLang;
+            } catch (e) {
+                const browser = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
+                if (languages[browser]) activeLang = browser;
             }
 
-            // Sayfa dil özniteliğini güncelle
-            document.documentElement.lang = detectedLang;
-            
-            // Siteyi tespit edilen dile göre çizdir
-            renderSiteContents(detectedLang);
+            document.documentElement.lang = activeLang;
+            renderAll(activeLang);
         }
 
-        // Sitedeki tüm metinleri ve bileşenleri basan ana fonksiyon
-        function renderSiteContents(lang) {
-            const dict = languages[lang] || languages.en;
-            
-            // DOM Elemanlarını Dile Göre Güncelle
-            document.getElementById('hero-title').innerText = dict.heroTitle;
-            document.getElementById('hero-sub').innerText = dict.heroSub;
-            document.getElementById('search-input').placeholder = dict.searchPlaceholder;
-            document.getElementById('section-tools-title').innerText = dict.toolsTitle;
-            document.getElementById('section-cats-title').innerText = dict.catsTitle;
-            document.getElementById('section-faq-title').innerText = dict.faqTitle;
-            document.getElementById('no-results').innerText = dict.noResults;
+        function renderAll(lang) {
+            const d = languages[lang] || languages.en;
+            document.getElementById('hero-title').innerText = d.heroTitle;
+            document.getElementById('hero-sub').innerText = d.heroSub;
+            document.getElementById('search-input').placeholder = d.searchPlaceholder;
+            document.getElementById('section-tools-title').innerText = d.toolsTitle;
+            document.getElementById('section-cats-title').innerText = d.catsTitle;
+            document.getElementById('section-faq-title').innerText = d.faqTitle;
+            document.getElementById('no-results').innerText = d.noResults;
 
-            // Araçları Çizdir
             renderTools(toolsData);
 
-            // Kategorileri Çizdir
-            const categoriesGrid = document.getElementById('categories-grid');
-            categoriesGrid.innerHTML = '';
-            categoriesData.forEach(cat => {
-                categoriesGrid.innerHTML += `
+            const catGrid = document.getElementById('categories-grid');
+            catGrid.innerHTML = '';
+            categoriesData.forEach(c => {
+                catGrid.innerHTML += `
                     <div class="p-4 bg-gray-900/20 border border-gray-800/60 rounded-xl text-center hover:bg-gray-900/50 transition-all cursor-pointer">
-                        <div class="text-2xl mb-2">${cat.icon}</div>
-                        <div class="text-sm font-semibold text-gray-200">${cat.name}</div>
-                        <div class="text-xs text-gray-500 mt-1">${cat.count} Tools</div>
-                    </div>
-                `;
+                        <div class="text-2xl mb-2">${c.icon}</div>
+                        <div class="text-sm font-semibold text-gray-200">${c.name}</div>
+                        <div class="text-xs text-gray-500 mt-1">${c.count} Tools</div>
+                    </div>`;
             });
 
-            // FAQ'ları Çizdir
-            const faqContainer = document.getElementById('faq-container');
-            faqContainer.innerHTML = '';
-            faqData.forEach((faq, index) => {
-                faqContainer.innerHTML += `
-                    <div class="bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(${index})">
+            const faqCont = document.getElementById('faq-container');
+            faqCont.innerHTML = '';
+            faqData.forEach((f, i) => {
+                faqCont.innerHTML += `
+                    <div class="bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(${i})">
                         <div class="p-6 flex justify-between items-center select-none">
-                            <h3 class="text-base font-semibold text-white flex items-center">
-                                <span class="text-indigo-400 mr-2">Q:</span> ${faq.q}
-                            </h3>
-                            <span id="faq-arrow-${index}" class="text-xl text-gray-500 transition-transform duration-200">▼</span>
+                            <h3 class="text-base font-semibold text-white flex items-center"><span class="text-indigo-400 mr-2">Q:</span> ${f.q}</h3>
+                            <span id="faq-arrow-${i}" class="text-xl text-gray-500 transition-transform duration-200">▼</span>
                         </div>
-                        <div id="faq-ans-${index}" class="px-6 pb-6 pt-2 border-t border-gray-800/50 bg-gray-900/10 hidden">
-                            <p class="text-sm text-gray-400 pl-6">${faq.a}</p>
+                        <div id="faq-ans-${i}" class="px-6 pb-6 pt-2 border-t border-gray-800/50 bg-gray-900/10 hidden">
+                            <p class="text-sm text-gray-400 pl-6">${f.a}</p>
                         </div>
-                    </div>
-                `;
+                    </div>`;
             });
         }
 
-        // Araç filtreleme fonksiyonu
-        const toolsGrid = document.getElementById('tools-grid');
+        const grid = document.getElementById('tools-grid');
         function renderTools(list) {
-            toolsGrid.innerHTML = '';
+            grid.innerHTML = '';
             if(list.length === 0) {
                 document.getElementById('no-results').classList.remove('hidden');
                 return;
             }
             document.getElementById('no-results').classList.add('hidden');
-            
-            list.forEach(tool => {
-                toolsGrid.innerHTML += `
-                    <a href="tools/${tool.slug}.html" class="group p-6 bg-gray-900/40 border border-gray-800/80 rounded-2xl hover:border-indigo-500/30 transition-all hover:bg-gray-900/70">
-                        <div class="w-12 h-12 flex items-center justify-center text-2xl bg-gray-800/50 rounded-xl mb-4 group-hover:scale-110 transition-transform">
-                            ${tool.icon}
-                        </div>
-                        <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-indigo-400 transition-colors">
-                            ${tool.name}
-                        </h3>
-                        <p class="text-sm text-gray-400">${tool.desc}</p>
-                    </a>
-                `;
+            list.forEach(t => {
+                grid.innerHTML += `
+                    <a href="tools/${t.slug}.html" class="group p-6 bg-gray-900/40 border border-gray-800/80 rounded-2xl hover:border-indigo-500/30 transition-all hover:bg-gray-900/70">
+                        <div class="w-12 h-12 flex items-center justify-center text-2xl bg-gray-800/50 rounded-xl mb-4 group-hover:scale-110 transition-transform">${t.icon}</div>
+                        <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-indigo-400 transition-colors">${t.name}</h3>
+                        <p class="text-sm text-gray-400">${t.desc}</p>
+                    </a>`;
             });
         }
 
-        // FAQ Akordiyon Açma Fonksiyonu
-        function toggleFaq(index) {
-            const ans = document.getElementById(`faq-ans-${index}`);
-            const arrow = document.getElementById(`faq-arrow-${index}`);
-            ans.classList.toggle('hidden');
-            arrow.classList.toggle('rotate-180');
-            arrow.classList.toggle('text-indigo-400');
+        function toggleFaq(i) {
+            document.getElementById(`faq-ans-${i}`).classList.toggle('hidden');
+            document.getElementById(`faq-arrow-${i}`).classList.toggle('rotate-180');
         }
 
-        // Canlı Arama Motoru Dinleyicisi
         document.getElementById('search-input').addEventListener('input', function(e) {
-            const query = e.target.value.toLowerCase();
-            const filtered = toolsData.filter(tool => 
-                tool.name.toLowerCase().includes(query) || 
-                tool.desc.toLowerCase().includes(query)
-            );
-            renderTools(filtered);
+            const q = e.target.value.toLowerCase();
+            renderTools(toolsData.filter(t => t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q)));
         });
 
-        // SİTEYİ BAŞLAT
-        initializeLanguageAndSite();
+        initSite();
     </script>
 </body>
 </html>
