@@ -5,32 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog - Toolcas</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    const userLang = navigator.language || navigator.userLanguage;
-    if (userLang.startsWith('tr')) {
-      document.documentElement.lang = 'tr';
-    }
-  </script>
 </head>
 <body class="bg-gray-950 text-white">
+
+  <!-- Nav -->
   <nav class="border-b border-gray-800 bg-gray-900">
-    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-      <a href="../index.html" class="flex items-center gap-3">
+    <div class="max-w-4xl mx-auto px-6 py-5 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
         <div class="w-9 h-9 bg-cyan-500 rounded-2xl flex items-center justify-center text-2xl font-bold">T</div>
         <span class="text-3xl font-semibold">Toolcas</span>
       </a>
     </div>
   </nav>
 
-  <div class="max-w-4xl mx-auto pt-20 px-6">
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto pt-16 px-6">
     <h1 class="text-4xl font-bold mb-8">Blog</h1>
-    <div class="space-y-12">
-      <div>
-        <h2 class="text-2xl font-semibold mb-3">Best Free AI Tools in 2026</h2>
-        <p class="text-gray-400">July 12, 2026</p>
-        <p class="mt-4 text-gray-300">Discover the top AI tools for freelancers and solopreneurs...</p>
-      </div>
+    
+    <!-- Link Listesi (Tasarımı bozmaz, saf metin linkleri) -->
+    <div class="flex flex-col gap-4">
+      <a href="ai-asset-creation.html" class="text-gray-300 hover:text-cyan-400 transition-colors text-lg">AI Asset Creation Guide</a>
+      <a href="how-ai-background-removers-work.html" class="text-gray-300 hover:text-cyan-400 transition-colors text-lg">How AI Background Removers Work</a>
+      <a href="prompt-engineering-guide.html" class="text-gray-300 hover:text-cyan-400 transition-colors text-lg">Prompt Engineering Guide</a>
+      <a href="clean-code-benefits.html" class="text-gray-300 hover:text-cyan-400 transition-colors text-lg">Benefits of Clean Code</a>
+      <a href="importance-of-text-summarization.html" class="text-gray-300 hover:text-cyan-400 transition-colors text-lg">Importance of Text Summarization</a>
+      <a href="structured-data-seo.html" class="text-gray-300 hover:text-cyan-400 transition-colors text-lg">Structured Data & SEO</a>
+      <a href="word-count-seo-impact.html" class="text-gray-300 hover:text-cyan-400 transition-colors text-lg">Word Count & SEO Impact</a>
     </div>
-  </div>
+  </main>
+
 </body>
 </html>
