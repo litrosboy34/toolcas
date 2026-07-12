@@ -11,112 +11,59 @@
 </head>
 <body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen">
 
+    <!-- Arka Plan Efektleri -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] pointer-events-none overflow-hidden opacity-20 z-0">
         <div class="absolute top-[-10%] left-[20%] w-[600px] h-[600px] bg-indigo-600 rounded-full blur-[150px]"></div>
         <div class="absolute top-[-5%] right-[20%] w-[400px] h-[400px] bg-purple-600 rounded-full blur-[130px]"></div>
     </div>
 
+    <!-- Header -->
     <header class="relative z-10 border-b border-gray-800/80 bg-[#0b0f19]/70 backdrop-blur-md sticky top-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <a href="index.html" class="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">TOOLCAS</a>
-                <span class="px-2 py-0.5 text-[10px] font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 rounded-full uppercase">AI</span>
             </div>
             <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
-                <a href="#tools" id="nav-tools" class="hover:text-white transition-colors">Tools</a>
-                <a href="#categories" id="nav-categories" class="hover:text-white transition-colors">Categories</a>
-                <a href="#faq" id="nav-faq" class="hover:text-white transition-colors">FAQ</a>
-                <a href="blog/index.html" id="nav-blog" class="hover:text-white transition-colors">Blog</a>
+                <a href="#tools" class="hover:text-white transition-colors">Tools</a>
+                <a href="blog/index.html" class="hover:text-white transition-colors">Blog</a>
             </nav>
-            <button class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-500 shadow-lg shadow-indigo-600/20 transition-all">Launch App</button>
         </div>
     </header>
 
+    <!-- Ana İçerik -->
     <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-        <div class="text-center max-w-3xl mx-auto">
-            <h1 id="hero-title" class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight"></h1>
-            <p id="hero-sub" class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto font-normal"></p>
-            <div class="relative max-w-2xl mx-auto p-1.5 bg-gray-900/60 border border-gray-800 rounded-2xl shadow-2xl backdrop-blur-sm focus-within:border-indigo-500/50 transition-all">
-                <div class="flex items-center">
-                    <div class="pl-3 pr-2 text-gray-500"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg></div>
-                    <input type="text" id="search-input" class="w-full bg-transparent border-none text-white placeholder-gray-500 focus:outline-none text-base py-3 px-2"/>
-                </div>
-            </div>
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">Discover the Power of AI</h1>
+            <p class="text-lg text-gray-400">Access your professional tools from a single platform.</p>
         </div>
 
-        <section id="tools" class="mt-28">
-            <h2 id="section-tools-title" class="text-2xl font-bold tracking-tight text-white mb-8"></h2>
-            <div id="tools-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-            <p id="no-results" class="text-center text-gray-500 py-12 hidden"></p>
-        </section>
-
-        <section id="categories" class="mt-24">
-            <h2 id="section-cats-title" class="text-2xl font-bold tracking-tight text-white mb-8 text-center"></h2>
-            <div id="categories-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"></div>
-        </section>
-
-        <section id="faq" class="mt-28 max-w-4xl mx-auto">
-            <h2 id="section-faq-title" class="text-2xl font-bold tracking-tight text-white mb-10 text-center"></h2>
-            <div id="faq-container" class="space-y-4"></div>
+        <!-- Araçlar Grid -->
+        <section id="tools">
+            <div id="tools-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Araçlar JS ile buraya gelecek -->
+            </div>
         </section>
     </main>
 
-    <footer class="border-t border-gray-900 bg-[#070a12] mt-32 relative z-10 text-xs text-gray-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">&copy; 2026 Toolcas Inc. All rights reserved.</div>
-    </footer>
-
     <script>
-        const languages = {
-            en: {
-                navTools: 'Tools', navCats: 'Categories', navFaq: 'FAQ', navBlog: 'Blog',
-                heroTitle: 'Discover the Power of AI', heroSub: 'Access your professional tools from a single platform.',
-                searchPlaceholder: 'Search tools...', toolsTitle: 'My Tools', catsTitle: 'Categories', faqTitle: 'FAQ',
-                tools: [
-                    { name: 'Code Helper', slug: 'code-helper', desc: 'Debug and optimize your code.', icon: '💻' },
-                    { name: 'JSON Validator', slug: 'json-validator', desc: 'Validate and format JSON.', icon: '📋' },
-                    { name: 'Prompt Generator', slug: 'prompt-generator', desc: 'Craft perfect AI prompts.', icon: '⚡' },
-                    { name: 'Text Summarizer', slug: 'text-summarizer', desc: 'Condense long texts.', icon: '📝' },
-                    { name: 'Word Counter', slug: 'word-counter', desc: 'Analyze text statistics.', icon: '🔢' }
-                ],
-                categories: [{name: 'Code', icon: '💻'}, {name: 'Writing', icon: '✍️'}, {name: 'Data', icon: '📊'}, {name: 'Image', icon: '🖼️'}, {name: 'Audio', icon: '🎵'}, {name: 'Video', icon: '🎥'}],
-                faqs: [{q: 'Is it free?', a: 'Yes, all core tools are free.'}]
-            },
-            tr: {
-                navTools: 'Araçlar', navCats: 'Kategoriler', navFaq: 'SSS', navBlog: 'Blog',
-                heroTitle: 'Yapay Zekanın Gücünü Keşfet', heroSub: 'Profesyonel araçlarına tek platformdan ulaş.',
-                searchPlaceholder: 'Araç ara...', toolsTitle: 'Araçlarım', catsTitle: 'Kategoriler', faqTitle: 'Sıkça Sorulan Sorular',
-                tools: [
-                    { name: 'Kod Yardımcısı', slug: 'code-helper', desc: 'Kodunu debug et ve optimize et.', icon: '💻' },
-                    { name: 'JSON Doğrulayıcı', slug: 'json-validator', desc: 'JSON verini doğrula ve formatla.', icon: '📋' },
-                    { name: 'İstem Oluşturucu', slug: 'prompt-generator', desc: 'Mükemmel AI istemleri tasarla.', icon: '⚡' },
-                    { name: 'Metin Özetleyici', slug: 'text-summarizer', desc: 'Uzun metinleri özetle.', icon: '📝' },
-                    { name: 'Kelime Sayacı', slug: 'word-counter', desc: 'Metin istatistiklerini analiz et.', icon: '🔢' }
-                ],
-                categories: [{name: 'Kod', icon: '💻'}, {name: 'Yazarlık', icon: '✍️'}, {name: 'Veri', icon: '📊'}, {name: 'Görsel', icon: '🖼️'}, {name: 'Ses', icon: '🎵'}, {name: 'Video', icon: '🎥'}],
-                faqs: [{q: 'Ücretsiz mi?', a: 'Evet, tüm temel araçlar ücretsizdir.'}]
-            }
-        };
-
-        const lang = (navigator.language || '').startsWith('tr') ? 'tr' : 'en';
-        const d = languages[lang];
-        document.getElementById('nav-tools').innerText = d.navTools;
-        document.getElementById('nav-categories').innerText = d.navCats;
-        document.getElementById('nav-faq').innerText = d.navFaq;
-        document.getElementById('nav-blog').innerText = d.navBlog;
-        document.getElementById('hero-title').innerText = d.heroTitle;
-        document.getElementById('hero-sub').innerText = d.heroSub;
-        document.getElementById('search-input').placeholder = d.searchPlaceholder;
-        document.getElementById('section-tools-title').innerText = d.toolsTitle;
-        document.getElementById('section-cats-title').innerText = d.catsTitle;
-        document.getElementById('section-faq-title').innerText = d.faqTitle;
+        const tools = [
+            { name: 'Code Helper', slug: 'code-helper', desc: 'Debug and optimize your code.', icon: '💻' },
+            { name: 'JSON Validator', slug: 'json-validator', desc: 'Validate and format JSON.', icon: '📋' },
+            { name: 'Prompt Generator', slug: 'prompt-generator', desc: 'Craft perfect AI prompts.', icon: '⚡' },
+            { name: 'Text Summarizer', slug: 'text-summarizer', desc: 'Condense long texts.', icon: '📝' },
+            { name: 'Word Counter', slug: 'word-counter', desc: 'Analyze text statistics.', icon: '🔢' }
+        ];
 
         const grid = document.getElementById('tools-grid');
-        d.tools.forEach(t => {
-            grid.innerHTML += `<a href="${t.slug}.html" class="group p-6 bg-gray-900/40 border border-gray-800 rounded-2xl hover:border-indigo-500/30 transition-all hover:bg-gray-900/70">
-                <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">${t.icon}</div>
-                <h3 class="text-lg font-semibold text-white group-hover:text-indigo-400">${t.name}</h3>
-                <p class="text-sm text-gray-400 mt-1">${t.desc}</p>
-            </a>`;
+        
+        tools.forEach(t => {
+            // Linkler tools/ klasörüne yönlendirilecek şekilde ayarlandı
+            grid.innerHTML += `
+                <a href="tools/${t.slug}.html" class="group p-6 bg-gray-900/40 border border-gray-800 rounded-2xl hover:border-indigo-500/30 transition-all hover:bg-gray-900/70">
+                    <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">${t.icon}</div>
+                    <h3 class="text-lg font-semibold text-white group-hover:text-indigo-400">${t.name}</h3>
+                    <p class="text-sm text-gray-400 mt-1">${t.desc}</p>
+                </a>`;
         });
     </script>
 </body>
