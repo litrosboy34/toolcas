@@ -1,32 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://toolcas.com/</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://www.toolcas.com/</loc>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Örnek tool sayfaları - bunları kendi sayfalarınla değiştir -->
+
   <url>
-    <loc>https://toolcas.com/qr-code-generator</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://toolcas.com/image-compressor</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Kategoriler -->
-  <url>
-    <loc>https://toolcas.com/image-tools</loc>
-    <lastmod>2026-07-12</lastmod>
+    <loc>https://www.toolcas.com/code-helper.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <url>
+    <loc>https://www.toolcas.com/json-validator.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.toolcas.com/prompt-generator.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.toolcas.com/text-summarizer.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.toolcas.com/word-counter.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>
