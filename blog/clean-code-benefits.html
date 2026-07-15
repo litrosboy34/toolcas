@@ -9,128 +9,1360 @@
 
   gtag('config', 'G-3NNQ6DL9K1');
 </script>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Impact of Clean Code on Core Web Vitals and SEO - Toolcas</title>
-    <!-- Tailwind CSS CDN -->
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        The Impact of Clean Code on Core Web Vitals and SEO - Toolcas
+    </title>
+
+    <meta
+        name="description"
+        content="Learn how clean code, minification and efficient front-end development can improve Core Web Vitals, page speed, user experience and SEO."
+    >
+
+    <meta
+        name="robots"
+        content="index, follow, max-image-preview:large"
+    >
+
+    <meta name="author" content="Toolcas Editorial">
+    <meta name="theme-color" content="#0b0f19">
+
+    <link
+        rel="canonical"
+        href="https://www.toolcas.com/blog/clean-code-benefits.html"
+    >
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+
+    <meta
+        property="og:title"
+        content="The Impact of Clean Code on Core Web Vitals and SEO"
+    >
+
+    <meta
+        property="og:description"
+        content="Discover how clean code and optimized front-end development can improve page speed, Core Web Vitals and search visibility."
+    >
+
+    <meta
+        property="og:url"
+        content="https://www.toolcas.com/blog/clean-code-benefits.html"
+    >
+
+    <meta property="og:site_name" content="Toolcas">
+
+    <meta
+        property="article:published_time"
+        content="2026-07-12T11:00:00+03:00"
+    >
+
+    <meta
+        property="article:modified_time"
+        content="2026-07-16T01:00:00+03:00"
+    >
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="The Impact of Clean Code on Core Web Vitals and SEO"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Learn how clean code, minification and efficient development can improve performance and SEO."
+    >
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        toolcas: {
+                            dark: '#0b0f19',
+                            panel: '#111827',
+                            indigo: '#6366f1',
+                            purple: '#a855f7',
+                            cyan: '#22d3ee'
+                        }
+                    },
+
+                    boxShadow: {
+                        glow: '0 0 45px rgba(99, 102, 241, 0.14)'
+                    }
+                }
+            }
+        };
+    </script>
+
     <style>
-        .glow-bg { background-color: #0b0f19; }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0b0f19;
+        }
+
+        ::selection {
+            background: rgba(99, 102, 241, 0.42);
+            color: #ffffff;
+        }
+
+        .glow-bg {
+            background-color: #0b0f19;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                #818cf8,
+                #c084fc,
+                #67e8f9
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .article-content p {
+            margin-top: 1.25rem;
+        }
+
+        .article-content h2 {
+            margin-top: 2.75rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+
+        .article-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+            font-size: 1.2rem;
+            line-height: 1.75rem;
+            font-weight: 700;
+        }
+
+        .article-content ul {
+            margin-top: 1.25rem;
+            padding-left: 1.4rem;
+            list-style-type: disc;
+        }
+
+        .article-content ol {
+            margin-top: 1.25rem;
+            padding-left: 1.4rem;
+            list-style-type: decimal;
+        }
+
+        .article-content li {
+            margin-top: 0.65rem;
+        }
+
+        .article-content strong {
+            color: #f3f4f6;
+            font-weight: 700;
+        }
+
+        .article-content a {
+            color: #a5b4fc;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .article-content a:hover {
+            color: #ffffff;
+        }
+
+        .article-content blockquote {
+            margin-top: 2rem;
+            padding: 1.25rem 1.5rem;
+            border-left: 4px solid #6366f1;
+            border-radius: 0 1rem 1rem 0;
+            background: rgba(99, 102, 241, 0.08);
+            color: #d1d5db;
+        }
+
+        .article-content code {
+            padding: 0.15rem 0.4rem;
+            border: 1px solid rgba(75, 85, 99, 0.8);
+            border-radius: 0.4rem;
+            background: rgba(17, 24, 39, 0.9);
+            color: #c4b5fd;
+            font-size: 0.9em;
+        }
+
+        .metric-card {
+            border: 1px solid rgba(55, 65, 81, 0.8);
+            border-radius: 1rem;
+            background: rgba(17, 24, 39, 0.65);
+            padding: 1.25rem;
+        }
+
+        .skip-link {
+            position: fixed;
+            top: -100px;
+            left: 16px;
+            z-index: 9999;
+            padding: 10px 16px;
+            border-radius: 10px;
+            background: #ffffff;
+            color: #111827;
+            font-weight: 700;
+            transition: top 0.2s ease;
+        }
+
+        .skip-link:focus {
+            top: 16px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
-    <!-- Article Schema -->
+
+    <!-- Blog Article Schema -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "The Impact of Clean Code on Core Web Vitals and SEO",
-      "datePublished": "2026-07-12T11:00:00+03:00",
-      "dateModified": "2026-07-12T11:00:00+03:00",
-      "author": [{
-          "@type": "Organization",
-          "name": "Toolcas Editorial",
-          "url": "https://toolcas.com"
-        }]
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "The Impact of Clean Code on Core Web Vitals and SEO",
+        "description": "Learn how clean code, minification and efficient front-end development can improve Core Web Vitals, page speed, user experience and SEO.",
+        "datePublished": "2026-07-12T11:00:00+03:00",
+        "dateModified": "2026-07-16T01:00:00+03:00",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.toolcas.com/blog/clean-code-benefits.html"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Toolcas Editorial",
+            "url": "https://www.toolcas.com/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Toolcas",
+            "url": "https://www.toolcas.com/"
+        },
+        "isPartOf": {
+            "@type": "Blog",
+            "name": "Toolcas Blog",
+            "url": "https://www.toolcas.com/blog/"
+        },
+        "keywords": [
+            "clean code",
+            "Core Web Vitals",
+            "SEO",
+            "web performance",
+            "minification",
+            "page speed"
+        ],
+        "inLanguage": "en"
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.toolcas.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://www.toolcas.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Clean Code and Web Performance",
+                "item": "https://www.toolcas.com/blog/clean-code-benefits.html"
+            }
+        ]
     }
     </script>
 </head>
-<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen">
 
-    <!-- Arka Plan Modern Blur Efekti -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[400px] pointer-events-none overflow-hidden opacity-20 z-0">
-        <div class="absolute top-[-10%] left-[40%] w-[450px] h-[450px] bg-blue-600 rounded-full blur-[130px]"></div>
+<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen overflow-x-hidden">
+
+    <a
+        href="#main-content"
+        class="skip-link"
+        data-i18n="skipContent"
+    >
+        Skip to content
+    </a>
+
+    <!-- Background Effects -->
+    <div
+        aria-hidden="true"
+        class="fixed inset-0 pointer-events-none overflow-hidden opacity-20 z-0"
+    >
+        <div class="absolute top-[-220px] left-[15%] md:left-[35%] w-[600px] h-[600px] bg-blue-600 rounded-full blur-[160px]"></div>
+
+        <div class="absolute top-[300px] right-[-250px] w-[500px] h-[500px] bg-indigo-600 rounded-full blur-[170px] opacity-60"></div>
+
+        <div class="absolute top-[1000px] left-[-250px] w-[500px] h-[500px] bg-purple-700 rounded-full blur-[180px] opacity-40"></div>
     </div>
 
-    <!-- Üst Menü (Navbar) -->
-    <header class="relative z-10 border-b border-gray-800/80 bg-[#0b0f19]/70 backdrop-blur-md sticky top-0">
+    <!-- Header -->
+    <header class="relative z-50 border-b border-gray-800/80 bg-[#0b0f19]/80 backdrop-blur-xl sticky top-0">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="../index.html" class="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                TOOLCAS
+
+            <a
+                href="../index.html"
+                class="flex items-center gap-3"
+                aria-label="Toolcas homepage"
+            >
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+
+                    <span
+                        class="text-white font-black text-lg"
+                        aria-hidden="true"
+                    >
+                        T
+                    </span>
+                </div>
+
+                <span class="text-2xl font-black tracking-tight gradient-text">
+                    TOOLCAS
+                </span>
             </a>
-            <nav class="space-x-6 text-sm font-medium text-gray-400">
-                <a href="../index.html" id="nav-home" class="hover:text-white transition-colors">Home</a>
-                <a href="../index.html#blog" id="nav-blog" class="hover:text-white transition-colors">Blog</a>
+
+            <nav
+                class="flex items-center gap-4 sm:gap-7 text-sm font-medium text-gray-400"
+                aria-label="Main navigation"
+            >
+                <a
+                    href="../index.html"
+                    class="hover:text-white transition-colors"
+                    data-i18n="navHome"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="index.html"
+                    class="hover:text-white transition-colors"
+                    data-i18n="navBlog"
+                >
+                    Blog
+                </a>
+
+                <a
+                    href="../index.html#tools"
+                    class="hidden sm:inline hover:text-white transition-colors"
+                    data-i18n="navTools"
+                >
+                    Tools
+                </a>
             </nav>
         </div>
     </header>
 
-    <!-- Blog İçeriği -->
-    <main class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
+    <!-- Main Content -->
+    <main
+        id="main-content"
+        class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 pb-24"
+    >
+        <!-- Breadcrumb -->
+        <nav
+            aria-label="Breadcrumb"
+            class="text-sm text-gray-500 mb-8"
+        >
+            <a
+                href="../index.html"
+                class="hover:text-indigo-300 transition-colors"
+                data-i18n="navHome"
+            >
+                Home
+            </a>
+
+            <span class="mx-2" aria-hidden="true">/</span>
+
+            <a
+                href="index.html"
+                class="hover:text-indigo-300 transition-colors"
+                data-i18n="navBlog"
+            >
+                Blog
+            </a>
+
+            <span class="mx-2" aria-hidden="true">/</span>
+
+            <span
+                class="text-gray-300"
+                data-i18n="breadcrumbArticle"
+            >
+                Clean Code and SEO
+            </span>
+        </nav>
+
+        <!-- Article -->
         <article>
-            <h1 id="post-title" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4 leading-tight"></h1>
-            <p id="post-date" class="text-xs text-gray-500 mb-8 border-b border-gray-900 pb-4"></p>
-            
-            <div id="post-body" class="text-gray-400 text-sm leading-relaxed space-y-6"></div>
+            <header class="mb-10 sm:mb-12">
+
+                <div class="flex flex-wrap items-center gap-3 mb-6">
+
+                    <span class="inline-flex items-center px-3.5 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/10 text-blue-300 text-xs font-bold uppercase tracking-widest">
+
+                        <span data-i18n="category">
+                            Web Development
+                        </span>
+                    </span>
+
+                    <span class="text-sm text-gray-500">
+                        <span data-i18n="readingTime">
+                            7 min read
+                        </span>
+                    </span>
+                </div>
+
+                <h1
+                    id="post-title"
+                    class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08]"
+                >
+                    The Impact of Clean Code on Core Web Vitals and SEO
+                </h1>
+
+                <p
+                    id="post-description"
+                    class="text-lg sm:text-xl text-gray-400 leading-8 mt-6 max-w-3xl"
+                >
+                    Clean code helps developers maintain websites, but its influence can also extend to page speed, user experience and search performance.
+                </p>
+
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 mt-8 pb-8 border-b border-gray-800">
+
+                    <div class="flex items-center gap-3">
+
+                        <div class="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center font-black text-white">
+
+                            T
+                        </div>
+
+                        <div>
+                            <p class="text-sm font-semibold text-gray-200">
+                                Toolcas Editorial
+                            </p>
+
+                            <p
+                                id="post-date"
+                                class="text-xs text-gray-500 mt-1"
+                            >
+                                Published on July 12, 2026
+                            </p>
+                        </div>
+                    </div>
+
+                    <a
+                        href="index.html"
+                        class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-300 hover:text-white transition-colors"
+                    >
+                        <span data-i18n="allArticles">
+                            All articles
+                        </span>
+
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </header>
+
+            <div
+                id="post-body"
+                class="article-content rounded-3xl border border-gray-800 bg-gray-900/45 backdrop-blur-sm p-6 sm:p-9 text-gray-400 text-base leading-8"
+            >
+                <!-- Article content rendered with JavaScript -->
+            </div>
         </article>
+
+        <!-- Article Navigation -->
+        <section class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+            <a
+                href="structured-data-seo.html"
+                class="group rounded-2xl border border-gray-800 bg-gray-900/40 hover:bg-gray-900/75 hover:border-indigo-500/30 p-5 transition-all"
+            >
+                <span
+                    class="text-xs uppercase tracking-widest text-gray-500"
+                    data-i18n="nextArticle"
+                >
+                    Next article
+                </span>
+
+                <span
+                    class="block text-base font-bold text-white mt-2 group-hover:text-indigo-300 transition-colors"
+                    data-i18n="nextArticleTitle"
+                >
+                    Structured Data and Modern SEO
+                </span>
+            </a>
+
+            <a
+                href="../tools/code-helper.html"
+                class="group rounded-2xl border border-gray-800 bg-gray-900/40 hover:bg-gray-900/75 hover:border-purple-500/30 p-5 transition-all"
+            >
+                <span
+                    class="text-xs uppercase tracking-widest text-gray-500"
+                    data-i18n="tryTool"
+                >
+                    Related tool
+                </span>
+
+                <span
+                    class="block text-base font-bold text-white mt-2 group-hover:text-purple-300 transition-colors"
+                    data-i18n="toolTitle"
+                >
+                    Try the Code Helper
+                </span>
+            </a>
+        </section>
+
+        <!-- CTA -->
+        <section class="relative overflow-hidden mt-14 rounded-3xl border border-indigo-500/20 bg-gradient-to-br from-indigo-950/70 to-blue-950/50 p-7 sm:p-10 text-center shadow-glow">
+
+            <div
+                aria-hidden="true"
+                class="absolute inset-0 opacity-30"
+            >
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-indigo-500 rounded-full blur-[100px]"></div>
+
+                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-500 rounded-full blur-[100px]"></div>
+            </div>
+
+            <div class="relative z-10">
+
+                <h2
+                    class="text-2xl sm:text-3xl font-bold text-white"
+                    data-i18n="ctaTitle"
+                >
+                    Work faster with free developer tools
+                </h2>
+
+                <p
+                    class="text-gray-300 leading-7 mt-4 max-w-2xl mx-auto"
+                    data-i18n="ctaDescription"
+                >
+                    Explore practical Toolcas utilities for code, JSON, prompts, writing and everyday productivity.
+                </p>
+
+                <a
+                    href="../index.html#tools"
+                    class="inline-flex items-center gap-2 mt-7 px-6 py-3 rounded-xl bg-white text-gray-950 font-bold hover:bg-gray-100 transition-colors"
+                >
+                    <span data-i18n="ctaButton">
+                        Explore tools
+                    </span>
+
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </section>
     </main>
 
-    <footer class="border-t border-gray-900 bg-[#070a12] text-xs text-gray-500 py-8 text-center relative z-10">
-        &copy; 2026 Toolcas Inc. All rights reserved.
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-gray-800/80 bg-[#070a12]">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-7">
+
+                <div>
+                    <a
+                        href="../index.html"
+                        class="text-xl font-black gradient-text"
+                    >
+                        TOOLCAS
+                    </a>
+
+                    <p
+                        class="text-sm text-gray-500 mt-2 max-w-md"
+                        data-i18n="footerDescription"
+                    >
+                        Free online tools for coding, writing and everyday productivity.
+                    </p>
+                </div>
+
+                <nav
+                    class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-500"
+                    aria-label="Footer navigation"
+                >
+                    <a
+                        href="../index.html#tools"
+                        class="hover:text-white transition-colors"
+                        data-i18n="navTools"
+                    >
+                        Tools
+                    </a>
+
+                    <a
+                        href="index.html"
+                        class="hover:text-white transition-colors"
+                        data-i18n="navBlog"
+                    >
+                        Blog
+                    </a>
+
+                    <a
+                        href="../faq/faq.html"
+                        class="hover:text-white transition-colors"
+                        data-i18n="navFaq"
+                    >
+                        FAQ
+                    </a>
+
+                    <a
+                        href="../privacy/index.html"
+                        class="hover:text-white transition-colors"
+                        data-i18n="privacy"
+                    >
+                        Privacy
+                    </a>
+
+                    <a
+                        href="../terms/index.html"
+                        class="hover:text-white transition-colors"
+                        data-i18n="terms"
+                    >
+                        Terms
+                    </a>
+                </nav>
+            </div>
+
+            <div class="border-t border-gray-800/70 mt-8 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-gray-600">
+
+                <p>
+                    © <span id="current-year"></span> Toolcas.
+                    <span data-i18n="rights">
+                        All rights reserved.
+                    </span>
+                </p>
+
+                <p data-i18n="footerNote">
+                    Built for faster and smarter work.
+                </p>
+            </div>
+        </div>
     </footer>
 
     <script>
         const localizations = {
             en: {
+                pageTitle: 'The Impact of Clean Code on Core Web Vitals and SEO - Toolcas',
+
+                pageDescription: 'Learn how clean code, minification and efficient front-end development can improve Core Web Vitals, page speed, user experience and SEO.',
+
+                skipContent: 'Skip to content',
                 navHome: 'Home',
                 navBlog: 'Blog',
-                title: 'The Hidden Impact of Clean Code on Web Performance and SEO',
-                date: 'Published on July 12, 2026 by Toolcas Editorial',
+                navTools: 'Tools',
+                navFaq: 'FAQ',
+                privacy: 'Privacy',
+                terms: 'Terms',
+
+                breadcrumbArticle: 'Clean Code and SEO',
+                category: 'Web Development',
+                readingTime: '7 min read',
+
+                title: 'The Impact of Clean Code on Core Web Vitals and SEO',
+
+                description: 'Clean code helps developers maintain websites, but its influence can also extend to page speed, user experience and search performance.',
+
+                date: 'Published on July 12, 2026',
+
+                allArticles: 'All articles',
+                nextArticle: 'Next article',
+                nextArticleTitle: 'Structured Data and Modern SEO',
+                tryTool: 'Related tool',
+                toolTitle: 'Try the Code Helper',
+
+                ctaTitle: 'Work faster with free developer tools',
+
+                ctaDescription: 'Explore practical Toolcas utilities for code, JSON, prompts, writing and everyday productivity.',
+
+                ctaButton: 'Explore tools',
+
+                footerDescription: 'Free online tools for coding, writing and everyday productivity.',
+
+                rights: 'All rights reserved.',
+                footerNote: 'Built for faster and smarter work.',
+
                 body: `
-                    <p class="text-lg text-gray-300 font-medium">Immaculate code layout parameters do more than just make script assets readable. Clean system formatting directly accelerates browser render pipelines and scales layout stability parameters.</p>
-                    
-                    <p>When deployment environments run messy scripts full of unnecessary white spaces, structural dead nodes, or redundant nests, page execution metrics begin to decrease. Modern web evaluation criteria look heavily at metrics like Core Web Vitals. Shaving off redundant script clusters directly optimizes these key load factors.</p>
-                    
-                    <h2 class="text-xl font-bold text-white mt-8 mb-4">Minification vs. Beautification</h2>
-                    <p>Software development requires navigating two optimization workflows: readability during maintenance phases, and raw compression during delivery cycles.</p>
-                    
-                    <ul class="list-disc list-inside space-y-2 pl-2">
-                        <li><strong>Beautification:</strong> Organizes syntax paths so structural layouts are fully scannable for engineering reviews.</li>
-                        <li><strong>Minification:</strong> Aggressively strips out comments, indentations, and unused bytes to create lightweight payloads built for fast load speeds.</li>
+                    <p class="text-lg sm:text-xl text-gray-300 font-medium leading-8">
+                        Clean code is often discussed as a development and maintenance
+                        practice. Its benefits, however, can reach beyond readability.
+                        Efficient HTML, CSS and JavaScript can contribute to faster
+                        rendering, more stable layouts and a better experience for
+                        visitors.
+                    </p>
+
+                    <p>
+                        Search engines do not rank a page simply because its source code
+                        looks tidy. Clean code is valuable because it can make it easier
+                        to prevent technical problems that affect performance,
+                        accessibility, crawling and usability.
+                    </p>
+
+                    <h2>What clean code actually means</h2>
+
+                    <p>
+                        Clean code is code that is understandable, consistent and easy
+                        to maintain. It avoids unnecessary complexity while clearly
+                        expressing what each part of the system is intended to do.
+                    </p>
+
+                    <p>
+                        In front-end development, clean code can include:
+                    </p>
+
+                    <ul>
+                        <li>Semantic and properly structured HTML</li>
+                        <li>Reusable CSS classes instead of repeated declarations</li>
+                        <li>JavaScript functions with clear responsibilities</li>
+                        <li>Removal of unused scripts and style rules</li>
+                        <li>Consistent naming and folder organization</li>
+                        <li>Efficient loading of images, fonts and external resources</li>
                     </ul>
-                    
-                    <p>Executing these pipelines right inside localized browser instances ensures that no raw internal source files ever leak to third-party databases, providing a seamless balance of speed and security.</p>
+
+                    <h2>How code quality affects page performance</h2>
+
+                    <p>
+                        Browsers must download, parse and execute the resources needed
+                        to display a webpage. Larger or unnecessarily complicated files
+                        can increase the amount of work required before the page becomes
+                        visible and interactive.
+                    </p>
+
+                    <p>
+                        Common performance problems include:
+                    </p>
+
+                    <ul>
+                        <li>Large JavaScript bundles that block the main thread</li>
+                        <li>Unused CSS loaded on every page</li>
+                        <li>Repeated third-party scripts</li>
+                        <li>Images without width and height attributes</li>
+                        <li>Resources loaded before they are actually needed</li>
+                        <li>DOM structures with excessive nesting</li>
+                    </ul>
+
+                    <p>
+                        Clean architecture makes these problems easier to identify and
+                        correct. It also reduces the risk of adding new features that
+                        unintentionally slow the entire website.
+                    </p>
+
+                    <h2>Clean code and Core Web Vitals</h2>
+
+                    <p>
+                        Core Web Vitals are performance measurements related to loading,
+                        responsiveness and visual stability. Clean code does not
+                        automatically guarantee strong scores, but it supports the
+                        technical work required to improve them.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+                        <div class="metric-card">
+                            <strong class="block text-white">LCP</strong>
+                            <span class="block text-sm text-gray-500 mt-2">
+                                Measures how quickly the main visible content loads.
+                            </span>
+                        </div>
+
+                        <div class="metric-card">
+                            <strong class="block text-white">INP</strong>
+                            <span class="block text-sm text-gray-500 mt-2">
+                                Measures how responsive a page feels during interaction.
+                            </span>
+                        </div>
+
+                        <div class="metric-card">
+                            <strong class="block text-white">CLS</strong>
+                            <span class="block text-sm text-gray-500 mt-2">
+                                Measures unexpected movement of visible page elements.
+                            </span>
+                        </div>
+                    </div>
+
+                    <h3>Largest Contentful Paint</h3>
+
+                    <p>
+                        LCP can be affected by oversized images, render-blocking CSS,
+                        slow server responses and unnecessary scripts. Cleaner resource
+                        loading strategies can help the browser display primary content
+                        sooner.
+                    </p>
+
+                    <h3>Interaction to Next Paint</h3>
+
+                    <p>
+                        INP can suffer when JavaScript tasks block the browser's main
+                        thread. Dividing large tasks, removing unused libraries and
+                        limiting unnecessary event handlers can improve responsiveness.
+                    </p>
+
+                    <h3>Cumulative Layout Shift</h3>
+
+                    <p>
+                        CLS often increases when images, advertisements, embeds or fonts
+                        appear without reserved space. Well-structured components and
+                        defined dimensions can help prevent sudden layout movement.
+                    </p>
+
+                    <h2>Minification and beautification serve different goals</h2>
+
+                    <p>
+                        Development code should usually remain readable. Production code,
+                        however, can often be compressed before delivery.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <strong>Beautification:</strong>
+                            Adds consistent spacing and indentation so code is easier
+                            for developers to review.
+                        </li>
+
+                        <li>
+                            <strong>Minification:</strong>
+                            Removes comments, unnecessary whitespace and other bytes
+                            that are not required by the browser.
+                        </li>
+                    </ul>
+
+                    <p>
+                        Minification can reduce file size, but it cannot repair poor
+                        architecture. A badly designed script remains inefficient even
+                        after its whitespace is removed.
+                    </p>
+
+                    <blockquote>
+                        Clean source code improves maintenance. Minified production code
+                        improves delivery. A strong workflow usually uses both.
+                    </blockquote>
+
+                    <h2>Does clean code directly improve SEO?</h2>
+
+                    <p>
+                        Search engines do not award rankings based on indentation or
+                        naming conventions. The SEO benefit is indirect.
+                    </p>
+
+                    <p>
+                        Cleaner development practices can help create:
+                    </p>
+
+                    <ul>
+                        <li>Faster and more responsive pages</li>
+                        <li>Better semantic page structure</li>
+                        <li>Fewer broken links and JavaScript errors</li>
+                        <li>More accessible navigation</li>
+                        <li>Consistent metadata and structured data</li>
+                        <li>Pages that are easier for crawlers to understand</li>
+                    </ul>
+
+                    <p>
+                        These improvements can strengthen user experience and technical
+                        SEO. They also make it easier for site owners to maintain quality
+                        as the number of pages grows.
+                    </p>
+
+                    <h2>Semantic HTML matters</h2>
+
+                    <p>
+                        Clean code is not only about reducing file size. Using meaningful
+                        HTML elements can improve accessibility and make page structure
+                        easier to understand.
+                    </p>
+
+                    <p>
+                        Elements such as <code>&lt;header&gt;</code>,
+                        <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>,
+                        <code>&lt;article&gt;</code> and
+                        <code>&lt;footer&gt;</code> communicate the purpose of each
+                        section more clearly than a page made entirely from generic
+                        containers.
+                    </p>
+
+                    <h2>Practical ways to improve a website</h2>
+
+                    <ol>
+                        <li>Remove scripts and CSS that are no longer used.</li>
+                        <li>Compress and correctly size images.</li>
+                        <li>Reserve space for images, ads and embedded content.</li>
+                        <li>Load non-critical scripts with appropriate strategies.</li>
+                        <li>Avoid deeply nested and unnecessarily large DOM structures.</li>
+                        <li>Use caching and compression on the server.</li>
+                        <li>Test pages on both mobile and desktop devices.</li>
+                        <li>Monitor performance after every significant update.</li>
+                    </ol>
+
+                    <h2>Browser-based code tools and privacy</h2>
+
+                    <p>
+                        Some formatting, validation and minification tools can process
+                        code directly in the browser. When a tool is designed this way,
+                        the submitted code may not need to be transferred to a remote
+                        server.
+                    </p>
+
+                    <p>
+                        This behavior depends on the specific implementation. Users
+                        working with confidential source code should always review the
+                        privacy policy and technical behavior of the service they use.
+                    </p>
+
+                    <h2>Final thoughts</h2>
+
+                    <p>
+                        Clean code is not a shortcut to higher search rankings, but it is
+                        an important foundation for a fast, accessible and maintainable
+                        website.
+                    </p>
+
+                    <p>
+                        The strongest results come from combining clear source code with
+                        optimized production files, good hosting, efficient images,
+                        sensible JavaScript and regular performance testing.
+                    </p>
+
+                    <p>
+                        A website that is easier to maintain is also easier to improve,
+                        and continuous improvement is one of the most reliable paths to
+                        better performance and stronger long-term SEO.
+                    </p>
                 `
             },
+
             tr: {
+                pageTitle: 'Temiz Kodun Core Web Vitals ve SEO Üzerindeki Etkisi - Toolcas',
+
+                pageDescription: 'Temiz kod, minify işlemi ve verimli ön yüz geliştirmenin Core Web Vitals, sayfa hızı, kullanıcı deneyimi ve SEO üzerindeki etkisini öğrenin.',
+
+                skipContent: 'İçeriğe geç',
                 navHome: 'Ana Sayfa',
                 navBlog: 'Blog',
-                title: 'Temiz Kodun Web Performansı ve SEO Üzerindeki Gizli Etkisi',
-                date: '12 Temmuz 2026 tarihinde Toolcas Editorial tarafından yayınlandı',
+                navTools: 'Araçlar',
+                navFaq: 'SSS',
+                privacy: 'Gizlilik',
+                terms: 'Kullanım Koşulları',
+
+                breadcrumbArticle: 'Temiz Kod ve SEO',
+                category: 'Web Geliştirme',
+                readingTime: '7 dakikalık okuma',
+
+                title: 'Temiz Kodun Core Web Vitals ve SEO Üzerindeki Etkisi',
+
+                description: 'Temiz kod, geliştiricilerin siteleri daha kolay yönetmesini sağlarken sayfa hızı, kullanıcı deneyimi ve arama performansına da katkıda bulunabilir.',
+
+                date: '12 Temmuz 2026 tarihinde yayımlandı',
+
+                allArticles: 'Tüm yazılar',
+                nextArticle: 'Sonraki yazı',
+                nextArticleTitle: 'Yapılandırılmış Veri ve Modern SEO',
+                tryTool: 'İlgili araç',
+                toolTitle: 'Kod Yardımcısını kullan',
+
+                ctaTitle: 'Ücretsiz geliştirici araçlarıyla daha hızlı çalışın',
+
+                ctaDescription: 'Kod, JSON, prompt, yazı ve günlük üretkenlik için kullanışlı Toolcas araçlarını keşfedin.',
+
+                ctaButton: 'Araçları keşfet',
+
+                footerDescription: 'Kodlama, yazı yazma ve günlük üretkenlik için ücretsiz çevrim içi araçlar.',
+
+                rights: 'Tüm hakları saklıdır.',
+                footerNote: 'Daha hızlı ve akıllı çalışma için geliştirildi.',
+
                 body: `
-                    <p class="text-lg text-gray-300 font-medium">Kusursuz kod düzenleri, kodlarınızı okunabilir kılmaktan çok daha fazlasını yapar. Temiz sistem biçimlendirmeleri, tarayıcıların sayfaları işleme hızını doğrudan artırır ve yerleşim kararlılığını optimize eder.</p>
-                    
-                    <p>Canlı sunucular gereksiz boşluklar, ölü düğümler veya tekrarlayan iç içe geçmiş yapılarla dolu karmaşık kodlar çalıştırdığında, sayfa performans değerleri düşmeye başlar. Modern web değerlendirme kriterleri, Core Web Vitals gibi metriklere büyük önem verir. Gereksiz kod yığınlarını temizlemek bu yükleme faktörlerini doğrudan iyileştirir.</p>
-                    
-                    <h2 class="text-xl font-bold text-white mt-8 mb-4">Kod Düzenleme (Beautify) ve Sıkıştırma (Minify) Dengesi</h2>
-                    <p>Yazılım geliştirme süreçleri iki temel optimizasyon iş akışı arasında dengelenmelidir: bakım aşamasında okunabilirlik ve dağıtım aşamasında ham sıkıştırma.</p>
-                    
-                    <ul class="list-disc list-inside space-y-2 pl-2">
-                        <li><strong>Kod Düzenleme (Beautification):</strong> Sözdizimi yollarını organize ederek kodun geliştiriciler tarafından kolayca incelenebilmesini sağlar.</li>
-                        <li><strong>Kod Sıkıştırma (Minification):</strong> Yorum satırlarını, girintileri ve kullanılmayan baytları agresif bir şekilde kaldırarak hızlı yükleme süreleri için hafif veri boyutları oluşturur.</li>
+                    <p class="text-lg sm:text-xl text-gray-300 font-medium leading-8">
+                        Temiz kod genellikle geliştirme ve bakım kolaylığıyla birlikte
+                        ele alınır. Ancak faydaları yalnızca kodun okunabilir olmasıyla
+                        sınırlı değildir. Verimli HTML, CSS ve JavaScript; daha hızlı
+                        görüntüleme, daha kararlı sayfa düzenleri ve daha iyi kullanıcı
+                        deneyimi oluşturulmasına katkı sağlayabilir.
+                    </p>
+
+                    <p>
+                        Arama motorları bir sayfayı yalnızca kaynak kodu düzenli olduğu
+                        için üst sıralara taşımaz. Temiz kodun değeri; performansı,
+                        erişilebilirliği, taranabilirliği ve kullanılabilirliği etkileyen
+                        teknik sorunların önlenmesini kolaylaştırmasıdır.
+                    </p>
+
+                    <h2>Temiz kod gerçekte ne anlama gelir?</h2>
+
+                    <p>
+                        Temiz kod; anlaşılır, tutarlı ve yönetilmesi kolay olan koddur.
+                        Gereksiz karmaşıklıktan kaçınır ve sistemdeki her bölümün ne
+                        yaptığını açık biçimde gösterir.
+                    </p>
+
+                    <p>
+                        Ön yüz geliştirmede temiz kod şu uygulamaları içerebilir:
+                    </p>
+
+                    <ul>
+                        <li>Anlamlı ve doğru biçimde yapılandırılmış HTML</li>
+                        <li>Tekrarlanan kurallar yerine yeniden kullanılabilir CSS sınıfları</li>
+                        <li>Belirli görevleri olan anlaşılır JavaScript fonksiyonları</li>
+                        <li>Kullanılmayan komut dosyalarının ve CSS kurallarının kaldırılması</li>
+                        <li>Tutarlı isimlendirme ve klasör düzeni</li>
+                        <li>Görsel, yazı tipi ve dış kaynakların verimli yüklenmesi</li>
                     </ul>
-                    
-                    <p>Bu işlemleri doğrudan yerel tarayıcı pencerelerinde çalıştırmak, ham kaynak dosyalarınızın asla üçüncü taraf veri tabanlarına sızmamasını sağlayarak hız ve güvenliği bir arada sunar.</p>
+
+                    <h2>Kod kalitesi sayfa performansını nasıl etkiler?</h2>
+
+                    <p>
+                        Tarayıcıların bir web sayfasını gösterebilmesi için gerekli
+                        dosyaları indirmesi, ayrıştırması ve çalıştırması gerekir.
+                        Gereksiz şekilde büyük veya karmaşık dosyalar, sayfanın görünür
+                        ve kullanılabilir hâle gelmeden önce yapılması gereken işlemleri
+                        artırabilir.
+                    </p>
+
+                    <p>
+                        Yaygın performans sorunları şunlardır:
+                    </p>
+
+                    <ul>
+                        <li>Ana işlem dizisini engelleyen büyük JavaScript paketleri</li>
+                        <li>Her sayfada yüklenen kullanılmayan CSS kuralları</li>
+                        <li>Tekrarlanan üçüncü taraf komut dosyaları</li>
+                        <li>Genişlik ve yükseklik değerleri belirtilmemiş görseller</li>
+                        <li>İhtiyaç duyulmadan önce yüklenen kaynaklar</li>
+                        <li>Gereksiz derecede iç içe geçmiş HTML yapıları</li>
+                    </ul>
+
+                    <p>
+                        Temiz bir mimari bu sorunların bulunmasını ve düzeltilmesini
+                        kolaylaştırır. Ayrıca yeni özellikler eklenirken bütün sitenin
+                        yanlışlıkla yavaşlatılması riskini azaltır.
+                    </p>
+
+                    <h2>Temiz kod ve Core Web Vitals</h2>
+
+                    <p>
+                        Core Web Vitals; yükleme, etkileşim ve görsel kararlılıkla ilgili
+                        performans ölçümleridir. Temiz kod tek başına yüksek puan
+                        garantisi vermez ancak bu değerleri geliştirmek için gereken
+                        teknik çalışmaların temelini oluşturur.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+                        <div class="metric-card">
+                            <strong class="block text-white">LCP</strong>
+                            <span class="block text-sm text-gray-500 mt-2">
+                                Sayfadaki ana görünür içeriğin ne kadar hızlı yüklendiğini ölçer.
+                            </span>
+                        </div>
+
+                        <div class="metric-card">
+                            <strong class="block text-white">INP</strong>
+                            <span class="block text-sm text-gray-500 mt-2">
+                                Sayfanın kullanıcı etkileşimlerine ne kadar hızlı yanıt verdiğini ölçer.
+                            </span>
+                        </div>
+
+                        <div class="metric-card">
+                            <strong class="block text-white">CLS</strong>
+                            <span class="block text-sm text-gray-500 mt-2">
+                                Görünür sayfa öğelerinin beklenmedik hareketlerini ölçer.
+                            </span>
+                        </div>
+                    </div>
+
+                    <h3>Largest Contentful Paint</h3>
+
+                    <p>
+                        LCP; büyük görsellerden, görüntülemeyi engelleyen CSS
+                        dosyalarından, yavaş sunucu yanıtlarından ve gereksiz
+                        JavaScript kodlarından etkilenebilir. Daha temiz kaynak yükleme
+                        stratejileri, ana içeriğin daha erken görüntülenmesine yardımcı
+                        olabilir.
+                    </p>
+
+                    <h3>Interaction to Next Paint</h3>
+
+                    <p>
+                        JavaScript görevleri tarayıcının ana işlem dizisini uzun süre
+                        engellediğinde INP değeri kötüleşebilir. Büyük görevleri bölmek,
+                        kullanılmayan kütüphaneleri kaldırmak ve gereksiz olay
+                        dinleyicilerini azaltmak daha hızlı etkileşim sağlayabilir.
+                    </p>
+
+                    <h3>Cumulative Layout Shift</h3>
+
+                    <p>
+                        Görseller, reklamlar, gömülü içerikler veya yazı tipleri için
+                        önceden yer ayrılmadığında CLS değeri artabilir. Bileşenlerin
+                        doğru yapılandırılması ve ölçülerin belirtilmesi beklenmedik
+                        sayfa hareketlerini azaltabilir.
+                    </p>
+
+                    <h2>Minify ve beautify farklı amaçlara hizmet eder</h2>
+
+                    <p>
+                        Geliştirme sırasında kullanılan kodun okunabilir kalması
+                        gerekir. Canlı sitede kullanılan üretim kodu ise kullanıcıya
+                        gönderilmeden önce sıkıştırılabilir.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <strong>Kod düzenleme:</strong>
+                            Kodun geliştiriciler tarafından daha kolay incelenmesi için
+                            tutarlı boşluk ve girintiler ekler.
+                        </li>
+
+                        <li>
+                            <strong>Kod sıkıştırma:</strong>
+                            Tarayıcı için gerekli olmayan yorumları, boşlukları ve
+                            karakterleri kaldırarak dosya boyutunu azaltır.
+                        </li>
+                    </ul>
+
+                    <p>
+                        Minify işlemi dosya boyutunu azaltabilir ancak kötü bir kod
+                        mimarisini düzeltemez. Verimsiz tasarlanmış bir komut dosyası,
+                        boşlukları kaldırıldıktan sonra da verimsiz kalır.
+                    </p>
+
+                    <blockquote>
+                        Temiz kaynak kodu bakım süreçlerini kolaylaştırır. Sıkıştırılmış
+                        üretim kodu ise dosyaların daha verimli sunulmasına yardımcı
+                        olur. Güçlü bir çalışma düzeninde genellikle ikisi birlikte
+                        kullanılır.
+                    </blockquote>
+
+                    <h2>Temiz kod SEO'yu doğrudan geliştirir mi?</h2>
+
+                    <p>
+                        Arama motorları girinti düzeni veya değişken isimleri nedeniyle
+                        bir siteye sıralama avantajı sağlamaz. SEO üzerindeki fayda
+                        dolaylıdır.
+                    </p>
+
+                    <p>
+                        Temiz geliştirme uygulamaları şu sonuçlara katkıda bulunabilir:
+                    </p>
+
+                    <ul>
+                        <li>Daha hızlı ve daha duyarlı sayfalar</li>
+                        <li>Daha anlamlı sayfa yapısı</li>
+                        <li>Daha az bozuk bağlantı ve JavaScript hatası</li>
+                        <li>Daha erişilebilir gezinme sistemi</li>
+                        <li>Tutarlı meta etiketler ve yapılandırılmış veriler</li>
+                        <li>Arama motorlarının daha kolay anlayabileceği sayfalar</li>
+                    </ul>
+
+                    <p>
+                        Bu geliştirmeler kullanıcı deneyimini ve teknik SEO'yu
+                        güçlendirebilir. Ayrıca sayfa sayısı arttıkça site kalitesinin
+                        korunmasını kolaylaştırır.
+                    </p>
+
+                    <h2>Anlamlı HTML kullanımı önemlidir</h2>
+
+                    <p>
+                        Temiz kod yalnızca dosya boyutunu azaltmak anlamına gelmez.
+                        Anlamlı HTML etiketlerinin kullanılması erişilebilirliği
+                        geliştirebilir ve sayfa yapısının daha kolay anlaşılmasını
+                        sağlayabilir.
+                    </p>
+
+                    <p>
+                        <code>&lt;header&gt;</code>,
+                        <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>,
+                        <code>&lt;article&gt;</code> ve
+                        <code>&lt;footer&gt;</code> gibi etiketler, her bölümün görevini
+                        yalnızca genel kapsayıcılardan oluşan bir sayfaya göre daha açık
+                        şekilde ifade eder.
+                    </p>
+
+                    <h2>Bir web sitesini geliştirmek için uygulanabilecek adımlar</h2>
+
+                    <ol>
+                        <li>Kullanılmayan JavaScript ve CSS dosyalarını kaldırın.</li>
+                        <li>Görselleri sıkıştırın ve doğru boyutlarda kullanın.</li>
+                        <li>Görseller, reklamlar ve gömülü içerikler için önceden alan ayırın.</li>
+                        <li>Kritik olmayan komut dosyalarını uygun yöntemlerle yükleyin.</li>
+                        <li>Gereksiz derecede büyük ve iç içe geçmiş DOM yapılarından kaçının.</li>
+                        <li>Sunucu tarafında önbellekleme ve sıkıştırma kullanın.</li>
+                        <li>Sayfaları hem mobil hem masaüstü cihazlarda test edin.</li>
+                        <li>Her önemli güncellemeden sonra performansı yeniden kontrol edin.</li>
+                    </ol>
+
+                    <h2>Tarayıcı tabanlı kod araçları ve gizlilik</h2>
+
+                    <p>
+                        Bazı biçimlendirme, doğrulama ve sıkıştırma araçları kodları
+                        doğrudan internet tarayıcısında işleyebilir. Bir araç bu şekilde
+                        tasarlandığında gönderilen kodun uzak bir sunucuya aktarılması
+                        gerekmeyebilir.
+                    </p>
+
+                    <p>
+                        Bu çalışma biçimi her araç için aynı değildir. Gizli veya özel
+                        kaynak kodlarıyla çalışan kullanıcıların kullandıkları hizmetin
+                        gizlilik politikasını ve teknik çalışma şeklini kontrol etmesi
+                        gerekir.
+                    </p>
+
+                    <h2>Sonuç</h2>
+
+                    <p>
+                        Temiz kod, arama sıralamasını otomatik olarak yükselten bir
+                        yöntem değildir. Ancak hızlı, erişilebilir ve yönetilebilir bir
+                        web sitesi için önemli bir temel oluşturur.
+                    </p>
+
+                    <p>
+                        En güçlü sonuçlar; anlaşılır kaynak kodunun sıkıştırılmış üretim
+                        dosyaları, iyi bir sunucu, optimize edilmiş görseller, verimli
+                        JavaScript ve düzenli performans testleriyle birleştirilmesiyle
+                        elde edilir.
+                    </p>
+
+                    <p>
+                        Yönetilmesi kolay bir web sitesini geliştirmek de daha kolaydır.
+                        Sürekli geliştirme ise daha iyi performans ve uzun vadeli SEO
+                        başarısına giden en güvenilir yollardan biridir.
+                    </p>
                 `
             }
         };
 
-        function initPost() {
-            let activeLang = 'en';
-            try {
-                const browserLang = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
-                if (localizations[browserLang]) activeLang = browserLang;
-            } catch (e) {}
+        function detectLanguage() {
+            const languages =
+                navigator.languages && navigator.languages.length
+                    ? navigator.languages
+                    : [navigator.language || navigator.userLanguage || 'en'];
 
-            document.documentElement.lang = activeLang;
-            const data = localizations[activeLang] || localizations.en;
-
-            document.getElementById('nav-home').innerText = data.navHome;
-            document.getElementById('nav-blog').innerText = data.navBlog;
-            document.getElementById('post-title').innerText = data.title;
-            document.getElementById('post-date').innerText = data.date;
-            document.getElementById('post-body').innerHTML = data.body;
+            return languages.some(language =>
+                String(language).toLowerCase().startsWith('tr')
+            ) ? 'tr' : 'en';
         }
 
-        initPost();
+        function renderPost(language) {
+            const data =
+                localizations[language] ||
+                localizations.en;
+
+            document.documentElement.lang = language;
+            document.title = data.pageTitle;
+
+            const metaDescription =
+                document.querySelector('meta[name="description"]');
+
+            if (metaDescription) {
+                metaDescription.setAttribute(
+                    'content',
+                    data.pageDescription
+                );
+            }
+
+            const ogTitle =
+                document.querySelector('meta[property="og:title"]');
+
+            if (ogTitle) {
+                ogTitle.setAttribute(
+                    'content',
+                    data.title
+                );
+            }
+
+            const ogDescription =
+                document.querySelector('meta[property="og:description"]');
+
+            if (ogDescription) {
+                ogDescription.setAttribute(
+                    'content',
+                    data.pageDescription
+                );
+            }
+
+            const twitterTitle =
+                document.querySelector('meta[name="twitter:title"]');
+
+            if (twitterTitle) {
+                twitterTitle.setAttribute(
+                    'content',
+                    data.title
+                );
+            }
+
+            const twitterDescription =
+                document.querySelector('meta[name="twitter:description"]');
+
+            if (twitterDescription) {
+                twitterDescription.setAttribute(
+                    'content',
+                    data.pageDescription
+                );
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.dataset.i18n;
+
+                if (data[key]) {
+                    element.textContent = data[key];
+                }
+            });
+
+            document.getElementById('post-title').textContent =
+                data.title;
+
+            document.getElementById('post-description').textContent =
+                data.description;
+
+            document.getElementById('post-date').textContent =
+                data.date;
+
+            document.getElementById('post-body').innerHTML =
+                data.body;
+        }
+
+        document.getElementById('current-year').textContent =
+            new Date().getFullYear();
+
+        renderPost(detectLanguage());
     </script>
 </body>
 </html>
