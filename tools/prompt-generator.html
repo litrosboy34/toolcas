@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><!-- Google tag (gtag.js) -->
+<head>
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3NNQ6DL9K1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -9,234 +10,846 @@
 
   gtag('config', 'G-3NNQ6DL9K1');
 </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Prompt Generator - Toolcas</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .glow-bg { background-color: #0b0f19; }
-    </style>
-    <script type="application/ld+json" id="faq-schema"></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free AI Prompt Generator for ChatGPT & Image AI | Toolcas</title>
+<meta name="description" content="Create clear, detailed prompts for ChatGPT, Claude, Gemini, Midjourney and Stable Diffusion with Toolcas AI Prompt Generator. Free and easy to use.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Toolcas">
+<meta name="theme-color" content="#0b0f19">
+
+<link rel="canonical" href="https://www.toolcas.com/tools/prompt-generator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free AI Prompt Generator | Toolcas">
+<meta property="og:description" content="Turn a simple idea into a structured prompt for leading text and image AI tools.">
+<meta property="og:url" content="https://www.toolcas.com/tools/prompt-generator.html">
+<meta property="og:site_name" content="Toolcas">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free AI Prompt Generator | Toolcas">
+<meta name="twitter:description" content="Generate structured prompts for ChatGPT, Claude, Gemini, Midjourney and Stable Diffusion.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #0b0f19; }
+  .glow-bg { background-color: #0b0f19; }
+  .glass { background: rgba(17, 24, 39, 0.58); backdrop-filter: blur(16px); }
+  textarea { resize: vertical; }
+  .faq-answer { transition: grid-template-rows .25s ease; }
+  .toast {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Toolcas AI Prompt Generator",
+  "url": "https://www.toolcas.com/tools/prompt-generator.html",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "description": "A free browser-based prompt generator for text and image AI tools.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Toolcas",
+    "url": "https://www.toolcas.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.toolcas.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://www.toolcas.com/#tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AI Prompt Generator",
+      "item": "https://www.toolcas.com/tools/prompt-generator.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json" id="faq-schema"></script>
 </head>
-<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen">
 
-    <!-- Arka Plan Modern Blur Efekti -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none overflow-hidden opacity-20 z-0">
-        <div class="absolute top-[-10%] left-[30%] w-[500px] h-[500px] bg-purple-600 rounded-full blur-[130px]"></div>
+<body class="glow-bg text-gray-100 font-sans antialiased min-h-screen overflow-x-hidden">
+
+<div class="fixed inset-x-0 top-0 h-[560px] pointer-events-none overflow-hidden opacity-25 -z-0">
+  <div class="absolute -top-28 left-1/3 w-[520px] h-[520px] bg-purple-600 rounded-full blur-[145px]"></div>
+  <div class="absolute top-20 right-10 w-[360px] h-[360px] bg-indigo-600 rounded-full blur-[130px] opacity-70"></div>
+</div>
+
+<header class="relative z-20 border-b border-gray-800/80 bg-[#0b0f19]/80 backdrop-blur-xl sticky top-0">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="../index.html" aria-label="Toolcas home"
+       class="text-2xl font-black tracking-tight bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+      TOOLCAS
+    </a>
+
+    <nav aria-label="Main navigation" class="flex items-center gap-4 sm:gap-6 text-sm font-medium text-gray-400">
+      <a href="../index.html" id="nav-home" class="hover:text-white transition-colors">Home</a>
+      <a href="../index.html#tools" id="nav-all-tools" class="hover:text-white transition-colors">All Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-20">
+
+  <section class="text-center mb-10 sm:mb-12">
+    <div id="tool-badge"
+         class="inline-flex items-center rounded-full border border-indigo-500/25 bg-indigo-500/10 px-3 py-1 text-xs font-semibold text-indigo-300 mb-5">
+      Free AI Writing Tool
     </div>
+    <h1 id="tool-title" class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-5 tracking-tight">
+      AI Prompt Generator
+    </h1>
+    <p id="tool-desc" class="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+      Turn a basic idea into a clearer, more detailed prompt for popular text and image AI tools.
+    </p>
+  </section>
 
-    <!-- Üst Menü (Navbar) -->
-    <header class="relative z-10 border-b border-gray-800/80 bg-[#0b0f19]/70 backdrop-blur-md sticky top-0">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="../index.html" class="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                TOOLCAS
-            </a>
-            <nav class="space-x-6 text-sm font-medium text-gray-400">
-                <a href="../index.html" id="nav-home" class="hover:text-white transition-colors">Home</a>
-                <a href="../index.html#tools" id="nav-all-tools" class="hover:text-white transition-colors">All Tools</a>
-            </nav>
+  <section class="max-w-4xl mx-auto mb-16">
+    <div class="glass border border-gray-800 rounded-3xl shadow-2xl shadow-black/30 overflow-hidden">
+      <div class="p-5 sm:p-7 lg:p-8 space-y-6">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label id="label-engine" for="prompt-engine"
+                   class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">
+              Target AI
+            </label>
+            <select id="prompt-engine"
+                    class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500">
+              <option value="chatgpt">ChatGPT</option>
+              <option value="claude">Claude</option>
+              <option value="gemini">Gemini</option>
+              <option value="midjourney">Midjourney</option>
+              <option value="stable">Stable Diffusion</option>
+            </select>
+          </div>
+
+          <div>
+            <label id="label-purpose" for="prompt-purpose"
+                   class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">
+              Purpose
+            </label>
+            <select id="prompt-purpose"
+                    class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500">
+              <option value="general">General</option>
+              <option value="writing">Writing</option>
+              <option value="coding">Coding</option>
+              <option value="marketing">Marketing</option>
+              <option value="learning">Learning</option>
+              <option value="image">Image creation</option>
+            </select>
+          </div>
         </div>
-    </header>
 
-    <!-- Ana İçerik Alanı -->
-    <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
-        
-        <!-- Araç Başlığı -->
-        <div class="text-center mb-12">
-            <h1 id="tool-title" class="text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight"></h1>
-            <p id="tool-desc" class="text-base text-gray-400 max-w-2xl mx-auto"></p>
+        <div>
+          <div class="flex items-center justify-between gap-4 mb-2">
+            <label id="label-input" for="user-idea"
+                   class="block text-xs font-semibold uppercase tracking-wider text-gray-400">
+              Your idea
+            </label>
+            <button type="button" id="btn-example"
+                    class="text-xs text-indigo-300 hover:text-indigo-200 transition-colors">
+              Load example
+            </button>
+          </div>
+
+          <textarea id="user-idea" rows="6" maxlength="3000"
+                    class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-4 text-sm text-gray-200 placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500"
+                    placeholder="Example: Create a 30-day social media plan for a new coffee shop."></textarea>
+
+          <div class="mt-2 flex justify-between text-xs text-gray-600">
+            <span id="input-hint">Describe the result you want as clearly as possible.</span>
+            <span><span id="char-count">0</span>/3000</span>
+          </div>
         </div>
 
-        <!-- Çalışan AI Araç Alanı -->
-        <section class="max-w-2xl mx-auto p-6 bg-gray-900/40 border border-gray-800 rounded-2xl shadow-2xl backdrop-blur-sm mb-16">
-            <div class="space-y-4">
-                <div>
-                    <label id="label-engine" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2"></label>
-                    <select id="prompt-engine" class="w-full bg-gray-950 border border-gray-800 rounded-lg px-4 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-indigo-500">
-                        <option value="chatgpt">ChatGPT / Claude (Text AI)</option>
-                        <option value="midjourney">Midjourney (Image AI)</option>
-                        <option value="stable">Stable Diffusion (Realistic Art)</option>
-                    </select>
-                </div>
-                <div>
-                    <label id="label-input" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2"></label>
-                    <textarea id="user-idea" rows="3" class="w-full bg-gray-950 border border-gray-800 rounded-lg px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-indigo-500 resizable-none" placeholder="e.g., cyberpunk cat sitting on a neon roof"></textarea>
-                </div>
-                <button onclick="generatePrompt()" id="btn-generate" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm py-3 px-4 rounded-lg transition-colors shadow-lg shadow-indigo-600/10"></button>
-                
-                <!-- Çıktı Alanı -->
-                <div id="output-box" class="mt-6 p-4 bg-gray-950/60 border border-gray-800/80 rounded-lg hidden relative">
-                    <p class="text-xs font-semibold uppercase tracking-wider text-indigo-400 mb-2">Generated Prompt</p>
-                    <p id="generated-text" class="text-sm text-gray-300 pr-12 whitespace-pre-line"></p>
-                    <button onclick="copyPrompt()" class="absolute top-4 right-4 text-xs bg-gray-900 hover:bg-gray-800 text-gray-400 hover:text-white px-2.5 py-1 rounded border border-gray-800 transition-colors">Copy</button>
-                </div>
-            </div>
-        </section>
+        <div class="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3">
+          <button type="button" id="btn-generate"
+                  class="w-full bg-indigo-600 hover:bg-indigo-500 focus:ring-4 focus:ring-indigo-500/30 text-white font-semibold text-sm py-3.5 px-5 rounded-xl transition-all shadow-lg shadow-indigo-600/10">
+            Generate Prompt ✨
+          </button>
+          <button type="button" id="btn-clear"
+                  class="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 border border-gray-800 text-gray-300 font-medium text-sm py-3.5 px-5 rounded-xl transition-colors">
+            Clear
+          </button>
+        </div>
 
-        <!-- Nasıl Kullanılır & Özellikler -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-gray-900 pt-12 mb-16">
+        <div id="status-message" class="hidden text-sm rounded-xl px-4 py-3" role="status" aria-live="polite"></div>
+
+        <div id="output-box" class="hidden mt-2 p-5 bg-gray-950/80 border border-gray-800 rounded-2xl">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
             <div>
-                <h2 id="how-to-title" class="text-xl font-bold text-white mb-4"></h2>
-                <ol id="how-to-steps" class="space-y-3 text-sm text-gray-400 list-decimal list-inside"></ol>
+              <p id="output-label" class="text-xs font-semibold uppercase tracking-wider text-indigo-400">
+                Generated Prompt
+              </p>
+              <p id="output-subtitle" class="text-xs text-gray-600 mt-1">
+                Review and adjust the prompt before using it.
+              </p>
             </div>
-            <div>
-                <h2 id="features-title" class="text-xl font-bold text-white mb-4"></h2>
-                <ul id="features-list" class="space-y-3 text-sm text-gray-400 list-disc list-inside"></ul>
+            <div class="flex gap-2">
+              <button type="button" id="btn-regenerate"
+                      class="text-xs bg-gray-900 hover:bg-gray-800 text-gray-300 px-3 py-2 rounded-lg border border-gray-800 transition-colors">
+                Regenerate
+              </button>
+              <button type="button" id="btn-copy"
+                      class="text-xs bg-indigo-600/15 hover:bg-indigo-600/25 text-indigo-300 px-3 py-2 rounded-lg border border-indigo-500/25 transition-colors">
+                Copy
+              </button>
             </div>
-        </section>
+          </div>
 
-        <!-- SEO İçerik Alanı -->
-        <section class="border-t border-gray-900 pt-12 mb-16">
-            <h2 id="seo-content-title" class="text-2xl font-bold text-white mb-6"></h2>
-            <div id="seo-content-body" class="text-sm text-gray-400 leading-relaxed space-y-4"></div>
-        </section>
+          <pre id="generated-text"
+               class="text-sm leading-7 text-gray-300 whitespace-pre-wrap break-words font-sans"></pre>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- FAQ Bölümü -->
-        <section id="faq-section" class="border-t border-gray-900 pt-12">
-            <h2 id="faq-section-title" class="text-2xl font-bold text-white mb-8 text-center"></h2>
-            <div id="faq-container" class="space-y-4 max-w-3xl mx-auto"></div>
-        </section>
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 border-t border-gray-900 pt-12 mb-16">
+    <div>
+      <h2 id="how-to-title" class="text-2xl font-bold text-white mb-5">How to use the prompt generator</h2>
+      <ol id="how-to-steps" class="space-y-4 text-sm text-gray-400"></ol>
+    </div>
+    <div>
+      <h2 id="features-title" class="text-2xl font-bold text-white mb-5">Key features</h2>
+      <ul id="features-list" class="space-y-4 text-sm text-gray-400"></ul>
+    </div>
+  </section>
 
-    </main>
+  <section class="border-t border-gray-900 pt-12 mb-16">
+    <h2 id="seo-content-title" class="text-2xl sm:text-3xl font-bold text-white mb-6">
+      Create better prompts for text and image AI
+    </h2>
+    <div id="seo-content-body" class="text-sm sm:text-base text-gray-400 leading-8 space-y-5 max-w-4xl"></div>
+  </section>
 
-    <footer class="border-t border-gray-900 bg-[#070a12] text-xs text-gray-500 py-8 text-center relative z-10">
-        &copy; 2026 Toolcas Inc. All rights reserved.
-    </footer>
+  <section id="faq-section" class="border-t border-gray-900 pt-12">
+    <h2 id="faq-section-title" class="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">
+      Frequently asked questions
+    </h2>
+    <div id="faq-container" class="space-y-4 max-w-3xl mx-auto"></div>
+  </section>
+</main>
 
-    <script>
-        const localizations = {
-            en: {
-                navHome: 'Home', navAllTools: 'All Tools',
-                title: 'AI Prompt Generator',
-                desc: 'Convert your simple ideas into highly detailed, professional engineering prompts for ChatGPT, Midjourney, and more.',
-                labelEngine: 'Select AI Engine',
-                labelInput: 'Your Simple Idea',
-                btnGenerate: 'Optimize Prompt ✨',
-                howTo: 'How to Use?',
-                steps: ['Choose your target AI architecture (e.g., Midjourney).', 'Type your basic, raw idea or concept.', 'Click optimize to generate the perfect structured prompt.'],
-                features: 'Key Features',
-                featList: ['Optimized tokens for precise AI understanding.', 'Adds parameters, lighting styles, and modifiers instantly.', 'Zero-retention: your text inputs are never cached or saved.'],
-                seoTitle: 'Maximize Your AI Results With Structured Prompts',
-                seoBody: '<p>Getting high-quality outputs from neural networks requires clear guidelines. Our AI Prompt Builder bridges the gap by automatically embedding crucial architectural nodes, lighting directions, and style formats into your raw concepts.</p>',
-                faqTitle: 'Frequently Asked Questions',
-                faqs: [
-                    { q: 'What is prompt engineering?', a: 'It is the practice of structuring text inputs so they can be accurately interpreted by generative AI models.' },
-                    { q: 'Is my input data saved?', a: 'No. All structures are processed entirely in volatile memory (RAM) and wiped instantly. We keep zero records.' }
-                ]
-            },
-            tr: {
-                navHome: 'Ana Sayfa', navAllTools: 'Tüm Araçlar',
-                title: 'AI Prompt Oluşturucu',
-                desc: 'Basit fikirlerinizi ChatGPT, Midjourney ve diğer sistemler için son derece detaylı, profesyonel mühendislik komutlarına dönüştürün.',
-                labelEngine: 'AI Motoru Seçin',
-                labelInput: 'Basit Fikriniz',
-                btnGenerate: 'Promptu Optimize Et ✨',
-                howTo: 'Nasıl Kullanılır?',
-                steps: ['Hedef yapay zeka mimarisini seçin (Örn: Midjourney).', 'Ham fikrinizi veya konseptinizi kısaca yazın.', 'Mükemmel yapılandırılmış promptu üretmek için optimize et butonuna basın.'],
-                features: 'Öne Çıkan Özellikler',
-                featList: ['Yapay zekanın tam anlaması için optimize edilmiş belirteçler (tokens).', 'Işık stillerini, parametreleri ve modifikatörleri anında ekler.', 'Sıfır depolama: metin girdileriniz asla önbelleğe alınmaz veya kaydedilmez.'],
-                seoTitle: 'Yapılandırılmış Komutlarla AI Sonuçlarınızı Maksimuma Çıkarın',
-                seoBody: '<p>Yapay zeka modellerinden kaliteli çıktılar almak net yönergeler gerektirir. Prompt oluşturucumuz, ham fikirlerinize otomatik olarak stil formatları ve kritik komut düğümleri ekleyerek aradaki köprüyü kurar.</p>',
-                faqTitle: 'Sıkça Sorulan Sorular',
-                faqs: [
-                    { q: 'Prompt mühendisliği nedir?', a: 'Yapay zeka modellerinin girdileri en doğru şekilde yorumlayabilmesi için metinleri yapılandırma işlemidir.' },
-                    { q: 'Girdiğim veriler kaydediliyor mu?', a: 'Hayır. Tüm işlemler anlık olarak geçici bellek (RAM) üzerinde yapılır ve anında temizlenir. Asla kayıt tutulmaz.' }
-                ]
-            }
-        };
+<footer class="relative z-10 border-t border-gray-900 bg-[#070a12]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="flex flex-col md:flex-row gap-6 items-center justify-between">
+      <p class="text-xs text-gray-500">&copy; 2026 Toolcas. All rights reserved.</p>
+      <nav aria-label="Footer navigation" class="flex flex-wrap justify-center gap-x-5 gap-y-3 text-xs text-gray-500">
+        <a href="../faq/faq.html" id="footer-faq" class="hover:text-white transition-colors">FAQ</a>
+        <a href="../privacy/index.html" id="footer-privacy" class="hover:text-white transition-colors">Privacy</a>
+        <a href="../terms/index.html" id="footer-terms" class="hover:text-white transition-colors">Terms</a>
+        <a href="../blog/index.html" id="footer-blog" class="hover:text-white transition-colors">Blog</a>
+      </nav>
+    </div>
+  </div>
+</footer>
 
-        const engineTemplates = {
-            chatgpt: "Act as an expert. Process the following concept with clear step-by-step logic, removing ambiguity and providing academic-level clarity: ",
-            midjourney: "Detailed cinematic shot, volumetric lighting, photorealistic, 8k resolution, Unreal Engine 5 render, highly detailed composition, --ar 16:9 --v 6.0 --style raw ",
-            stable: "Masterpiece, ultra high res, sharp focus, intricate details, highly atmospheric, award-winning digital art, style of professional concept art: "
-        };
+<div id="toast"
+     class="toast fixed bottom-5 left-1/2 -translate-x-1/2 z-50 rounded-xl border border-gray-700 bg-gray-900 px-4 py-3 text-sm text-gray-200 shadow-2xl"
+     role="status" aria-live="polite">
+  Copied
+</div>
 
-        async function loadPage() {
-            let activeLang = 'en';
-            try {
-                const response = await fetch('https://1.1.1.1/cdn-cgi/trace');
-                const text = await response.text();
-                const locLine = text.split('\n').find(line => line.startsWith('loc='));
-                if (locLine && locLine.split('=')[1].trim() === 'TR') activeLang = 'tr';
-            } catch (e) {}
-            document.documentElement.lang = activeLang;
-            renderPage(activeLang);
-        }
+<script>
+const localizations = {
+  en: {
+    pageTitle: 'Free AI Prompt Generator for ChatGPT & Image AI | Toolcas',
+    metaDescription: 'Create clear, detailed prompts for ChatGPT, Claude, Gemini, Midjourney and Stable Diffusion with Toolcas AI Prompt Generator. Free and easy to use.',
+    navHome: 'Home',
+    navAllTools: 'All Tools',
+    badge: 'Free AI Writing Tool',
+    title: 'AI Prompt Generator',
+    desc: 'Turn a basic idea into a clearer, more detailed prompt for popular text and image AI tools.',
+    labelEngine: 'Target AI',
+    labelPurpose: 'Purpose',
+    labelInput: 'Your idea',
+    inputHint: 'Describe the result you want as clearly as possible.',
+    inputPlaceholder: 'Example: Create a 30-day social media plan for a new coffee shop.',
+    loadExample: 'Load example',
+    generate: 'Generate Prompt ✨',
+    clear: 'Clear',
+    outputLabel: 'Generated Prompt',
+    outputSubtitle: 'Review and adjust the prompt before using it.',
+    regenerate: 'Regenerate',
+    copy: 'Copy',
+    copied: 'Prompt copied',
+    emptyError: 'Enter an idea before generating a prompt.',
+    howTo: 'How to use the prompt generator',
+    steps: [
+      'Choose the AI tool you plan to use.',
+      'Select the purpose that best matches your task.',
+      'Describe your idea, audience, goal and preferred format.',
+      'Generate the prompt, review it and make any final adjustments.'
+    ],
+    features: 'Key features',
+    featList: [
+      'Separate structures for text AI and image generation tools.',
+      'Useful context, output format and quality instructions.',
+      'Copy, clear, example and regenerate controls.',
+      'Automatic English or Turkish interface based on browser language.'
+    ],
+    seoTitle: 'Create better prompts for text and image AI',
+    seoBody: `
+      <p>A good AI prompt explains the task, goal, audience, context and expected output. Vague instructions can produce generic answers, while a structured prompt gives the model clearer boundaries.</p>
+      <p>Toolcas Prompt Generator adds a practical structure to your idea. For text tools, it can include a role, objective, requirements, output format and quality checks. For image tools, it can add subject, composition, lighting, style, camera and negative prompt guidance.</p>
+      <p>The generated prompt is a starting point rather than a guarantee of a specific result. Review it before use and add any details that matter to your project.</p>
+    `,
+    faqTitle: 'Frequently asked questions',
+    faqs: [
+      {
+        q: 'What is prompt engineering?',
+        a: 'Prompt engineering is the practice of writing clear, structured instructions that help an AI model understand the task, context and desired output.'
+      },
+      {
+        q: 'Which AI tools can I use these prompts with?',
+        a: 'The generator includes formats for ChatGPT, Claude, Gemini, Midjourney and Stable Diffusion. You can also adapt the result for similar AI tools.'
+      },
+      {
+        q: 'Does the generated prompt guarantee a perfect result?',
+        a: 'No. AI output can vary by model, settings and context. The generated prompt is designed to provide a stronger starting point.'
+      },
+      {
+        q: 'Is the tool free?',
+        a: 'Yes. You can use this prompt generator without creating an account.'
+      }
+    ],
+    examples: {
+      general: 'Explain how solar panels work to a beginner using simple language and a short real-life example.',
+      writing: 'Write a friendly welcome email for customers joining a productivity app.',
+      coding: 'Build a responsive pricing card component using HTML, Tailwind CSS and vanilla JavaScript.',
+      marketing: 'Create a 30-day Instagram content plan for a new coffee shop targeting university students.',
+      learning: 'Teach me the basics of personal budgeting with a seven-day beginner study plan.',
+      image: 'A futuristic coastal city at sunset with flying public transport and reflective glass towers.'
+    },
+    purposes: {
+      general: 'General',
+      writing: 'Writing',
+      coding: 'Coding',
+      marketing: 'Marketing',
+      learning: 'Learning',
+      image: 'Image creation'
+    },
+    engines: {
+      chatgpt: 'ChatGPT',
+      claude: 'Claude',
+      gemini: 'Gemini',
+      midjourney: 'Midjourney',
+      stable: 'Stable Diffusion'
+    },
+    footerFaq: 'FAQ',
+    footerPrivacy: 'Privacy',
+    footerTerms: 'Terms',
+    footerBlog: 'Blog'
+  },
+  tr: {
+    pageTitle: 'Ücretsiz AI Prompt Oluşturucu | Toolcas',
+    metaDescription: 'ChatGPT, Claude, Gemini, Midjourney ve Stable Diffusion için açık ve detaylı promptlar oluşturun. Toolcas AI Prompt Oluşturucu ücretsizdir.',
+    navHome: 'Ana Sayfa',
+    navAllTools: 'Tüm Araçlar',
+    badge: 'Ücretsiz Yapay Zeka Aracı',
+    title: 'AI Prompt Oluşturucu',
+    desc: 'Basit bir fikri, popüler metin ve görsel yapay zeka araçları için daha açık ve detaylı bir prompta dönüştürün.',
+    labelEngine: 'Hedef AI',
+    labelPurpose: 'Kullanım Amacı',
+    labelInput: 'Fikriniz',
+    inputHint: 'İstediğiniz sonucu mümkün olduğunca açık anlatın.',
+    inputPlaceholder: 'Örnek: Yeni bir kahve dükkânı için 30 günlük sosyal medya planı oluştur.',
+    loadExample: 'Örnek yükle',
+    generate: 'Prompt Oluştur ✨',
+    clear: 'Temizle',
+    outputLabel: 'Oluşturulan Prompt',
+    outputSubtitle: 'Kullanmadan önce promptu kontrol edip düzenleyin.',
+    regenerate: 'Yeniden Oluştur',
+    copy: 'Kopyala',
+    copied: 'Prompt kopyalandı',
+    emptyError: 'Prompt oluşturmadan önce bir fikir yazın.',
+    howTo: 'Prompt oluşturucu nasıl kullanılır?',
+    steps: [
+      'Kullanacağınız yapay zeka aracını seçin.',
+      'Görevinize en uygun kullanım amacını belirleyin.',
+      'Fikrinizi, hedef kitlenizi, amacınızı ve istediğiniz formatı açıklayın.',
+      'Promptu oluşturun, kontrol edin ve gerekiyorsa son düzenlemeleri yapın.'
+    ],
+    features: 'Öne çıkan özellikler',
+    featList: [
+      'Metin ve görsel yapay zeka araçları için ayrı prompt yapıları.',
+      'Bağlam, çıktı biçimi ve kalite talimatları.',
+      'Kopyalama, temizleme, örnek yükleme ve yeniden oluşturma kontrolleri.',
+      'Tarayıcı diline göre otomatik Türkçe veya İngilizce arayüz.'
+    ],
+    seoTitle: 'Metin ve görsel yapay zeka için daha iyi promptlar oluşturun',
+    seoBody: `
+      <p>İyi bir yapay zeka promptu; görevi, amacı, hedef kitleyi, bağlamı ve beklenen çıktı biçimini açıklar. Belirsiz komutlar genel sonuçlar üretebilirken yapılandırılmış bir prompt modele daha net sınırlar verir.</p>
+      <p>Toolcas Prompt Oluşturucu, fikrinize pratik bir yapı ekler. Metin araçlarında rol, hedef, gereksinimler, çıktı biçimi ve kalite kontrolü; görsel araçlarda ise konu, kompozisyon, ışık, stil, kamera ve negatif prompt yönlendirmeleri ekleyebilir.</p>
+      <p>Oluşturulan prompt kesin bir sonuç garantisi değildir. Promptu kullanmadan önce kontrol edin ve projeniz için önemli ayrıntıları ekleyin.</p>
+    `,
+    faqTitle: 'Sıkça sorulan sorular',
+    faqs: [
+      {
+        q: 'Prompt mühendisliği nedir?',
+        a: 'Prompt mühendisliği, bir yapay zeka modelinin görevi, bağlamı ve istenen çıktıyı daha iyi anlamasına yardımcı olan açık ve yapılandırılmış talimatlar yazma işlemidir.'
+      },
+      {
+        q: 'Bu promptları hangi yapay zeka araçlarında kullanabilirim?',
+        a: 'Araç; ChatGPT, Claude, Gemini, Midjourney ve Stable Diffusion için şablonlar içerir. Çıktıyı benzer yapay zeka araçlarına da uyarlayabilirsiniz.'
+      },
+      {
+        q: 'Oluşturulan prompt kusursuz sonuç garantiler mi?',
+        a: 'Hayır. Sonuçlar kullanılan modele, ayarlara ve bağlama göre değişebilir. Oluşturulan prompt daha güçlü bir başlangıç noktası sunmak için hazırlanır.'
+      },
+      {
+        q: 'Araç ücretsiz mi?',
+        a: 'Evet. Bu prompt oluşturucuyu hesap açmadan kullanabilirsiniz.'
+      }
+    ],
+    examples: {
+      general: 'Güneş panellerinin nasıl çalıştığını yeni başlayan birine basit dille ve kısa bir günlük hayat örneğiyle anlat.',
+      writing: 'Bir üretkenlik uygulamasına yeni katılan müşteriler için samimi bir hoş geldiniz e-postası yaz.',
+      coding: 'HTML, Tailwind CSS ve vanilla JavaScript kullanarak mobil uyumlu fiyatlandırma kartı oluştur.',
+      marketing: 'Üniversite öğrencilerini hedefleyen yeni bir kahve dükkânı için 30 günlük Instagram içerik planı oluştur.',
+      learning: 'Kişisel bütçe yönetiminin temellerini yedi günlük başlangıç seviyesinde çalışma planıyla öğret.',
+      image: 'Gün batımında, uçan toplu taşıma araçları ve yansıtıcı cam kuleleri bulunan fütüristik bir kıyı şehri.'
+    },
+    purposes: {
+      general: 'Genel',
+      writing: 'Yazı',
+      coding: 'Kodlama',
+      marketing: 'Pazarlama',
+      learning: 'Öğrenme',
+      image: 'Görsel oluşturma'
+    },
+    engines: {
+      chatgpt: 'ChatGPT',
+      claude: 'Claude',
+      gemini: 'Gemini',
+      midjourney: 'Midjourney',
+      stable: 'Stable Diffusion'
+    },
+    footerFaq: 'SSS',
+    footerPrivacy: 'Gizlilik',
+    footerTerms: 'Kullanım Şartları',
+    footerBlog: 'Blog'
+  }
+};
 
-        function renderPage(lang) {
-            const data = localizations[lang] || localizations.en;
-            document.getElementById('nav-home').innerText = data.navHome;
-            document.getElementById('nav-all-tools').innerText = data.navAllTools;
-            document.getElementById('tool-title').innerText = data.title;
-            document.getElementById('tool-desc').innerText = data.desc;
-            document.getElementById('label-engine').innerText = data.labelEngine;
-            document.getElementById('label-input').innerText = data.labelInput;
-            document.getElementById('btn-generate').innerText = data.btnGenerate;
-            document.getElementById('how-to-title').innerText = data.howTo;
-            document.getElementById('features-title').innerText = data.features;
-            document.getElementById('seo-content-title').innerText = data.seoTitle;
-            document.getElementById('seo-content-body').innerHTML = data.seoBody;
-            document.getElementById('faq-section-title').innerText = data.faqTitle;
+let currentLang = 'en';
 
-            const stepsContainer = document.getElementById('how-to-steps');
-            stepsContainer.innerHTML = '';
-            data.steps.forEach(step => stepsContainer.innerHTML += `<li>${step}</li>`);
+function detectLanguage() {
+  const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+  return browserLang.startsWith('tr') ? 'tr' : 'en';
+}
 
-            const featContainer = document.getElementById('features-list');
-            featContainer.innerHTML = '';
-            data.featList.forEach(feat => featContainer.innerHTML += `<li>${feat}</li>`);
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = value;
+}
 
-            const faqContainer = document.getElementById('faq-container');
-            faqContainer.innerHTML = '';
-            const schemaMainEntity = [];
-            data.faqs.forEach((faq, index) => {
-                faqContainer.innerHTML += `
-                    <div class="bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden cursor-pointer shadow-sm" onclick="toggleFaq(${index})">
-                        <div class="p-5 flex justify-between items-center select-none">
-                            <h3 class="text-sm font-semibold text-white flex items-center"><span class="text-indigo-400 mr-2">Q:</span> ${faq.q}</h3>
-                            <span id="faq-arr-${index}" class="text-xs text-gray-500 transition-transform">▼</span>
-                        </div>
-                        <div id="faq-answer-${index}" class="px-5 pb-5 pt-1 border-t border-gray-800/40 bg-gray-900/10 hidden">
-                            <p class="text-xs text-gray-400 pl-5">${faq.a}</p>
-                        </div>
-                    </div>`;
-                schemaMainEntity.push({
-                    "@type": "Question",
-                    "name": faq.q,
-                    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
-                });
-            });
-            document.getElementById('faq-schema').textContent = JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": schemaMainEntity});
-        }
+function renderPage(lang) {
+  currentLang = lang;
+  const data = localizations[lang] || localizations.en;
 
-        function toggleFaq(index) {
-            document.getElementById(`faq-answer-${index}`).classList.toggle('hidden');
-            document.getElementById(`faq-arr-${index}`).classList.toggle('rotate-180');
-        }
+  document.documentElement.lang = lang;
+  document.title = data.pageTitle;
+  document.querySelector('meta[name="description"]').setAttribute('content', data.metaDescription);
 
-        function generatePrompt() {
-            const engine = document.getElementById('prompt-engine').value;
-            const idea = document.getElementById('user-idea').value.trim();
-            if(!idea) return;
+  setText('nav-home', data.navHome);
+  setText('nav-all-tools', data.navAllTools);
+  setText('tool-badge', data.badge);
+  setText('tool-title', data.title);
+  setText('tool-desc', data.desc);
+  setText('label-engine', data.labelEngine);
+  setText('label-purpose', data.labelPurpose);
+  setText('label-input', data.labelInput);
+  setText('input-hint', data.inputHint);
+  setText('btn-example', data.loadExample);
+  setText('btn-generate', data.generate);
+  setText('btn-clear', data.clear);
+  setText('output-label', data.outputLabel);
+  setText('output-subtitle', data.outputSubtitle);
+  setText('btn-regenerate', data.regenerate);
+  setText('btn-copy', data.copy);
+  setText('how-to-title', data.howTo);
+  setText('features-title', data.features);
+  setText('seo-content-title', data.seoTitle);
+  setText('faq-section-title', data.faqTitle);
+  setText('footer-faq', data.footerFaq);
+  setText('footer-privacy', data.footerPrivacy);
+  setText('footer-terms', data.footerTerms);
+  setText('footer-blog', data.footerBlog);
 
-            let result = "";
-            if(engine === 'midjourney') {
-                result = `${idea}, ${engineTemplates.midjourney}`;
-            } else {
-                result = `${engineTemplates[engine]}${idea}`;
-            }
+  const idea = document.getElementById('user-idea');
+  idea.placeholder = data.inputPlaceholder;
 
-            document.getElementById('generated-text').innerText = result;
-            document.getElementById('output-box').classList.remove('hidden');
-        }
+  const engineSelect = document.getElementById('prompt-engine');
+  [...engineSelect.options].forEach(option => {
+    option.textContent = data.engines[option.value];
+  });
 
-        function copyPrompt() {
-            const text = document.getElementById('generated-text').innerText;
-            navigator.clipboard.writeText(text);
-        }
+  const purposeSelect = document.getElementById('prompt-purpose');
+  [...purposeSelect.options].forEach(option => {
+    option.textContent = data.purposes[option.value];
+  });
 
-        loadPage();
-    </script>
+  const stepsContainer = document.getElementById('how-to-steps');
+  stepsContainer.innerHTML = '';
+  data.steps.forEach((step, index) => {
+    const li = document.createElement('li');
+    li.className = 'flex gap-3';
+    li.innerHTML = `<span class="shrink-0 w-7 h-7 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 flex items-center justify-center text-xs font-bold">${index + 1}</span><span class="pt-1">${escapeHtml(step)}</span>`;
+    stepsContainer.appendChild(li);
+  });
+
+  const featuresContainer = document.getElementById('features-list');
+  featuresContainer.innerHTML = '';
+  data.featList.forEach(feature => {
+    const li = document.createElement('li');
+    li.className = 'flex gap-3';
+    li.innerHTML = `<span class="text-indigo-400 mt-0.5">✓</span><span>${escapeHtml(feature)}</span>`;
+    featuresContainer.appendChild(li);
+  });
+
+  document.getElementById('seo-content-body').innerHTML = data.seoBody;
+  renderFaq(data.faqs);
+}
+
+function renderFaq(faqs) {
+  const container = document.getElementById('faq-container');
+  container.innerHTML = '';
+
+  const schemaMainEntity = faqs.map(faq => ({
+    '@type': 'Question',
+    'name': faq.q,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': faq.a
+    }
+  }));
+
+  faqs.forEach((faq, index) => {
+    const item = document.createElement('div');
+    item.className = 'bg-gray-900/35 border border-gray-800 rounded-2xl overflow-hidden';
+
+    item.innerHTML = `
+      <button type="button"
+              class="w-full p-5 flex justify-between items-center gap-4 text-left"
+              aria-expanded="false"
+              aria-controls="faq-answer-${index}">
+        <span class="text-sm sm:text-base font-semibold text-white">${escapeHtml(faq.q)}</span>
+        <span class="faq-icon shrink-0 text-gray-500 transition-transform">+</span>
+      </button>
+      <div id="faq-answer-${index}" class="hidden px-5 pb-5">
+        <p class="text-sm text-gray-400 leading-7">${escapeHtml(faq.a)}</p>
+      </div>
+    `;
+
+    const button = item.querySelector('button');
+    const answer = item.querySelector(`#faq-answer-${index}`);
+    const icon = item.querySelector('.faq-icon');
+
+    button.addEventListener('click', () => {
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!isOpen));
+      answer.classList.toggle('hidden');
+      icon.textContent = isOpen ? '+' : '−';
+    });
+
+    container.appendChild(item);
+  });
+
+  document.getElementById('faq-schema').textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': schemaMainEntity
+  });
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+function buildTextPrompt(engine, purpose, idea, lang) {
+  const isTr = lang === 'tr';
+
+  const roleMap = {
+    general: isTr ? 'konu hakkında uzman bir danışman' : 'an expert consultant on the topic',
+    writing: isTr ? 'deneyimli bir editör ve metin yazarı' : 'an experienced editor and copywriter',
+    coding: isTr ? 'kıdemli bir yazılım geliştirici' : 'a senior software developer',
+    marketing: isTr ? 'stratejik bir dijital pazarlama uzmanı' : 'a strategic digital marketing specialist',
+    learning: isTr ? 'sabırlı ve sistemli bir eğitmen' : 'a patient and structured teacher',
+    image: isTr ? 'yaratıcı bir sanat yönetmeni' : 'a creative art director'
+  };
+
+  const purposeGuidance = {
+    general: isTr
+      ? 'Konuyu açık, doğru ve gereksiz tekrar yapmadan ele al.'
+      : 'Handle the topic clearly, accurately and without unnecessary repetition.',
+    writing: isTr
+      ? 'Ton, hedef kitle, yapı ve okunabilirliğe özellikle dikkat et.'
+      : 'Pay special attention to tone, audience, structure and readability.',
+    coding: isTr
+      ? 'Çalışan, okunabilir ve bakımı kolay bir çözüm üret; gerekli varsayımları açıkça belirt.'
+      : 'Produce a working, readable and maintainable solution, and state any necessary assumptions.',
+    marketing: isTr
+      ? 'Hedef kitle, mesaj, kanal, çağrı ve ölçülebilir hedefleri dikkate al.'
+      : 'Consider the audience, message, channel, call to action and measurable goals.',
+    learning: isTr
+      ? 'Konuyu basitten zora anlat, örnekler ver ve önemli noktaları özetle.'
+      : 'Explain from simple to advanced, include examples and summarize the key points.',
+    image: isTr
+      ? 'Görsel fikri net bir sahne, stil ve kompozisyon açıklamasına dönüştür.'
+      : 'Turn the visual idea into a clear scene, style and composition description.'
+  };
+
+  const platformHint = {
+    chatgpt: 'ChatGPT',
+    claude: 'Claude',
+    gemini: 'Gemini'
+  }[engine] || 'AI';
+
+  if (isTr) {
+    return `Rol:
+${roleMap[purpose]} olarak hareket et.
+
+Görev:
+${idea}
+
+Hedef:
+Kullanıcının isteğini doğru anlayarak uygulanabilir, açık ve yüksek kaliteli bir sonuç üret.
+
+Talimatlar:
+- ${purposeGuidance[purpose]}
+- Belirsiz noktalar varsa en makul varsayımları kısa şekilde belirt.
+- Gereksiz giriş cümlelerinden ve tekrarlardan kaçın.
+- Bilgiyi mantıklı başlıklar ve düzenli bölümler hâlinde sun.
+- Uygun olduğunda somut örnekler, kontrol listeleri veya adımlar ekle.
+- Gerçek dışı kesinliklerden kaçın ve önemli sınırlamaları belirt.
+
+Çıktı biçimi:
+1. Kısa sonuç veya özet
+2. Ana açıklama ya da çözüm
+3. Uygulanabilir adımlar
+4. Gerekirse örnek veya alternatifler
+
+Hedef platform:
+${platformHint}`;
+  }
+
+  return `Role:
+Act as ${roleMap[purpose]}.
+
+Task:
+${idea}
+
+Objective:
+Understand the request accurately and produce a clear, practical, high-quality result.
+
+Instructions:
+- ${purposeGuidance[purpose]}
+- If anything is unclear, briefly state the most reasonable assumptions.
+- Avoid unnecessary introductions and repetition.
+- Organize the response with useful headings and logical sections.
+- Add concrete examples, checklists or steps when helpful.
+- Avoid unsupported certainty and mention important limitations.
+
+Output format:
+1. Brief result or summary
+2. Main explanation or solution
+3. Actionable steps
+4. Examples or alternatives when useful
+
+Target platform:
+${platformHint}`;
+}
+
+function buildMidjourneyPrompt(idea, lang) {
+  if (lang === 'tr') {
+    return `${idea}, güçlü ana konu, dengeli kompozisyon, sinematik ışık, doğal gölgeler, yüksek ayrıntı, atmosferik derinlik, profesyonel renk düzenleme, net odak, görsel hikâye anlatımı --ar 16:9 --stylize 250`;
+  }
+
+  return `${idea}, strong focal subject, balanced composition, cinematic lighting, natural shadows, high detail, atmospheric depth, professional color grading, sharp focus, visual storytelling --ar 16:9 --stylize 250`;
+}
+
+function buildStablePrompt(idea, lang) {
+  if (lang === 'tr') {
+    return `Pozitif prompt:
+${idea}, yüksek ayrıntı, dengeli kompozisyon, doğal ışık, net odak, atmosferik derinlik, profesyonel renkler, temiz arka plan, tutarlı görsel stil
+
+Negatif prompt:
+bulanık, düşük çözünürlük, bozuk anatomi, fazladan uzuv, kötü eller, yazı, filigran, logo, aşırı doygunluk, sıkışmış kompozisyon, gürültü`;
+  }
+
+  return `Positive prompt:
+${idea}, high detail, balanced composition, natural lighting, sharp focus, atmospheric depth, professional color grading, clean background, consistent visual style
+
+Negative prompt:
+blurry, low resolution, distorted anatomy, extra limbs, bad hands, text, watermark, logo, oversaturated, cramped composition, noise`;
+}
+
+function generatePrompt() {
+  const engine = document.getElementById('prompt-engine').value;
+  const purpose = document.getElementById('prompt-purpose').value;
+  const idea = document.getElementById('user-idea').value.trim();
+  const data = localizations[currentLang];
+
+  hideStatus();
+
+  if (!idea) {
+    showStatus(data.emptyError, 'error');
+    document.getElementById('user-idea').focus();
+    return;
+  }
+
+  let result;
+  if (engine === 'midjourney') {
+    result = buildMidjourneyPrompt(idea, currentLang);
+  } else if (engine === 'stable') {
+    result = buildStablePrompt(idea, currentLang);
+  } else {
+    result = buildTextPrompt(engine, purpose, idea, currentLang);
+  }
+
+  document.getElementById('generated-text').textContent = result;
+  document.getElementById('output-box').classList.remove('hidden');
+  document.getElementById('output-box').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function showStatus(message, type) {
+  const box = document.getElementById('status-message');
+  box.textContent = message;
+  box.className = 'text-sm rounded-xl px-4 py-3';
+
+  if (type === 'error') {
+    box.classList.add('bg-red-500/10', 'border', 'border-red-500/20', 'text-red-300');
+  } else {
+    box.classList.add('bg-emerald-500/10', 'border', 'border-emerald-500/20', 'text-emerald-300');
+  }
+
+  box.classList.remove('hidden');
+}
+
+function hideStatus() {
+  document.getElementById('status-message').classList.add('hidden');
+}
+
+async function copyPrompt() {
+  const text = document.getElementById('generated-text').textContent;
+  if (!text) return;
+
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch (error) {
+    const temp = document.createElement('textarea');
+    temp.value = text;
+    temp.style.position = 'fixed';
+    temp.style.opacity = '0';
+    document.body.appendChild(temp);
+    temp.select();
+    document.execCommand('copy');
+    temp.remove();
+  }
+
+  showToast(localizations[currentLang].copied);
+}
+
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.classList.add('show');
+
+  clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(() => {
+    toast.classList.remove('show');
+  }, 1800);
+}
+
+function clearTool() {
+  document.getElementById('user-idea').value = '';
+  document.getElementById('generated-text').textContent = '';
+  document.getElementById('output-box').classList.add('hidden');
+  hideStatus();
+  updateCharCount();
+  document.getElementById('user-idea').focus();
+}
+
+function loadExample() {
+  const purpose = document.getElementById('prompt-purpose').value;
+  document.getElementById('user-idea').value = localizations[currentLang].examples[purpose];
+  updateCharCount();
+  document.getElementById('user-idea').focus();
+}
+
+function updateCharCount() {
+  document.getElementById('char-count').textContent = document.getElementById('user-idea').value.length;
+}
+
+function syncPurposeWithEngine() {
+  const engine = document.getElementById('prompt-engine').value;
+  if (engine === 'midjourney' || engine === 'stable') {
+    document.getElementById('prompt-purpose').value = 'image';
+  }
+}
+
+document.getElementById('btn-generate').addEventListener('click', generatePrompt);
+document.getElementById('btn-regenerate').addEventListener('click', generatePrompt);
+document.getElementById('btn-copy').addEventListener('click', copyPrompt);
+document.getElementById('btn-clear').addEventListener('click', clearTool);
+document.getElementById('btn-example').addEventListener('click', loadExample);
+document.getElementById('user-idea').addEventListener('input', updateCharCount);
+document.getElementById('prompt-engine').addEventListener('change', syncPurposeWithEngine);
+
+document.getElementById('user-idea').addEventListener('keydown', event => {
+  if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+    event.preventDefault();
+    generatePrompt();
+  }
+});
+
+renderPage(detectLanguage());
+updateCharCount();
+</script>
 </body>
 </html>
