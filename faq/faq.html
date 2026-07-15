@@ -9,39 +9,427 @@
 
   gtag('config', 'G-3NNQ6DL9K1');
 </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ - Toolcas</title>
+
+  <title>Frequently Asked Questions - Toolcas</title>
+
+  <meta
+    name="description"
+    content="Find answers to frequently asked questions about Toolcas, free online tools, privacy, accounts and supported devices."
+  >
+
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#030712">
+
+  <link rel="canonical" href="https://www.toolcas.com/faq/faq.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Frequently Asked Questions - Toolcas">
+  <meta
+    property="og:description"
+    content="Find answers to common questions about Toolcas tools, privacy and usage."
+  >
+  <meta property="og:url" content="https://www.toolcas.com/faq/faq.html">
+  <meta property="og:site_name" content="Toolcas">
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    const userLang = navigator.language || navigator.userLanguage;
-    if (userLang.startsWith('tr')) {
-      document.documentElement.lang = 'tr';
+
+  <style>
+    html {
+      scroll-behavior: smooth;
     }
+
+    body {
+      background-color: #030712;
+    }
+
+    ::selection {
+      background: rgba(6, 182, 212, 0.35);
+      color: #ffffff;
+    }
+
+    .faq-item[open] .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #22d3ee, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  </style>
+
+  <script type="application/ld+json" id="faq-schema">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Are Toolcas tools free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The core tools available on Toolcas are free to use."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to create an account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. You can use the available Toolcas tools without creating an account."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Many Toolcas utilities process data directly in your browser. Individual tool pages explain how each tool handles data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Toolcas work on mobile devices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Toolcas is designed to work on phones, tablets and desktop computers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which tools are available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Toolcas includes tools for coding, JSON validation, prompt generation, text summarization and text analysis."
+        }
+      }
+    ]
+  }
   </script>
 </head>
-<body class="bg-gray-950 text-white">
-  <nav class="border-b border-gray-800 bg-gray-900">
-    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-      <a href="../index.html" class="flex items-center gap-3">
-        <div class="w-9 h-9 bg-cyan-500 rounded-2xl flex items-center justify-center text-2xl font-bold">T</div>
-        <span class="text-3xl font-semibold">Toolcas</span>
-      </a>
-    </div>
-  </nav>
 
-  <div class="max-w-3xl mx-auto pt-20 px-6">
-    <h1 class="text-4xl font-bold mb-12">Frequently Asked Questions</h1>
-    <div class="space-y-8">
-      <div>
-        <h2 class="text-xl font-semibold mb-3">Are the tools free?</h2>
-        <p class="text-gray-400">Yes, core tools are completely free.</p>
-      </div>
-      <div>
-        <h2 class="text-xl font-semibold mb-3">Is my data private?</h2>
-        <p class="text-gray-400">Yes, everything runs in your browser.</p>
-      </div>
-    </div>
+<body class="bg-gray-950 text-white min-h-screen antialiased overflow-x-hidden">
+
+  <!-- Background effects -->
+  <div
+    aria-hidden="true"
+    class="fixed inset-0 pointer-events-none overflow-hidden opacity-20"
+  >
+    <div class="absolute -top-48 left-1/4 w-[520px] h-[520px] bg-cyan-600 rounded-full blur-[150px]"></div>
+    <div class="absolute top-10 right-[-180px] w-[450px] h-[450px] bg-indigo-600 rounded-full blur-[150px]"></div>
   </div>
+
+  <!-- Header -->
+  <header class="relative z-20 border-b border-gray-800/80 bg-gray-950/80 backdrop-blur-xl sticky top-0">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex justify-between items-center">
+
+      <a
+        href="../index.html"
+        class="flex items-center gap-3"
+        aria-label="Toolcas homepage"
+      >
+        <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-indigo-600 rounded-xl flex items-center justify-center text-lg font-black shadow-lg shadow-cyan-500/20">
+          T
+        </div>
+
+        <span class="text-2xl font-black tracking-tight gradient-text">
+          TOOLCAS
+        </span>
+      </a>
+
+      <nav class="flex items-center gap-4 sm:gap-7 text-sm font-medium text-gray-400">
+        <a
+          href="../index.html#tools"
+          class="hover:text-white transition-colors"
+          data-i18n="tools"
+        >
+          Tools
+        </a>
+
+        <a
+          href="../blog/index.html"
+          class="hover:text-white transition-colors"
+          data-i18n="blog"
+        >
+          Blog
+        </a>
+
+        <a
+          href="../privacy/index.html"
+          class="hidden sm:inline hover:text-white transition-colors"
+          data-i18n="privacy"
+        >
+          Privacy
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-20">
+
+    <!-- Breadcrumb -->
+    <nav
+      aria-label="Breadcrumb"
+      class="text-sm text-gray-500 mb-8"
+    >
+      <a
+        href="../index.html"
+        class="hover:text-cyan-400 transition-colors"
+        data-i18n="home"
+      >
+        Home
+      </a>
+
+      <span class="mx-2" aria-hidden="true">/</span>
+
+      <span class="text-gray-300" data-i18n="faqShort">
+        FAQ
+      </span>
+    </nav>
+
+    <!-- Hero -->
+    <section class="text-center max-w-3xl mx-auto mb-14">
+      <div class="inline-flex items-center px-4 py-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 text-cyan-300 text-sm font-semibold mb-6">
+        <span data-i18n="badge">Help center</span>
+      </div>
+
+      <h1
+        class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight"
+        data-i18n="title"
+      >
+        Frequently Asked Questions
+      </h1>
+
+      <p
+        class="text-gray-400 text-base sm:text-lg leading-7 mt-5 max-w-2xl mx-auto"
+        data-i18n="description"
+      >
+        Find quick answers about Toolcas tools, privacy, accounts and supported devices.
+      </p>
+    </section>
+
+    <!-- FAQ list -->
+    <section class="space-y-4" aria-labelledby="faq-heading">
+
+      <h2 id="faq-heading" class="sr-only">
+        Toolcas frequently asked questions
+      </h2>
+
+      <details class="faq-item group rounded-2xl border border-gray-800 bg-gray-900/50 p-5 sm:p-6 backdrop-blur-sm">
+        <summary class="cursor-pointer list-none flex justify-between items-center gap-5">
+          <span class="text-base sm:text-lg font-semibold" data-i18n="q1">
+            Are Toolcas tools free?
+          </span>
+
+          <span class="faq-icon text-2xl text-cyan-400 transition-transform" aria-hidden="true">
+            +
+          </span>
+        </summary>
+
+        <p class="text-gray-400 leading-7 mt-4 pr-8" data-i18n="a1">
+          Yes. The core tools available on Toolcas are free to use.
+        </p>
+      </details>
+
+      <details class="faq-item group rounded-2xl border border-gray-800 bg-gray-900/50 p-5 sm:p-6 backdrop-blur-sm">
+        <summary class="cursor-pointer list-none flex justify-between items-center gap-5">
+          <span class="text-base sm:text-lg font-semibold" data-i18n="q2">
+            Do I need to create an account?
+          </span>
+
+          <span class="faq-icon text-2xl text-cyan-400 transition-transform" aria-hidden="true">
+            +
+          </span>
+        </summary>
+
+        <p class="text-gray-400 leading-7 mt-4 pr-8" data-i18n="a2">
+          No. You can use the available Toolcas tools without creating an account.
+        </p>
+      </details>
+
+      <details class="faq-item group rounded-2xl border border-gray-800 bg-gray-900/50 p-5 sm:p-6 backdrop-blur-sm">
+        <summary class="cursor-pointer list-none flex justify-between items-center gap-5">
+          <span class="text-base sm:text-lg font-semibold" data-i18n="q3">
+            Is my data private?
+          </span>
+
+          <span class="faq-icon text-2xl text-cyan-400 transition-transform" aria-hidden="true">
+            +
+          </span>
+        </summary>
+
+        <p class="text-gray-400 leading-7 mt-4 pr-8" data-i18n="a3">
+          Many Toolcas utilities process data directly in your browser. Individual tool pages explain how each tool handles data.
+        </p>
+      </details>
+
+      <details class="faq-item group rounded-2xl border border-gray-800 bg-gray-900/50 p-5 sm:p-6 backdrop-blur-sm">
+        <summary class="cursor-pointer list-none flex justify-between items-center gap-5">
+          <span class="text-base sm:text-lg font-semibold" data-i18n="q4">
+            Does Toolcas work on mobile devices?
+          </span>
+
+          <span class="faq-icon text-2xl text-cyan-400 transition-transform" aria-hidden="true">
+            +
+          </span>
+        </summary>
+
+        <p class="text-gray-400 leading-7 mt-4 pr-8" data-i18n="a4">
+          Yes. Toolcas is designed to work on phones, tablets and desktop computers.
+        </p>
+      </details>
+
+      <details class="faq-item group rounded-2xl border border-gray-800 bg-gray-900/50 p-5 sm:p-6 backdrop-blur-sm">
+        <summary class="cursor-pointer list-none flex justify-between items-center gap-5">
+          <span class="text-base sm:text-lg font-semibold" data-i18n="q5">
+            Which tools are available?
+          </span>
+
+          <span class="faq-icon text-2xl text-cyan-400 transition-transform" aria-hidden="true">
+            +
+          </span>
+        </summary>
+
+        <p class="text-gray-400 leading-7 mt-4 pr-8" data-i18n="a5">
+          Toolcas includes tools for coding, JSON validation, prompt generation, text summarization and text analysis.
+        </p>
+      </details>
+    </section>
+
+    <!-- CTA -->
+    <section class="mt-14 rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-950/60 to-indigo-950/50 p-7 sm:p-10 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold" data-i18n="ctaTitle">
+        Ready to try the tools?
+      </h2>
+
+      <p class="text-gray-400 mt-3" data-i18n="ctaDescription">
+        Visit the Toolcas tool library and start using a tool immediately.
+      </p>
+
+      <a
+        href="../index.html#tools"
+        class="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-gray-950 font-bold transition-colors"
+      >
+        <span data-i18n="ctaButton">Explore tools</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-gray-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row justify-between gap-5 text-sm text-gray-500">
+      <p>
+        © <span id="year"></span> Toolcas.
+        <span data-i18n="rights">All rights reserved.</span>
+      </p>
+
+      <nav class="flex flex-wrap gap-5">
+        <a href="../privacy/index.html" class="hover:text-white transition-colors" data-i18n="privacy">
+          Privacy
+        </a>
+
+        <a href="../terms/index.html" class="hover:text-white transition-colors" data-i18n="terms">
+          Terms
+        </a>
+
+        <a href="../blog/index.html" class="hover:text-white transition-colors" data-i18n="blog">
+          Blog
+        </a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        pageTitle: 'Frequently Asked Questions - Toolcas',
+        pageDescription: 'Find answers to frequently asked questions about Toolcas, free online tools, privacy, accounts and supported devices.',
+        tools: 'Tools',
+        blog: 'Blog',
+        privacy: 'Privacy',
+        terms: 'Terms',
+        home: 'Home',
+        faqShort: 'FAQ',
+        badge: 'Help center',
+        title: 'Frequently Asked Questions',
+        description: 'Find quick answers about Toolcas tools, privacy, accounts and supported devices.',
+        q1: 'Are Toolcas tools free?',
+        a1: 'Yes. The core tools available on Toolcas are free to use.',
+        q2: 'Do I need to create an account?',
+        a2: 'No. You can use the available Toolcas tools without creating an account.',
+        q3: 'Is my data private?',
+        a3: 'Many Toolcas utilities process data directly in your browser. Individual tool pages explain how each tool handles data.',
+        q4: 'Does Toolcas work on mobile devices?',
+        a4: 'Yes. Toolcas is designed to work on phones, tablets and desktop computers.',
+        q5: 'Which tools are available?',
+        a5: 'Toolcas includes tools for coding, JSON validation, prompt generation, text summarization and text analysis.',
+        ctaTitle: 'Ready to try the tools?',
+        ctaDescription: 'Visit the Toolcas tool library and start using a tool immediately.',
+        ctaButton: 'Explore tools',
+        rights: 'All rights reserved.'
+      },
+
+      tr: {
+        pageTitle: 'Sıkça Sorulan Sorular - Toolcas',
+        pageDescription: 'Toolcas, ücretsiz çevrim içi araçlar, gizlilik, üyelik ve desteklenen cihazlar hakkında sıkça sorulan soruların cevaplarını bulun.',
+        tools: 'Araçlar',
+        blog: 'Blog',
+        privacy: 'Gizlilik',
+        terms: 'Kullanım Koşulları',
+        home: 'Ana Sayfa',
+        faqShort: 'SSS',
+        badge: 'Yardım merkezi',
+        title: 'Sıkça Sorulan Sorular',
+        description: 'Toolcas araçları, gizlilik, üyelik ve desteklenen cihazlarla ilgili hızlı cevapları bulun.',
+        q1: 'Toolcas araçları ücretsiz mi?',
+        a1: 'Evet. Toolcas üzerinde bulunan temel araçlar ücretsiz olarak kullanılabilir.',
+        q2: 'Hesap oluşturmam gerekiyor mu?',
+        a2: 'Hayır. Mevcut Toolcas araçlarını hesap oluşturmadan kullanabilirsiniz.',
+        q3: 'Verilerim gizli mi?',
+        a3: 'Birçok Toolcas aracı verileri doğrudan tarayıcınızda işler. Her aracın verileri nasıl kullandığı ilgili araç sayfasında açıklanır.',
+        q4: 'Toolcas mobil cihazlarda çalışıyor mu?',
+        a4: 'Evet. Toolcas telefon, tablet ve masaüstü bilgisayarlarda çalışacak şekilde tasarlanmıştır.',
+        q5: 'Hangi araçlar bulunuyor?',
+        a5: 'Toolcas üzerinde kodlama, JSON doğrulama, prompt oluşturma, metin özetleme ve metin analizi araçları bulunur.',
+        ctaTitle: 'Araçları denemeye hazır mısınız?',
+        ctaDescription: 'Toolcas araç kütüphanesini ziyaret edin ve istediğiniz aracı hemen kullanmaya başlayın.',
+        ctaButton: 'Araçları keşfet',
+        rights: 'Tüm hakları saklıdır.'
+      }
+    };
+
+    const browserLanguage = (
+      navigator.languages && navigator.languages.length
+        ? navigator.languages[0]
+        : navigator.language
+    ).toLowerCase();
+
+    const currentLanguage = browserLanguage.startsWith('tr') ? 'tr' : 'en';
+    const languageData = translations[currentLanguage];
+
+    document.documentElement.lang = currentLanguage;
+    document.title = languageData.pageTitle;
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+
+    if (metaDescription) {
+      metaDescription.setAttribute('content', languageData.pageDescription);
+    }
+
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.dataset.i18n;
+
+      if (languageData[key]) {
+        element.textContent = languageData[key];
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
