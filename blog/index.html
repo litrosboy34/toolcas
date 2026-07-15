@@ -9,38 +9,563 @@
 
   gtag('config', 'G-3NNQ6DL9K1');
 </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - Toolcas</title>
+
+  <title>Toolcas Blog - AI, Coding and Productivity Guides</title>
+
+  <meta
+    name="description"
+    content="Explore Toolcas guides about artificial intelligence, coding, prompt engineering, SEO, text summarization and productivity."
+  >
+
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#030712">
+
+  <link rel="canonical" href="https://www.toolcas.com/blog/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Toolcas Blog">
+  <meta
+    property="og:description"
+    content="Guides about artificial intelligence, coding, SEO and productivity."
+  >
+  <meta property="og:url" content="https://www.toolcas.com/blog/">
+  <meta property="og:site_name" content="Toolcas">
+
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #030712;
+    }
+
+    ::selection {
+      background: rgba(6, 182, 212, 0.35);
+      color: #ffffff;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #22d3ee, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .article-card {
+      content-visibility: auto;
+      contain-intrinsic-size: 220px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Toolcas Blog",
+    "url": "https://www.toolcas.com/blog/",
+    "description": "Guides about artificial intelligence, coding, SEO and productivity.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Toolcas",
+      "url": "https://www.toolcas.com/"
+    }
+  }
+  </script>
 </head>
-<body class="bg-gray-950 text-white">
 
-  <!-- Nav -->
-  <nav class="border-b border-gray-800 bg-gray-900">
-    <div class="max-w-4xl mx-auto px-6 py-5 flex justify-between items-center">
-      <a href="index.html" class="flex items-center gap-3">
-        <div class="w-9 h-9 bg-cyan-500 rounded-2xl flex items-center justify-center text-2xl font-bold">T</div>
-        <span class="text-3xl font-semibold">Toolcas</span>
+<body class="bg-gray-950 text-white min-h-screen antialiased overflow-x-hidden">
+
+  <!-- Background -->
+  <div
+    aria-hidden="true"
+    class="fixed inset-0 pointer-events-none overflow-hidden opacity-20"
+  >
+    <div class="absolute -top-52 left-[15%] w-[600px] h-[600px] bg-cyan-600 rounded-full blur-[160px]"></div>
+    <div class="absolute top-0 right-[-220px] w-[500px] h-[500px] bg-indigo-600 rounded-full blur-[160px]"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="relative z-20 border-b border-gray-800/80 bg-gray-950/80 backdrop-blur-xl sticky top-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+
+      <a
+        href="../index.html"
+        class="flex items-center gap-3"
+        aria-label="Toolcas homepage"
+      >
+        <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-indigo-600 rounded-xl flex items-center justify-center text-lg font-black shadow-lg shadow-cyan-500/20">
+          T
+        </div>
+
+        <span class="text-2xl font-black tracking-tight gradient-text">
+          TOOLCAS
+        </span>
       </a>
-    </div>
-  </nav>
 
-  <!-- Main Content -->
-  <main class="max-w-4xl mx-auto pt-16 px-6">
-    <h1 class="text-4xl font-bold mb-8">Blog</h1>
-    
-    <!-- Link Listesi (Tasarımı bozmaz, saf metin linkleri) -->
-    <div class="flex flex-col gap-4">
-      <a href="ai-asset-creation.html" class="text-gray-300 hover:text-cyan-400 transition-colors text-lg">AI Asset Creation Guide</a>
-      <a href="how-ai-background-removers-work.html" class="text-gray-300 hover:text-cyan-400 transition-colors text-lg">How AI Background Removers Work</a>
-      <a href="prompt-engineering-guide.html" class="text-gray-300 hover:text-cyan-400 transition-colors text-lg">Prompt Engineering Guide</a>
-      <a href="clean-code-benefits.html" class="text-gray-300 hover:text-cyan-400 transition-colors text-lg">Benefits of Clean Code</a>
-      <a href="importance-of-text-summarization.html" class="text-gray-300 hover:text-cyan-400 transition-colors text-lg">Importance of Text Summarization</a>
-      <a href="structured-data-seo.html" class="text-gray-300 hover:text-cyan-400 transition-colors text-lg">Structured Data & SEO</a>
-      <a href="word-count-seo-impact.html" class="text-gray-300 hover:text-cyan-400 transition-colors text-lg">Word Count & SEO Impact</a>
+      <nav
+        class="flex items-center gap-4 sm:gap-7 text-sm font-medium text-gray-400"
+        aria-label="Main navigation"
+      >
+        <a
+          href="../index.html"
+          class="hover:text-white transition-colors"
+          data-i18n="home"
+        >
+          Home
+        </a>
+
+        <a
+          href="../index.html#tools"
+          class="hover:text-white transition-colors"
+          data-i18n="tools"
+        >
+          Tools
+        </a>
+
+        <a
+          href="../faq/faq.html"
+          class="hidden sm:inline hover:text-white transition-colors"
+          data-i18n="faq"
+        >
+          FAQ
+        </a>
+      </nav>
     </div>
+  </header>
+
+  <!-- Main -->
+  <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-24">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="text-sm text-gray-500 mb-8">
+      <a
+        href="../index.html"
+        class="hover:text-cyan-400 transition-colors"
+        data-i18n="home"
+      >
+        Home
+      </a>
+
+      <span class="mx-2" aria-hidden="true">/</span>
+
+      <span class="text-gray-300">Blog</span>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-4xl mb-14 sm:mb-20">
+      <div class="inline-flex items-center px-4 py-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 text-cyan-300 text-sm font-semibold mb-6">
+        <span data-i18n="badge">Guides and insights</span>
+      </div>
+
+      <h1
+        class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight"
+        data-i18n="title"
+      >
+        Learn, build and work smarter
+      </h1>
+
+      <p
+        class="text-gray-400 text-base sm:text-xl leading-8 mt-5 max-w-3xl"
+        data-i18n="description"
+      >
+        Practical guides about artificial intelligence, coding, SEO, writing and online productivity.
+      </p>
+    </section>
+
+    <!-- Search -->
+    <section class="mb-9">
+      <label for="article-search" class="sr-only" data-i18n="searchLabel">
+        Search articles
+      </label>
+
+      <div class="relative max-w-xl">
+        <span
+          class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"
+          aria-hidden="true"
+        >
+          🔎
+        </span>
+
+        <input
+          id="article-search"
+          type="search"
+          autocomplete="off"
+          placeholder="Search articles..."
+          class="w-full bg-gray-900/70 border border-gray-800 rounded-xl py-3.5 pl-11 pr-4 text-sm text-white placeholder:text-gray-500 outline-none focus:border-cyan-500 focus:ring-4 focus:ring-cyan-500/10 transition"
+        >
+      </div>
+    </section>
+
+    <!-- Articles -->
+    <section aria-labelledby="articles-title">
+      <h2 id="articles-title" class="sr-only">
+        Blog articles
+      </h2>
+
+      <div
+        id="article-grid"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
+      ></div>
+
+      <p
+        id="no-results"
+        class="hidden text-center text-gray-400 py-16"
+        data-i18n="noResults"
+      >
+        No matching articles were found.
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="mt-20 rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-950/60 to-indigo-950/50 p-7 sm:p-12 text-center">
+      <h2
+        class="text-2xl sm:text-4xl font-bold"
+        data-i18n="ctaTitle"
+      >
+        Put what you learn into practice
+      </h2>
+
+      <p
+        class="text-gray-400 mt-4 max-w-2xl mx-auto leading-7"
+        data-i18n="ctaDescription"
+      >
+        Explore the Toolcas library and use free online tools for your next task.
+      </p>
+
+      <a
+        href="../index.html#tools"
+        class="inline-flex items-center gap-2 mt-7 px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-gray-950 font-bold transition-colors"
+      >
+        <span data-i18n="ctaButton">Explore tools</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </section>
   </main>
 
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-gray-800/80 bg-gray-950/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-9">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 text-sm text-gray-500">
+
+        <p>
+          © <span id="current-year"></span> Toolcas.
+          <span data-i18n="rights">All rights reserved.</span>
+        </p>
+
+        <nav class="flex flex-wrap gap-5">
+          <a
+            href="../faq/faq.html"
+            class="hover:text-white transition-colors"
+            data-i18n="faq"
+          >
+            FAQ
+          </a>
+
+          <a
+            href="../privacy/index.html"
+            class="hover:text-white transition-colors"
+            data-i18n="privacy"
+          >
+            Privacy
+          </a>
+
+          <a
+            href="../terms/index.html"
+            class="hover:text-white transition-colors"
+            data-i18n="terms"
+          >
+            Terms
+          </a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        pageTitle: 'Toolcas Blog - AI, Coding and Productivity Guides',
+        pageDescription: 'Explore Toolcas guides about artificial intelligence, coding, prompt engineering, SEO, text summarization and productivity.',
+        home: 'Home',
+        tools: 'Tools',
+        faq: 'FAQ',
+        privacy: 'Privacy',
+        terms: 'Terms',
+        badge: 'Guides and insights',
+        title: 'Learn, build and work smarter',
+        description: 'Practical guides about artificial intelligence, coding, SEO, writing and online productivity.',
+        searchLabel: 'Search articles',
+        searchPlaceholder: 'Search articles...',
+        readArticle: 'Read article',
+        noResults: 'No matching articles were found.',
+        ctaTitle: 'Put what you learn into practice',
+        ctaDescription: 'Explore the Toolcas library and use free online tools for your next task.',
+        ctaButton: 'Explore tools',
+        rights: 'All rights reserved.',
+        categories: {
+          ai: 'Artificial Intelligence',
+          coding: 'Coding',
+          seo: 'SEO',
+          writing: 'Writing'
+        },
+        articles: {
+          assetCreation: {
+            title: 'AI Asset Creation Guide',
+            description: 'Learn how AI can help create visual, written and digital assets.'
+          },
+          backgroundRemovers: {
+            title: 'How AI Background Removers Work',
+            description: 'Discover how AI identifies subjects and removes image backgrounds.'
+          },
+          promptEngineering: {
+            title: 'Prompt Engineering Guide',
+            description: 'Write clearer prompts and get more useful results from AI systems.'
+          },
+          cleanCode: {
+            title: 'Benefits of Clean Code',
+            description: 'Understand why readable and maintainable code matters.'
+          },
+          summarization: {
+            title: 'Importance of Text Summarization',
+            description: 'See how summaries make long information easier to understand.'
+          },
+          structuredData: {
+            title: 'Structured Data and SEO',
+            description: 'Learn how structured data helps search engines understand pages.'
+          },
+          wordCount: {
+            title: 'Word Count and SEO Impact',
+            description: 'Explore the relationship between content length, quality and SEO.'
+          }
+        }
+      },
+
+      tr: {
+        pageTitle: 'Toolcas Blog - Yapay Zekâ, Yazılım ve SEO Rehberleri',
+        pageDescription: 'Yapay zekâ, yazılım, prompt mühendisliği, SEO, metin özetleme ve üretkenlik hakkında Toolcas rehberlerini keşfedin.',
+        home: 'Ana Sayfa',
+        tools: 'Araçlar',
+        faq: 'SSS',
+        privacy: 'Gizlilik',
+        terms: 'Kullanım Koşulları',
+        badge: 'Rehberler ve bilgiler',
+        title: 'Öğrenin, üretin ve daha akıllı çalışın',
+        description: 'Yapay zekâ, yazılım, SEO, yazı yazma ve çevrim içi üretkenlik hakkında pratik rehberler.',
+        searchLabel: 'Yazılarda ara',
+        searchPlaceholder: 'Yazılarda ara...',
+        readArticle: 'Yazıyı oku',
+        noResults: 'Aramanızla eşleşen bir yazı bulunamadı.',
+        ctaTitle: 'Öğrendiklerinizi uygulamaya dönüştürün',
+        ctaDescription: 'Toolcas araç kütüphanesini keşfedin ve bir sonraki işiniz için ücretsiz araçları kullanın.',
+        ctaButton: 'Araçları keşfet',
+        rights: 'Tüm hakları saklıdır.',
+        categories: {
+          ai: 'Yapay Zekâ',
+          coding: 'Yazılım',
+          seo: 'SEO',
+          writing: 'Yazı'
+        },
+        articles: {
+          assetCreation: {
+            title: 'Yapay Zekâ ile Dijital İçerik Oluşturma Rehberi',
+            description: 'Yapay zekânın görsel, yazılı ve dijital içerikler üretmenize nasıl yardımcı olabileceğini öğrenin.'
+          },
+          backgroundRemovers: {
+            title: 'Yapay Zekâ Arka Plan Siliciler Nasıl Çalışır?',
+            description: 'Yapay zekânın nesneleri nasıl algıladığını ve görsel arka planlarını nasıl kaldırdığını keşfedin.'
+          },
+          promptEngineering: {
+            title: 'Prompt Mühendisliği Rehberi',
+            description: 'Daha açık komutlar yazın ve yapay zekâ sistemlerinden daha yararlı sonuçlar alın.'
+          },
+          cleanCode: {
+            title: 'Temiz Kodun Faydaları',
+            description: 'Okunabilir ve sürdürülebilir kod yazmanın neden önemli olduğunu öğrenin.'
+          },
+          summarization: {
+            title: 'Metin Özetlemenin Önemi',
+            description: 'Özetlerin uzun bilgileri anlamayı nasıl kolaylaştırdığını keşfedin.'
+          },
+          structuredData: {
+            title: 'Yapılandırılmış Veri ve SEO',
+            description: 'Yapılandırılmış verinin arama motorlarının sayfaları anlamasına nasıl yardımcı olduğunu öğrenin.'
+          },
+          wordCount: {
+            title: 'Kelime Sayısının SEO Üzerindeki Etkisi',
+            description: 'İçerik uzunluğu, kalite ve SEO arasındaki ilişkiyi keşfedin.'
+          }
+        }
+      }
+    };
+
+    const articles = [
+      {
+        key: 'assetCreation',
+        slug: 'ai-asset-creation.html',
+        category: 'ai',
+        icon: '🎨'
+      },
+      {
+        key: 'backgroundRemovers',
+        slug: 'how-ai-background-removers-work.html',
+        category: 'ai',
+        icon: '🖼️'
+      },
+      {
+        key: 'promptEngineering',
+        slug: 'prompt-engineering-guide.html',
+        category: 'ai',
+        icon: '⚡'
+      },
+      {
+        key: 'cleanCode',
+        slug: 'clean-code-benefits.html',
+        category: 'coding',
+        icon: '💻'
+      },
+      {
+        key: 'summarization',
+        slug: 'importance-of-text-summarization.html',
+        category: 'writing',
+        icon: '📝'
+      },
+      {
+        key: 'structuredData',
+        slug: 'structured-data-seo.html',
+        category: 'seo',
+        icon: '🔎'
+      },
+      {
+        key: 'wordCount',
+        slug: 'word-count-seo-impact.html',
+        category: 'seo',
+        icon: '📊'
+      }
+    ];
+
+    function detectLanguage() {
+      const languages = navigator.languages && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language || 'en'];
+
+      return languages.some(language =>
+        String(language).toLowerCase().startsWith('tr')
+      ) ? 'tr' : 'en';
+    }
+
+    const currentLanguage = detectLanguage();
+    const languageData = translations[currentLanguage];
+
+    document.documentElement.lang = currentLanguage;
+    document.title = languageData.pageTitle;
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+
+    if (metaDescription) {
+      metaDescription.setAttribute('content', languageData.pageDescription);
+    }
+
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.dataset.i18n;
+
+      if (languageData[key]) {
+        element.textContent = languageData[key];
+      }
+    });
+
+    const articleGrid = document.getElementById('article-grid');
+    const articleSearch = document.getElementById('article-search');
+    const noResults = document.getElementById('no-results');
+
+    articleSearch.placeholder = languageData.searchPlaceholder;
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    function renderArticles(searchTerm = '') {
+      const normalizedSearch = searchTerm
+        .trim()
+        .toLocaleLowerCase(currentLanguage);
+
+      const filteredArticles = articles.filter(article => {
+        const translatedArticle = languageData.articles[article.key];
+        const category = languageData.categories[article.category];
+
+        const searchableText = [
+          translatedArticle.title,
+          translatedArticle.description,
+          category
+        ].join(' ').toLocaleLowerCase(currentLanguage);
+
+        return searchableText.includes(normalizedSearch);
+      });
+
+      articleGrid.innerHTML = filteredArticles.map(article => {
+        const translatedArticle = languageData.articles[article.key];
+        const category = languageData.categories[article.category];
+
+        return `
+          <article class="article-card group rounded-2xl border border-gray-800 bg-gray-900/50 hover:bg-gray-900/80 hover:border-cyan-500/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+            <a
+              href="${escapeHtml(article.slug)}"
+              class="block h-full p-6 sm:p-7"
+            >
+              <div class="flex justify-between items-start gap-4">
+                <div class="w-12 h-12 rounded-xl border border-gray-700 bg-gray-800/80 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                  ${escapeHtml(article.icon)}
+                </div>
+
+                <span class="text-gray-600 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all text-xl" aria-hidden="true">
+                  →
+                </span>
+              </div>
+
+              <div class="mt-6">
+                <span class="text-xs uppercase tracking-widest font-bold text-cyan-400">
+                  ${escapeHtml(category)}
+                </span>
+
+                <h2 class="text-xl font-bold mt-3 text-white group-hover:text-cyan-300 transition-colors">
+                  ${escapeHtml(translatedArticle.title)}
+                </h2>
+
+                <p class="text-sm text-gray-400 leading-6 mt-3">
+                  ${escapeHtml(translatedArticle.description)}
+                </p>
+
+                <span class="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-gray-300 group-hover:text-white">
+                  ${escapeHtml(languageData.readArticle)}
+                  <span aria-hidden="true">→</span>
+                </span>
+              </div>
+            </a>
+          </article>
+        `;
+      }).join('');
+
+      noResults.classList.toggle('hidden', filteredArticles.length !== 0);
+    }
+
+    renderArticles();
+
+    articleSearch.addEventListener('input', event => {
+      renderArticles(event.target.value);
+    });
+
+    document.getElementById('current-year').textContent =
+      new Date().getFullYear();
+  </script>
 </body>
 </html>
