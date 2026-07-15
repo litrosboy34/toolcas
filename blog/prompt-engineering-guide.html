@@ -9,128 +9,1776 @@
 
   gtag('config', 'G-3NNQ6DL9K1');
 </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Ultimate Guide to Prompt Engineering - Toolcas</title>
+
+    <title>The Ultimate Guide to Prompt Engineering in 2026 - Toolcas</title>
+
+    <meta
+        name="description"
+        content="Learn the fundamentals of prompt engineering, including context, roles, constraints, examples and practical techniques for getting better AI responses."
+    >
+
+    <meta
+        name="robots"
+        content="index, follow, max-image-preview:large"
+    >
+
+    <meta name="author" content="Toolcas Editorial">
+    <meta name="theme-color" content="#0b0f19">
+
+    <link
+        rel="canonical"
+        href="https://www.toolcas.com/blog/prompt-engineering-guide.html"
+    >
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+
+    <meta
+        property="og:title"
+        content="The Ultimate Guide to Prompt Engineering in 2026"
+    >
+
+    <meta
+        property="og:description"
+        content="A practical guide to writing clearer prompts, defining constraints and getting more useful results from generative AI tools."
+    >
+
+    <meta
+        property="og:url"
+        content="https://www.toolcas.com/blog/prompt-engineering-guide.html"
+    >
+
+    <meta property="og:site_name" content="Toolcas">
+
+    <meta
+        property="article:published_time"
+        content="2026-07-12T09:00:00+03:00"
+    >
+
+    <meta
+        property="article:modified_time"
+        content="2026-07-16T01:00:00+03:00"
+    >
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="The Ultimate Guide to Prompt Engineering in 2026"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Learn practical prompt engineering techniques for clearer and more useful AI responses."
+    >
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        toolcas: {
+                            dark: '#0b0f19',
+                            panel: '#111827',
+                            purple: '#a855f7',
+                            indigo: '#6366f1'
+                        }
+                    },
+                    boxShadow: {
+                        glow: '0 0 45px rgba(168, 85, 247, 0.12)'
+                    }
+                }
+            }
+        };
+    </script>
+
     <style>
-        .glow-bg { background-color: #0b0f19; }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0b0f19;
+        }
+
+        ::selection {
+            background: rgba(168, 85, 247, 0.4);
+            color: #ffffff;
+        }
+
+        .glow-bg {
+            background-color: #0b0f19;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                #818cf8,
+                #c084fc,
+                #67e8f9
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .article-content p {
+            margin-top: 1.25rem;
+        }
+
+        .article-content h2 {
+            margin-top: 2.75rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+
+        .article-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+            font-size: 1.2rem;
+            line-height: 1.75rem;
+            font-weight: 700;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-top: 1.25rem;
+            padding-left: 1.4rem;
+        }
+
+        .article-content ul {
+            list-style-type: disc;
+        }
+
+        .article-content ol {
+            list-style-type: decimal;
+        }
+
+        .article-content li {
+            margin-top: 0.65rem;
+        }
+
+        .article-content strong {
+            color: #f3f4f6;
+            font-weight: 700;
+        }
+
+        .article-content code {
+            border: 1px solid rgba(107, 114, 128, 0.25);
+            border-radius: 0.4rem;
+            background: rgba(17, 24, 39, 0.9);
+            padding: 0.1rem 0.4rem;
+            color: #d8b4fe;
+            font-size: 0.9em;
+        }
+
+        .article-content blockquote {
+            margin-top: 2rem;
+            padding: 1.25rem 1.5rem;
+            border-left: 4px solid #a855f7;
+            border-radius: 0 1rem 1rem 0;
+            background: rgba(168, 85, 247, 0.08);
+            color: #d1d5db;
+        }
+
+        .prompt-card {
+            margin-top: 1.5rem;
+            border: 1px solid rgba(75, 85, 99, 0.8);
+            border-radius: 1rem;
+            background: rgba(17, 24, 39, 0.72);
+            padding: 1.25rem;
+        }
+
+        .prompt-card-title {
+            display: block;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .skip-link {
+            position: fixed;
+            top: -100px;
+            left: 16px;
+            z-index: 9999;
+            padding: 10px 16px;
+            border-radius: 10px;
+            background: #ffffff;
+            color: #111827;
+            font-weight: 700;
+            transition: top 0.2s ease;
+        }
+
+        .skip-link:focus {
+            top: 16px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
-    <!-- Article Schema -->
+
+    <!-- Blog Article Schema -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "The Ultimate Guide to Prompt Engineering in 2026",
-      "datePublished": "2026-07-12T09:00:00+03:00",
-      "dateModified": "2026-07-12T09:00:00+03:00",
-      "author": [{
-          "@type": "Organization",
-          "name": "Toolcas Editorial",
-          "url": "https://toolcas.com"
-        }]
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "The Ultimate Guide to Prompt Engineering in 2026",
+        "description": "Learn the fundamentals of prompt engineering, including context, roles, constraints, examples and practical techniques for getting better AI responses.",
+        "datePublished": "2026-07-12T09:00:00+03:00",
+        "dateModified": "2026-07-16T01:00:00+03:00",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.toolcas.com/blog/prompt-engineering-guide.html"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Toolcas Editorial",
+            "url": "https://www.toolcas.com/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Toolcas",
+            "url": "https://www.toolcas.com/"
+        },
+        "isPartOf": {
+            "@type": "Blog",
+            "name": "Toolcas Blog",
+            "url": "https://www.toolcas.com/blog/"
+        },
+        "keywords": [
+            "prompt engineering",
+            "AI prompts",
+            "generative AI",
+            "ChatGPT prompts",
+            "prompt writing"
+        ],
+        "inLanguage": "en"
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.toolcas.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://www.toolcas.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Prompt Engineering Guide",
+                "item": "https://www.toolcas.com/blog/prompt-engineering-guide.html"
+            }
+        ]
     }
     </script>
 </head>
-<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen">
 
-    <!-- Arka Plan Modern Blur Efekti -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[400px] pointer-events-none overflow-hidden opacity-20 z-0">
-        <div class="absolute top-[-10%] left-[40%] w-[450px] h-[450px] bg-purple-600 rounded-full blur-[130px]"></div>
+<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen overflow-x-hidden">
+
+    <a
+        href="#main-content"
+        class="skip-link"
+        data-i18n="skipContent"
+    >
+        Skip to content
+    </a>
+
+    <!-- Background Effects -->
+    <div
+        aria-hidden="true"
+        class="fixed inset-0 pointer-events-none overflow-hidden opacity-20 z-0"
+    >
+        <div class="absolute top-[-230px] left-[20%] md:left-[38%] w-[620px] h-[620px] bg-purple-600 rounded-full blur-[170px]"></div>
+
+        <div class="absolute top-[450px] right-[-260px] w-[520px] h-[520px] bg-indigo-700 rounded-full blur-[180px] opacity-40"></div>
+
+        <div class="absolute top-[1300px] left-[-260px] w-[520px] h-[520px] bg-cyan-700 rounded-full blur-[180px] opacity-25"></div>
     </div>
 
-    <!-- Üst Menü (Navbar) -->
-    <header class="relative z-10 border-b border-gray-800/80 bg-[#0b0f19]/70 backdrop-blur-md sticky top-0">
+    <!-- Header -->
+    <header class="relative z-50 border-b border-gray-800/80 bg-[#0b0f19]/80 backdrop-blur-xl sticky top-0">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="../index.html" class="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                TOOLCAS
+
+            <a
+                href="../index.html"
+                class="flex items-center gap-3"
+                aria-label="Toolcas homepage"
+            >
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-purple-500/20">
+
+                    <span
+                        class="text-white font-black text-lg"
+                        aria-hidden="true"
+                    >
+                        T
+                    </span>
+                </div>
+
+                <span class="text-2xl font-black tracking-tight gradient-text">
+                    TOOLCAS
+                </span>
             </a>
-            <nav class="space-x-6 text-sm font-medium text-gray-400">
-                <a href="../index.html" id="nav-home" class="hover:text-white transition-colors">Home</a>
-                <a href="../index.html#blog" id="nav-blog" class="hover:text-white transition-colors">Blog</a>
+
+            <nav
+                class="flex items-center gap-4 sm:gap-7 text-sm font-medium text-gray-400"
+                aria-label="Main navigation"
+            >
+                <a
+                    href="../index.html"
+                    class="hover:text-white transition-colors"
+                    data-i18n="navHome"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="index.html"
+                    class="hover:text-white transition-colors"
+                    data-i18n="navBlog"
+                >
+                    Blog
+                </a>
+
+                <a
+                    href="../index.html#tools"
+                    class="hidden sm:inline hover:text-white transition-colors"
+                    data-i18n="navTools"
+                >
+                    Tools
+                </a>
             </nav>
         </div>
     </header>
 
-    <!-- Blog İçeriği -->
-    <main class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
+    <!-- Main Content -->
+    <main
+        id="main-content"
+        class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 pb-24"
+    >
+        <!-- Breadcrumb -->
+        <nav
+            aria-label="Breadcrumb"
+            class="text-sm text-gray-500 mb-8"
+        >
+            <a
+                href="../index.html"
+                class="hover:text-purple-300 transition-colors"
+                data-i18n="navHome"
+            >
+                Home
+            </a>
+
+            <span class="mx-2" aria-hidden="true">/</span>
+
+            <a
+                href="index.html"
+                class="hover:text-purple-300 transition-colors"
+                data-i18n="navBlog"
+            >
+                Blog
+            </a>
+
+            <span class="mx-2" aria-hidden="true">/</span>
+
+            <span
+                class="text-gray-300"
+                data-i18n="breadcrumbArticle"
+            >
+                Prompt Engineering
+            </span>
+        </nav>
+
         <article>
-            <h1 id="post-title" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4 leading-tight"></h1>
-            <p id="post-date" class="text-xs text-gray-500 mb-8 border-b border-gray-900 pb-4"></p>
-            
-            <div id="post-body" class="text-gray-400 text-sm leading-relaxed space-y-6"></div>
+            <header class="mb-10 sm:mb-12">
+
+                <div class="flex flex-wrap items-center gap-3 mb-6">
+
+                    <span class="inline-flex items-center px-3.5 py-1.5 rounded-full border border-purple-500/20 bg-purple-500/10 text-purple-300 text-xs font-bold uppercase tracking-widest">
+
+                        <span data-i18n="category">
+                            Artificial Intelligence
+                        </span>
+                    </span>
+
+                    <span
+                        class="text-sm text-gray-500"
+                        data-i18n="readingTime"
+                    >
+                        9 min read
+                    </span>
+                </div>
+
+                <h1
+                    id="post-title"
+                    class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08]"
+                >
+                    The Ultimate Guide to Prompt Engineering in 2026
+                </h1>
+
+                <p
+                    id="post-description"
+                    class="text-lg sm:text-xl text-gray-400 leading-8 mt-6 max-w-3xl"
+                >
+                    Learn how to give generative AI clearer instructions by defining context, goals, constraints and output formats.
+                </p>
+
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 mt-8 pb-8 border-b border-gray-800">
+
+                    <div class="flex items-center gap-3">
+
+                        <div class="w-11 h-11 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center font-black text-white">
+                            T
+                        </div>
+
+                        <div>
+                            <p class="text-sm font-semibold text-gray-200">
+                                Toolcas Editorial
+                            </p>
+
+                            <p
+                                id="post-date"
+                                class="text-xs text-gray-500 mt-1"
+                            >
+                                Published on July 12, 2026
+                            </p>
+                        </div>
+                    </div>
+
+                    <a
+                        href="index.html"
+                        class="inline-flex items-center gap-2 text-sm font-semibold text-purple-300 hover:text-white transition-colors"
+                    >
+                        <span data-i18n="allArticles">
+                            All articles
+                        </span>
+
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </header>
+
+            <div
+                id="post-body"
+                class="article-content rounded-3xl border border-gray-800 bg-gray-900/45 backdrop-blur-sm p-6 sm:p-9 text-gray-400 text-base leading-8"
+            >
+                <!-- Article content rendered with JavaScript -->
+            </div>
         </article>
+
+        <!-- Related Content -->
+        <section class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+            <a
+                href="importance-of-text-summarization.html"
+                class="group rounded-2xl border border-gray-800 bg-gray-900/40 hover:bg-gray-900/75 hover:border-purple-500/30 p-5 transition-all"
+            >
+                <span
+                    class="text-xs uppercase tracking-widest text-gray-500"
+                    data-i18n="relatedArticle"
+                >
+                    Related article
+                </span>
+
+                <span
+                    class="block text-base font-bold text-white mt-2 group-hover:text-purple-300 transition-colors"
+                    data-i18n="relatedArticleTitle"
+                >
+                    The Power of Text Summarization
+                </span>
+            </a>
+
+            <a
+                href="../tools/prompt-generator.html"
+                class="group rounded-2xl border border-gray-800 bg-gray-900/40 hover:bg-gray-900/75 hover:border-cyan-500/30 p-5 transition-all"
+            >
+                <span
+                    class="text-xs uppercase tracking-widest text-gray-500"
+                    data-i18n="relatedTool"
+                >
+                    Related tool
+                </span>
+
+                <span
+                    class="block text-base font-bold text-white mt-2 group-hover:text-cyan-300 transition-colors"
+                    data-i18n="relatedToolTitle"
+                >
+                    Try the Prompt Generator
+                </span>
+            </a>
+        </section>
+
+        <!-- CTA -->
+        <section class="relative overflow-hidden mt-14 rounded-3xl border border-purple-500/20 bg-gradient-to-br from-purple-950/70 to-indigo-950/50 p-7 sm:p-10 text-center shadow-glow">
+
+            <div
+                aria-hidden="true"
+                class="absolute inset-0 opacity-30"
+            >
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-purple-500 rounded-full blur-[100px]"></div>
+
+                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-indigo-500 rounded-full blur-[100px]"></div>
+            </div>
+
+            <div class="relative z-10">
+
+                <h2
+                    class="text-2xl sm:text-3xl font-bold text-white"
+                    data-i18n="ctaTitle"
+                >
+                    Build a clearer AI prompt
+                </h2>
+
+                <p
+                    class="text-gray-300 leading-7 mt-4 max-w-2xl mx-auto"
+                    data-i18n="ctaDescription"
+                >
+                    Use the Toolcas Prompt Generator to organize your idea, constraints and preferred output format.
+                </p>
+
+                <a
+                    href="../tools/prompt-generator.html"
+                    class="inline-flex items-center gap-2 mt-7 px-6 py-3 rounded-xl bg-white text-gray-950 font-bold hover:bg-gray-100 transition-colors"
+                >
+                    <span data-i18n="ctaButton">
+                        Open Prompt Generator
+                    </span>
+
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </section>
     </main>
 
-    <footer class="border-t border-gray-900 bg-[#070a12] text-xs text-gray-500 py-8 text-center relative z-10">
-        &copy; 2026 Toolcas Inc. All rights reserved.
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-gray-800/80 bg-[#070a12]">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-7">
+
+                <div>
+                    <a
+                        href="../index.html"
+                        class="text-xl font-black gradient-text"
+                    >
+                        TOOLCAS
+                    </a>
+
+                    <p
+                        class="text-sm text-gray-500 mt-2 max-w-md"
+                        data-i18n="footerDescription"
+                    >
+                        Free online tools for coding, writing and everyday productivity.
+                    </p>
+                </div>
+
+                <nav
+                    class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-500"
+                    aria-label="Footer navigation"
+                >
+                    <a
+                        href="../index.html#tools"
+                        class="hover:text-white transition-colors"
+                        data-i18n="navTools"
+                    >
+                        Tools
+                    </a>
+
+                    <a
+                        href="index.html"
+                        class="hover:text-white transition-colors"
+                        data-i18n="navBlog"
+                    >
+                        Blog
+                    </a>
+
+                    <a
+                        href="../faq/faq.html"
+                        class="hover:text-white transition-colors"
+                        data-i18n="navFaq"
+                    >
+                        FAQ
+                    </a>
+
+                    <a
+                        href="../privacy/index.html"
+                        class="hover:text-white transition-colors"
+                        data-i18n="privacy"
+                    >
+                        Privacy
+                    </a>
+
+                    <a
+                        href="../terms/index.html"
+                        class="hover:text-white transition-colors"
+                        data-i18n="terms"
+                    >
+                        Terms
+                    </a>
+                </nav>
+            </div>
+
+            <div class="border-t border-gray-800/70 mt-8 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-gray-600">
+
+                <p>
+                    © <span id="current-year"></span> Toolcas.
+                    <span data-i18n="rights">
+                        All rights reserved.
+                    </span>
+                </p>
+
+                <p data-i18n="footerNote">
+                    Built for faster and smarter work.
+                </p>
+            </div>
+        </div>
     </footer>
 
     <script>
         const localizations = {
             en: {
+                pageTitle: 'The Ultimate Guide to Prompt Engineering in 2026 - Toolcas',
+
+                pageDescription: 'Learn the fundamentals of prompt engineering, including context, roles, constraints, examples and practical techniques for getting better AI responses.',
+
+                skipContent: 'Skip to content',
                 navHome: 'Home',
                 navBlog: 'Blog',
-                title: 'The Ultimate Guide to Prompt Engineering: Talking to AI Correctly',
-                date: 'Published on July 12, 2026 by Toolcas Editorial',
+                navTools: 'Tools',
+                navFaq: 'FAQ',
+                privacy: 'Privacy',
+                terms: 'Terms',
+
+                breadcrumbArticle: 'Prompt Engineering',
+                category: 'Artificial Intelligence',
+                readingTime: '9 min read',
+
+                title: 'The Ultimate Guide to Prompt Engineering in 2026',
+
+                description: 'Learn how to give generative AI clearer instructions by defining context, goals, constraints and output formats.',
+
+                date: 'Published on July 12, 2026',
+
+                allArticles: 'All articles',
+                relatedArticle: 'Related article',
+                relatedArticleTitle: 'The Power of Text Summarization',
+                relatedTool: 'Related tool',
+                relatedToolTitle: 'Try the Prompt Generator',
+
+                ctaTitle: 'Build a clearer AI prompt',
+
+                ctaDescription: 'Use the Toolcas Prompt Generator to organize your idea, constraints and preferred output format.',
+
+                ctaButton: 'Open Prompt Generator',
+
+                footerDescription: 'Free online tools for coding, writing and everyday productivity.',
+
+                rights: 'All rights reserved.',
+                footerNote: 'Built for faster and smarter work.',
+
                 body: `
-                    <p class="text-lg text-gray-300 font-medium">Generative AI models are only as smart as the instructions they are given. Learning how to structure your keywords is the absolute key to unlocking professional outputs.</p>
-                    
-                    <p>When users get subpar or generic responses from engines like ChatGPT or Midjourney, the issue is almost never the AI model itself—it is the ambiguity of the prompt. Large Language Models (LLMs) operate on statistical probabilities, meaning vague descriptions yield generic, average results.</p>
-                    
-                    <h2 class="text-xl font-bold text-white mt-8 mb-4">The Anatomy of a Perfect Prompt</h2>
-                    <p>To transition from amateur inputs to professional-grade engineering, your prompts should ideally contain three core components:</p>
-                    <ul class="list-disc list-inside space-y-2 pl-2">
-                        <li><strong>Role & Context:</strong> Tell the AI exactly who it is (e.g., "Act as a Senior Frontend Developer").</li>
-                        <li><strong>Specific Modifiers:</strong> Add parameters, constraints, and stylistic preferences (e.g., volumetric lighting, no markdown, production-ready).</li>
-                        <li><strong>The Core Concept:</strong> Your raw idea stated clearly without conversational fluff.</li>
+                    <p class="text-lg sm:text-xl text-gray-300 font-medium leading-8">
+                        Generative AI tools can produce useful text, code, images and
+                        ideas, but the quality of the result often depends on how clearly
+                        the task is described.
+                    </p>
+
+                    <p>
+                        Prompt engineering is the practice of designing instructions
+                        that help an AI system understand the goal, context, limits and
+                        expected output of a task.
+                    </p>
+
+                    <p>
+                        It does not require complicated technical language. In many
+                        cases, a strong prompt is simply a clear and well-structured
+                        request.
+                    </p>
+
+                    <h2>What is prompt engineering?</h2>
+
+                    <p>
+                        Prompt engineering is the process of writing, testing and
+                        improving instructions for generative AI systems.
+                    </p>
+
+                    <p>
+                        The purpose is to reduce ambiguity and guide the model toward a
+                        response that is more relevant, complete and suitable for the
+                        user's needs.
+                    </p>
+
+                    <h2>Why vague prompts produce weak results</h2>
+
+                    <p>
+                        A prompt such as <code>write about marketing</code> leaves many
+                        questions unanswered:
+                    </p>
+
+                    <ul>
+                        <li>Who is the intended audience?</li>
+                        <li>What type of marketing should be discussed?</li>
+                        <li>How long should the response be?</li>
+                        <li>Should the tone be formal or conversational?</li>
+                        <li>What format should the output use?</li>
+                        <li>What is the final purpose of the content?</li>
                     </ul>
-                    
-                    <p>Instead of manually typing out these complicated parameters every single time, utilizing automated scaffolding utilities can speed up your production flow exponentially. Our specialized tools instantly inject these precise nodes based on your chosen engine framework.</p>
+
+                    <p>
+                        When these details are missing, the model must make assumptions.
+                        The result may be technically correct but too broad or generic
+                        to be useful.
+                    </p>
+
+                    <h2>The core components of a strong prompt</h2>
+
+                    <h3>1. Task</h3>
+
+                    <p>
+                        State clearly what the AI should do. Use direct verbs such as
+                        write, summarize, compare, explain, rewrite, classify or
+                        analyze.
+                    </p>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">Example</span>
+
+                        <p class="m-0 text-gray-300">
+                            Summarize the following article in five bullet points.
+                        </p>
+                    </div>
+
+                    <h3>2. Context</h3>
+
+                    <p>
+                        Explain the situation, purpose or background behind the request.
+                        Context helps the AI understand why the output is needed.
+                    </p>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">Example</span>
+
+                        <p class="m-0 text-gray-300">
+                            The summary will be used by university students preparing
+                            for an introductory economics exam.
+                        </p>
+                    </div>
+
+                    <h3>3. Audience</h3>
+
+                    <p>
+                        Describe who will read or use the response. The same topic may
+                        need completely different language for beginners, specialists,
+                        children or executives.
+                    </p>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">Example</span>
+
+                        <p class="m-0 text-gray-300">
+                            Explain the concept for a reader with no programming
+                            experience.
+                        </p>
+                    </div>
+
+                    <h3>4. Constraints</h3>
+
+                    <p>
+                        Add rules that limit the output. Constraints may include word
+                        count, tone, prohibited content, technical requirements or
+                        required topics.
+                    </p>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">Example</span>
+
+                        <p class="m-0 text-gray-300">
+                            Keep the answer below 250 words. Avoid jargon and do not use
+                            a table.
+                        </p>
+                    </div>
+
+                    <h3>5. Output format</h3>
+
+                    <p>
+                        Specify how the answer should be organized. This can include
+                        headings, bullet points, JSON, HTML, code or a step-by-step list.
+                    </p>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">Example</span>
+
+                        <p class="m-0 text-gray-300">
+                            Return the result as a numbered checklist with one sentence
+                            per item.
+                        </p>
+                    </div>
+
+                    <h3>6. Examples</h3>
+
+                    <p>
+                        Showing a sample input or desired output can make the expected
+                        structure much clearer. This technique is often called
+                        few-shot prompting.
+                    </p>
+
+                    <h2>A practical prompt formula</h2>
+
+                    <p>
+                        A useful starting structure is:
+                    </p>
+
+                    <blockquote>
+                        Task + context + audience + constraints + output format
+                    </blockquote>
+
+                    <p>
+                        Not every prompt needs every component. Simple tasks may only
+                        require a clear instruction, while complex tasks benefit from
+                        more detailed guidance.
+                    </p>
+
+                    <h2>Weak prompt versus improved prompt</h2>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">
+                            Weak prompt
+                        </span>
+
+                        <p class="m-0 text-gray-300">
+                            Write a product description.
+                        </p>
+                    </div>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">
+                            Improved prompt
+                        </span>
+
+                        <p class="m-0 text-gray-300">
+                            Write a 120-word product description for a lightweight
+                            wireless mouse aimed at remote workers. Use a clear and
+                            professional tone. Mention silent clicks, a rechargeable
+                            battery and portability. Finish with a short call to action.
+                        </p>
+                    </div>
+
+                    <p>
+                        The improved prompt gives the model a product type, audience,
+                        length, tone, required features and desired ending.
+                    </p>
+
+                    <h2>Using roles effectively</h2>
+
+                    <p>
+                        A role can help establish perspective and level of expertise.
+                        For example:
+                    </p>
+
+                    <ul>
+                        <li>Act as a technical editor.</li>
+                        <li>Act as a frontend developer reviewing accessibility.</li>
+                        <li>Act as a tutor teaching a beginner.</li>
+                        <li>Act as a customer support specialist.</li>
+                    </ul>
+
+                    <p>
+                        Roles work best when combined with a specific task. Telling the
+                        AI to act as an expert is not a substitute for explaining what
+                        the expert should actually do.
+                    </p>
+
+                    <h2>Ask the AI to plan before answering</h2>
+
+                    <p>
+                        For complicated tasks, it can help to request a structured
+                        approach before the final answer.
+                    </p>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">Example</span>
+
+                        <p class="m-0 text-gray-300">
+                            First identify the three main problems in the code. Then
+                            explain each problem and provide a corrected version.
+                        </p>
+                    </div>
+
+                    <p>
+                        This encourages a more organized response, although the result
+                        should still be checked carefully.
+                    </p>
+
+                    <h2>Break large tasks into smaller steps</h2>
+
+                    <p>
+                        Asking for research, analysis, writing, editing and formatting
+                        in a single prompt can create inconsistent results.
+                    </p>
+
+                    <p>
+                        A more reliable workflow may be:
+                    </p>
+
+                    <ol>
+                        <li>Generate an outline.</li>
+                        <li>Review and revise the outline.</li>
+                        <li>Write one section at a time.</li>
+                        <li>Check facts and examples.</li>
+                        <li>Edit the final text for tone and structure.</li>
+                    </ol>
+
+                    <h2>Prompting for code</h2>
+
+                    <p>
+                        Coding prompts should include relevant technical details such
+                        as the language, framework, runtime environment, existing
+                        behavior and expected result.
+                    </p>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">
+                            Coding prompt example
+                        </span>
+
+                        <p class="m-0 text-gray-300">
+                            Create a responsive navigation bar using semantic HTML,
+                            Tailwind CSS and vanilla JavaScript. It must include a
+                            mobile menu button, keyboard navigation and accessible ARIA
+                            labels. Return one complete HTML file.
+                        </p>
+                    </div>
+
+                    <p>
+                        When debugging, include the relevant code and the exact error
+                        message. Avoid sending unrelated files or large sections that do
+                        not affect the problem.
+                    </p>
+
+                    <h2>Prompting for images</h2>
+
+                    <p>
+                        Image prompts can include the subject, composition, environment,
+                        perspective, lighting, color palette, mood and aspect ratio.
+                    </p>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">
+                            Image prompt example
+                        </span>
+
+                        <p class="m-0 text-gray-300">
+                            A minimalist workspace with a laptop and mechanical
+                            keyboard, viewed from a slightly elevated angle, soft
+                            morning light, dark navy and cyan color palette, clean
+                            commercial photography, wide composition.
+                        </p>
+                    </div>
+
+                    <p>
+                        Different image systems interpret prompt terms differently, so
+                        prompts often need to be tested and adjusted.
+                    </p>
+
+                    <h2>Use positive and negative constraints</h2>
+
+                    <p>
+                        Positive constraints describe what should appear. Negative
+                        constraints describe what should be avoided.
+                    </p>
+
+                    <ul>
+                        <li>
+                            Positive: Include three practical examples.
+                        </li>
+
+                        <li>
+                            Negative: Do not use technical jargon.
+                        </li>
+
+                        <li>
+                            Positive: Return valid JSON.
+                        </li>
+
+                        <li>
+                            Negative: Do not include explanations outside the JSON.
+                        </li>
+                    </ul>
+
+                    <h2>Iterative prompting</h2>
+
+                    <p>
+                        A prompt does not need to produce the perfect result on the first
+                        attempt. Strong prompting is usually an iterative process.
+                    </p>
+
+                    <p>
+                        Useful follow-up instructions include:
+                    </p>
+
+                    <ul>
+                        <li>Make the introduction shorter.</li>
+                        <li>Add two practical examples.</li>
+                        <li>Rewrite this for a beginner.</li>
+                        <li>Remove repeated information.</li>
+                        <li>Return only the corrected code.</li>
+                        <li>Explain what assumptions you made.</li>
+                    </ul>
+
+                    <h2>Common prompt engineering mistakes</h2>
+
+                    <h3>Being too vague</h3>
+
+                    <p>
+                        General instructions force the model to guess the intended
+                        direction.
+                    </p>
+
+                    <h3>Adding unnecessary detail</h3>
+
+                    <p>
+                        Longer prompts are not automatically better. Irrelevant details
+                        can distract from the main task.
+                    </p>
+
+                    <h3>Using conflicting instructions</h3>
+
+                    <p>
+                        A prompt should not ask for a detailed explanation and also
+                        demand a one-sentence answer unless the priority is clear.
+                    </p>
+
+                    <h3>Failing to define the output</h3>
+
+                    <p>
+                        The AI may provide a useful response in the wrong format if the
+                        desired structure is not specified.
+                    </p>
+
+                    <h3>Trusting the output without review</h3>
+
+                    <p>
+                        Generative systems can produce inaccurate facts, broken code or
+                        invented references. Important outputs require human review.
+                    </p>
+
+                    <h2>Prompt injection and untrusted content</h2>
+
+                    <p>
+                        When AI systems process documents, websites or user submissions,
+                        the source material may contain instructions that conflict with
+                        the original task.
+                    </p>
+
+                    <p>
+                        Applications using AI should distinguish between trusted system
+                        instructions and untrusted external content. Sensitive actions
+                        should not be performed solely because text inside a document
+                        requests them.
+                    </p>
+
+                    <h2>Prompt templates</h2>
+
+                    <h3>Writing template</h3>
+
+                    <div class="prompt-card">
+                        <p class="m-0 text-gray-300">
+                            Write a [content type] about [topic] for [audience]. Use a
+                            [tone] tone. Keep it approximately [length]. Include
+                            [required points]. Format the result as [format].
+                        </p>
+                    </div>
+
+                    <h3>Summarization template</h3>
+
+                    <div class="prompt-card">
+                        <p class="m-0 text-gray-300">
+                            Summarize the following text for [audience]. Preserve
+                            important names, dates and numbers. Limit the result to
+                            [length]. Use [bullet points or paragraphs].
+                        </p>
+                    </div>
+
+                    <h3>Code review template</h3>
+
+                    <div class="prompt-card">
+                        <p class="m-0 text-gray-300">
+                            Review the following [language] code for bugs,
+                            accessibility, performance and security issues. Explain
+                            each issue briefly and then provide a corrected version.
+                        </p>
+                    </div>
+
+                    <h2>How to evaluate an AI response</h2>
+
+                    <p>
+                        Before using the output, review it for:
+                    </p>
+
+                    <ul>
+                        <li>Accuracy</li>
+                        <li>Relevance</li>
+                        <li>Completeness</li>
+                        <li>Consistency</li>
+                        <li>Correct formatting</li>
+                        <li>Unsupported claims</li>
+                        <li>Privacy or security concerns</li>
+                    </ul>
+
+                    <h2>Final thoughts</h2>
+
+                    <p>
+                        Prompt engineering is less about discovering secret words and
+                        more about communicating clearly. Strong prompts explain the
+                        task, provide useful context and define the expected result.
+                    </p>
+
+                    <p>
+                        The most effective approach is to start with a clear structure,
+                        review the response and refine the instructions until the output
+                        matches the intended goal.
+                    </p>
                 `
             },
+
             tr: {
+                pageTitle: '2026 Prompt Mühendisliği Rehberi - Toolcas',
+
+                pageDescription: 'Bağlam, rol, kısıtlamalar, örnekler ve daha iyi yapay zeka yanıtları almak için kullanabileceğiniz pratik prompt mühendisliği tekniklerini öğrenin.',
+
+                skipContent: 'İçeriğe geç',
                 navHome: 'Ana Sayfa',
                 navBlog: 'Blog',
-                title: 'Prompt Mühendisliği Kılavuzu: Yapay Zekayla Doğru Konuşma Sanatı',
-                date: '12 Temmuz 2026 tarihinde Toolcas Editorial tarafından yayınlandı',
+                navTools: 'Araçlar',
+                navFaq: 'SSS',
+                privacy: 'Gizlilik',
+                terms: 'Kullanım Koşulları',
+
+                breadcrumbArticle: 'Prompt Mühendisliği',
+                category: 'Yapay Zeka',
+                readingTime: '9 dakikalık okuma',
+
+                title: '2026 Prompt Mühendisliği Rehberi',
+
+                description: 'Bağlam, hedef, kısıtlama ve çıktı biçimini tanımlayarak üretken yapay zekaya daha açık talimatlar vermeyi öğrenin.',
+
+                date: '12 Temmuz 2026 tarihinde yayımlandı',
+
+                allArticles: 'Tüm yazılar',
+                relatedArticle: 'İlgili yazı',
+                relatedArticleTitle: 'Metin Özetlemenin Gücü',
+                relatedTool: 'İlgili araç',
+                relatedToolTitle: 'Prompt Oluşturucuyu kullan',
+
+                ctaTitle: 'Daha açık bir yapay zeka promptu oluşturun',
+
+                ctaDescription: 'Fikrinizi, kısıtlamalarınızı ve tercih ettiğiniz çıktı biçimini düzenlemek için Toolcas Prompt Oluşturucuyu kullanın.',
+
+                ctaButton: 'Prompt Oluşturucuyu aç',
+
+                footerDescription: 'Kodlama, yazı yazma ve günlük üretkenlik için ücretsiz çevrim içi araçlar.',
+
+                rights: 'Tüm hakları saklıdır.',
+                footerNote: 'Daha hızlı ve akıllı çalışma için geliştirildi.',
+
                 body: `
-                    <p class="text-lg text-gray-300 font-medium">Üretken yapay zeka modelleri, yalnızca onlara verilen talimatlar kadar akıllıdır. Kelimelerinizi nasıl yapılandıracağınızı öğrenmek, profesyonel çıktılar almanın mutlak anahtarıdır.</p>
-                    
-                    <p>Kullanıcılar ChatGPT veya Midjourney gibi motorlardan kalitesiz ya da sıradan yanıtlar aldıklarında, sorun neredeyse hiçbir zaman yapay zeka modelinin kendisinde değildir; sorun promptun belirsizliğidir. Büyük Dil Modelleri (LLM'ler) istatistiksel olasılıklarla çalışır, bu da belirsiz açıklamaların sıradan ve ortalama sonuçlar doğuracağı anlamına gelir.</p>
-                    
-                    <h2 class="text-xl font-bold text-white mt-8 mb-4">Kusursuz Bir Promptun Anatomisi</h2>
-                    <p>Amatör girdilerden profesyonel düzeyde mühendisliğe geçiş yapmak için promptlarınızın ideal olarak üç temel bileşeni içermesi gerekir:</p>
-                    <ul class="list-disc list-inside space-y-2 pl-2">
-                        <li><strong>Rol ve Bağlam:</strong> Yapay zekaya tam olarak kim olduğunu söyleyin (Örn: "Kıdemli bir Arayüz Geliştiricisi gibi davran").</li>
-                        <li><strong>Belirli Modifikatörler:</strong> Parametreler, kısıtlamalar ve üslup tercihleri ekleyin (Örn: hacimsel ışıklandırma, kod dışı metin olmasın).</li>
-                        <li><strong>Ana Konsept:</strong> Ham fikrinizi gereksiz konuşma kalıplarından arındırarak net bir şekilde ifade edin.</li>
+                    <p class="text-lg sm:text-xl text-gray-300 font-medium leading-8">
+                        Üretken yapay zeka araçları metin, kod, görsel ve fikir
+                        üretebilir. Ancak sonucun ne kadar kullanışlı olduğu çoğu zaman
+                        görevin ne kadar açık anlatıldığına bağlıdır.
+                    </p>
+
+                    <p>
+                        Prompt mühendisliği; bir yapay zeka sisteminin görevi, bağlamı,
+                        sınırları ve beklenen çıktıyı anlamasına yardımcı olacak
+                        talimatları hazırlama sürecidir.
+                    </p>
+
+                    <p>
+                        Bunun için karmaşık teknik ifadeler kullanmak gerekmez. Çoğu
+                        durumda güçlü bir prompt, açık ve düzenli yazılmış bir
+                        istektir.
+                    </p>
+
+                    <h2>Prompt mühendisliği nedir?</h2>
+
+                    <p>
+                        Prompt mühendisliği, üretken yapay zeka sistemlerine verilen
+                        talimatları yazma, test etme ve geliştirme işlemidir.
+                    </p>
+
+                    <p>
+                        Amaç belirsizliği azaltmak ve modeli kullanıcının ihtiyacına
+                        daha uygun, eksiksiz ve ilgili bir cevaba yönlendirmektir.
+                    </p>
+
+                    <h2>Belirsiz promptlar neden zayıf sonuçlar üretir?</h2>
+
+                    <p>
+                        <code>Pazarlama hakkında yaz</code> gibi bir prompt birçok
+                        soruyu yanıtsız bırakır:
+                    </p>
+
+                    <ul>
+                        <li>Hedef kitle kimdir?</li>
+                        <li>Hangi pazarlama türü anlatılmalıdır?</li>
+                        <li>Yanıt ne kadar uzun olmalıdır?</li>
+                        <li>Üslup resmî mi yoksa samimi mi olmalıdır?</li>
+                        <li>Çıktı hangi formatta verilmelidir?</li>
+                        <li>İçeriğin son amacı nedir?</li>
                     </ul>
-                    
-                    <p>Her seferinde bu karmaşık parametreleri manuel olarak yazmak yerine, otomatik taslak araçları kullanmak üretim akışınızı büyük ölçüde hızlandırır. Geliştirdiğimiz özel araçlar, seçtiğiniz motor mimarisine göre bu hassas düğümleri girdilerinize anında ekler.</p>
+
+                    <p>
+                        Bu bilgiler eksik olduğunda model bazı varsayımlar yapmak
+                        zorunda kalır. Sonuç doğru görünse bile fazla genel olabilir.
+                    </p>
+
+                    <h2>Güçlü bir promptun temel bileşenleri</h2>
+
+                    <h3>1. Görev</h3>
+
+                    <p>
+                        Yapay zekanın ne yapması gerektiğini açıkça belirtin. Yaz,
+                        özetle, karşılaştır, açıkla, yeniden yaz, sınıflandır veya analiz
+                        et gibi doğrudan fiiller kullanın.
+                    </p>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">Örnek</span>
+
+                        <p class="m-0 text-gray-300">
+                            Aşağıdaki makaleyi beş maddeyle özetle.
+                        </p>
+                    </div>
+
+                    <h3>2. Bağlam</h3>
+
+                    <p>
+                        İsteğin arkasındaki durumu, amacı veya geçmiş bilgiyi açıklayın.
+                        Bağlam, çıktının neden gerekli olduğunu anlamayı kolaylaştırır.
+                    </p>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">Örnek</span>
+
+                        <p class="m-0 text-gray-300">
+                            Bu özet, giriş seviyesinde ekonomi sınavına hazırlanan
+                            üniversite öğrencileri tarafından kullanılacak.
+                        </p>
+                    </div>
+
+                    <h3>3. Hedef kitle</h3>
+
+                    <p>
+                        Yanıtı okuyacak veya kullanacak kişileri tanımlayın. Aynı konu;
+                        başlangıç seviyesindeki bir kullanıcı, uzman, çocuk veya yönetici
+                        için farklı şekilde anlatılabilir.
+                    </p>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">Örnek</span>
+
+                        <p class="m-0 text-gray-300">
+                            Konuyu programlama deneyimi olmayan bir okuyucuya açıkla.
+                        </p>
+                    </div>
+
+                    <h3>4. Kısıtlamalar</h3>
+
+                    <p>
+                        Çıktıyı sınırlandıran kurallar ekleyin. Bunlar kelime sayısı,
+                        üslup, yasaklanan içerikler, teknik gereksinimler veya mutlaka
+                        ele alınması gereken konular olabilir.
+                    </p>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">Örnek</span>
+
+                        <p class="m-0 text-gray-300">
+                            Yanıtı 250 kelimenin altında tut. Teknik terimlerden kaçın
+                            ve tablo kullanma.
+                        </p>
+                    </div>
+
+                    <h3>5. Çıktı biçimi</h3>
+
+                    <p>
+                        Yanıtın nasıl düzenlenmesi gerektiğini belirtin. Başlıklar,
+                        maddeler, JSON, HTML, kod veya adım adım liste isteyebilirsiniz.
+                    </p>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">Örnek</span>
+
+                        <p class="m-0 text-gray-300">
+                            Sonucu, her maddesi tek cümleden oluşan numaralı bir kontrol
+                            listesi olarak ver.
+                        </p>
+                    </div>
+
+                    <h3>6. Örnekler</h3>
+
+                    <p>
+                        Örnek bir girdi veya istenen çıktı göstermek, beklenen yapının
+                        daha iyi anlaşılmasını sağlayabilir. Bu yöntem genellikle
+                        few-shot prompting olarak adlandırılır.
+                    </p>
+
+                    <h2>Pratik bir prompt formülü</h2>
+
+                    <p>
+                        Başlangıç için şu yapı kullanılabilir:
+                    </p>
+
+                    <blockquote>
+                        Görev + bağlam + hedef kitle + kısıtlamalar + çıktı biçimi
+                    </blockquote>
+
+                    <p>
+                        Her promptun bütün bileşenleri içermesi gerekmez. Basit işler
+                        için açık bir talimat yeterli olabilir. Karmaşık görevler daha
+                        fazla ayrıntıdan faydalanır.
+                    </p>
+
+                    <h2>Zayıf prompt ve geliştirilmiş prompt</h2>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">
+                            Zayıf prompt
+                        </span>
+
+                        <p class="m-0 text-gray-300">
+                            Bir ürün açıklaması yaz.
+                        </p>
+                    </div>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">
+                            Geliştirilmiş prompt
+                        </span>
+
+                        <p class="m-0 text-gray-300">
+                            Uzaktan çalışanlara yönelik hafif bir kablosuz fare için
+                            120 kelimelik ürün açıklaması yaz. Açık ve profesyonel bir
+                            üslup kullan. Sessiz tıklama, şarj edilebilir pil ve kolay
+                            taşınabilirlik özelliklerinden bahset. Kısa bir harekete
+                            geçirici mesajla bitir.
+                        </p>
+                    </div>
+
+                    <p>
+                        Geliştirilmiş prompt; ürün türünü, hedef kitleyi, uzunluğu,
+                        üslubu, gerekli özellikleri ve istenen kapanışı tanımlar.
+                    </p>
+
+                    <h2>Rolleri doğru kullanmak</h2>
+
+                    <p>
+                        Rol tanımlamak bakış açısını ve uzmanlık seviyesini
+                        belirlemeye yardımcı olabilir:
+                    </p>
+
+                    <ul>
+                        <li>Teknik bir editör gibi davran.</li>
+                        <li>Erişilebilirliği inceleyen bir frontend geliştirici gibi davran.</li>
+                        <li>Başlangıç seviyesindeki bir öğrenciye ders veren öğretmen gibi davran.</li>
+                        <li>Müşteri destek uzmanı gibi davran.</li>
+                    </ul>
+
+                    <p>
+                        Roller, belirli bir görevle birlikte kullanıldığında daha
+                        faydalıdır. Yapay zekaya yalnızca uzman gibi davranmasını
+                        söylemek, yapması gereken işi açıklamanın yerine geçmez.
+                    </p>
+
+                    <h2>Yanıt vermeden önce planlama isteyin</h2>
+
+                    <p>
+                        Karmaşık görevlerde, son cevaptan önce düzenli bir yaklaşım
+                        oluşturulmasını isteyebilirsiniz.
+                    </p>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">Örnek</span>
+
+                        <p class="m-0 text-gray-300">
+                            Önce koddaki üç temel sorunu belirle. Ardından her sorunu
+                            açıkla ve düzeltilmiş sürümü ver.
+                        </p>
+                    </div>
+
+                    <p>
+                        Bu yöntem yanıtın daha düzenli olmasına yardımcı olabilir.
+                        Ancak sonuç yine de kontrol edilmelidir.
+                    </p>
+
+                    <h2>Büyük görevleri küçük adımlara ayırın</h2>
+
+                    <p>
+                        Araştırma, analiz, yazım, düzenleme ve biçimlendirmeyi tek bir
+                        prompt içinde istemek tutarsız sonuçlara yol açabilir.
+                    </p>
+
+                    <p>
+                        Daha güvenilir bir iş akışı şöyle olabilir:
+                    </p>
+
+                    <ol>
+                        <li>Önce içerik planı oluşturun.</li>
+                        <li>Planı kontrol edip düzenleyin.</li>
+                        <li>Her bölümü ayrı ayrı yazdırın.</li>
+                        <li>Bilgileri ve örnekleri kontrol edin.</li>
+                        <li>Son metni üslup ve yapı açısından düzenleyin.</li>
+                    </ol>
+
+                    <h2>Kodlama için prompt hazırlamak</h2>
+
+                    <p>
+                        Kodlama promptları dil, framework, çalışma ortamı, mevcut
+                        davranış ve beklenen sonuç gibi teknik ayrıntıları içermelidir.
+                    </p>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">
+                            Kod promptu örneği
+                        </span>
+
+                        <p class="m-0 text-gray-300">
+                            Semantik HTML, Tailwind CSS ve vanilla JavaScript kullanarak
+                            mobil uyumlu bir navigasyon menüsü oluştur. Mobil menü
+                            düğmesi, klavye navigasyonu ve erişilebilir ARIA etiketleri
+                            içersin. Tek ve eksiksiz bir HTML dosyası olarak ver.
+                        </p>
+                    </div>
+
+                    <p>
+                        Hata ayıklarken ilgili kodu ve tam hata mesajını ekleyin.
+                        Sorunla ilgisi olmayan büyük dosyaları göndermekten kaçının.
+                    </p>
+
+                    <h2>Görsel üretimi için prompt hazırlamak</h2>
+
+                    <p>
+                        Görsel promptları konu, kompozisyon, ortam, perspektif,
+                        ışıklandırma, renk paleti, atmosfer ve en-boy oranı gibi
+                        ayrıntılar içerebilir.
+                    </p>
+
+                    <div class="prompt-card">
+                        <span class="prompt-card-title">
+                            Görsel promptu örneği
+                        </span>
+
+                        <p class="m-0 text-gray-300">
+                            Dizüstü bilgisayar ve mekanik klavye bulunan minimalist bir
+                            çalışma masası, hafif üst açıdan görünüm, yumuşak sabah
+                            ışığı, koyu lacivert ve cyan renk paleti, temiz reklam
+                            fotoğrafçılığı, geniş kompozisyon.
+                        </p>
+                    </div>
+
+                    <p>
+                        Farklı görsel sistemleri aynı ifadeleri farklı yorumlayabilir.
+                        Bu nedenle promptların test edilip düzenlenmesi gerekebilir.
+                    </p>
+
+                    <h2>Olumlu ve olumsuz kısıtlamalar kullanın</h2>
+
+                    <p>
+                        Olumlu kısıtlamalar neyin bulunması gerektiğini, olumsuz
+                        kısıtlamalar ise nelerden kaçınılması gerektiğini açıklar.
+                    </p>
+
+                    <ul>
+                        <li>
+                            Olumlu: Üç pratik örnek ekle.
+                        </li>
+
+                        <li>
+                            Olumsuz: Teknik terimler kullanma.
+                        </li>
+
+                        <li>
+                            Olumlu: Geçerli JSON döndür.
+                        </li>
+
+                        <li>
+                            Olumsuz: JSON dışında açıklama ekleme.
+                        </li>
+                    </ul>
+
+                    <h2>Promptu aşamalı olarak geliştirmek</h2>
+
+                    <p>
+                        Bir promptun ilk denemede kusursuz sonuç üretmesi gerekmez.
+                        Güçlü prompt hazırlama genellikle aşamalı bir süreçtir.
+                    </p>
+
+                    <p>
+                        Kullanılabilecek devam talimatları şunlardır:
+                    </p>
+
+                    <ul>
+                        <li>Giriş bölümünü kısalt.</li>
+                        <li>İki pratik örnek ekle.</li>
+                        <li>Bunu başlangıç seviyesine göre yeniden yaz.</li>
+                        <li>Tekrarlanan bilgileri kaldır.</li>
+                        <li>Yalnızca düzeltilmiş kodu ver.</li>
+                        <li>Hangi varsayımları yaptığını açıkla.</li>
+                    </ul>
+
+                    <h2>Yaygın prompt mühendisliği hataları</h2>
+
+                    <h3>Fazla belirsiz olmak</h3>
+
+                    <p>
+                        Genel talimatlar, modelin istenen yön hakkında tahmin yapmasına
+                        neden olur.
+                    </p>
+
+                    <h3>Gereksiz ayrıntı eklemek</h3>
+
+                    <p>
+                        Daha uzun promptlar otomatik olarak daha iyi değildir. İlgisiz
+                        ayrıntılar ana görevin anlaşılmasını zorlaştırabilir.
+                    </p>
+
+                    <h3>Çelişkili talimatlar vermek</h3>
+
+                    <p>
+                        Öncelik belirtilmedikçe bir prompt hem ayrıntılı açıklama
+                        isteyip hem de tek cümlelik yanıt talep etmemelidir.
+                    </p>
+
+                    <h3>Çıktı biçimini tanımlamamak</h3>
+
+                    <p>
+                        İstenen yapı belirtilmezse yapay zeka doğru bilgiyi yanlış
+                        formatta sunabilir.
+                    </p>
+
+                    <h3>Çıktıyı kontrol etmeden kullanmak</h3>
+
+                    <p>
+                        Üretken sistemler yanlış bilgiler, bozuk kod veya uydurulmuş
+                        kaynaklar oluşturabilir. Önemli çıktılar insan kontrolünden
+                        geçirilmelidir.
+                    </p>
+
+                    <h2>Prompt injection ve güvenilmeyen içerikler</h2>
+
+                    <p>
+                        Yapay zeka sistemleri belge, web sayfası veya kullanıcı
+                        gönderilerini işlerken kaynak içerik içinde ana görevle çelişen
+                        talimatlar bulunabilir.
+                    </p>
+
+                    <p>
+                        Yapay zeka kullanan uygulamalar güvenilir sistem talimatlarıyla
+                        harici ve güvenilmeyen içerikleri birbirinden ayırmalıdır.
+                        Hassas işlemler yalnızca bir belge içindeki metin bunu istediği
+                        için gerçekleştirilmemelidir.
+                    </p>
+
+                    <h2>Prompt şablonları</h2>
+
+                    <h3>Yazı şablonu</h3>
+
+                    <div class="prompt-card">
+                        <p class="m-0 text-gray-300">
+                            [Hedef kitle] için [konu] hakkında bir [içerik türü] yaz.
+                            [Üslup] bir ton kullan. Yaklaşık [uzunluk] olsun.
+                            [Gerekli konuları] ekle. Sonucu [format] biçiminde ver.
+                        </p>
+                    </div>
+
+                    <h3>Özetleme şablonu</h3>
+
+                    <div class="prompt-card">
+                        <p class="m-0 text-gray-300">
+                            Aşağıdaki metni [hedef kitle] için özetle. Önemli isimleri,
+                            tarihleri ve sayıları koru. Sonucu [uzunluk] ile sınırla.
+                            [Maddeler veya paragraflar] kullan.
+                        </p>
+                    </div>
+
+                    <h3>Kod inceleme şablonu</h3>
+
+                    <div class="prompt-card">
+                        <p class="m-0 text-gray-300">
+                            Aşağıdaki [programlama dili] kodunu hata, erişilebilirlik,
+                            performans ve güvenlik sorunları açısından incele. Her
+                            sorunu kısaca açıkla ve ardından düzeltilmiş sürümü ver.
+                        </p>
+                    </div>
+
+                    <h2>Bir yapay zeka yanıtı nasıl değerlendirilir?</h2>
+
+                    <p>
+                        Çıktıyı kullanmadan önce şu konuları kontrol edin:
+                    </p>
+
+                    <ul>
+                        <li>Doğruluk</li>
+                        <li>İlgililik</li>
+                        <li>Eksiksizlik</li>
+                        <li>Tutarlılık</li>
+                        <li>Doğru biçimlendirme</li>
+                        <li>Kanıtlanmamış iddialar</li>
+                        <li>Gizlilik veya güvenlik sorunları</li>
+                    </ul>
+
+                    <h2>Sonuç</h2>
+
+                    <p>
+                        Prompt mühendisliği gizli kelimeler bulmaktan çok açık iletişim
+                        kurmakla ilgilidir. Güçlü promptlar görevi açıklar, gerekli
+                        bağlamı sağlar ve beklenen sonucu tanımlar.
+                    </p>
+
+                    <p>
+                        En etkili yaklaşım; düzenli bir promptla başlamak, yanıtı
+                        incelemek ve çıktı hedefe ulaşıncaya kadar talimatları
+                        geliştirmektir.
+                    </p>
                 `
             }
         };
 
-        function initPost() {
-            let activeLang = 'en';
-            try {
-                const browserLang = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
-                if (localizations[browserLang]) activeLang = browserLang;
-            } catch (e) {}
+        function detectLanguage() {
+            const languages =
+                navigator.languages && navigator.languages.length
+                    ? navigator.languages
+                    : [navigator.language || navigator.userLanguage || 'en'];
 
-            document.documentElement.lang = activeLang;
-            const data = localizations[activeLang] || localizations.en;
-
-            document.getElementById('nav-home').innerText = data.navHome;
-            document.getElementById('nav-blog').innerText = data.navBlog;
-            document.getElementById('post-title').innerText = data.title;
-            document.getElementById('post-date').innerText = data.date;
-            document.getElementById('post-body').innerHTML = data.body;
+            return languages.some(language =>
+                String(language).toLowerCase().startsWith('tr')
+            ) ? 'tr' : 'en';
         }
 
-        initPost();
+        function renderPost(language) {
+            const data =
+                localizations[language] ||
+                localizations.en;
+
+            document.documentElement.lang = language;
+            document.title = data.pageTitle;
+
+            const metaDescription =
+                document.querySelector('meta[name="description"]');
+
+            if (metaDescription) {
+                metaDescription.setAttribute(
+                    'content',
+                    data.pageDescription
+                );
+            }
+
+            const ogTitle =
+                document.querySelector('meta[property="og:title"]');
+
+            if (ogTitle) {
+                ogTitle.setAttribute(
+                    'content',
+                    data.title
+                );
+            }
+
+            const ogDescription =
+                document.querySelector('meta[property="og:description"]');
+
+            if (ogDescription) {
+                ogDescription.setAttribute(
+                    'content',
+                    data.pageDescription
+                );
+            }
+
+            const twitterTitle =
+                document.querySelector('meta[name="twitter:title"]');
+
+            if (twitterTitle) {
+                twitterTitle.setAttribute(
+                    'content',
+                    data.title
+                );
+            }
+
+            const twitterDescription =
+                document.querySelector('meta[name="twitter:description"]');
+
+            if (twitterDescription) {
+                twitterDescription.setAttribute(
+                    'content',
+                    data.pageDescription
+                );
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.dataset.i18n;
+
+                if (data[key]) {
+                    element.textContent = data[key];
+                }
+            });
+
+            document.getElementById('post-title').textContent =
+                data.title;
+
+            document.getElementById('post-description').textContent =
+                data.description;
+
+            document.getElementById('post-date').textContent =
+                data.date;
+
+            document.getElementById('post-body').innerHTML =
+                data.body;
+        }
+
+        document.getElementById('current-year').textContent =
+            new Date().getFullYear();
+
+        renderPost(detectLanguage());
     </script>
 </body>
 </html>
