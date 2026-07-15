@@ -9,138 +9,1347 @@
 
   gtag('config', 'G-3NNQ6DL9K1');
 </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How AI Background Removers Work - Toolcas Blog</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .glow-bg { background-color: #0b0f19; }
-    </style>
-</head>
-<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen">
 
-    <!-- Arka Plan Modern Blur Efekti -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none overflow-hidden opacity-20 z-0">
-        <div class="absolute top-[-10%] right-[30%] w-[500px] h-[500px] bg-purple-600 rounded-full blur-[130px]"></div>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>How AI Background Removers Work - Toolcas Blog</title>
+
+    <meta
+        name="description"
+        content="Learn how AI background removal tools use image segmentation, object detection and alpha matting to separate subjects from image backgrounds."
+    >
+
+    <meta
+        name="robots"
+        content="index, follow, max-image-preview:large"
+    >
+
+    <meta name="author" content="Toolcas Editorial">
+    <meta name="theme-color" content="#0b0f19">
+
+    <link
+        rel="canonical"
+        href="https://www.toolcas.com/blog/how-ai-background-removers-work.html"
+    >
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+
+    <meta
+        property="og:title"
+        content="How AI Background Removers Work Behind the Scenes"
+    >
+
+    <meta
+        property="og:description"
+        content="Discover how segmentation, object recognition and alpha matting help AI tools remove image backgrounds."
+    >
+
+    <meta
+        property="og:url"
+        content="https://www.toolcas.com/blog/how-ai-background-removers-work.html"
+    >
+
+    <meta property="og:site_name" content="Toolcas">
+
+    <meta
+        property="article:published_time"
+        content="2026-07-10T10:00:00+03:00"
+    >
+
+    <meta
+        property="article:modified_time"
+        content="2026-07-16T01:00:00+03:00"
+    >
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="How AI Background Removers Work Behind the Scenes"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Learn how AI tools identify subjects, calculate transparency and remove image backgrounds."
+    >
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        toolcas: {
+                            dark: '#0b0f19',
+                            panel: '#111827',
+                            indigo: '#6366f1',
+                            purple: '#a855f7',
+                            cyan: '#22d3ee'
+                        }
+                    },
+
+                    boxShadow: {
+                        glow: '0 0 45px rgba(99, 102, 241, 0.14)'
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0b0f19;
+        }
+
+        ::selection {
+            background: rgba(99, 102, 241, 0.42);
+            color: #ffffff;
+        }
+
+        .glow-bg {
+            background-color: #0b0f19;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                #818cf8,
+                #c084fc,
+                #67e8f9
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .article-content p {
+            margin-top: 1.25rem;
+        }
+
+        .article-content h2 {
+            margin-top: 2.75rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+
+        .article-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+            font-size: 1.2rem;
+            line-height: 1.75rem;
+            font-weight: 700;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-top: 1.25rem;
+            padding-left: 1.4rem;
+        }
+
+        .article-content ul {
+            list-style-type: disc;
+        }
+
+        .article-content ol {
+            list-style-type: decimal;
+        }
+
+        .article-content li {
+            margin-top: 0.65rem;
+        }
+
+        .article-content strong {
+            color: #f3f4f6;
+            font-weight: 700;
+        }
+
+        .article-content blockquote {
+            margin-top: 2rem;
+            padding: 1.25rem 1.5rem;
+            border-left: 4px solid #8b5cf6;
+            border-radius: 0 1rem 1rem 0;
+            background: rgba(139, 92, 246, 0.08);
+            color: #d1d5db;
+        }
+
+        .process-card {
+            border: 1px solid rgba(55, 65, 81, 0.8);
+            border-radius: 1rem;
+            background: rgba(17, 24, 39, 0.65);
+            padding: 1.25rem;
+        }
+
+        .skip-link {
+            position: fixed;
+            top: -100px;
+            left: 16px;
+            z-index: 9999;
+            padding: 10px 16px;
+            border-radius: 10px;
+            background: #ffffff;
+            color: #111827;
+            font-weight: 700;
+            transition: top 0.2s ease;
+        }
+
+        .skip-link:focus {
+            top: 16px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+
+    <!-- Blog Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How AI Background Removers Work Behind the Scenes",
+        "description": "Learn how AI background removal tools use image segmentation, object detection and alpha matting to separate subjects from image backgrounds.",
+        "datePublished": "2026-07-10T10:00:00+03:00",
+        "dateModified": "2026-07-16T01:00:00+03:00",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.toolcas.com/blog/how-ai-background-removers-work.html"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Toolcas Editorial",
+            "url": "https://www.toolcas.com/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Toolcas",
+            "url": "https://www.toolcas.com/"
+        },
+        "isPartOf": {
+            "@type": "Blog",
+            "name": "Toolcas Blog",
+            "url": "https://www.toolcas.com/blog/"
+        },
+        "keywords": [
+            "AI background remover",
+            "image segmentation",
+            "alpha matting",
+            "computer vision",
+            "background removal"
+        ],
+        "inLanguage": "en"
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.toolcas.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://www.toolcas.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "How AI Background Removers Work",
+                "item": "https://www.toolcas.com/blog/how-ai-background-removers-work.html"
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen overflow-x-hidden">
+
+    <a
+        href="#main-content"
+        class="skip-link"
+        data-i18n="skipContent"
+    >
+        Skip to content
+    </a>
+
+    <!-- Background Effects -->
+    <div
+        aria-hidden="true"
+        class="fixed inset-0 pointer-events-none overflow-hidden opacity-20 z-0"
+    >
+        <div class="absolute top-[-240px] right-[5%] md:right-[25%] w-[620px] h-[620px] bg-purple-600 rounded-full blur-[170px]"></div>
+
+        <div class="absolute top-[350px] left-[-260px] w-[520px] h-[520px] bg-indigo-700 rounded-full blur-[180px] opacity-50"></div>
+
+        <div class="absolute top-[1100px] right-[-260px] w-[520px] h-[520px] bg-cyan-700 rounded-full blur-[180px] opacity-30"></div>
     </div>
 
-    <!-- Üst Menü (Navbar) -->
-    <header class="relative z-10 border-b border-gray-800/80 bg-[#0b0f19]/70 backdrop-blur-md sticky top-0">
+    <!-- Header -->
+    <header class="relative z-50 border-b border-gray-800/80 bg-[#0b0f19]/80 backdrop-blur-xl sticky top-0">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="../index.html" class="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                TOOLCAS
+
+            <a
+                href="../index.html"
+                class="flex items-center gap-3"
+                aria-label="Toolcas homepage"
+            >
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+
+                    <span
+                        class="text-white font-black text-lg"
+                        aria-hidden="true"
+                    >
+                        T
+                    </span>
+                </div>
+
+                <span class="text-2xl font-black tracking-tight gradient-text">
+                    TOOLCAS
+                </span>
             </a>
-            <nav class="space-x-6 text-sm font-medium text-gray-400">
-                <a href="../index.html" id="nav-home" class="hover:text-white transition-colors">Home</a>
-                <a href="index.html" id="nav-blog" class="hover:text-white transition-colors">Blog</a>
+
+            <nav
+                class="flex items-center gap-4 sm:gap-7 text-sm font-medium text-gray-400"
+                aria-label="Main navigation"
+            >
+                <a
+                    href="../index.html"
+                    class="hover:text-white transition-colors"
+                    data-i18n="navHome"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="index.html"
+                    class="hover:text-white transition-colors"
+                    data-i18n="navBlog"
+                >
+                    Blog
+                </a>
+
+                <a
+                    href="../index.html#tools"
+                    class="hidden sm:inline hover:text-white transition-colors"
+                    data-i18n="navTools"
+                >
+                    Tools
+                </a>
             </nav>
         </div>
     </header>
 
-    <!-- Blog Detay İçeriği -->
-    <main class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
+    <!-- Main Content -->
+    <main
+        id="main-content"
+        class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 pb-24"
+    >
+        <!-- Breadcrumb -->
+        <nav
+            aria-label="Breadcrumb"
+            class="text-sm text-gray-500 mb-8"
+        >
+            <a
+                href="../index.html"
+                class="hover:text-indigo-300 transition-colors"
+                data-i18n="navHome"
+            >
+                Home
+            </a>
+
+            <span class="mx-2" aria-hidden="true">/</span>
+
+            <a
+                href="index.html"
+                class="hover:text-indigo-300 transition-colors"
+                data-i18n="navBlog"
+            >
+                Blog
+            </a>
+
+            <span class="mx-2" aria-hidden="true">/</span>
+
+            <span
+                class="text-gray-300"
+                data-i18n="breadcrumbArticle"
+            >
+                AI Background Removal
+            </span>
+        </nav>
+
+        <!-- Article -->
         <article>
-            <!-- Üst Bilgi ve Meta Veriler -->
-            <header class="mb-8">
-                <div class="flex items-center gap-3 mb-4">
-                    <span id="post-tag" class="px-2.5 py-0.5 text-[11px] font-semibold bg-indigo-500/10 text-indigo-400 rounded-md uppercase tracking-wider"></span>
-                    <span id="post-date" class="text-xs text-gray-500"></span>
+            <header class="mb-10 sm:mb-12">
+
+                <div class="flex flex-wrap items-center gap-3 mb-6">
+
+                    <span class="inline-flex items-center px-3.5 py-1.5 rounded-full border border-purple-500/20 bg-purple-500/10 text-purple-300 text-xs font-bold uppercase tracking-widest">
+
+                        <span data-i18n="category">
+                            Computer Vision
+                        </span>
+                    </span>
+
+                    <span
+                        class="text-sm text-gray-500"
+                        data-i18n="readingTime"
+                    >
+                        7 min read
+                    </span>
                 </div>
-                <h1 id="post-title" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4 leading-tight"></h1>
+
+                <h1
+                    id="post-title"
+                    class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08]"
+                >
+                    How AI Background Removers Work Behind the Scenes
+                </h1>
+
+                <p
+                    id="post-description"
+                    class="text-lg sm:text-xl text-gray-400 leading-8 mt-6 max-w-3xl"
+                >
+                    Discover how modern image-processing systems identify subjects, refine difficult edges and create transparent backgrounds.
+                </p>
+
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 mt-8 pb-8 border-b border-gray-800">
+
+                    <div class="flex items-center gap-3">
+
+                        <div class="w-11 h-11 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center font-black text-white">
+
+                            T
+                        </div>
+
+                        <div>
+                            <p class="text-sm font-semibold text-gray-200">
+                                Toolcas Editorial
+                            </p>
+
+                            <p
+                                id="post-date"
+                                class="text-xs text-gray-500 mt-1"
+                            >
+                                Published on July 10, 2026
+                            </p>
+                        </div>
+                    </div>
+
+                    <a
+                        href="index.html"
+                        class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-300 hover:text-white transition-colors"
+                    >
+                        <span data-i18n="allArticles">
+                            All articles
+                        </span>
+
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
             </header>
 
-            <!-- Dinamik Makale Gövdesi -->
-            <div id="post-body" class="text-gray-300 text-sm leading-relaxed space-y-6 border-t border-gray-900 pt-8"></div>
+            <div
+                id="post-body"
+                class="article-content rounded-3xl border border-gray-800 bg-gray-900/45 backdrop-blur-sm p-6 sm:p-9 text-gray-400 text-base leading-8"
+            >
+                <!-- Article content rendered with JavaScript -->
+            </div>
         </article>
+
+        <!-- Article Navigation -->
+        <section class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+            <a
+                href="ai-asset-creation.html"
+                class="group rounded-2xl border border-gray-800 bg-gray-900/40 hover:bg-gray-900/75 hover:border-indigo-500/30 p-5 transition-all"
+            >
+                <span
+                    class="text-xs uppercase tracking-widest text-gray-500"
+                    data-i18n="relatedArticle"
+                >
+                    Related article
+                </span>
+
+                <span
+                    class="block text-base font-bold text-white mt-2 group-hover:text-indigo-300 transition-colors"
+                    data-i18n="relatedArticleTitle"
+                >
+                    AI and Modern Asset Creation
+                </span>
+            </a>
+
+            <a
+                href="../index.html#tools"
+                class="group rounded-2xl border border-gray-800 bg-gray-900/40 hover:bg-gray-900/75 hover:border-purple-500/30 p-5 transition-all"
+            >
+                <span
+                    class="text-xs uppercase tracking-widest text-gray-500"
+                    data-i18n="toolLibrary"
+                >
+                    Tool library
+                </span>
+
+                <span
+                    class="block text-base font-bold text-white mt-2 group-hover:text-purple-300 transition-colors"
+                    data-i18n="exploreTools"
+                >
+                    Explore Toolcas tools
+                </span>
+            </a>
+        </section>
+
+        <!-- CTA -->
+        <section class="relative overflow-hidden mt-14 rounded-3xl border border-purple-500/20 bg-gradient-to-br from-purple-950/70 to-indigo-950/50 p-7 sm:p-10 text-center shadow-glow">
+
+            <div
+                aria-hidden="true"
+                class="absolute inset-0 opacity-30"
+            >
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-purple-500 rounded-full blur-[100px]"></div>
+
+                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-indigo-500 rounded-full blur-[100px]"></div>
+            </div>
+
+            <div class="relative z-10">
+
+                <h2
+                    class="text-2xl sm:text-3xl font-bold text-white"
+                    data-i18n="ctaTitle"
+                >
+                    Explore practical online tools
+                </h2>
+
+                <p
+                    class="text-gray-300 leading-7 mt-4 max-w-2xl mx-auto"
+                    data-i18n="ctaDescription"
+                >
+                    Use Toolcas utilities for coding, writing, data and everyday productivity.
+                </p>
+
+                <a
+                    href="../index.html#tools"
+                    class="inline-flex items-center gap-2 mt-7 px-6 py-3 rounded-xl bg-white text-gray-950 font-bold hover:bg-gray-100 transition-colors"
+                >
+                    <span data-i18n="ctaButton">
+                        Explore tools
+                    </span>
+
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-900 bg-[#070a12] text-xs text-gray-500 py-8 text-center relative z-10">
-        &copy; 2026 Toolcas Inc. All rights reserved.
+    <footer class="relative z-10 border-t border-gray-800/80 bg-[#070a12]">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-7">
+
+                <div>
+                    <a
+                        href="../index.html"
+                        class="text-xl font-black gradient-text"
+                    >
+                        TOOLCAS
+                    </a>
+
+                    <p
+                        class="text-sm text-gray-500 mt-2 max-w-md"
+                        data-i18n="footerDescription"
+                    >
+                        Free online tools for coding, writing and everyday productivity.
+                    </p>
+                </div>
+
+                <nav
+                    class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-500"
+                    aria-label="Footer navigation"
+                >
+                    <a
+                        href="../index.html#tools"
+                        class="hover:text-white transition-colors"
+                        data-i18n="navTools"
+                    >
+                        Tools
+                    </a>
+
+                    <a
+                        href="index.html"
+                        class="hover:text-white transition-colors"
+                        data-i18n="navBlog"
+                    >
+                        Blog
+                    </a>
+
+                    <a
+                        href="../faq/faq.html"
+                        class="hover:text-white transition-colors"
+                        data-i18n="navFaq"
+                    >
+                        FAQ
+                    </a>
+
+                    <a
+                        href="../privacy/index.html"
+                        class="hover:text-white transition-colors"
+                        data-i18n="privacy"
+                    >
+                        Privacy
+                    </a>
+
+                    <a
+                        href="../terms/index.html"
+                        class="hover:text-white transition-colors"
+                        data-i18n="terms"
+                    >
+                        Terms
+                    </a>
+                </nav>
+            </div>
+
+            <div class="border-t border-gray-800/70 mt-8 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-gray-600">
+
+                <p>
+                    © <span id="current-year"></span> Toolcas.
+                    <span data-i18n="rights">
+                        All rights reserved.
+                    </span>
+                </p>
+
+                <p data-i18n="footerNote">
+                    Built for faster and smarter work.
+                </p>
+            </div>
+        </div>
     </footer>
 
-    <!-- DİL VE İÇERİK MOTORU -->
     <script>
         const localizations = {
             en: {
+                pageTitle: 'How AI Background Removers Work - Toolcas Blog',
+
+                pageDescription: 'Learn how AI background removal tools use image segmentation, object detection and alpha matting to separate subjects from image backgrounds.',
+
+                skipContent: 'Skip to content',
                 navHome: 'Home',
                 navBlog: 'Blog',
-                tag: 'Technology',
-                date: 'July 10, 2026',
+                navTools: 'Tools',
+                navFaq: 'FAQ',
+                privacy: 'Privacy',
+                terms: 'Terms',
+
+                breadcrumbArticle: 'AI Background Removal',
+                category: 'Computer Vision',
+                readingTime: '7 min read',
+
                 title: 'How AI Background Removers Work Behind the Scenes',
+
+                description: 'Discover how modern image-processing systems identify subjects, refine difficult edges and create transparent backgrounds.',
+
+                date: 'Published on July 10, 2026',
+
+                allArticles: 'All articles',
+                relatedArticle: 'Related article',
+                relatedArticleTitle: 'AI and Modern Asset Creation',
+                toolLibrary: 'Tool library',
+                exploreTools: 'Explore Toolcas tools',
+
+                ctaTitle: 'Explore practical online tools',
+
+                ctaDescription: 'Use Toolcas utilities for coding, writing, data and everyday productivity.',
+
+                ctaButton: 'Explore tools',
+
+                footerDescription: 'Free online tools for coding, writing and everyday productivity.',
+
+                rights: 'All rights reserved.',
+                footerNote: 'Built for faster and smarter work.',
+
                 body: `
-                    <p class="text-base text-gray-400">Have you ever wondered how single-purpose web tools isolate a person, product, or animal from an image in the blink of an eye? The secret lies within advanced machine learning architectures specifically optimized for computer vision tasks.</p>
-                    
-                    <h2 class="text-xl font-bold text-white mt-8 mb-4">1. The Core Architecture: Semantic Segmentation</h2>
-                    <p>Unlike basic editing software that relies on color contrast or magic wand tolerances, artificial intelligence treats the image as a collection of semantic units. Deep Convolutional Neural Networks (CNNs) analyze the matrix of pixels to understand not just where colors change, but what objects are actually present in the viewport.</p>
-                    
-                    <h2 class="text-xl font-bold text-white mt-8 mb-4">2. Trimap Generation and Alpha Matting</h2>
-                    <p>Once the AI recognizes the core subject, it creates an internal map split into three distinct zones: definite foreground, definite background, and an unknown transition zone (usually around complex areas like hair, fur, or semi-transparent fabrics). The system then applies alpha matting algorithms to compute the exact transparency values for each pixel in this transition zone, resulting in a perfectly clean cutout.</p>
-                    
-                    <h2 class="text-xl font-bold text-white mt-8 mb-4">3. Why Cloud Processing Changes Everything</h2>
-                    <p>Running these heavy neural networks locally on a standard mobile browser or older computer would take minutes and drain significant battery. By leveraging secure, serverless cloud processing infrastructures, web platforms can accept an uploaded image, pass it through optimized model pipelines, and return a clean alpha-channel transparent PNG file within milliseconds.</p>
+                    <p class="text-lg sm:text-xl text-gray-300 font-medium leading-8">
+                        AI background removal tools can separate people, products,
+                        animals and other subjects from an image with very little
+                        manual input. Behind the simple upload button is a sequence
+                        of computer-vision processes designed to understand which
+                        pixels belong to the subject and which belong to the background.
+                    </p>
+
+                    <p>
+                        Traditional editing tools usually depend on manual selections,
+                        color ranges or edge-detection controls. AI-assisted tools use
+                        trained models that can recognize visual patterns and estimate
+                        the boundaries of objects.
+                    </p>
+
+                    <h2>1. The image is prepared for analysis</h2>
+
+                    <p>
+                        Before a model analyzes an image, the file may be decoded,
+                        resized and converted into a numerical format suitable for
+                        processing.
+                    </p>
+
+                    <p>
+                        The system does not see the picture as a person does. It receives
+                        a grid of pixel values containing information such as brightness,
+                        color and position.
+                    </p>
+
+                    <h2>2. The subject is identified</h2>
+
+                    <p>
+                        A computer-vision model examines the image and estimates which
+                        regions contain the main subject. Depending on the system, this
+                        stage may use object detection, semantic segmentation, instance
+                        segmentation or a combination of several techniques.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <strong>Object detection</strong> estimates where an object
+                            is located, usually by drawing a rectangular boundary.
+                        </li>
+
+                        <li>
+                            <strong>Semantic segmentation</strong> assigns a category
+                            to individual pixels.
+                        </li>
+
+                        <li>
+                            <strong>Instance segmentation</strong> separates individual
+                            objects even when several objects belong to the same category.
+                        </li>
+                    </ul>
+
+                    <p>
+                        Background removal requires more than locating a rectangular
+                        area. The system must estimate the shape of the subject at pixel
+                        level.
+                    </p>
+
+                    <h2>3. A foreground mask is created</h2>
+
+                    <p>
+                        After analyzing the image, the model creates a mask. A mask is
+                        usually a map describing which pixels should remain visible and
+                        which pixels should be removed.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+
+                        <div class="process-card">
+                            <strong class="block text-white">
+                                Foreground
+                            </strong>
+
+                            <span class="block text-sm text-gray-500 mt-2">
+                                Pixels believed to belong to the main subject.
+                            </span>
+                        </div>
+
+                        <div class="process-card">
+                            <strong class="block text-white">
+                                Background
+                            </strong>
+
+                            <span class="block text-sm text-gray-500 mt-2">
+                                Pixels identified as removable background areas.
+                            </span>
+                        </div>
+
+                        <div class="process-card">
+                            <strong class="block text-white">
+                                Uncertain edges
+                            </strong>
+
+                            <span class="block text-sm text-gray-500 mt-2">
+                                Complex areas requiring additional refinement.
+                            </span>
+                        </div>
+                    </div>
+
+                    <h2>4. Difficult edges are refined</h2>
+
+                    <p>
+                        Sharp edges around solid objects are relatively easy to isolate.
+                        Hair, fur, smoke, glass, motion blur and transparent fabric are
+                        more difficult because foreground and background colors may be
+                        mixed within the same pixel.
+                    </p>
+
+                    <p>
+                        Systems may use a trimap to divide the image into definite
+                        foreground, definite background and an uncertain transition
+                        region.
+                    </p>
+
+                    <p>
+                        Alpha matting techniques can then estimate a transparency value
+                        for pixels in this uncertain area. This produces softer and more
+                        natural boundaries than simply deleting every pixel outside a
+                        hard outline.
+                    </p>
+
+                    <blockquote>
+                        The quality of a background removal result often depends on how
+                        accurately the system handles fine details and partially
+                        transparent edges.
+                    </blockquote>
+
+                    <h2>5. A transparent image is generated</h2>
+
+                    <p>
+                        When the mask is ready, the original background can be removed
+                        or replaced. The remaining subject is commonly exported as a PNG
+                        or WebP file containing an alpha channel.
+                    </p>
+
+                    <p>
+                        The alpha channel stores transparency information. A fully
+                        visible pixel has high opacity, while a removed background pixel
+                        is transparent. Edge pixels may contain partial transparency to
+                        create smoother transitions.
+                    </p>
+
+                    <h2>Why some images produce better results</h2>
+
+                    <p>
+                        Even advanced systems can struggle when the subject and
+                        background are visually similar.
+                    </p>
+
+                    <p>
+                        Background removal generally works better when:
+                    </p>
+
+                    <ul>
+                        <li>The subject is clearly visible</li>
+                        <li>The image has sufficient resolution</li>
+                        <li>The subject contrasts with the background</li>
+                        <li>Important parts of the subject are not cropped</li>
+                        <li>The image contains limited motion blur</li>
+                        <li>Lighting is reasonably balanced</li>
+                    </ul>
+
+                    <p>
+                        Difficult conditions can include low resolution, heavy shadows,
+                        transparent objects, overlapping subjects and backgrounds that
+                        closely match the subject's color.
+                    </p>
+
+                    <h2>Browser processing and cloud processing</h2>
+
+                    <p>
+                        Background-removal tools can be implemented in different ways.
+                        Some perform processing on a remote server, while others run
+                        compatible models directly inside the user's browser.
+                    </p>
+
+                    <h3>Cloud or server processing</h3>
+
+                    <p>
+                        Server-based tools upload the image to an external system, run
+                        the model on server hardware and return the result. This can
+                        support larger models but requires the image to be transferred
+                        over the network.
+                    </p>
+
+                    <h3>Browser-based processing</h3>
+
+                    <p>
+                        Browser-based tools may use JavaScript, WebAssembly, WebGL or
+                        WebGPU to perform compatible operations on the user's device.
+                        This can reduce uploads and may provide additional privacy when
+                        the tool is designed to keep image data local.
+                    </p>
+
+                    <p>
+                        The actual processing method depends on the individual service.
+                        Users should review the privacy information and technical
+                        description of the tool they use.
+                    </p>
+
+                    <h2>Why processing time varies</h2>
+
+                    <p>
+                        The time required to remove a background can depend on:
+                    </p>
+
+                    <ul>
+                        <li>Image dimensions and file size</li>
+                        <li>Model size and complexity</li>
+                        <li>The processing power of the device or server</li>
+                        <li>Network speed when uploads are required</li>
+                        <li>The number of refinement steps</li>
+                        <li>The complexity of the subject's edges</li>
+                    </ul>
+
+                    <p>
+                        A small product image with clear edges may be processed quickly,
+                        while a high-resolution photograph containing hair, shadows and
+                        transparent objects can require more work.
+                    </p>
+
+                    <h2>Common uses of background removal</h2>
+
+                    <ul>
+                        <li>Product photographs for online stores</li>
+                        <li>Profile and identification-style pictures</li>
+                        <li>Social media graphics</li>
+                        <li>Presentation assets</li>
+                        <li>Marketing banners and advertisements</li>
+                        <li>Thumbnails and content illustrations</li>
+                    </ul>
+
+                    <h2>Final thoughts</h2>
+
+                    <p>
+                        AI background removal combines subject recognition, pixel-level
+                        segmentation, edge refinement and transparency generation.
+                        Although the final experience may appear simple, the system must
+                        make a large number of visual decisions before producing a clean
+                        result.
+                    </p>
+
+                    <p>
+                        Future tools are likely to become better at handling hair,
+                        transparent materials, shadows and complex scenes. Human review
+                        may still be necessary for professional work, especially when
+                        accurate edges and consistent branding are important.
+                    </p>
                 `
             },
+
             tr: {
+                pageTitle: 'Yapay Zekâ Arka Plan Siliciler Nasıl Çalışır? - Toolcas Blog',
+
+                pageDescription: 'Yapay zekâ arka plan silme araçlarının nesne algılama, görüntü bölütleme ve alfa matlaştırma yöntemleriyle nasıl çalıştığını öğrenin.',
+
+                skipContent: 'İçeriğe geç',
                 navHome: 'Ana Sayfa',
                 navBlog: 'Blog',
-                tag: 'Teknoloji',
-                date: '10 Temmuz 2026',
-                title: 'AI Arka Plan Siliciler Arka Planda Nasıl Çalışır?',
+                navTools: 'Araçlar',
+                navFaq: 'SSS',
+                privacy: 'Gizlilik',
+                terms: 'Kullanım Koşulları',
+
+                breadcrumbArticle: 'Yapay Zekâ ile Arka Plan Silme',
+                category: 'Bilgisayarlı Görü',
+                readingTime: '7 dakikalık okuma',
+
+                title: 'Yapay Zekâ Arka Plan Siliciler Nasıl Çalışır?',
+
+                description: 'Modern görüntü işleme sistemlerinin nesneleri nasıl algıladığını, karmaşık kenarları nasıl düzelttiğini ve şeffaf arka plan oluşturduğunu keşfedin.',
+
+                date: '10 Temmuz 2026 tarihinde yayımlandı',
+
+                allArticles: 'Tüm yazılar',
+                relatedArticle: 'İlgili yazı',
+                relatedArticleTitle: 'Yapay Zekâ ve Modern İçerik Üretimi',
+                toolLibrary: 'Araç kütüphanesi',
+                exploreTools: 'Toolcas araçlarını keşfet',
+
+                ctaTitle: 'Kullanışlı çevrim içi araçları keşfedin',
+
+                ctaDescription: 'Kodlama, yazı, veri ve günlük üretkenlik için Toolcas araçlarını kullanın.',
+
+                ctaButton: 'Araçları keşfet',
+
+                footerDescription: 'Kodlama, yazı yazma ve günlük üretkenlik için ücretsiz çevrim içi araçlar.',
+
+                rights: 'Tüm hakları saklıdır.',
+                footerNote: 'Daha hızlı ve akıllı çalışma için geliştirildi.',
+
                 body: `
-                    <p class="text-base text-gray-400">Tek amaçlı web araçlarının bir insanı, ürünü veya hayvanı göz açıp kapayıncaya kadar görselden nasıl ayırdığını hiç merak ettiniz mi? Sır, bilgisayarlı görü görevleri için özel olarak optimize edilmiş gelişmiş makine öğrenimi mimarilerinde saklıdır.</p>
-                    
-                    <h2 class="text-xl font-bold text-white mt-8 mb-4">1. Temel Mimari: Anlamsal Bölütleme (Semantic Segmentation)</h2>
-                    <p>Renk kontrastına veya sihirli değnek toleranslarına dayanan temel düzenleme yazılımlarının aksine, yapay zeka görseli anlamsal birimlerin bir koleksiyonu olarak ele alır. Derin Evrişimli Sinir Ağları (CNN'ler), yalnızca renklerin nerede değiştiğini değil, ekranda gerçekte hangi nesnelerin bulunduğunu anlamak için piksel matrisini analiz eder.</p>
-                    
-                    <h2 class="text-xl font-bold text-white mt-8 mb-4">2. Trimap Oluşturma ve Alfa Matlaştırma</h2>
-                    <p>Yapay zeka ana nesneyi tanıdıktan sonra, üç belirgin bölgeye ayrılmış dahili bir harita oluşturur: kesin ön plan, kesin arka plan ve bilinmeyen bir geçiş bölgesi (genellikle saç, kürk veya yarı saydam kumaşlar gibi karmaşık alanların çevresi). Sistem daha sonra bu geçiş bölgesindeki her piksel için tam şeffaflık değerlerini hesaplamak amacıyla alfa matlaştırma algoritmaları uygular ve sonuçta kusursuz temizlikte bir kesim elde edilir.</p>
-                    
-                    <h2 class="text-xl font-bold text-white mt-8 mb-4">3. Bulut İşleme Neden Her Şeyi Değiştiriyor?</h2>
-                    <p>Bu ağır sinir ağlarını standart bir mobil tarayıcıda veya eski bir bilgisayarda yerel olarak çalıştırmak dakikalar alabilir ve ciddi pil tüketimine yol açabilirdi. Güvenli ve sunucusuz bulut işleme altyapılarından yararlanan web platformları, yüklenen bir görseli kabul edebilir, optimize edilmiş model hatlarından geçirebilir ve milisaniyeler içinde temiz bir alfa kanallı şeffaf PNG dosyası döndürebilir.</p>
+                    <p class="text-lg sm:text-xl text-gray-300 font-medium leading-8">
+                        Yapay zekâ destekli arka plan silme araçları; insanları,
+                        ürünleri, hayvanları ve diğer nesneleri çok az manuel işlemle
+                        görselin arka planından ayırabilir. Basit görünen yükleme
+                        düğmesinin arkasında, hangi piksellerin ana nesneye ve hangi
+                        piksellerin arka plana ait olduğunu belirleyen bir dizi
+                        bilgisayarlı görü işlemi bulunur.
+                    </p>
+
+                    <p>
+                        Geleneksel düzenleme araçları genellikle manuel seçimlere, renk
+                        aralıklarına veya kenar algılama ayarlarına dayanır. Yapay zekâ
+                        destekli araçlar ise görsel desenleri tanıyabilen ve nesnelerin
+                        sınırlarını tahmin edebilen eğitilmiş modeller kullanır.
+                    </p>
+
+                    <h2>1. Görsel analiz için hazırlanır</h2>
+
+                    <p>
+                        Bir model görseli analiz etmeden önce dosya çözümlenebilir,
+                        yeniden boyutlandırılabilir ve işleme için uygun sayısal bir
+                        biçime dönüştürülebilir.
+                    </p>
+
+                    <p>
+                        Sistem görseli insanlar gibi görmez. Parlaklık, renk ve konum
+                        bilgileri içeren bir piksel değerleri tablosu üzerinde çalışır.
+                    </p>
+
+                    <h2>2. Ana nesne belirlenir</h2>
+
+                    <p>
+                        Bilgisayarlı görü modeli görseli inceler ve ana nesnenin hangi
+                        bölgelerde bulunduğunu tahmin eder. Kullanılan sisteme göre bu
+                        aşamada nesne algılama, anlamsal bölütleme, örnek bölütleme veya
+                        birkaç yöntemin birleşimi kullanılabilir.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <strong>Nesne algılama,</strong>
+                            genellikle dikdörtgen bir alan oluşturarak nesnenin yaklaşık
+                            konumunu belirler.
+                        </li>
+
+                        <li>
+                            <strong>Anlamsal bölütleme,</strong>
+                            tek tek piksellere belirli kategoriler atar.
+                        </li>
+
+                        <li>
+                            <strong>Örnek bölütleme,</strong>
+                            aynı kategoriye ait olsalar bile ayrı nesneleri birbirinden
+                            ayırabilir.
+                        </li>
+                    </ul>
+
+                    <p>
+                        Arka plan silme işlemi için yalnızca dikdörtgen bir konum
+                        belirlemek yeterli değildir. Sistemin nesnenin gerçek şeklini
+                        piksel seviyesinde tahmin etmesi gerekir.
+                    </p>
+
+                    <h2>3. Ön plan maskesi oluşturulur</h2>
+
+                    <p>
+                        Görsel analiz edildikten sonra model bir maske oluşturur.
+                        Maske, hangi piksellerin görünür kalacağını ve hangi piksellerin
+                        kaldırılacağını belirten bir harita olarak düşünülebilir.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+
+                        <div class="process-card">
+                            <strong class="block text-white">
+                                Ön plan
+                            </strong>
+
+                            <span class="block text-sm text-gray-500 mt-2">
+                                Ana nesneye ait olduğu düşünülen pikseller.
+                            </span>
+                        </div>
+
+                        <div class="process-card">
+                            <strong class="block text-white">
+                                Arka plan
+                            </strong>
+
+                            <span class="block text-sm text-gray-500 mt-2">
+                                Kaldırılabilir arka plan olarak belirlenen pikseller.
+                            </span>
+                        </div>
+
+                        <div class="process-card">
+                            <strong class="block text-white">
+                                Belirsiz kenarlar
+                            </strong>
+
+                            <span class="block text-sm text-gray-500 mt-2">
+                                Ek düzeltme gerektiren karmaşık geçiş alanları.
+                            </span>
+                        </div>
+                    </div>
+
+                    <h2>4. Karmaşık kenarlar düzeltilir</h2>
+
+                    <p>
+                        Katı nesnelerin keskin kenarlarını ayırmak nispeten kolaydır.
+                        Saç, kürk, duman, cam, hareket bulanıklığı ve şeffaf kumaşlar
+                        daha zordur. Bunun nedeni ön plan ve arka plan renklerinin aynı
+                        piksel içerisinde karışabilmesidir.
+                    </p>
+
+                    <p>
+                        Sistemler görseli kesin ön plan, kesin arka plan ve belirsiz
+                        geçiş bölgesi olarak ayıran bir trimap kullanabilir.
+                    </p>
+
+                    <p>
+                        Alfa matlaştırma yöntemleri bu belirsiz alandaki pikseller için
+                        şeffaflık değerleri tahmin eder. Bu yöntem, sert bir çizginin
+                        dışındaki bütün pikselleri silmek yerine daha yumuşak ve doğal
+                        kenarlar oluşturabilir.
+                    </p>
+
+                    <blockquote>
+                        Arka plan silme sonucunun kalitesi büyük ölçüde sistemin ince
+                        ayrıntıları ve yarı şeffaf kenarları ne kadar doğru işlediğine
+                        bağlıdır.
+                    </blockquote>
+
+                    <h2>5. Şeffaf görsel oluşturulur</h2>
+
+                    <p>
+                        Maske hazır olduğunda orijinal arka plan kaldırılabilir veya
+                        başka bir arka planla değiştirilebilir. Kalan nesne genellikle
+                        alfa kanalı içeren PNG veya WebP dosyası olarak dışa aktarılır.
+                    </p>
+
+                    <p>
+                        Alfa kanalı şeffaflık bilgisini saklar. Tamamen görünür bir
+                        piksel yüksek opaklık değerine sahipken kaldırılan arka plan
+                        pikseli şeffaftır. Kenarlardaki pikseller daha yumuşak geçişler
+                        için kısmi şeffaflık içerebilir.
+                    </p>
+
+                    <h2>Bazı görseller neden daha iyi sonuç verir?</h2>
+
+                    <p>
+                        Gelişmiş sistemler bile nesne ile arka plan birbirine çok
+                        benzediğinde zorlanabilir.
+                    </p>
+
+                    <p>
+                        Arka plan silme işlemi genellikle şu durumlarda daha iyi çalışır:
+                    </p>
+
+                    <ul>
+                        <li>Ana nesne açık biçimde görünüyorsa</li>
+                        <li>Görsel yeterli çözünürlüğe sahipse</li>
+                        <li>Nesne ile arka plan arasında belirgin kontrast varsa</li>
+                        <li>Nesnenin önemli bölümleri kırpılmamışsa</li>
+                        <li>Görselde yoğun hareket bulanıklığı yoksa</li>
+                        <li>Aydınlatma dengeliyse</li>
+                    </ul>
+
+                    <p>
+                        Düşük çözünürlük, yoğun gölgeler, şeffaf nesneler, üst üste
+                        geçen nesneler ve ana nesneyle aynı renkteki arka planlar işlemi
+                        zorlaştırabilir.
+                    </p>
+
+                    <h2>Tarayıcı işleme ve bulut işleme</h2>
+
+                    <p>
+                        Arka plan silme araçları farklı şekillerde geliştirilebilir.
+                        Bazıları işlemi uzak bir sunucuda gerçekleştirirken bazıları
+                        uyumlu modelleri doğrudan kullanıcının tarayıcısında çalıştırır.
+                    </p>
+
+                    <h3>Bulut veya sunucu taraflı işleme</h3>
+
+                    <p>
+                        Sunucu tabanlı araçlar görseli harici bir sisteme yükler, modeli
+                        sunucu donanımında çalıştırır ve sonucu geri gönderir. Bu yöntem
+                        daha büyük modellerin kullanılmasını sağlayabilir ancak görselin
+                        ağ üzerinden aktarılmasını gerektirir.
+                    </p>
+
+                    <h3>Tarayıcı tabanlı işleme</h3>
+
+                    <p>
+                        Tarayıcı tabanlı araçlar uyumlu işlemleri kullanıcının cihazında
+                        gerçekleştirmek için JavaScript, WebAssembly, WebGL veya WebGPU
+                        kullanabilir. Araç görsel verilerini yerel tutacak şekilde
+                        tasarlandıysa bu yöntem yüklemeleri azaltabilir ve ek gizlilik
+                        sağlayabilir.
+                    </p>
+
+                    <p>
+                        Gerçek işleme yöntemi kullanılan hizmete göre değişir.
+                        Kullanıcıların aracın gizlilik açıklamalarını ve teknik çalışma
+                        biçimini incelemesi gerekir.
+                    </p>
+
+                    <h2>İşlem süresi neden değişir?</h2>
+
+                    <p>
+                        Arka plan silme süresini şu etkenler değiştirebilir:
+                    </p>
+
+                    <ul>
+                        <li>Görselin boyutları ve dosya büyüklüğü</li>
+                        <li>Modelin boyutu ve karmaşıklığı</li>
+                        <li>Cihazın veya sunucunun işlem gücü</li>
+                        <li>Yükleme gerekiyorsa internet bağlantısının hızı</li>
+                        <li>Uygulanan kenar düzeltme adımlarının sayısı</li>
+                        <li>Ana nesnenin kenarlarının karmaşıklığı</li>
+                    </ul>
+
+                    <p>
+                        Net kenarlara sahip küçük bir ürün görseli hızlı işlenebilirken
+                        saç, gölge ve şeffaf nesneler içeren yüksek çözünürlüklü bir
+                        fotoğraf daha fazla işlem gerektirebilir.
+                    </p>
+
+                    <h2>Arka plan silmenin yaygın kullanım alanları</h2>
+
+                    <ul>
+                        <li>E-ticaret ürün görselleri</li>
+                        <li>Profil ve kimlik tarzı fotoğraflar</li>
+                        <li>Sosyal medya tasarımları</li>
+                        <li>Sunum görselleri</li>
+                        <li>Reklam ve pazarlama afişleri</li>
+                        <li>Video küçük resimleri ve içerik görselleri</li>
+                    </ul>
+
+                    <h2>Sonuç</h2>
+
+                    <p>
+                        Yapay zekâ ile arka plan silme; nesne tanıma, piksel seviyesinde
+                        bölütleme, kenar düzeltme ve şeffaflık oluşturma işlemlerinin
+                        birleşimidir. Kullanıcı deneyimi basit görünse de sistem temiz
+                        bir sonuç oluşturmadan önce çok sayıda görsel karar verir.
+                    </p>
+
+                    <p>
+                        Gelecekteki araçların saç, şeffaf malzemeler, gölgeler ve
+                        karmaşık sahnelerde daha iyi sonuç vermesi beklenebilir.
+                        Özellikle doğru kenarların ve marka tutarlılığının önemli olduğu
+                        profesyonel çalışmalarda insan kontrolü yine gerekli olabilir.
+                    </p>
                 `
             }
         };
 
-        async function initPost() {
-            let activeLang = 'en';
-            try {
-                const response = await fetch('https://1.1.1.1/cdn-cgi/trace');
-                const text = await response.text();
-                const locLine = text.split('\n').find(line => line.startsWith('loc='));
-                if (locLine) {
-                    const country = locLine.split('=')[1].trim();
-                    if (country === 'TR') activeLang = 'tr';
-                    else {
-                        const browserLang = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
-                        if (localizations[browserLang]) activeLang = browserLang;
-                    }
-                }
-            } catch (e) {
-                const browserLang = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
-                if (localizations[browserLang]) activeLang = browserLang;
+        function detectLanguage() {
+            const languages =
+                navigator.languages && navigator.languages.length
+                    ? navigator.languages
+                    : [navigator.language || navigator.userLanguage || 'en'];
+
+            return languages.some(language =>
+                String(language).toLowerCase().startsWith('tr')
+            ) ? 'tr' : 'en';
+        }
+
+        function renderPost(language) {
+            const data =
+                localizations[language] ||
+                localizations.en;
+
+            document.documentElement.lang = language;
+            document.title = data.pageTitle;
+
+            const metaDescription =
+                document.querySelector('meta[name="description"]');
+
+            if (metaDescription) {
+                metaDescription.setAttribute(
+                    'content',
+                    data.pageDescription
+                );
             }
 
-            document.documentElement.lang = activeLang;
-            renderPost(activeLang);
+            const ogTitle =
+                document.querySelector('meta[property="og:title"]');
+
+            if (ogTitle) {
+                ogTitle.setAttribute(
+                    'content',
+                    data.title
+                );
+            }
+
+            const ogDescription =
+                document.querySelector('meta[property="og:description"]');
+
+            if (ogDescription) {
+                ogDescription.setAttribute(
+                    'content',
+                    data.pageDescription
+                );
+            }
+
+            const twitterTitle =
+                document.querySelector('meta[name="twitter:title"]');
+
+            if (twitterTitle) {
+                twitterTitle.setAttribute(
+                    'content',
+                    data.title
+                );
+            }
+
+            const twitterDescription =
+                document.querySelector('meta[name="twitter:description"]');
+
+            if (twitterDescription) {
+                twitterDescription.setAttribute(
+                    'content',
+                    data.pageDescription
+                );
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.dataset.i18n;
+
+                if (data[key]) {
+                    element.textContent = data[key];
+                }
+            });
+
+            document.getElementById('post-title').textContent =
+                data.title;
+
+            document.getElementById('post-description').textContent =
+                data.description;
+
+            document.getElementById('post-date').textContent =
+                data.date;
+
+            document.getElementById('post-body').innerHTML =
+                data.body;
         }
 
-        function renderPost(lang) {
-            const data = localizations[lang] || localizations.en;
+        document.getElementById('current-year').textContent =
+            new Date().getFullYear();
 
-            // Navigasyon
-            document.getElementById('nav-home').innerText = data.navHome;
-            document.getElementById('nav-blog').innerText = data.navBlog;
-
-            // Makale İçeriği
-            document.getElementById('post-tag').innerText = data.tag;
-            document.getElementById('post-date').innerText = data.date;
-            document.getElementById('post-title').innerText = data.title;
-            document.getElementById('post-body').innerHTML = data.body;
-        }
-
-        initPost();
+        renderPost(detectLanguage());
     </script>
 </body>
 </html>
