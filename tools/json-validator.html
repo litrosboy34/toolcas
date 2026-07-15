@@ -11,226 +11,719 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI JSON Validator & Formatter - Toolcas</title>
+
+    <title>JSON Validator & Formatter Online | Toolcas</title>
+    <meta name="description" content="Validate, format and inspect JSON directly in your browser with Toolcas JSON Validator. Free, fast and registration-free.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://www.toolcas.com/tools/json-validator.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="JSON Validator & Formatter | Toolcas">
+    <meta property="og:description" content="Validate and format JSON directly in your browser.">
+    <meta property="og:url" content="https://www.toolcas.com/tools/json-validator.html">
+    <meta property="og:site_name" content="Toolcas">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="JSON Validator & Formatter | Toolcas">
+    <meta name="twitter:description" content="Check JSON syntax and create readable formatted output online.">
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
         .glow-bg { background-color: #0b0f19; }
+        textarea, pre, code { tab-size: 2; }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Toolcas JSON Validator & Formatter",
+      "url": "https://www.toolcas.com/tools/json-validator.html",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "description": "A browser-based tool for validating, formatting and minifying JSON.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Toolcas",
+        "url": "https://www.toolcas.com/"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Toolcas",
+          "item": "https://www.toolcas.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "JSON Validator",
+          "item": "https://www.toolcas.com/tools/json-validator.html"
+        }
+      ]
+    }
+    </script>
+
     <script type="application/ld+json" id="faq-schema"></script>
 </head>
-<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen">
 
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none overflow-hidden opacity-20 z-0">
+<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen">
+    <div aria-hidden="true" class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none overflow-hidden opacity-20 z-0">
         <div class="absolute top-[-10%] left-[20%] w-[500px] h-[500px] bg-amber-600 rounded-full blur-[130px]"></div>
     </div>
 
     <!-- Adsense Üst Alanı Buraya Gelecek -->
 
     <header class="relative z-10 border-b border-gray-800/80 bg-[#0b0f19]/70 backdrop-blur-md sticky top-0">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="../index.html" class="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-16 py-3 flex items-center justify-between gap-4">
+            <a href="../index.html" aria-label="Toolcas homepage" class="text-2xl font-black tracking-tight bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
                 TOOLCAS
             </a>
-            <nav class="space-x-6 text-sm font-medium text-gray-400">
+
+            <nav aria-label="Main navigation" class="flex items-center gap-4 sm:gap-6 text-sm font-medium text-gray-400">
                 <a href="../index.html" id="nav-home" class="hover:text-white transition-colors">Home</a>
                 <a href="../index.html#tools" id="nav-all-tools" class="hover:text-white transition-colors">All Tools</a>
             </nav>
         </div>
     </header>
 
-    <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
-        
-        <div class="text-center mb-12">
-            <h1 id="tool-title" class="text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight"></h1>
-            <p id="tool-desc" class="text-base text-gray-400 max-w-2xl mx-auto"></p>
+    <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-12 pb-16">
+        <div class="text-center mb-10 sm:mb-12">
+            <p id="eyebrow" class="text-xs font-semibold uppercase tracking-[0.22em] text-amber-400 mb-3">Developer Tool</p>
+            <h1 id="tool-title" class="text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight">
+                JSON Validator & Formatter
+            </h1>
+            <p id="tool-desc" class="text-base text-gray-400 max-w-2xl mx-auto">
+                Validate JSON syntax, format readable output and minify valid JSON directly in your browser.
+            </p>
         </div>
 
-        <!-- JSON Validator Workspace -->
-        <section class="max-w-3xl mx-auto p-6 bg-gray-900/40 border border-gray-800 rounded-2xl shadow-2xl backdrop-blur-sm mb-16">
+        <section aria-labelledby="tool-title" class="max-w-3xl mx-auto p-4 sm:p-6 bg-gray-900/40 border border-gray-800 rounded-2xl shadow-2xl backdrop-blur-sm mb-16">
             <div class="space-y-4">
                 <div>
-                    <label id="label-input" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2"></label>
-                    <textarea id="json-input" rows="8" class="w-full bg-gray-950 border border-gray-800 rounded-lg px-4 py-3 text-sm font-mono text-gray-200 focus:outline-none focus:border-indigo-500 resize-none" placeholder='{ "status": "paste raw json here" }'></textarea>
-                </div>
-                
-                <div class="flex gap-4">
-                    <button onclick="validateJSON()" id="btn-process" class="flex-1 bg-amber-600 hover:bg-amber-500 text-white font-medium text-sm py-3 px-4 rounded-lg transition-colors shadow-lg shadow-amber-600/10"></button>
-                    <button onclick="clearInput()" id="btn-clear" class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium text-sm py-3 px-6 rounded-lg transition-colors"></button>
-                </div>
-                
-                <!-- Durum Bildirimi -->
-                <div id="status-msg" class="text-sm font-semibold hidden p-3 rounded-lg border"></div>
+                    <div class="flex items-center justify-between gap-4 mb-2">
+                        <label id="label-input" for="json-input" class="block text-xs font-semibold uppercase tracking-wider text-gray-400">
+                            Raw JSON
+                        </label>
+                        <button type="button" id="btn-sample" class="text-xs text-gray-500 hover:text-white transition-colors">
+                            Load sample
+                        </button>
+                    </div>
 
-                <!-- Çıktı Kutusu -->
-                <div id="output-box" class="mt-6 p-4 bg-gray-950/60 border border-gray-800/80 rounded-lg hidden relative">
-                    <p class="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-2">Formatted & Validated JSON</p>
-                    <pre><code id="output-code" class="text-xs font-mono text-gray-300 block overflow-x-auto whitespace-pre max-h-[400px]"></code></pre>
-                    <button onclick="copyJSON()" class="absolute top-4 right-4 text-xs bg-gray-900 hover:bg-gray-800 text-gray-400 hover:text-white px-2.5 py-1 rounded border border-gray-800 transition-colors">Copy</button>
+                    <textarea
+                        id="json-input"
+                        rows="12"
+                        spellcheck="false"
+                        autocomplete="off"
+                        class="w-full bg-gray-950 border border-gray-800 rounded-lg px-4 py-3 text-sm font-mono text-gray-200 focus:outline-none focus:ring-2 focus:ring-amber-500/40 focus:border-amber-500 resize-y min-h-64"
+                        placeholder='{ "name": "Toolcas", "status": "ready" }'
+                    ></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <button type="button" id="btn-process" class="sm:col-span-2 bg-amber-600 hover:bg-amber-500 text-white font-semibold text-sm py-3 px-4 rounded-lg transition-colors shadow-lg shadow-amber-600/10">
+                        Validate & Format
+                    </button>
+
+                    <button type="button" id="btn-clear" class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium text-sm py-3 px-6 rounded-lg transition-colors">
+                        Clear
+                    </button>
+                </div>
+
+                <div id="status-msg" class="hidden text-sm font-semibold p-3 rounded-lg border" role="status" aria-live="polite"></div>
+
+                <div id="error-details" class="hidden bg-rose-950/20 border border-rose-900/70 rounded-lg p-4">
+                    <p id="error-title" class="text-xs font-semibold uppercase tracking-wider text-rose-400 mb-2">Error details</p>
+                    <p id="error-message" class="text-sm text-rose-300 break-words"></p>
+                    <p id="error-location" class="text-xs text-gray-400 mt-2"></p>
+                    <pre id="error-preview" class="mt-3 overflow-x-auto text-xs font-mono text-gray-300 whitespace-pre-wrap"></pre>
+                </div>
+
+                <div id="output-box" class="mt-6 p-4 bg-gray-950/60 border border-gray-800/80 rounded-lg hidden">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
+                        <div>
+                            <p id="output-label" class="text-xs font-semibold uppercase tracking-wider text-amber-400">
+                                Formatted JSON
+                            </p>
+                            <p id="json-stats" class="text-xs text-gray-500 mt-1"></p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" id="btn-minify" class="text-xs bg-gray-900 hover:bg-gray-800 text-gray-300 hover:text-white px-3 py-1.5 rounded border border-gray-800 transition-colors">
+                                Minify
+                            </button>
+                            <button type="button" id="btn-download" class="text-xs bg-gray-900 hover:bg-gray-800 text-gray-300 hover:text-white px-3 py-1.5 rounded border border-gray-800 transition-colors">
+                                Download
+                            </button>
+                            <button type="button" id="btn-copy" class="text-xs bg-gray-900 hover:bg-gray-800 text-gray-300 hover:text-white px-3 py-1.5 rounded border border-gray-800 transition-colors">
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+
+                    <pre class="overflow-auto max-h-[460px]"><code id="output-code" class="text-xs sm:text-sm font-mono text-gray-300 block whitespace-pre"></code></pre>
                 </div>
             </div>
         </section>
 
         <!-- Adsense Orta Alanı Buraya Gelecek -->
 
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-gray-900 pt-12 mb-16">
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 border-t border-gray-900 pt-12 mb-16">
             <div>
-                <h2 id="how-to-title" class="text-xl font-bold text-white mb-4"></h2>
+                <h2 id="how-to-title" class="text-xl font-bold text-white mb-4">How to Use</h2>
                 <ol id="how-to-steps" class="space-y-3 text-sm text-gray-400 list-decimal list-inside"></ol>
             </div>
+
             <div>
-                <h2 id="features-title" class="text-xl font-bold text-white mb-4"></h2>
+                <h2 id="features-title" class="text-xl font-bold text-white mb-4">Key Features</h2>
                 <ul id="features-list" class="space-y-3 text-sm text-gray-400 list-disc list-inside"></ul>
             </div>
         </section>
 
         <section class="border-t border-gray-900 pt-12 mb-16">
-            <h2 id="seo-content-title" class="text-2xl font-bold text-white mb-6"></h2>
-            <div id="seo-content-body" class="text-sm text-gray-400 leading-relaxed space-y-4"></div>
+            <h2 id="seo-content-title" class="text-2xl font-bold text-white mb-6">Check and Format JSON Online</h2>
+            <div id="seo-content-body" class="text-sm text-gray-400 leading-7 space-y-4"></div>
         </section>
 
         <section id="faq-section" class="border-t border-gray-900 pt-12">
-            <h2 id="faq-section-title" class="text-2xl font-bold text-white mb-8 text-center"></h2>
+            <h2 id="faq-section-title" class="text-2xl font-bold text-white mb-8 text-center">
+                Frequently Asked Questions
+            </h2>
             <div id="faq-container" class="space-y-4 max-w-3xl mx-auto"></div>
         </section>
-
     </main>
 
-    <footer class="border-t border-gray-900 bg-[#070a12] text-xs text-gray-500 py-8 text-center relative z-10">
-        &copy; 2026 Toolcas Inc. All rights reserved.
+    <footer class="border-t border-gray-900 bg-[#070a12] text-sm text-gray-500 py-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 Toolcas. <span id="footer-rights">All rights reserved.</span></p>
+
+            <nav aria-label="Footer navigation" class="flex flex-wrap justify-center gap-x-5 gap-y-2">
+                <a href="../faq/faq.html" id="footer-faq" class="hover:text-white transition-colors">FAQ</a>
+                <a href="../privacy/index.html" id="footer-privacy" class="hover:text-white transition-colors">Privacy</a>
+                <a href="../terms/index.html" id="footer-terms" class="hover:text-white transition-colors">Terms</a>
+                <a href="../blog/index.html" id="footer-blog" class="hover:text-white transition-colors">Blog</a>
+            </nav>
+        </div>
     </footer>
 
     <script>
         const localizations = {
             en: {
-                navHome: 'Home', navAllTools: 'All Tools',
-                title: 'AI JSON Validator & Formatter',
-                desc: 'Parse, validate, and beautify your raw JSON schemas instantly in a secure client environment.',
-                labelInput: 'Raw JSON Input',
-                btnProcess: 'Validate & Format 🚀',
-                btnClear: 'Clear',
-                howTo: 'How to Validate?',
-                steps: ['Paste your raw or compressed JSON payload into the structural node box.', 'Click execute to initialize syntax verification.', 'Review structure errors or copy beautifully aligned schema matrices.'],
-                features: 'Technical Benefits',
-                featList: ['Instant structural node diagnosis.', 'Validates nested arrays against strict RFC 8259 frameworks.', 'Runs 100% on client RAM: absolute endpoint privacy.'],
-                seoTitle: 'Impeccable JSON Syntax Engineering',
-                seoBody: '<p>Modern API integrations require absolute structural precision. Even a missing comma can break high-density backend pipelines. Our engine parses structures locally under 5ms.</p>',
+                navHome: 'Home',
+                navAllTools: 'All Tools',
+                eyebrow: 'Developer Tool',
+                title: 'JSON Validator & Formatter',
+                desc: 'Validate JSON syntax, format readable output and minify valid JSON directly in your browser.',
+                labelInput: 'Raw JSON',
+                sample: 'Load sample',
+                process: 'Validate & Format',
+                clear: 'Clear',
+                output: 'Formatted JSON',
+                minify: 'Minify',
+                beautify: 'Beautify',
+                download: 'Download',
+                copy: 'Copy',
+                copied: 'Copied!',
+                empty: 'Paste JSON before running the validator.',
+                valid: '✓ Valid JSON',
+                invalid: '✗ Invalid JSON',
+                errorTitle: 'Error details',
+                line: 'Line',
+                column: 'Column',
+                stats: (chars, keys) => `${chars} characters • ${keys} properties`,
+                howTo: 'How to Use',
+                steps: [
+                    'Paste JSON into the input area or load the sample data.',
+                    'Click Validate & Format to check the syntax.',
+                    'Review the formatted result or inspect the error location.',
+                    'Copy, minify or download valid JSON.'
+                ],
+                features: 'Key Features',
+                featList: [
+                    'Validates JSON using the browser JSON parser.',
+                    'Formats valid JSON with readable indentation.',
+                    'Shows an estimated line and column for common syntax errors.',
+                    'Includes copy, minify and JSON download options.',
+                    'Works without registration on desktop and mobile browsers.'
+                ],
+                seoTitle: 'Check and Format JSON Online',
+                seoBody: `
+                    <p>JSON is commonly used for API responses, configuration files and data exchange between applications. A missing comma, quotation mark or closing bracket can prevent an application from reading the data correctly.</p>
+                    <p>This JSON validator checks whether the input can be parsed as valid JSON. Valid data is displayed with consistent indentation, while invalid input returns the parser message and an estimated error location when the browser provides enough information.</p>
+                    <p>The tool is suitable for quick checks and formatting. It does not validate data against a custom JSON Schema, API contract or business rule set.</p>
+                `,
                 faqTitle: 'Frequently Asked Questions',
                 faqs: [
-                    { q: 'Will my dataset be uploaded to servers?', a: 'No. The validation loops run entirely inside your browser sandbox.' },
-                    { q: 'Does it catch missing braces?', a: 'Yes, the parser explicitly highlights syntax breaks and column errors.' }
-                ]
+                    {
+                        q: 'What does this JSON validator check?',
+                        a: 'It checks whether the input follows valid JSON syntax and can be parsed by the browser JSON parser.'
+                    },
+                    {
+                        q: 'Does it validate a JSON Schema?',
+                        a: 'No. It validates JSON syntax only. Schema validation requires a separate schema definition and validator.'
+                    },
+                    {
+                        q: 'Why is my JSON invalid even though it looks correct?',
+                        a: 'Common causes include trailing commas, single quotes, unquoted property names, comments or missing brackets.'
+                    },
+                    {
+                        q: 'Can I download the formatted result?',
+                        a: 'Yes. After successful validation, use the Download button to save the result as a JSON file.'
+                    }
+                ],
+                rights: 'All rights reserved.',
+                footerFaq: 'FAQ',
+                footerPrivacy: 'Privacy',
+                footerTerms: 'Terms',
+                footerBlog: 'Blog'
             },
+
             tr: {
                 navHome: 'Ana Sayfa',
                 navAllTools: 'Tüm Araçlar',
-                title: 'AI JSON Doğrulayıcı ve Düzenleyici',
-                desc: 'Ham JSON şemalarınızı güvenli istemci alanında anında ayrıştırın, doğrulayın ve biçimlendirin.',
-                labelInput: 'Ham JSON Girdisi',
-                btnProcess: 'Doğrula ve Biçimlendir 🚀',
-                btnClear: 'Temizle',
-                howTo: 'Nasıl Doğrulanır?',
-                steps: ['Ham veya sıkıştırılmış JSON verinizi yapı kutusuna yapıştırın.', 'Sözdizimi doğrulamayı başlatmak için çalıştır butonuna tıklayın.', 'Hataları inceleyin veya mükemmel şekilde hizalanmış şemayı kopyalayın.'],
-                features: 'Teknik Avantajlar',
-                featList: ['Anlık yapısal düğüm teşhisi.', 'Strict RFC 8259 standartlarına göre iç içe geçmiş dizileri doğrulama.', '%100 istemci RAM\'inde çalışır: mutlak veri gizliliği.'],
-                seoTitle: 'Kusursuz JSON Sözdizimi Mühendisliği',
-                seoBody: '<p>Modern API entegrasyonları mutlak yapısal kesinlik gerektirir. Eksik tek bir virgül bile büyük arka plan veri hatlarına yol açabilir. Motorumuz yapıları yerel olarak 5ms altında çözümler.</p>',
+                eyebrow: 'Geliştirici Aracı',
+                title: 'JSON Doğrulayıcı ve Düzenleyici',
+                desc: 'JSON sözdizimini kontrol edin, okunabilir biçime dönüştürün ve geçerli JSON verisini küçültün.',
+                labelInput: 'Ham JSON',
+                sample: 'Örnek yükle',
+                process: 'Doğrula ve Biçimlendir',
+                clear: 'Temizle',
+                output: 'Biçimlendirilmiş JSON',
+                minify: 'Küçült',
+                beautify: 'Biçimlendir',
+                download: 'İndir',
+                copy: 'Kopyala',
+                copied: 'Kopyalandı!',
+                empty: 'Doğrulayıcıyı çalıştırmadan önce JSON verisi yapıştırın.',
+                valid: '✓ Geçerli JSON',
+                invalid: '✗ Geçersiz JSON',
+                errorTitle: 'Hata ayrıntıları',
+                line: 'Satır',
+                column: 'Sütun',
+                stats: (chars, keys) => `${chars} karakter • ${keys} özellik`,
+                howTo: 'Nasıl Kullanılır?',
+                steps: [
+                    'JSON verisini giriş alanına yapıştırın veya örnek veriyi yükleyin.',
+                    'Sözdizimini kontrol etmek için Doğrula ve Biçimlendir düğmesine basın.',
+                    'Biçimlendirilmiş sonucu veya hata konumunu inceleyin.',
+                    'Geçerli JSON verisini kopyalayın, küçültün veya indirin.'
+                ],
+                features: 'Öne Çıkan Özellikler',
+                featList: [
+                    'JSON verisini tarayıcının JSON ayrıştırıcısıyla doğrular.',
+                    'Geçerli JSON verisini okunabilir girintilerle biçimlendirir.',
+                    'Yaygın sözdizimi hataları için tahmini satır ve sütun gösterir.',
+                    'Kopyalama, küçültme ve JSON indirme seçenekleri sunar.',
+                    'Kayıt olmadan masaüstü ve mobil tarayıcılarda çalışır.'
+                ],
+                seoTitle: 'JSON Verisini Çevrimiçi Kontrol Edin ve Biçimlendirin',
+                seoBody: `
+                    <p>JSON; API yanıtlarında, yapılandırma dosyalarında ve uygulamalar arasındaki veri alışverişinde sıkça kullanılır. Eksik bir virgül, tırnak işareti veya kapanış parantezi, uygulamanın veriyi okuyamamasına neden olabilir.</p>
+                    <p>Bu JSON doğrulayıcı, girilen verinin geçerli JSON olarak ayrıştırılıp ayrıştırılamadığını kontrol eder. Geçerli veriler düzenli girintilerle gösterilir. Geçersiz girişlerde ise tarayıcının hata mesajı ve mümkün olduğunda tahmini hata konumu sunulur.</p>
+                    <p>Araç hızlı sözdizimi kontrolü ve biçimlendirme için uygundur. Özel JSON Schema, API sözleşmesi veya iş kurallarına göre doğrulama yapmaz.</p>
+                `,
                 faqTitle: 'Sıkça Sorulan Sorular',
                 faqs: [
-                    { q: 'Verilerim sunuculara yüklenecek mi?', a: 'Hayır. Doğrulama döngüleri tamamen tarayıcınızın güvenli alanı içinde çalışır.' },
-                    { q: 'Eksik parantezleri yakalar mı?', a: 'Evet, ayrıştırıcı sözdizimi kırılmalarını ve satır hatalarını açıkça belirtir.' }
-                ]
+                    {
+                        q: 'Bu JSON doğrulayıcı neyi kontrol eder?',
+                        a: 'Girilen verinin geçerli JSON sözdizimine uyup uymadığını ve tarayıcı tarafından ayrıştırılıp ayrıştırılamadığını kontrol eder.'
+                    },
+                    {
+                        q: 'JSON Schema doğrulaması yapar mı?',
+                        a: 'Hayır. Yalnızca JSON sözdizimini doğrular. Schema doğrulaması için ayrıca bir şema tanımı ve uygun doğrulayıcı gerekir.'
+                    },
+                    {
+                        q: 'Doğru görünmesine rağmen JSON neden geçersiz olabilir?',
+                        a: 'Sondaki virgüller, tek tırnaklar, tırnaksız özellik adları, yorum satırları veya eksik parantezler yaygın nedenlerdir.'
+                    },
+                    {
+                        q: 'Biçimlendirilmiş sonucu indirebilir miyim?',
+                        a: 'Evet. Başarılı doğrulamadan sonra İndir düğmesiyle sonucu JSON dosyası olarak kaydedebilirsiniz.'
+                    }
+                ],
+                rights: 'Tüm hakları saklıdır.',
+                footerFaq: 'SSS',
+                footerPrivacy: 'Gizlilik',
+                footerTerms: 'Kullanım Şartları',
+                footerBlog: 'Blog'
             }
         };
 
-        function loadPage() {
-            let activeLang = 'en';
-            try {
-                const browserLang = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
-                if (localizations[browserLang]) activeLang = browserLang;
-            } catch (e) {}
-            document.documentElement.lang = activeLang;
-            renderPage(activeLang);
+        let activeLang = 'en';
+        let parsedJSON = null;
+        let isMinified = false;
+
+        function getPreferredLanguage() {
+            const language = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+            return language.startsWith('tr') ? 'tr' : 'en';
         }
 
-        function renderPage(lang) {
-            const data = localizations[lang] || localizations.en;
-            document.getElementById('nav-home').innerText = data.navHome;
-            document.getElementById('nav-all-tools').innerText = data.navAllTools;
-            document.getElementById('tool-title').innerText = data.title;
-            document.getElementById('tool-desc').innerText = data.desc;
-            document.getElementById('label-input').innerText = data.labelInput;
-            document.getElementById('btn-process').innerText = data.btnProcess;
-            document.getElementById('btn-clear').innerText = data.btnClear;
-            document.getElementById('how-to-title').innerText = data.howTo;
-            document.getElementById('features-title').innerText = data.features;
-            document.getElementById('seo-content-title').innerText = data.seoTitle;
-            document.getElementById('seo-content-body').innerHTML = data.seoBody;
-            document.getElementById('faq-section-title').innerText = data.faqTitle;
+        function renderList(elementId, items) {
+            const container = document.getElementById(elementId);
+            container.replaceChildren();
 
-            const stepsContainer = document.getElementById('how-to-steps');
-            stepsContainer.innerHTML = '';
-            data.steps.forEach(step => stepsContainer.innerHTML += `<li>${step}</li>`);
-
-            const featContainer = document.getElementById('features-list');
-            featContainer.innerHTML = '';
-            data.featList.forEach(feat => featContainer.innerHTML += `<li>${feat}</li>`);
-
-            const faqContainer = document.getElementById('faq-container');
-            faqContainer.innerHTML = '';
-            data.faqs.forEach((faq, index) => {
-                faqContainer.innerHTML += `
-                    <div class="bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(${index})">
-                        <div class="p-5 flex justify-between items-center select-none">
-                            <h3 class="text-sm font-semibold text-white flex items-center"><span class="text-amber-400 mr-2">Q:</span> ${faq.q}</h3>
-                            <span id="faq-arr-${index}" class="text-xs text-gray-500 transition-transform">▼</span>
-                        </div>
-                        <div id="faq-answer-${index}" class="px-5 pb-5 pt-1 border-t border-gray-800/40 bg-gray-900/10 hidden">
-                            <p class="text-xs text-gray-400 pl-5">${faq.a}</p>
-                        </div>
-                    </div>`;
+            items.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                container.appendChild(li);
             });
         }
 
-        function toggleFaq(index) {
-            document.getElementById(`faq-answer-${index}`).classList.toggle('hidden');
-            document.getElementById(`faq-arr-${index}`).classList.toggle('rotate-180');
+        function renderFaqs(faqs) {
+            const container = document.getElementById('faq-container');
+            container.replaceChildren();
+
+            faqs.forEach((faq, index) => {
+                const item = document.createElement('article');
+                item.className = 'bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden shadow-sm';
+
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'w-full p-5 flex justify-between items-center gap-4 text-left';
+                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('aria-controls', `faq-answer-${index}`);
+
+                const question = document.createElement('span');
+                question.className = 'text-sm font-semibold text-white';
+                question.textContent = faq.q;
+
+                const arrow = document.createElement('span');
+                arrow.className = 'text-xs text-gray-500 transition-transform';
+                arrow.setAttribute('aria-hidden', 'true');
+                arrow.textContent = '▼';
+
+                const answer = document.createElement('div');
+                answer.id = `faq-answer-${index}`;
+                answer.className = 'px-5 pb-5 pt-4 border-t border-gray-800/40 bg-gray-900/10 hidden';
+                answer.hidden = true;
+
+                const answerText = document.createElement('p');
+                answerText.className = 'text-sm leading-6 text-gray-400';
+                answerText.textContent = faq.a;
+                answer.appendChild(answerText);
+
+                button.append(question, arrow);
+                button.addEventListener('click', () => {
+                    const open = button.getAttribute('aria-expanded') === 'true';
+                    button.setAttribute('aria-expanded', String(!open));
+                    answer.hidden = open;
+                    answer.classList.toggle('hidden', open);
+                    arrow.classList.toggle('rotate-180', !open);
+                });
+
+                item.append(button, answer);
+                container.appendChild(item);
+            });
+
+            document.getElementById('faq-schema').textContent = JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: faqs.map(faq => ({
+                    '@type': 'Question',
+                    name: faq.q,
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: faq.a
+                    }
+                }))
+            });
         }
 
-        function clearInput() {
-            document.getElementById('json-input').value = '';
-            document.getElementById('output-box').classList.add('hidden');
-            document.getElementById('status-msg').classList.add('hidden');
+        function renderPage(lang) {
+            activeLang = lang;
+            const data = localizations[lang] || localizations.en;
+            document.documentElement.lang = lang;
+
+            document.getElementById('nav-home').textContent = data.navHome;
+            document.getElementById('nav-all-tools').textContent = data.navAllTools;
+            document.getElementById('eyebrow').textContent = data.eyebrow;
+            document.getElementById('tool-title').textContent = data.title;
+            document.getElementById('tool-desc').textContent = data.desc;
+            document.getElementById('label-input').textContent = data.labelInput;
+            document.getElementById('btn-sample').textContent = data.sample;
+            document.getElementById('btn-process').textContent = data.process;
+            document.getElementById('btn-clear').textContent = data.clear;
+            document.getElementById('output-label').textContent = data.output;
+            document.getElementById('btn-minify').textContent = isMinified ? data.beautify : data.minify;
+            document.getElementById('btn-download').textContent = data.download;
+            document.getElementById('btn-copy').textContent = data.copy;
+            document.getElementById('error-title').textContent = data.errorTitle;
+            document.getElementById('how-to-title').textContent = data.howTo;
+            document.getElementById('features-title').textContent = data.features;
+            document.getElementById('seo-content-title').textContent = data.seoTitle;
+            document.getElementById('seo-content-body').innerHTML = data.seoBody;
+            document.getElementById('faq-section-title').textContent = data.faqTitle;
+            document.getElementById('footer-rights').textContent = data.rights;
+            document.getElementById('footer-faq').textContent = data.footerFaq;
+            document.getElementById('footer-privacy').textContent = data.footerPrivacy;
+            document.getElementById('footer-terms').textContent = data.footerTerms;
+            document.getElementById('footer-blog').textContent = data.footerBlog;
+
+            renderList('how-to-steps', data.steps);
+            renderList('features-list', data.featList);
+            renderFaqs(data.faqs);
         }
 
-        function validateJSON() {
-            const raw = document.getElementById('json-input').value;
-            const statusEl = document.getElementById('status-msg');
-            const outputBox = document.getElementById('output-box');
-            
-            if(!raw.trim()) return;
+        function countProperties(value) {
+            if (Array.isArray(value)) {
+                return value.reduce((total, item) => total + countProperties(item), 0);
+            }
 
-            try {
-                const parsed = JSON.parse(raw);
-                statusEl.className = "text-sm font-semibold p-3 rounded-lg border bg-emerald-950/40 border-emerald-800 text-emerald-400";
-                statusEl.innerText = document.documentElement.lang === 'tr' ? "✓ Geçerli JSON Formeti!" : "✓ Valid JSON Structure!";
-                statusEl.classList.remove('hidden');
-                
-                document.getElementById('output-code').innerText = JSON.stringify(parsed, null, 2);
-                outputBox.classList.remove('hidden');
-            } catch (err) {
-                statusEl.className = "text-sm font-semibold p-3 rounded-lg border bg-rose-950/40 border-rose-800 text-rose-400";
-                statusEl.innerText = `✗ Invalid JSON: ${err.message}`;
-                statusEl.classList.remove('hidden');
-                outputBox.classList.add('hidden');
+            if (value && typeof value === 'object') {
+                return Object.entries(value).reduce(
+                    (total, [, child]) => total + 1 + countProperties(child),
+                    0
+                );
+            }
+
+            return 0;
+        }
+
+        function getErrorPosition(message, raw) {
+            const positionMatch = message.match(/position\s+(\d+)/i);
+            if (!positionMatch) return null;
+
+            const position = Number(positionMatch[1]);
+            const before = raw.slice(0, position);
+            const lines = before.split('\n');
+
+            return {
+                position,
+                line: lines.length,
+                column: lines[lines.length - 1].length + 1
+            };
+        }
+
+        function buildErrorPreview(raw, location) {
+            if (!location) return '';
+
+            const lines = raw.split('\n');
+            const index = location.line - 1;
+            const target = lines[index] || '';
+            const pointer = ' '.repeat(Math.max(0, location.column - 1)) + '^';
+
+            const output = [];
+
+            if (index > 0) {
+                output.push(`${location.line - 1} | ${lines[index - 1]}`);
+            }
+
+            output.push(`${location.line} | ${target}`);
+            output.push(`    ${pointer}`);
+
+            if (index < lines.length - 1) {
+                output.push(`${location.line + 1} | ${lines[index + 1]}`);
+            }
+
+            return output.join('\n');
+        }
+
+        function setStatus(type, text) {
+            const status = document.getElementById('status-msg');
+            status.textContent = text;
+            status.classList.remove('hidden');
+
+            if (type === 'success') {
+                status.className = 'text-sm font-semibold p-3 rounded-lg border bg-emerald-950/40 border-emerald-800 text-emerald-400';
+            } else if (type === 'error') {
+                status.className = 'text-sm font-semibold p-3 rounded-lg border bg-rose-950/40 border-rose-800 text-rose-400';
+            } else {
+                status.className = 'text-sm font-semibold p-3 rounded-lg border bg-amber-950/40 border-amber-800 text-amber-400';
             }
         }
 
-        function copyJSON() {
-            const text = document.getElementById('output-code').innerText;
-            navigator.clipboard.writeText(text);
+        function validateJSON() {
+            const data = localizations[activeLang];
+            const raw = document.getElementById('json-input').value;
+            const outputBox = document.getElementById('output-box');
+            const errorDetails = document.getElementById('error-details');
+
+            if (!raw.trim()) {
+                parsedJSON = null;
+                setStatus('warning', data.empty);
+                outputBox.classList.add('hidden');
+                errorDetails.classList.add('hidden');
+                return;
+            }
+
+            try {
+                parsedJSON = JSON.parse(raw);
+                isMinified = false;
+
+                const output = JSON.stringify(parsedJSON, null, 2);
+                document.getElementById('output-code').textContent = output;
+                document.getElementById('json-stats').textContent = data.stats(
+                    output.length,
+                    countProperties(parsedJSON)
+                );
+
+                document.getElementById('btn-minify').textContent = data.minify;
+                setStatus('success', data.valid);
+                outputBox.classList.remove('hidden');
+                errorDetails.classList.add('hidden');
+            } catch (error) {
+                parsedJSON = null;
+                outputBox.classList.add('hidden');
+
+                const location = getErrorPosition(error.message, raw);
+                setStatus('error', data.invalid);
+
+                document.getElementById('error-message').textContent = error.message;
+
+                if (location) {
+                    document.getElementById('error-location').textContent =
+                        `${data.line}: ${location.line} • ${data.column}: ${location.column}`;
+                    document.getElementById('error-preview').textContent =
+                        buildErrorPreview(raw, location);
+                } else {
+                    document.getElementById('error-location').textContent = '';
+                    document.getElementById('error-preview').textContent = '';
+                }
+
+                errorDetails.classList.remove('hidden');
+            }
         }
 
-        loadPage();
+        function clearInput() {
+            parsedJSON = null;
+            isMinified = false;
+
+            document.getElementById('json-input').value = '';
+            document.getElementById('output-code').textContent = '';
+            document.getElementById('json-stats').textContent = '';
+            document.getElementById('output-box').classList.add('hidden');
+            document.getElementById('status-msg').classList.add('hidden');
+            document.getElementById('error-details').classList.add('hidden');
+            document.getElementById('btn-minify').textContent = localizations[activeLang].minify;
+            document.getElementById('json-input').focus();
+        }
+
+        function loadSample() {
+            const sample = {
+                name: 'Toolcas',
+                type: 'JSON Validator',
+                active: true,
+                features: [
+                    'validate',
+                    'format',
+                    'minify',
+                    'download'
+                ],
+                settings: {
+                    language: activeLang,
+                    indentation: 2
+                }
+            };
+
+            document.getElementById('json-input').value = JSON.stringify(sample, null, 2);
+            validateJSON();
+        }
+
+        function toggleMinify() {
+            if (parsedJSON === null) return;
+
+            const data = localizations[activeLang];
+            isMinified = !isMinified;
+
+            const output = isMinified
+                ? JSON.stringify(parsedJSON)
+                : JSON.stringify(parsedJSON, null, 2);
+
+            document.getElementById('output-code').textContent = output;
+            document.getElementById('json-stats').textContent = data.stats(
+                output.length,
+                countProperties(parsedJSON)
+            );
+            document.getElementById('btn-minify').textContent =
+                isMinified ? data.beautify : data.minify;
+        }
+
+        async function copyJSON() {
+            const text = document.getElementById('output-code').textContent;
+            if (!text) return;
+
+            try {
+                await navigator.clipboard.writeText(text);
+            } catch (error) {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                textarea.remove();
+            }
+
+            const button = document.getElementById('btn-copy');
+            const original = button.textContent;
+            button.textContent = localizations[activeLang].copied;
+
+            setTimeout(() => {
+                button.textContent = original;
+            }, 1400);
+        }
+
+        function downloadJSON() {
+            const text = document.getElementById('output-code').textContent;
+            if (!text) return;
+
+            const blob = new Blob([text], { type: 'application/json;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+
+            link.href = url;
+            link.download = 'toolcas-formatted.json';
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+
+            URL.revokeObjectURL(url);
+        }
+
+        document.getElementById('btn-process').addEventListener('click', validateJSON);
+        document.getElementById('btn-clear').addEventListener('click', clearInput);
+        document.getElementById('btn-sample').addEventListener('click', loadSample);
+        document.getElementById('btn-minify').addEventListener('click', toggleMinify);
+        document.getElementById('btn-copy').addEventListener('click', copyJSON);
+        document.getElementById('btn-download').addEventListener('click', downloadJSON);
+
+        document.getElementById('json-input').addEventListener('keydown', event => {
+            if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+                validateJSON();
+            }
+
+            if (event.key === 'Tab') {
+                event.preventDefault();
+
+                const textarea = event.currentTarget;
+                const start = textarea.selectionStart;
+                const end = textarea.selectionEnd;
+
+                textarea.value =
+                    textarea.value.slice(0, start) +
+                    '  ' +
+                    textarea.value.slice(end);
+
+                textarea.selectionStart = textarea.selectionEnd = start + 2;
+            }
+        });
+
+        renderPage(getPreferredLanguage());
     </script>
 </body>
 </html>
