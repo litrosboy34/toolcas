@@ -1,295 +1,715 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Word & Character Counter - Toolcas</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .glow-bg { background-color: #0b0f19; }
-    </style>
-    
-    <!-- Dinamik FAQ SEO Şeması İçin Yuva -->
-    <script type="application/ld+json" id="faq-schema"></script>
-</head>
-<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3NNQ6DL9K1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <!-- Arka Plan Modern Blur Efekti -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none overflow-hidden opacity-20 z-0">
-        <div class="absolute top-[-10%] left-[30%] w-[500px] h-[500px] bg-indigo-600 rounded-full blur-[130px]"></div>
+  gtag('config', 'G-3NNQ6DL9K1');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free Word & Character Counter Online | Toolcas</title>
+<meta name="description" content="Count words, characters, sentences, paragraphs and reading time instantly with Toolcas Word Counter. Free, fast and easy to use.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Toolcas">
+<meta name="theme-color" content="#0b0f19">
+
+<link rel="canonical" href="https://www.toolcas.com/tools/word-counter.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Word & Character Counter | Toolcas">
+<meta property="og:description" content="Analyze words, characters, sentences, paragraphs and reading time in real time.">
+<meta property="og:url" content="https://www.toolcas.com/tools/word-counter.html">
+<meta property="og:site_name" content="Toolcas">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Word & Character Counter | Toolcas">
+<meta name="twitter:description" content="Count words, characters, sentences, paragraphs and reading time instantly.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #0b0f19; }
+  .glass { background: rgba(17, 24, 39, .58); backdrop-filter: blur(16px); }
+  textarea { resize: vertical; }
+  .toast {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Toolcas Word Counter",
+  "url": "https://www.toolcas.com/tools/word-counter.html",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "description": "A free browser-based word and character counter with sentence, paragraph and reading time statistics.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Toolcas",
+    "url": "https://www.toolcas.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.toolcas.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://www.toolcas.com/#tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Word Counter",
+      "item": "https://www.toolcas.com/tools/word-counter.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json" id="faq-schema"></script>
+</head>
+
+<body class="text-gray-100 font-sans antialiased min-h-screen overflow-x-hidden">
+
+<div class="fixed inset-x-0 top-0 h-[560px] pointer-events-none overflow-hidden opacity-25 -z-0">
+  <div class="absolute -top-28 left-1/3 w-[520px] h-[520px] bg-indigo-600 rounded-full blur-[145px]"></div>
+  <div class="absolute top-20 right-10 w-[360px] h-[360px] bg-purple-600 rounded-full blur-[130px] opacity-70"></div>
+</div>
+
+<header class="relative z-20 border-b border-gray-800/80 bg-[#0b0f19]/80 backdrop-blur-xl sticky top-0">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="../index.html" aria-label="Toolcas home"
+       class="text-2xl font-black tracking-tight bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+      TOOLCAS
+    </a>
+
+    <nav aria-label="Main navigation" class="flex items-center gap-4 sm:gap-6 text-sm font-medium text-gray-400">
+      <a href="../index.html" id="nav-home" class="hover:text-white transition-colors">Home</a>
+      <a href="../index.html#tools" id="nav-all-tools" class="hover:text-white transition-colors">All Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-20">
+
+  <section class="text-center mb-10 sm:mb-12">
+    <div id="tool-badge"
+         class="inline-flex items-center rounded-full border border-indigo-500/25 bg-indigo-500/10 px-3 py-1 text-xs font-semibold text-indigo-300 mb-5">
+      Free Writing Tool
     </div>
 
-    <!-- Üst Menü (Navbar) -->
-    <header class="relative z-10 border-b border-gray-800/80 bg-[#0b0f19]/70 backdrop-blur-md sticky top-0">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="../index.html" class="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                TOOLCAS
-            </a>
-            <nav class="space-x-6 text-sm font-medium text-gray-400">
-                <a href="../index.html" id="nav-home" class="hover:text-white transition-colors">Home</a>
-                <a href="../index.html#tools" id="nav-all-tools" class="hover:text-white transition-colors">All Tools</a>
-            </nav>
+    <h1 id="tool-title" class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-5 tracking-tight">
+      Word & Character Counter
+    </h1>
+
+    <p id="tool-desc" class="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+      Analyze word count, characters, sentences, paragraphs and reading time instantly.
+    </p>
+  </section>
+
+  <section class="max-w-5xl mx-auto mb-16">
+    <div class="glass border border-gray-800 rounded-3xl shadow-2xl shadow-black/30 overflow-hidden">
+      <div class="p-5 sm:p-7 lg:p-8 space-y-6">
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div class="bg-gray-950/70 border border-gray-800 p-4 rounded-2xl text-center">
+            <span id="stat-words-label" class="block text-[11px] text-gray-500 uppercase font-bold tracking-wider mb-2">Words</span>
+            <span id="cnt-words" class="text-2xl font-black text-indigo-400">0</span>
+          </div>
+
+          <div class="bg-gray-950/70 border border-gray-800 p-4 rounded-2xl text-center">
+            <span id="stat-chars-label" class="block text-[11px] text-gray-500 uppercase font-bold tracking-wider mb-2">Characters</span>
+            <span id="cnt-chars" class="text-2xl font-black text-purple-400">0</span>
+          </div>
+
+          <div class="bg-gray-950/70 border border-gray-800 p-4 rounded-2xl text-center">
+            <span id="stat-no-space-label" class="block text-[11px] text-gray-500 uppercase font-bold tracking-wider mb-2">No Spaces</span>
+            <span id="cnt-no-space" class="text-2xl font-black text-cyan-400">0</span>
+          </div>
+
+          <div class="bg-gray-950/70 border border-gray-800 p-4 rounded-2xl text-center">
+            <span id="stat-sentences-label" class="block text-[11px] text-gray-500 uppercase font-bold tracking-wider mb-2">Sentences</span>
+            <span id="cnt-sentences" class="text-2xl font-black text-emerald-400">0</span>
+          </div>
+
+          <div class="bg-gray-950/70 border border-gray-800 p-4 rounded-2xl text-center">
+            <span id="stat-paragraphs-label" class="block text-[11px] text-gray-500 uppercase font-bold tracking-wider mb-2">Paragraphs</span>
+            <span id="cnt-paragraphs" class="text-2xl font-black text-amber-400">0</span>
+          </div>
+
+          <div class="bg-gray-950/70 border border-gray-800 p-4 rounded-2xl text-center">
+            <span id="stat-reading-label" class="block text-[11px] text-gray-500 uppercase font-bold tracking-wider mb-2">Read Time</span>
+            <span id="cnt-reading" class="text-lg font-black text-rose-400 flex items-center justify-center min-h-8">0s</span>
+          </div>
         </div>
-    </header>
 
-    <!-- Ana İçerik Alanı -->
-    <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
-        
-        <!-- 1. Araç Başlığı ve Kısa Açıklama -->
-        <div class="text-center mb-12">
-            <h1 id="tool-title" class="text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight"></h1>
-            <p id="tool-desc" class="text-base text-gray-400 max-w-2xl mx-auto"></p>
+        <div>
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+            <label id="label-input" for="text-input"
+                   class="block text-xs font-semibold uppercase tracking-wider text-gray-400">
+              Your Text
+            </label>
+
+            <button type="button" id="btn-example"
+                    class="text-xs text-indigo-300 hover:text-indigo-200 transition-colors">
+              Load example
+            </button>
+          </div>
+
+          <textarea id="text-input" rows="12" maxlength="100000"
+                    class="w-full bg-gray-950 border border-gray-800 rounded-2xl px-4 py-4 text-sm text-gray-200 placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-colors"
+                    placeholder="Type or paste your content here..."></textarea>
         </div>
 
-        <!-- 2. Çalışan AI Araç Alanı -->
-        <section class="max-w-3xl mx-auto p-6 bg-gray-900/40 border border-gray-800 rounded-2xl shadow-2xl backdrop-blur-sm mb-16">
-            <div class="space-y-4">
-                <!-- Canlı Sayaç Metrikleri -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-2">
-                    <div class="bg-gray-950/60 border border-gray-800 p-4 rounded-xl text-center">
-                        <span id="stat-words-label" class="block text-xs text-gray-500 uppercase font-bold tracking-wider">Words</span>
-                        <span id="cnt-words" class="text-2xl font-black text-indigo-400">0</span>
-                    </div>
-                    <div class="bg-gray-950/60 border border-gray-800 p-4 rounded-xl text-center">
-                        <span id="stat-chars-label" class="block text-xs text-gray-500 uppercase font-bold tracking-wider">Characters</span>
-                        <span id="cnt-chars" class="text-2xl font-black text-purple-400">0</span>
-                    </div>
-                    <div class="bg-gray-950/60 border border-gray-800 p-4 rounded-xl text-center">
-                        <span id="stat-sentences-label" class="block text-xs text-gray-500 uppercase font-bold tracking-wider">Sentences</span>
-                        <span id="cnt-sentences" class="text-2xl font-black text-emerald-400">0</span>
-                    </div>
-                    <div class="bg-gray-950/60 border border-gray-800 p-4 rounded-xl text-center">
-                        <span id="stat-reading-label" class="block text-xs text-gray-500 uppercase font-bold tracking-wider">Read Time</span>
-                        <span id="cnt-reading" class="text-lg font-black text-amber-400 flex items-center justify-center h-8">0s</span>
-                    </div>
-                </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="bg-gray-950/60 border border-gray-800 rounded-xl px-4 py-3">
+            <p id="avg-word-label" class="text-xs text-gray-500 mb-1">Average word length</p>
+            <p id="avg-word-length" class="text-sm font-semibold text-white">0</p>
+          </div>
 
-                <!-- Metin Giriş Alanı -->
-                <textarea id="text-input" oninput="analyzeText()" rows="8" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-indigo-500 resize-none transition-colors" placeholder="Type or paste your content here to calculate dense statistics instantly..."></p></textarea>
-                
-                <div class="flex justify-end">
-                    <button onclick="clearText()" id="btn-clear" class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium text-xs py-2.5 px-6 rounded-lg transition-colors"></button>
-                </div>
+          <div class="bg-gray-950/60 border border-gray-800 rounded-xl px-4 py-3">
+            <p id="meta-label" class="text-xs text-gray-500 mb-1">Meta description</p>
+            <p class="text-sm font-semibold text-white">
+              <span id="meta-count">0</span>/160
+            </p>
+            <div class="mt-2 h-1.5 rounded-full bg-gray-800 overflow-hidden">
+              <div id="meta-bar" class="h-full bg-indigo-500 transition-all" style="width:0%"></div>
             </div>
-        </section>
+          </div>
 
-        <!-- Adsense Orta Alanı Buraya Gelecek -->
-
-        <!-- 3. Nasıl Kullanılır & Özellikler (İki Kolon Yapı) -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-gray-900 pt-12 mb-16">
-            <div>
-                <h2 id="how-to-title" class="text-xl font-bold text-white mb-4"></h2>
-                <ol id="how-to-steps" class="space-y-3 text-sm text-gray-400 list-decimal list-inside"></ol>
+          <div class="bg-gray-950/60 border border-gray-800 rounded-xl px-4 py-3">
+            <p id="social-label" class="text-xs text-gray-500 mb-1">X / Tweet</p>
+            <p class="text-sm font-semibold text-white">
+              <span id="social-count">0</span>/280
+            </p>
+            <div class="mt-2 h-1.5 rounded-full bg-gray-800 overflow-hidden">
+              <div id="social-bar" class="h-full bg-purple-500 transition-all" style="width:0%"></div>
             </div>
-            <div>
-                <h2 id="features-title" class="text-xl font-bold text-white mb-4"></h2>
-                <ul id="features-list" class="space-y-3 text-sm text-gray-400 list-disc list-inside"></ul>
-            </div>
-        </section>
+          </div>
+        </div>
 
-        <!-- 4. Detaylı SEO İçerik Alanı -->
-        <section class="border-t border-gray-900 pt-12 mb-16">
-            <h2 id="seo-content-title" class="text-2xl font-bold text-white mb-6"></h2>
-            <div id="seo-content-body" class="text-sm text-gray-400 leading-relaxed space-y-4"></div>
-        </section>
+        <div class="flex flex-col sm:flex-row sm:justify-end gap-3">
+          <button type="button" id="btn-copy"
+                  class="bg-indigo-600/15 hover:bg-indigo-600/25 text-indigo-300 border border-indigo-500/25 font-medium text-xs py-3 px-5 rounded-xl transition-colors">
+            Copy Text
+          </button>
 
-        <!-- 5. Minimum 6-10 Adet FAQ Bölümü -->
-        <section id="faq-section" class="border-t border-gray-900 pt-12">
-            <h2 id="faq-section-title" class="text-2xl font-bold text-white mb-8 text-center"></h2>
-            <div id="faq-container" class="space-y-4 max-w-3xl mx-auto"></div>
-        </section>
+          <button type="button" id="btn-clear"
+                  class="bg-gray-900 hover:bg-gray-800 border border-gray-800 text-gray-300 font-medium text-xs py-3 px-5 rounded-xl transition-colors">
+            Clear
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    </main>
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 border-t border-gray-900 pt-12 mb-16">
+    <div>
+      <h2 id="how-to-title" class="text-2xl font-bold text-white mb-5">How to use the word counter</h2>
+      <ol id="how-to-steps" class="space-y-4 text-sm text-gray-400"></ol>
+    </div>
 
-    <!-- Footer -->
-    <footer class="border-t border-gray-900 bg-[#070a12] text-xs text-gray-500 py-8 text-center relative z-10">
-        &copy; 2026 Toolcas Inc. All rights reserved.
-    </footer>
+    <div>
+      <h2 id="features-title" class="text-2xl font-bold text-white mb-5">What it measures</h2>
+      <ul id="features-list" class="space-y-4 text-sm text-gray-400"></ul>
+    </div>
+  </section>
 
-    <!-- DİL MOTORU VE SAYAÇ MANTIĞI -->
-    <script>
-        const localizations = {
-            en: {
-                navHome: 'Home', navAllTools: 'All Tools',
-                title: 'AI Word & Character Counter',
-                desc: 'Analyze your copy parameters instantly. Monitor total words, exact characters, reading pacing, and sentence counts in real time.',
-                placeholder: 'Type or paste your content here to calculate dense statistics instantly...',
-                btnClear: 'Clear Workspace',
-                lblWords: 'Words', lblChars: 'Characters', lblSentences: 'Sentences', lblReading: 'Read Time',
-                howTo: 'How to Use?',
-                steps: ['Input or paste your text documents directly into the responsive workspace node.', 'Watch the metadata registers update live with every single keystroke.', 'Track estimated human reading speed allocations before running deployments.'],
-                features: 'Analytical Coverage',
-                featList: ['Calculates parameters 100% locally on device browser hardware.', 'Accurately bypasses double spacing irregularities to avoid artificial inflation.', 'Evaluates structural text payload weight metrics under 2ms.'],
-                seoTitle: 'Precision Copywriting and Character Auditing Engine',
-                seoBody: '<p>Content delivery networks, metadata parameters, and social platform nodes depend on strict layout boundaries. A single overflowing character can truncate search results or ruin interface layouts. Utilizing client-side execution nodes guarantees that sensitive draft configurations are never transmitted across open network infrastructures.</p>',
-                faqTitle: 'Frequently Asked Questions',
-                faqs: [
-                    { q: 'Is there a character processing limit?', a: 'No, the memory structure handles massive documents cleanly directly inside your local browser.' },
-                    { q: 'How is reading time calculated?', a: 'It utilizes standard global cognitive metrics assuming an average reading pace of 200 words per minute.' },
-                    { q: 'Are my inputs sent to remote networks?', a: 'Never. All counting operations happen instantly inside local volatile memory allocations.' },
-                    { q: 'Does it support markdown elements?', a: 'Yes, all plaintext and specialized formatting tokens are audited raw.' },
-                    { q: 'Does it count spaces as characters?', a: 'Yes, it tracks overall string structural metrics, which includes space nodes.' },
-                    { q: 'Is it fully responsive on mobile devices?', a: 'Absolutely, the counting interface scales dynamically on all mobile browsers.' },
-                    { q: 'Can I use it for meta description checking?', a: 'Yes, it is optimal for monitoring strict 160-character SEO thresholds.' }
-                ]
-            },
-            tr: {
-                navHome: 'Ana Sayfa', navAllTools: 'Tüm Araçlar',
-                title: 'AI Kelime ve Karakter Sayıcı',
-                desc: 'Metin parametrelerinizi anında analiz edin. Toplam kelime, net karakter, tahmini okuma süresi ve cümle sayılarını canlı takip edin.',
-                placeholder: 'Yoğun istatistikleri anında hesaplamak için içeriğinizi buraya yazın veya yapıştırın...',
-                btnClear: 'Alanı Temizle',
-                lblWords: 'Kelime', lblChars: 'Karakter', lblSentences: 'Cümle', lblReading: 'Okuma Süresi',
-                howTo: 'Nasıl Kullanılır?',
-                steps: ['Metin belgelerinizi doğrudan esnek çalışma alanına yazın veya yapıştırın.', 'Her tuş vuruşunda meta veri kayıtlarının canlı olarak güncellenmesini izleyin.', 'Yayınlamadan önce tahmini insan okuma hızı tahsislerini takip edin.'],
-                features: 'Analitik Kapsam',
-                featList: ['Parametreleri %100 yerel olarak cihaz tarayıcı donanımında hesaplar.', 'Yapay şişirmeyi önlemek için çift boşluk düzensizliklerini doğru şekilde atlar.', 'Yapısal metin yükü ağırlık ölçümlerini 2 ms altında değerlendirir.'],
-                seoTitle: 'Hassas Metin Yazarlığı ve Karakter Denetim Motoru',
-                seoBody: '<p>İçerik dağıtım ağları, meta veri parametreleri ve sosyal platform düğümleri katı yerleşim sınırlarına bağlıdır. Tek bir taşan karakter arama sonuçlarını kesebilir veya arayüz düzenlerini bozabilir. İstemci tarafı yürütme düğümlerinin kullanılması, hassas taslak yapılandırmalarının asla açık ağ altyapıları üzerinden iletilmemesini garanti eder.</p>',
-                faqTitle: 'Sıkça Sorulan Sorular',
-                faqs: [
-                    { q: 'Karakter işleme sınırı var mı?', a: 'Hayır, bellek yapısı devasa belgeleri doğrudan yerel tarayıcınızın içinde temiz bir şekilde işler.' },
-                    { q: 'Okuma süresi nasıl hesaplanıyor?', a: 'Dakikada ortalama 200 kelimelik bir okuma hızı varsayarak standart küresel bilişsel ölçümleri kullanır.' },
-                    { q: 'Girdilerim uzak ağlara gönderiliyor mu?', a: 'Asla. Tüm sayma işlemleri anlık olarak yerel geçici bellek tahsislerinde gerçekleşir.' },
-                    { q: 'Markdown öğelerini destekliyor mu?', a: 'Evet, tüm düz metin ve özel biçimlendirme simgeleri ham olarak denetlenir.' },
-                    { q: 'Boşlukları karakter olarak sayıyor mu?', a: 'Evet, boşluk düğümlerini içeren genel dize yapısal ölçümlerini izler.' },
-                    { q: 'Mobil cihazlarda tamamen uyumlu mu?', a: 'Kesinlikle, sayma arayüzü tüm mobil tarayıcılarda dinamik olarak ölçeklenir.' },
-                    { q: 'Meta açıklama kontrolü için kullanabilir miyim?', a: 'Evet, katı 160 karakterlik SEO sınırlarını izlemek için en uygun araçtır.' }
-                ]
-            }
-        };
+  <section class="border-t border-gray-900 pt-12 mb-16">
+    <h2 id="seo-content-title" class="text-2xl sm:text-3xl font-bold text-white mb-6">
+      Check word and character limits instantly
+    </h2>
 
-        async function loadToolPage() {
-            let activeLang = 'en';
-            try {
-                const response = await fetch('https://1.1.1.1/cdn-cgi/trace');
-                const text = await response.text();
-                const locLine = text.split('\n').find(line => line.startsWith('loc='));
-                if (locLine) {
-                    const country = locLine.split('=')[1].trim();
-                    if (country === 'TR') activeLang = 'tr';
-                    else {
-                        const browserLang = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
-                        if (localizations[browserLang]) activeLang = browserLang;
-                    }
-                }
-            } catch (e) {
-                const browserLang = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
-                if (localizations[browserLang]) activeLang = browserLang;
-            }
+    <div id="seo-content-body" class="text-sm sm:text-base text-gray-400 leading-8 space-y-5 max-w-4xl"></div>
+  </section>
 
-            document.documentElement.lang = activeLang;
-            renderPageData(activeLang);
-            analyzeText();
-        }
+  <section id="faq-section" class="border-t border-gray-900 pt-12">
+    <h2 id="faq-section-title" class="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">
+      Frequently asked questions
+    </h2>
+    <div id="faq-container" class="space-y-4 max-w-3xl mx-auto"></div>
+  </section>
+</main>
 
-        function renderPageData(lang) {
-            const data = localizations[lang] || localizations.en;
+<footer class="relative z-10 border-t border-gray-900 bg-[#070a12]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="flex flex-col md:flex-row gap-6 items-center justify-between">
+      <p class="text-xs text-gray-500">&copy; 2026 Toolcas. All rights reserved.</p>
 
-            document.getElementById('nav-home').innerText = data.navHome;
-            document.getElementById('nav-all-tools').innerText = data.navAllTools;
-            document.getElementById('tool-title').innerText = data.title;
-            document.getElementById('tool-desc').innerText = data.desc;
-            document.getElementById('text-input').placeholder = data.placeholder;
-            document.getElementById('btn-clear').innerText = data.btnClear;
-            
-            document.getElementById('stat-words-label').innerText = data.lblWords;
-            document.getElementById('stat-chars-label').innerText = data.lblChars;
-            document.getElementById('stat-sentences-label').innerText = data.lblSentences;
-            document.getElementById('stat-reading-label').innerText = data.lblReading;
+      <nav aria-label="Footer navigation" class="flex flex-wrap justify-center gap-x-5 gap-y-3 text-xs text-gray-500">
+        <a href="../faq/faq.html" id="footer-faq" class="hover:text-white transition-colors">FAQ</a>
+        <a href="../privacy/index.html" id="footer-privacy" class="hover:text-white transition-colors">Privacy</a>
+        <a href="../terms/index.html" id="footer-terms" class="hover:text-white transition-colors">Terms</a>
+        <a href="../blog/index.html" id="footer-blog" class="hover:text-white transition-colors">Blog</a>
+      </nav>
+    </div>
+  </div>
+</footer>
 
-            document.getElementById('how-to-title').innerText = data.howTo;
-            document.getElementById('features-title').innerText = data.features;
-            document.getElementById('seo-content-title').innerText = data.seoTitle;
-            document.getElementById('seo-content-body').innerHTML = data.seoBody;
-            document.getElementById('faq-section-title').innerText = data.faqTitle;
+<div id="toast"
+     class="toast fixed bottom-5 left-1/2 -translate-x-1/2 z-50 rounded-xl border border-gray-700 bg-gray-900 px-4 py-3 text-sm text-gray-200 shadow-2xl"
+     role="status" aria-live="polite">
+  Copied
+</div>
 
-            const stepsContainer = document.getElementById('how-to-steps');
-            stepsContainer.innerHTML = '';
-            data.steps.forEach(step => stepsContainer.innerHTML += `<li>${step}</li>`);
+<script>
+const localizations = {
+  en: {
+    pageTitle: 'Free Word & Character Counter Online | Toolcas',
+    metaDescription: 'Count words, characters, sentences, paragraphs and reading time instantly with Toolcas Word Counter. Free, fast and easy to use.',
+    navHome: 'Home',
+    navAllTools: 'All Tools',
+    badge: 'Free Writing Tool',
+    title: 'Word & Character Counter',
+    desc: 'Analyze word count, characters, sentences, paragraphs and reading time instantly.',
+    labelInput: 'Your Text',
+    placeholder: 'Type or paste your content here...',
+    loadExample: 'Load example',
+    copy: 'Copy Text',
+    clear: 'Clear',
+    copied: 'Text copied',
+    emptyCopy: 'There is no text to copy.',
+    lblWords: 'Words',
+    lblChars: 'Characters',
+    lblNoSpace: 'No Spaces',
+    lblSentences: 'Sentences',
+    lblParagraphs: 'Paragraphs',
+    lblReading: 'Read Time',
+    avgWord: 'Average word length',
+    meta: 'Meta description',
+    social: 'X / Tweet',
+    howTo: 'How to use the word counter',
+    steps: [
+      'Type or paste your content into the text area.',
+      'Review the live word, character, sentence and paragraph statistics.',
+      'Check estimated reading time and average word length.',
+      'Use the 160-character and 280-character indicators for short-form content.'
+    ],
+    features: 'What it measures',
+    featList: [
+      'Words, characters with spaces and characters without spaces.',
+      'Sentences, paragraphs and estimated reading time.',
+      'Average word length based on letter count.',
+      'Live indicators for meta descriptions and short social posts.'
+    ],
+    seoTitle: 'Check word and character limits instantly',
+    seoBody: `
+      <p>Word and character limits matter when writing articles, essays, product descriptions, social posts and metadata. A live counter helps you stay within a required length without manually checking each section.</p>
+      <p>Toolcas Word Counter updates as you type. It counts words, characters, characters without spaces, sentences and paragraphs, then estimates reading time using an average reading speed of 200 words per minute.</p>
+      <p>The meta description and social post indicators are practical guides rather than universal rules. Search engines and platforms can display text differently depending on device, language and formatting.</p>
+    `,
+    faqTitle: 'Frequently asked questions',
+    faqs: [
+      {
+        q: 'How are words counted?',
+        a: 'Words are counted by separating visible text at spaces and line breaks while ignoring repeated empty spaces.'
+      },
+      {
+        q: 'Are spaces included in the character count?',
+        a: 'The main character count includes spaces. A separate statistic shows the count without whitespace.'
+      },
+      {
+        q: 'How is reading time estimated?',
+        a: 'Reading time is estimated using an average pace of 200 words per minute.'
+      },
+      {
+        q: 'How are paragraphs counted?',
+        a: 'Non-empty text blocks separated by one or more blank lines are counted as paragraphs.'
+      },
+      {
+        q: 'Can I use this for meta descriptions?',
+        a: 'Yes. The tool includes a 160-character progress indicator, but the exact visible length in search results can vary.'
+      },
+      {
+        q: 'Can I count Markdown or code?',
+        a: 'Yes. The tool counts the visible raw characters and text tokens that you paste into the field.'
+      }
+    ],
+    example: `Good writing is easier to improve when you can measure it. A word counter helps writers check article length, sentence count and reading time before publishing.
 
-            const featContainer = document.getElementById('features-list');
-            featContainer.innerHTML = '';
-            data.featList.forEach(feat => featContainer.innerHTML += `<li>${feat}</li>`);
+Character limits are also useful for meta descriptions, product titles and social media posts. Live statistics make it easier to edit a draft without switching between several tools.`
+  },
+  tr: {
+    pageTitle: 'Ücretsiz Kelime ve Karakter Sayacı | Toolcas',
+    metaDescription: 'Kelime, karakter, cümle, paragraf ve okuma süresini anında hesaplayın. Toolcas Kelime Sayacı ücretsiz ve kullanımı kolaydır.',
+    navHome: 'Ana Sayfa',
+    navAllTools: 'Tüm Araçlar',
+    badge: 'Ücretsiz Yazı Aracı',
+    title: 'Kelime ve Karakter Sayacı',
+    desc: 'Kelime, karakter, cümle, paragraf ve tahmini okuma süresini anında analiz edin.',
+    labelInput: 'Metniniz',
+    placeholder: 'İçeriğinizi buraya yazın veya yapıştırın...',
+    loadExample: 'Örnek yükle',
+    copy: 'Metni Kopyala',
+    clear: 'Temizle',
+    copied: 'Metin kopyalandı',
+    emptyCopy: 'Kopyalanacak bir metin bulunmuyor.',
+    lblWords: 'Kelime',
+    lblChars: 'Karakter',
+    lblNoSpace: 'Boşluksuz',
+    lblSentences: 'Cümle',
+    lblParagraphs: 'Paragraf',
+    lblReading: 'Okuma Süresi',
+    avgWord: 'Ortalama kelime uzunluğu',
+    meta: 'Meta açıklama',
+    social: 'X / Tweet',
+    howTo: 'Kelime sayacı nasıl kullanılır?',
+    steps: [
+      'İçeriğinizi metin alanına yazın veya yapıştırın.',
+      'Canlı kelime, karakter, cümle ve paragraf istatistiklerini inceleyin.',
+      'Tahmini okuma süresini ve ortalama kelime uzunluğunu kontrol edin.',
+      'Kısa içerikler için 160 ve 280 karakter göstergelerinden yararlanın.'
+    ],
+    features: 'Neleri ölçer?',
+    featList: [
+      'Kelime, boşluklu karakter ve boşluksuz karakter sayısı.',
+      'Cümle, paragraf ve tahmini okuma süresi.',
+      'Harf sayısına göre ortalama kelime uzunluğu.',
+      'Meta açıklamalar ve kısa sosyal medya metinleri için canlı göstergeler.'
+    ],
+    seoTitle: 'Kelime ve karakter sınırlarını anında kontrol edin',
+    seoBody: `
+      <p>Makale, deneme, ürün açıklaması, sosyal medya gönderisi ve meta veri yazarken kelime ve karakter sınırları önemlidir. Canlı bir sayaç, metnin her bölümünü elle kontrol etmeden hedef uzunlukta kalmanıza yardımcı olur.</p>
+      <p>Toolcas Kelime Sayacı siz yazdıkça güncellenir. Kelime, karakter, boşluksuz karakter, cümle ve paragraf sayılarını hesaplar; ardından dakikada ortalama 200 kelimelik hıza göre okuma süresi tahmini verir.</p>
+      <p>Meta açıklama ve sosyal medya göstergeleri pratik rehberlerdir; kesin ve evrensel sınırlar değildir. Arama motorları ve platformlar metni cihaz, dil ve biçime göre farklı gösterebilir.</p>
+    `,
+    faqTitle: 'Sıkça sorulan sorular',
+    faqs: [
+      {
+        q: 'Kelimeler nasıl sayılır?',
+        a: 'Kelimeler görünür metnin boşluk ve satır sonlarından ayrılmasıyla sayılır; art arda gelen boş alanlar yok sayılır.'
+      },
+      {
+        q: 'Karakter sayısına boşluklar dahil mi?',
+        a: 'Ana karakter sayısına boşluklar dahildir. Ayrı bir istatistik boşluk ve diğer beyaz alanlar çıkarılmış sayıyı gösterir.'
+      },
+      {
+        q: 'Okuma süresi nasıl hesaplanır?',
+        a: 'Okuma süresi dakikada ortalama 200 kelimelik okuma hızına göre tahmin edilir.'
+      },
+      {
+        q: 'Paragraflar nasıl sayılır?',
+        a: 'Bir veya daha fazla boş satırla ayrılan boş olmayan metin blokları paragraf olarak sayılır.'
+      },
+      {
+        q: 'Meta açıklama kontrolü için kullanabilir miyim?',
+        a: 'Evet. Araç 160 karakterlik bir ilerleme göstergesi sunar ancak arama sonuçlarında görünen kesin uzunluk değişebilir.'
+      },
+      {
+        q: 'Markdown veya kod metni sayılabilir mi?',
+        a: 'Evet. Araç alana yapıştırdığınız ham karakterleri ve metin parçalarını sayar.'
+      }
+    ],
+    example: `İyi bir metni geliştirmek, ölçebildiğiniz zaman daha kolaydır. Kelime sayacı; yazarların yayınlamadan önce makale uzunluğunu, cümle sayısını ve okuma süresini kontrol etmesine yardımcı olur.
 
-            const faqContainer = document.getElementById('faq-container');
-            faqContainer.innerHTML = '';
-            const schemaMainEntity = [];
+Karakter sınırları meta açıklamalar, ürün başlıkları ve sosyal medya gönderileri için de kullanışlıdır. Canlı istatistikler, farklı araçlar arasında geçiş yapmadan taslağı düzenlemeyi kolaylaştırır.`
+  }
+};
 
-            data.faqs.forEach((faq, index) => {
-                faqContainer.innerHTML += `
-                    <div class="bg-gray-900/30 border border-gray-800 rounded-xl overflow-hidden cursor-pointer shadow-sm" onclick="toggleFaqDetail(${index})">
-                        <div class="p-5 flex justify-between items-center select-none">
-                            <h3 class="text-sm font-semibold text-white flex items-center">
-                                <span class="text-indigo-400 mr-2">Q:</span> ${faq.q}
-                            </h3>
-                            <span id="faq-arr-${index}" class="text-xs text-gray-500 transition-transform duration-200">▼</span>
-                        </div>
-                        <div id="faq-answer-${index}" class="px-5 pb-5 pt-1 border-t border-gray-800/40 bg-gray-900/10 hidden">
-                            <p class="text-xs text-gray-400 pl-5">${faq.a}</p>
-                        </div>
-                    </div>`;
+let currentLang = 'en';
 
-                schemaMainEntity.push({
-                    "@type": "Question",
-                    "name": faq.q,
-                    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
-                });
-            });
+function detectLanguage() {
+  const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+  return browserLang.startsWith('tr') ? 'tr' : 'en';
+}
 
-            const schemaObj = {
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": schemaMainEntity
-            };
-            document.getElementById('faq-schema').textContent = JSON.stringify(schemaObj);
-        }
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = value;
+}
 
-        function toggleFaqDetail(index) {
-            document.getElementById(`faq-answer-${index}`).classList.toggle('hidden');
-            document.getElementById(`faq-arr-${index}`).classList.toggle('rotate-180');
-        }
+function renderPage(lang) {
+  currentLang = lang;
+  const data = localizations[lang] || localizations.en;
 
-        // Hesaplama Fonksiyonu
-        function analyzeText() {
-            const txt = document.getElementById('text-input').value;
-            
-            // Karakter
-            const charCount = txt.length;
-            
-            // Kelime
-            const cleanTxt = txt.trim().replace(/\s+/g, ' ');
-            const wordCount = cleanTxt === '' ? 0 : cleanTxt.split(' ').length;
-            
-            // Cümle
-            const sentenceCount = txt.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
-            
-            // Okuma Süresi (Ortalama 200 kelime/dk)
-            const totalSeconds = Math.ceil((wordCount / 200) * 60);
-            let timeStr = "0s";
-            if (wordCount > 0) {
-                if (totalSeconds < 60) {
-                    timeStr = `${totalSeconds}s`;
-                } else {
-                    const mins = Math.floor(totalSeconds / 60);
-                    const secs = totalSeconds % 60;
-                    timeStr = secs > 0 ? `${mins}m ${secs}s` : `${mins}m`;
-                }
-            }
+  document.documentElement.lang = lang;
+  document.title = data.pageTitle;
+  document.querySelector('meta[name="description"]').setAttribute('content', data.metaDescription);
 
-            document.getElementById('cnt-words').innerText = wordCount;
-            document.getElementById('cnt-chars').innerText = charCount;
-            document.getElementById('cnt-sentences').innerText = sentenceCount;
-            document.getElementById('cnt-reading').innerText = timeStr;
-        }
+  setText('nav-home', data.navHome);
+  setText('nav-all-tools', data.navAllTools);
+  setText('tool-badge', data.badge);
+  setText('tool-title', data.title);
+  setText('tool-desc', data.desc);
+  setText('label-input', data.labelInput);
+  setText('btn-example', data.loadExample);
+  setText('btn-copy', data.copy);
+  setText('btn-clear', data.clear);
 
-        function clearText() {
-            document.getElementById('text-input').value = '';
-            analyzeText();
-        }
+  setText('stat-words-label', data.lblWords);
+  setText('stat-chars-label', data.lblChars);
+  setText('stat-no-space-label', data.lblNoSpace);
+  setText('stat-sentences-label', data.lblSentences);
+  setText('stat-paragraphs-label', data.lblParagraphs);
+  setText('stat-reading-label', data.lblReading);
 
-        loadToolPage();
-    </script>
+  setText('avg-word-label', data.avgWord);
+  setText('meta-label', data.meta);
+  setText('social-label', data.social);
+
+  setText('how-to-title', data.howTo);
+  setText('features-title', data.features);
+  setText('seo-content-title', data.seoTitle);
+  setText('faq-section-title', data.faqTitle);
+
+  setText('footer-faq', lang === 'tr' ? 'SSS' : 'FAQ');
+  setText('footer-privacy', lang === 'tr' ? 'Gizlilik' : 'Privacy');
+  setText('footer-terms', lang === 'tr' ? 'Kullanım Şartları' : 'Terms');
+  setText('footer-blog', 'Blog');
+
+  document.getElementById('text-input').placeholder = data.placeholder;
+  document.getElementById('seo-content-body').innerHTML = data.seoBody;
+
+  const stepsContainer = document.getElementById('how-to-steps');
+  stepsContainer.innerHTML = '';
+  data.steps.forEach((step, index) => {
+    const li = document.createElement('li');
+    li.className = 'flex gap-3';
+    li.innerHTML = `<span class="shrink-0 w-7 h-7 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 flex items-center justify-center text-xs font-bold">${index + 1}</span><span class="pt-1">${escapeHtml(step)}</span>`;
+    stepsContainer.appendChild(li);
+  });
+
+  const featuresContainer = document.getElementById('features-list');
+  featuresContainer.innerHTML = '';
+  data.featList.forEach(feature => {
+    const li = document.createElement('li');
+    li.className = 'flex gap-3';
+    li.innerHTML = `<span class="text-indigo-400 mt-0.5">✓</span><span>${escapeHtml(feature)}</span>`;
+    featuresContainer.appendChild(li);
+  });
+
+  renderFaq(data.faqs);
+}
+
+function renderFaq(faqs) {
+  const container = document.getElementById('faq-container');
+  container.innerHTML = '';
+
+  faqs.forEach((faq, index) => {
+    const item = document.createElement('div');
+    item.className = 'bg-gray-900/35 border border-gray-800 rounded-2xl overflow-hidden';
+
+    item.innerHTML = `
+      <button type="button"
+              class="w-full p-5 flex justify-between items-center gap-4 text-left"
+              aria-expanded="false"
+              aria-controls="faq-answer-${index}">
+        <span class="text-sm sm:text-base font-semibold text-white">${escapeHtml(faq.q)}</span>
+        <span class="faq-icon shrink-0 text-gray-500">+</span>
+      </button>
+      <div id="faq-answer-${index}" class="hidden px-5 pb-5">
+        <p class="text-sm text-gray-400 leading-7">${escapeHtml(faq.a)}</p>
+      </div>
+    `;
+
+    const button = item.querySelector('button');
+    const answer = item.querySelector(`#faq-answer-${index}`);
+    const icon = item.querySelector('.faq-icon');
+
+    button.addEventListener('click', () => {
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!isOpen));
+      answer.classList.toggle('hidden');
+      icon.textContent = isOpen ? '+' : '−';
+    });
+
+    container.appendChild(item);
+  });
+
+  document.getElementById('faq-schema').textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': faqs.map(faq => ({
+      '@type': 'Question',
+      'name': faq.q,
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': faq.a
+      }
+    }))
+  });
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+function countWords(text) {
+  const matches = text.trim().match(/\S+/g);
+  return matches ? matches.length : 0;
+}
+
+function countSentences(text) {
+  if (!text.trim()) return 0;
+  const matches = text.match(/[^.!?…\n]+(?:[.!?…]+|$)/g) || [];
+  return matches.filter(sentence => sentence.trim().length > 0).length;
+}
+
+function countParagraphs(text) {
+  const trimmed = text.trim();
+  if (!trimmed) return 0;
+  return trimmed.split(/\n\s*\n/).filter(paragraph => paragraph.trim().length > 0).length;
+}
+
+function averageWordLength(text) {
+  const words = text.match(/[a-zA-ZÀ-ÿğüşöçıİĞÜŞÖÇ]+/g) || [];
+  if (!words.length) return 0;
+  const letters = words.reduce((sum, word) => sum + word.length, 0);
+  return (letters / words.length).toFixed(1);
+}
+
+function formatReadingTime(wordCount, lang) {
+  if (wordCount === 0) return '0s';
+
+  const totalSeconds = Math.max(1, Math.ceil((wordCount / 200) * 60));
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+
+  if (lang === 'tr') {
+    if (minutes === 0) return `${seconds} sn`;
+    return seconds ? `${minutes} dk ${seconds} sn` : `${minutes} dk`;
+  }
+
+  if (minutes === 0) return `${seconds}s`;
+  return seconds ? `${minutes}m ${seconds}s` : `${minutes}m`;
+}
+
+function updateProgressBar(id, value, max) {
+  const bar = document.getElementById(id);
+  const percent = Math.min(100, (value / max) * 100);
+  bar.style.width = `${percent}%`;
+
+  bar.classList.remove('bg-indigo-500', 'bg-purple-500', 'bg-amber-500', 'bg-red-500');
+
+  if (value > max) {
+    bar.classList.add('bg-red-500');
+  } else if (value > max * 0.9) {
+    bar.classList.add('bg-amber-500');
+  } else {
+    bar.classList.add(id === 'meta-bar' ? 'bg-indigo-500' : 'bg-purple-500');
+  }
+}
+
+function analyzeText() {
+  const text = document.getElementById('text-input').value;
+
+  const words = countWords(text);
+  const chars = text.length;
+  const charsNoSpace = text.replace(/\s/g, '').length;
+  const sentences = countSentences(text);
+  const paragraphs = countParagraphs(text);
+  const avgLength = averageWordLength(text);
+
+  setText('cnt-words', String(words));
+  setText('cnt-chars', String(chars));
+  setText('cnt-no-space', String(charsNoSpace));
+  setText('cnt-sentences', String(sentences));
+  setText('cnt-paragraphs', String(paragraphs));
+  setText('cnt-reading', formatReadingTime(words, currentLang));
+  setText('avg-word-length', String(avgLength));
+
+  setText('meta-count', String(chars));
+  setText('social-count', String(chars));
+
+  updateProgressBar('meta-bar', chars, 160);
+  updateProgressBar('social-bar', chars, 280);
+}
+
+async function copyText() {
+  const text = document.getElementById('text-input').value;
+  const data = localizations[currentLang];
+
+  if (!text) {
+    showToast(data.emptyCopy);
+    return;
+  }
+
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch (error) {
+    const temp = document.createElement('textarea');
+    temp.value = text;
+    temp.style.position = 'fixed';
+    temp.style.opacity = '0';
+    document.body.appendChild(temp);
+    temp.select();
+    document.execCommand('copy');
+    temp.remove();
+  }
+
+  showToast(data.copied);
+}
+
+function clearText() {
+  document.getElementById('text-input').value = '';
+  analyzeText();
+  document.getElementById('text-input').focus();
+}
+
+function loadExample() {
+  document.getElementById('text-input').value = localizations[currentLang].example;
+  analyzeText();
+  document.getElementById('text-input').focus();
+}
+
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.classList.add('show');
+
+  clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(() => {
+    toast.classList.remove('show');
+  }, 1800);
+}
+
+document.getElementById('text-input').addEventListener('input', analyzeText);
+document.getElementById('btn-clear').addEventListener('click', clearText);
+document.getElementById('btn-copy').addEventListener('click', copyText);
+document.getElementById('btn-example').addEventListener('click', loadExample);
+
+renderPage(detectLanguage());
+analyzeText();
+</script>
 </body>
 </html>
