@@ -9,119 +9,570 @@
 
   gtag('config', 'G-3NNQ6DL9K1');
 </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Privacy Policy - Toolcas</title>
-    <!-- Tailwind CSS CDN -->
+
+    <meta
+        name="description"
+        content="Learn how Toolcas handles website usage data, cookies, analytics and information processed through its online tools."
+    >
+
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0b0f19">
+
+    <link rel="canonical" href="https://www.toolcas.com/privacy/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Privacy Policy - Toolcas">
+    <meta
+        property="og:description"
+        content="Learn how Toolcas handles website usage data, cookies, analytics and information processed through its tools."
+    >
+    <meta property="og:url" content="https://www.toolcas.com/privacy/">
+    <meta property="og:site_name" content="Toolcas">
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
-        .glow-bg { background-color: #0b0f19; }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0b0f19;
+        }
+
+        ::selection {
+            background: rgba(99, 102, 241, 0.4);
+            color: #ffffff;
+        }
+
+        .glow-bg {
+            background-color: #0b0f19;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #818cf8, #c084fc, #67e8f9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .policy-content h2 {
+            color: #ffffff;
+            font-size: 1.15rem;
+            line-height: 1.75rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 0.65rem;
+        }
+
+        .policy-content p {
+            margin-top: 0.75rem;
+        }
+
+        .policy-content ul {
+            margin-top: 0.75rem;
+            padding-left: 1.25rem;
+            list-style-type: disc;
+        }
+
+        .policy-content li {
+            margin-top: 0.4rem;
+        }
+
+        .policy-content a {
+            color: #a5b4fc;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .policy-content a:hover {
+            color: #ffffff;
+        }
     </style>
 </head>
-<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen">
 
-    <!-- Arka Plan Modern Blur Efekti -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[400px] pointer-events-none overflow-hidden opacity-20 z-0">
-        <div class="absolute top-[-10%] left-[40%] w-[450px] h-[450px] bg-indigo-600 rounded-full blur-[130px]"></div>
+<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen overflow-x-hidden">
+
+    <!-- Background -->
+    <div
+        aria-hidden="true"
+        class="fixed inset-0 pointer-events-none overflow-hidden opacity-20 z-0"
+    >
+        <div class="absolute top-[-220px] left-[20%] w-[600px] h-[600px] bg-indigo-600 rounded-full blur-[150px]"></div>
+        <div class="absolute top-[100px] right-[-220px] w-[450px] h-[450px] bg-purple-600 rounded-full blur-[150px]"></div>
     </div>
 
-    <!-- Üst Menü (Navbar) -->
-    <header class="relative z-10 border-b border-gray-800/80 bg-[#0b0f19]/70 backdrop-blur-md sticky top-0">
+    <!-- Header -->
+    <header class="relative z-20 border-b border-gray-800/80 bg-[#0b0f19]/80 backdrop-blur-xl sticky top-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="../index.html" class="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                TOOLCAS
+
+            <a
+                href="../index.html"
+                class="flex items-center gap-3"
+                aria-label="Toolcas homepage"
+            >
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                    <span class="text-white font-black text-lg">T</span>
+                </div>
+
+                <span class="text-2xl font-black tracking-tight gradient-text">
+                    TOOLCAS
+                </span>
             </a>
-            <nav class="space-x-6 text-sm font-medium text-gray-400">
-                <a href="../index.html" id="nav-home" class="hover:text-white transition-colors">Home</a>
+
+            <nav class="flex items-center gap-4 sm:gap-7 text-sm font-medium text-gray-400">
+                <a
+                    href="../index.html"
+                    class="hover:text-white transition-colors"
+                    data-i18n="navHome"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="../index.html#tools"
+                    class="hidden sm:inline hover:text-white transition-colors"
+                    data-i18n="navTools"
+                >
+                    Tools
+                </a>
+
+                <a
+                    href="../faq/faq.html"
+                    class="hover:text-white transition-colors"
+                    data-i18n="navFaq"
+                >
+                    FAQ
+                </a>
             </nav>
         </div>
     </header>
 
-    <!-- Yasal Metin İçeriği -->
-    <main class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
-        <h1 id="policy-title" class="text-3xl font-extrabold text-white tracking-tight mb-4"></h1>
-        <p id="policy-date" class="text-xs text-gray-500 mb-8 border-b border-gray-900 pb-4"></p>
-        
-        <div id="policy-body" class="text-gray-400 text-sm leading-relaxed space-y-6"></div>
+    <!-- Main -->
+    <main class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 pb-24">
+
+        <nav aria-label="Breadcrumb" class="text-sm text-gray-500 mb-8">
+            <a
+                href="../index.html"
+                class="hover:text-indigo-300 transition-colors"
+                data-i18n="navHome"
+            >
+                Home
+            </a>
+
+            <span class="mx-2">/</span>
+
+            <span class="text-gray-300" data-i18n="breadcrumb">
+                Privacy Policy
+            </span>
+        </nav>
+
+        <header class="mb-10">
+            <div class="inline-flex items-center px-4 py-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 text-indigo-300 text-sm font-semibold mb-6">
+                <span data-i18n="badge">Legal information</span>
+            </div>
+
+            <h1
+                id="policy-title"
+                class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight"
+            >
+                Privacy Policy
+            </h1>
+
+            <p
+                id="policy-intro"
+                class="text-base sm:text-lg text-gray-400 leading-7 mt-5 max-w-3xl"
+            ></p>
+
+            <p
+                id="policy-date"
+                class="text-sm text-gray-500 mt-5 pb-7 border-b border-gray-800"
+            ></p>
+        </header>
+
+        <article
+            id="policy-body"
+            class="policy-content rounded-3xl border border-gray-800 bg-gray-900/45 backdrop-blur-sm p-6 sm:p-9 text-gray-400 text-sm sm:text-base leading-7"
+        ></article>
+
+        <section class="mt-10 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-white" data-i18n="contactTitle">
+                Questions about this policy?
+            </h2>
+
+            <p class="text-gray-400 mt-3 leading-7" data-i18n="contactText">
+                Contact Toolcas if you have questions about privacy or the way information is handled.
+            </p>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-900 bg-[#070a12] text-xs text-gray-500 py-8 text-center relative z-10">
-        &copy; 2026 Toolcas Inc. All rights reserved.
+    <footer class="relative z-10 border-t border-gray-800/80 bg-[#070a12]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-9">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 text-sm text-gray-500">
+                <p>
+                    &copy; <span id="current-year"></span> Toolcas.
+                    <span data-i18n="rights">All rights reserved.</span>
+                </p>
+
+                <nav class="flex flex-wrap gap-5">
+                    <a
+                        href="../faq/faq.html"
+                        class="hover:text-white transition-colors"
+                        data-i18n="navFaq"
+                    >
+                        FAQ
+                    </a>
+
+                    <a
+                        href="../terms/index.html"
+                        class="hover:text-white transition-colors"
+                        data-i18n="terms"
+                    >
+                        Terms
+                    </a>
+
+                    <a
+                        href="../blog/index.html"
+                        class="hover:text-white transition-colors"
+                        data-i18n="blog"
+                    >
+                        Blog
+                    </a>
+                </nav>
+            </div>
+        </div>
     </footer>
 
-    <!-- DİL VE METİN YÖNETİM MOTORU -->
     <script>
         const localizations = {
             en: {
+                pageTitle: 'Privacy Policy - Toolcas',
+                pageDescription: 'Learn how Toolcas handles website usage data, cookies, analytics and information processed through its online tools.',
                 navHome: 'Home',
+                navTools: 'Tools',
+                navFaq: 'FAQ',
+                breadcrumb: 'Privacy Policy',
+                badge: 'Legal information',
                 title: 'Privacy Policy',
-                date: 'Last updated: July 12, 2026',
+                intro: 'This policy explains what information may be processed when you visit Toolcas or use its online tools.',
+                date: 'Last updated: July 16, 2026',
+                contactTitle: 'Questions about this policy?',
+                contactText: 'Contact Toolcas if you have questions about privacy or the way information is handled.',
+                terms: 'Terms',
+                blog: 'Blog',
+                rights: 'All rights reserved.',
+
                 body: `
-                    <p>At Toolcas, accessible from our platform, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Toolcas and how we use it.</p>
-                    
-                    <h2 class="text-lg font-bold text-white mt-6 mb-2">1. Zero-Retention Data Processing</h2>
-                    <p>When you use our web-based tools, such as the Background Remover, all image processing occurs instantly in volatile memory (RAM). We maintain a strict zero-retention policy: your uploaded assets are never written to physical disks, permanently stored, or shared with third parties. Once the output is generated and delivered to your browser, it is instantly wiped from existence.</p>
-                    
-                    <h2 class="text-lg font-bold text-white mt-6 mb-2">2. Log Files and Analytics</h2>
-                    <p>Toolcas follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, and referring/exit pages. These are not linked to any information that is personally identifiable.</p>
-                    
-                    <h2 class="text-lg font-bold text-white mt-6 mb-2">3. Cookies</h2>
-                    <p>Like any other website, Toolcas uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+                    <p>
+                        Toolcas respects the privacy of its visitors. This Privacy Policy explains what
+                        information may be collected or processed when you visit the website and use
+                        the available tools.
+                    </p>
+
+                    <h2>1. Information processed through tools</h2>
+
+                    <p>
+                        Some Toolcas tools may process text, code, JSON, images or other content that
+                        you provide. The way information is handled can vary depending on the tool.
+                    </p>
+
+                    <p>
+                        Tools that operate entirely inside your browser generally process content on
+                        your device. Tools that rely on an external service or server may transmit the
+                        submitted content to that service for processing.
+                    </p>
+
+                    <p>
+                        Do not submit confidential, sensitive or personally identifiable information
+                        unless the relevant tool clearly states that it is appropriate to do so.
+                    </p>
+
+                    <h2>2. Website analytics</h2>
+
+                    <p>
+                        Toolcas uses Google Analytics to understand how visitors use the website,
+                        measure traffic and improve the platform. Google Analytics may process
+                        information such as:
+                    </p>
+
+                    <ul>
+                        <li>Pages visited and approximate visit duration</li>
+                        <li>Browser, device and operating system information</li>
+                        <li>General geographic or language information</li>
+                        <li>Referring pages and interactions with the website</li>
+                        <li>Online identifiers and cookie-related data</li>
+                    </ul>
+
+                    <p>
+                        Information collected through Google Analytics is handled in accordance with
+                        Google's own privacy terms and data practices.
+                    </p>
+
+                    <h2>3. Cookies and similar technologies</h2>
+
+                    <p>
+                        Toolcas and third-party services used by the website may use cookies or similar
+                        technologies. These technologies can support analytics, remember preferences,
+                        improve performance and help understand website usage.
+                    </p>
+
+                    <p>
+                        You can control or delete cookies through your browser settings. Disabling
+                        cookies may affect some website functions.
+                    </p>
+
+                    <h2>4. Server and security logs</h2>
+
+                    <p>
+                        The website hosting provider, security systems or content delivery services
+                        may automatically record technical information such as IP address, request
+                        time, browser details, requested pages and error information.
+                    </p>
+
+                    <p>
+                        These logs may be used for security, abuse prevention, troubleshooting and
+                        maintaining the operation of the website.
+                    </p>
+
+                    <h2>5. Third-party services</h2>
+
+                    <p>
+                        Toolcas may use third-party services for analytics, hosting, security, content
+                        delivery or tool functionality. These services may process information under
+                        their own privacy policies.
+                    </p>
+
+                    <h2>6. Data retention</h2>
+
+                    <p>
+                        Retention periods may vary depending on the type of information and the service
+                        involved. Toolcas aims to retain information only for as long as reasonably
+                        necessary for operation, security, analytics or legal requirements.
+                    </p>
+
+                    <h2>7. Your choices and rights</h2>
+
+                    <p>
+                        Depending on your location, you may have rights relating to your personal data,
+                        such as requesting access, correction, deletion or restriction of processing.
+                    </p>
+
+                    <p>
+                        You can also manage cookies through your browser and use available Google
+                        privacy or analytics controls.
+                    </p>
+
+                    <h2>8. Children's privacy</h2>
+
+                    <p>
+                        Toolcas is not intended to knowingly collect personal information from children.
+                        Children should not submit personal or sensitive information through the tools.
+                    </p>
+
+                    <h2>9. Changes to this policy</h2>
+
+                    <p>
+                        This Privacy Policy may be updated when the website, its tools or applicable
+                        practices change. The latest revision date will be displayed at the top of this
+                        page.
+                    </p>
+
+                    <h2>10. Contact</h2>
+
+                    <p>
+                        Questions regarding this Privacy Policy can be sent through the contact method
+                        published on the Toolcas website.
+                    </p>
                 `
             },
+
             tr: {
+                pageTitle: 'Gizlilik Politikası - Toolcas',
+                pageDescription: 'Toolcas sitesinde kullanım verilerinin, çerezlerin, analitik bilgilerinin ve araçlar üzerinden işlenen verilerin nasıl ele alındığını öğrenin.',
                 navHome: 'Ana Sayfa',
+                navTools: 'Araçlar',
+                navFaq: 'SSS',
+                breadcrumb: 'Gizlilik Politikası',
+                badge: 'Yasal bilgiler',
                 title: 'Gizlilik Politikası',
-                date: 'Son güncelleme: 12 Temmuz 2026',
+                intro: 'Bu politika, Toolcas sitesini ziyaret ettiğinizde veya çevrim içi araçları kullandığınızda hangi bilgilerin işlenebileceğini açıklar.',
+                date: 'Son güncelleme: 16 Temmuz 2026',
+                contactTitle: 'Bu politika hakkında sorunuz mu var?',
+                contactText: 'Gizlilik veya bilgilerin nasıl işlendiğiyle ilgili sorularınız için Toolcas ile iletişime geçebilirsiniz.',
+                terms: 'Kullanım Koşulları',
+                blog: 'Blog',
+                rights: 'Tüm hakları saklıdır.',
+
                 body: `
-                    <p>Platformumuz üzerinden erişilebilen Toolcas'te, ana önceliklerimizden biri ziyaretçilerimizin gizliliğidir. Bu Gizlilik Politikası belgesi, Toolcas tarafından toplanan ve kaydedilen bilgi türlerini ve bunları nasıl kullandığımızı içerir.</p>
-                    
-                    <h2 class="text-lg font-bold text-white mt-6 mb-2">1. Sıfır Depolama (Zero-Retention) ile Veri İşleme</h2>
-                    <p>Arka Plan Silici gibi web tabanlı araçlarimizi kullandiğinizda, tüm görsel işleme işlemleri anlik olarak geçici bellekte (RAM) gerçekleşir. Kesin bir sıfır depolama politikası uyguluyoruz: yüklediğiniz varlıklar asla fiziksel disklere yazılmaz, kalıcı olarak saklanmaz veya üçüncü taraflarla paylaşılmaz. Çıktı üretilip tarayıcınıza iletildiği an, sistemden tamamen yok edilir.</p>
-                    
-                    <h2 class="text-lg font-bold text-white mt-6 mb-2">2. Günlük Dosyaları ve Analitik</h2>
-                    <p>Toolcas, günlük dosyaları (log files) kullanımında standart bir prosedür izler. Bu dosyalar ziyaretçileri web sitelerini ziyaret ettiklerinde kaydeder. Toplanan bilgilere internet protokolü (IP) adresleri, tarayıcı türü, İnternet Servis Sağlayıcısı (ISP), tarih ve saat damgası ile yönlendirme/çıkış sayfaları dahildir. Bunlar kişisel olarak tanımlanabilir herhangi bir bilgiyle bağlantılı değildir.</p>
-                    
-                    <h2 class="text-lg font-bold text-white mt-6 mb-2">3. Çerezler (Cookies)</h2>
-                    <p>Diğer tüm web siteleri gibi Toolcas de 'çerezler' kullanır. Bu çerezler, ziyaretçilerin tercihleri ve web sitesinde eriştikleri veya ziyaret ettikleri sayfalar dahil olmak üzere bilgileri depolamak için kullanılır. Bu bilgiler, web sayfası içeriğimizi ziyaretçilerin tarayıcı türüne ve/veya diğer bilgilere göre özelleştirerek kullanıcı deneyimini optimize etmek için kullanılır.</p>
+                    <p>
+                        Toolcas, ziyaretçilerinin gizliliğine saygı duyar. Bu Gizlilik Politikası,
+                        siteyi ziyaret ettiğinizde ve mevcut araçları kullandığınızda hangi bilgilerin
+                        toplanabileceğini veya işlenebileceğini açıklar.
+                    </p>
+
+                    <h2>1. Araçlar üzerinden işlenen bilgiler</h2>
+
+                    <p>
+                        Bazı Toolcas araçları sağladığınız metin, kod, JSON, görsel veya diğer içerikleri
+                        işleyebilir. Bilgilerin işlenme şekli kullanılan araca göre değişebilir.
+                    </p>
+
+                    <p>
+                        Tamamen tarayıcı içerisinde çalışan araçlar genellikle içeriği cihazınızda işler.
+                        Harici bir hizmete veya sunucuya bağlı çalışan araçlar ise gönderilen içeriği
+                        işlenmesi amacıyla ilgili hizmete iletebilir.
+                    </p>
+
+                    <p>
+                        İlgili araç açıkça uygun olduğunu belirtmediği sürece gizli, hassas veya kişisel
+                        olarak tanımlanabilir bilgiler göndermeyin.
+                    </p>
+
+                    <h2>2. Site analitiği</h2>
+
+                    <p>
+                        Toolcas, ziyaretçilerin siteyi nasıl kullandığını anlamak, trafiği ölçmek ve
+                        platformu geliştirmek amacıyla Google Analytics kullanır. Google Analytics
+                        aşağıdaki türde bilgileri işleyebilir:
+                    </p>
+
+                    <ul>
+                        <li>Ziyaret edilen sayfalar ve yaklaşık ziyaret süresi</li>
+                        <li>Tarayıcı, cihaz ve işletim sistemi bilgileri</li>
+                        <li>Genel konum veya dil bilgileri</li>
+                        <li>Yönlendiren sayfalar ve siteyle gerçekleştirilen etkileşimler</li>
+                        <li>Çevrim içi tanımlayıcılar ve çerezlerle ilişkili veriler</li>
+                    </ul>
+
+                    <p>
+                        Google Analytics aracılığıyla toplanan bilgiler Google'ın kendi gizlilik
+                        koşulları ve veri uygulamaları kapsamında işlenir.
+                    </p>
+
+                    <h2>3. Çerezler ve benzer teknolojiler</h2>
+
+                    <p>
+                        Toolcas ve site üzerinde kullanılan üçüncü taraf hizmetler çerezlerden veya
+                        benzer teknolojilerden yararlanabilir. Bu teknolojiler analitik ölçüm yapılması,
+                        tercihlerin hatırlanması, performansın geliştirilmesi ve site kullanımının
+                        anlaşılması amacıyla kullanılabilir.
+                    </p>
+
+                    <p>
+                        Çerezleri tarayıcı ayarlarınızdan kontrol edebilir veya silebilirsiniz.
+                        Çerezlerin devre dışı bırakılması bazı site işlevlerini etkileyebilir.
+                    </p>
+
+                    <h2>4. Sunucu ve güvenlik kayıtları</h2>
+
+                    <p>
+                        Siteyi barındıran hizmet sağlayıcı, güvenlik sistemleri veya içerik dağıtım
+                        hizmetleri; IP adresi, istek zamanı, tarayıcı bilgileri, istenen sayfalar ve
+                        hata bilgileri gibi teknik verileri otomatik olarak kaydedebilir.
+                    </p>
+
+                    <p>
+                        Bu kayıtlar güvenlik, kötüye kullanımın önlenmesi, hata giderme ve sitenin
+                        çalışmasının sürdürülmesi amacıyla kullanılabilir.
+                    </p>
+
+                    <h2>5. Üçüncü taraf hizmetler</h2>
+
+                    <p>
+                        Toolcas; analitik, barındırma, güvenlik, içerik dağıtımı veya araç işlevleri
+                        için üçüncü taraf hizmetlerden yararlanabilir. Bu hizmetler bilgileri kendi
+                        gizlilik politikaları doğrultusunda işleyebilir.
+                    </p>
+
+                    <h2>6. Verilerin saklanma süresi</h2>
+
+                    <p>
+                        Saklama süreleri bilgi türüne ve kullanılan hizmete göre değişebilir. Toolcas,
+                        bilgileri yalnızca işletim, güvenlik, analitik veya yasal gereklilikler için
+                        makul ölçüde gerekli olduğu sürece saklamayı amaçlar.
+                    </p>
+
+                    <h2>7. Tercihleriniz ve haklarınız</h2>
+
+                    <p>
+                        Bulunduğunuz ülkeye göre kişisel verilerinize ilişkin erişim, düzeltme, silme
+                        veya işlemenin sınırlandırılmasını isteme gibi haklara sahip olabilirsiniz.
+                    </p>
+
+                    <p>
+                        Ayrıca tarayıcınız üzerinden çerezleri yönetebilir ve Google tarafından sunulan
+                        gizlilik veya analitik kontrollerinden yararlanabilirsiniz.
+                    </p>
+
+                    <h2>8. Çocukların gizliliği</h2>
+
+                    <p>
+                        Toolcas, çocuklardan bilerek kişisel bilgi toplamak amacıyla tasarlanmamıştır.
+                        Çocuklar araçlar üzerinden kişisel veya hassas bilgi göndermemelidir.
+                    </p>
+
+                    <h2>9. Politikadaki değişiklikler</h2>
+
+                    <p>
+                        Bu Gizlilik Politikası; site, araçlar veya kullanılan uygulamalar değiştiğinde
+                        güncellenebilir. En son güncelleme tarihi bu sayfanın üst kısmında gösterilir.
+                    </p>
+
+                    <h2>10. İletişim</h2>
+
+                    <p>
+                        Bu Gizlilik Politikasıyla ilgili sorular Toolcas sitesinde yayımlanan iletişim
+                        yöntemi üzerinden iletilebilir.
+                    </p>
                 `
             }
         };
 
-        async function initPrivacy() {
-            let activeLang = 'en';
-            try {
-                const response = await fetch('https://1.1.1.1/cdn-cgi/trace');
-                const text = await response.text();
-                const locLine = text.split('\n').find(line => line.startsWith('loc='));
-                if (locLine) {
-                    const country = locLine.split('=')[1].trim();
-                    if (country === 'TR') activeLang = 'tr';
-                    else {
-                        const browserLang = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
-                        if (localizations[browserLang]) activeLang = browserLang;
-                    }
-                }
-            } catch (e) {
-                const browserLang = (navigator.language || navigator.userLanguage).substring(0,2).toLowerCase();
-                if (localizations[browserLang]) activeLang = browserLang;
-            }
+        function detectLanguage() {
+            const languages = navigator.languages && navigator.languages.length
+                ? navigator.languages
+                : [navigator.language || navigator.userLanguage || 'en'];
 
-            document.documentElement.lang = activeLang;
-            renderPrivacy(activeLang);
+            return languages.some(lang =>
+                String(lang).toLowerCase().startsWith('tr')
+            ) ? 'tr' : 'en';
         }
 
         function renderPrivacy(lang) {
             const data = localizations[lang] || localizations.en;
 
-            document.getElementById('nav-home').innerText = data.navHome;
-            document.getElementById('policy-title').innerText = data.title;
-            document.getElementById('policy-date').innerText = data.date;
+            document.documentElement.lang = lang;
+            document.title = data.pageTitle;
+
+            const description = document.querySelector('meta[name="description"]');
+
+            if (description) {
+                description.setAttribute('content', data.pageDescription);
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.dataset.i18n;
+
+                if (data[key]) {
+                    element.textContent = data[key];
+                }
+            });
+
+            document.getElementById('policy-title').textContent = data.title;
+            document.getElementById('policy-intro').textContent = data.intro;
+            document.getElementById('policy-date').textContent = data.date;
             document.getElementById('policy-body').innerHTML = data.body;
         }
 
-        initPrivacy();
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        renderPrivacy(detectLanguage());
     </script>
 </body>
 </html>
