@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3NNQ6DL9K1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3NNQ6DL9K1');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free AI Text Humanizer Online | Toolcas</title>
+<meta name="description" content="Rewrite stiff or repetitive text into clearer, more natural language with the free Toolcas AI Text Humanizer. Choose tone and rewrite strength instantly.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Toolcas">
+<meta name="theme-color" content="#0b0f19">
+
+<link rel="canonical" href="https://www.toolcas.com/tools/ai-humanizer.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free AI Text Humanizer | Toolcas">
+<meta property="og:description" content="Make robotic or repetitive writing sound clearer and more natural.">
+<meta property="og:url" content="https://www.toolcas.com/tools/ai-humanizer.html">
+<meta property="og:site_name" content="Toolcas">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free AI Text Humanizer | Toolcas">
+<meta name="twitter:description" content="Rewrite text with a more natural tone using Toolcas.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background:#0b0f19; }
+  .glass { background:rgba(17,24,39,.58); backdrop-filter:blur(16px); }
+  textarea { resize:vertical; }
+  .toast {
+    opacity:0;
+    transform:translateY(10px);
+    pointer-events:none;
+    transition:opacity .2s ease, transform .2s ease;
+  }
+  .toast.show {
+    opacity:1;
+    transform:translateY(0);
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Toolcas AI Text Humanizer",
+  "url":"https://www.toolcas.com/tools/ai-humanizer.html",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Any",
+  "browserRequirements":"Requires JavaScript",
+  "description":"A free browser-based writing tool that rewrites stiff or repetitive text into clearer and more natural language.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"USD"
+  },
+  "publisher":{
+    "@type":"Organization",
+    "name":"Toolcas",
+    "url":"https://www.toolcas.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Home",
+      "item":"https://www.toolcas.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Tools",
+      "item":"https://www.toolcas.com/#tools"
+    },
+    {
+      "@type":"ListItem",
+      "position":3,
+      "name":"AI Text Humanizer",
+      "item":"https://www.toolcas.com/tools/ai-humanizer.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json" id="faq-schema"></script>
+</head>
+
+<body class="text-gray-100 font-sans antialiased min-h-screen overflow-x-hidden">
+
+<div class="fixed inset-x-0 top-0 h-[600px] pointer-events-none overflow-hidden opacity-25 -z-0">
+  <div class="absolute -top-32 left-1/3 w-[540px] h-[540px] bg-cyan-600 rounded-full blur-[150px]"></div>
+  <div class="absolute top-24 right-8 w-[380px] h-[380px] bg-indigo-600 rounded-full blur-[135px] opacity-70"></div>
+</div>
+
+<header class="relative z-20 border-b border-gray-800/80 bg-[#0b0f19]/80 backdrop-blur-xl sticky top-0">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="../index.html" aria-label="Toolcas home"
+       class="text-2xl font-black tracking-tight bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent">
+      TOOLCAS
+    </a>
+
+    <nav aria-label="Main navigation" class="flex items-center gap-4 sm:gap-6 text-sm font-medium text-gray-400">
+      <a href="../index.html" id="nav-home" class="hover:text-white transition-colors">Home</a>
+      <a href="../index.html#tools" id="nav-all-tools" class="hover:text-white transition-colors">All Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-20">
+
+  <section class="text-center mb-10 sm:mb-12">
+    <div id="tool-badge"
+         class="inline-flex items-center rounded-full border border-cyan-500/25 bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-300 mb-5">
+      Free AI Writing Tool
+    </div>
+
+    <h1 id="tool-title" class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-5 tracking-tight">
+      AI Text Humanizer
+    </h1>
+
+    <p id="tool-desc" class="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+      Rewrite stiff, repetitive or robotic text into clearer and more natural language.
+    </p>
+  </section>
+
+  <section class="max-w-6xl mx-auto mb-16">
+    <div class="glass border border-gray-800 rounded-3xl shadow-2xl shadow-black/30 overflow-hidden">
+      <div class="p-5 sm:p-7 lg:p-8 space-y-6">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <label class="block">
+            <span id="tone-label" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Tone</span>
+            <select id="tone-select"
+                    class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/30 focus:border-cyan-500">
+              <option value="natural">Natural</option>
+              <option value="casual">Casual</option>
+              <option value="professional">Professional</option>
+              <option value="simple">Simple</option>
+            </select>
+          </label>
+
+          <label class="block">
+            <span id="strength-label" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Rewrite Strength</span>
+            <select id="strength-select"
+                    class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/30 focus:border-cyan-500">
+              <option value="light">Light</option>
+              <option value="balanced" selected>Balanced</option>
+              <option value="strong">Strong</option>
+            </select>
+          </label>
+
+          <label class="block">
+            <span id="length-label" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Length</span>
+            <select id="length-select"
+                    class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/30 focus:border-cyan-500">
+              <option value="same">Keep Similar</option>
+              <option value="shorter">Shorter</option>
+              <option value="longer">Slightly Longer</option>
+            </select>
+          </label>
+
+          <label class="flex items-end">
+            <span class="w-full flex items-center justify-between bg-gray-950 border border-gray-800 rounded-xl px-4 py-3">
+              <span id="preserve-label" class="text-sm text-gray-300">Preserve line breaks</span>
+              <input id="preserve-lines" type="checkbox" checked
+                     class="w-4 h-4 rounded border-gray-700 bg-gray-900 text-cyan-500 focus:ring-cyan-500">
+            </span>
+          </label>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          <div>
+            <div class="flex items-center justify-between gap-3 mb-2">
+              <label id="input-label" for="input-text"
+                     class="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                Original Text
+              </label>
+              <button type="button" id="btn-example"
+                      class="text-xs text-cyan-300 hover:text-cyan-200 transition-colors">
+                Load example
+              </button>
+            </div>
+
+            <textarea id="input-text" rows="15" maxlength="20000"
+                      class="w-full bg-gray-950 border border-gray-800 rounded-2xl px-4 py-4 text-sm text-gray-200 placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/30 focus:border-cyan-500"
+                      placeholder="Paste the text you want to rewrite..."></textarea>
+
+            <div class="mt-2 flex justify-between text-xs text-gray-500">
+              <span><span id="input-word-count">0</span> <span id="words-label-a">words</span></span>
+              <span><span id="input-char-count">0</span>/20,000</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between gap-3 mb-2">
+              <label id="output-label" for="output-text"
+                     class="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                Humanized Result
+              </label>
+              <span id="output-status" class="text-xs text-gray-500">Ready</span>
+            </div>
+
+            <textarea id="output-text" rows="15" readonly
+                      class="w-full bg-gray-950/80 border border-gray-800 rounded-2xl px-4 py-4 text-sm text-gray-200 placeholder:text-gray-600 focus:outline-none"
+                      placeholder="Your rewritten text will appear here..."></textarea>
+
+            <div class="mt-2 flex justify-between text-xs text-gray-500">
+              <span><span id="output-word-count">0</span> <span id="words-label-b">words</span></span>
+              <span id="change-label">0% change</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 sm:justify-between">
+          <button type="button" id="btn-humanize"
+                  class="order-1 sm:order-none inline-flex justify-center items-center gap-2 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:from-cyan-400 hover:to-indigo-400 text-white font-bold text-sm py-3.5 px-7 rounded-xl transition-all shadow-lg shadow-cyan-950/30">
+            Humanize Text
+          </button>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <button type="button" id="btn-copy"
+                    class="bg-cyan-600/15 hover:bg-cyan-600/25 text-cyan-300 border border-cyan-500/25 font-medium text-xs py-3 px-5 rounded-xl transition-colors">
+              Copy Result
+            </button>
+
+            <button type="button" id="btn-download"
+                    class="bg-indigo-600/15 hover:bg-indigo-600/25 text-indigo-300 border border-indigo-500/25 font-medium text-xs py-3 px-5 rounded-xl transition-colors">
+              Download TXT
+            </button>
+
+            <button type="button" id="btn-clear"
+                    class="bg-gray-900 hover:bg-gray-800 border border-gray-800 text-gray-300 font-medium text-xs py-3 px-5 rounded-xl transition-colors">
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <p id="tool-note" class="text-xs text-gray-500 leading-6 border-t border-gray-800 pt-4">
+          This tool rewrites text using browser-based language rules. Results may need a final manual review.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 border-t border-gray-900 pt-12 mb-16">
+    <div>
+      <h2 id="how-to-title" class="text-2xl font-bold text-white mb-5">How to use the AI Humanizer</h2>
+      <ol id="how-to-steps" class="space-y-4 text-sm text-gray-400"></ol>
+    </div>
+
+    <div>
+      <h2 id="features-title" class="text-2xl font-bold text-white mb-5">Main features</h2>
+      <ul id="features-list" class="space-y-4 text-sm text-gray-400"></ul>
+    </div>
+  </section>
+
+  <section class="border-t border-gray-900 pt-12 mb-16">
+    <h2 id="seo-content-title" class="text-2xl sm:text-3xl font-bold text-white mb-6">
+      Make stiff writing sound more natural
+    </h2>
+    <div id="seo-content-body" class="text-sm sm:text-base text-gray-400 leading-8 space-y-5 max-w-4xl"></div>
+  </section>
+
+  <section id="faq-section" class="border-t border-gray-900 pt-12">
+    <h2 id="faq-section-title" class="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">
+      Frequently asked questions
+    </h2>
+    <div id="faq-container" class="space-y-4 max-w-3xl mx-auto"></div>
+  </section>
+</main>
+
+<footer class="relative z-10 border-t border-gray-900 bg-[#070a12]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="flex flex-col md:flex-row gap-6 items-center justify-between">
+      <p class="text-xs text-gray-500">&copy; 2026 Toolcas. All rights reserved.</p>
+      <nav aria-label="Footer navigation" class="flex flex-wrap justify-center gap-x-5 gap-y-3 text-xs text-gray-500">
+        <a href="../faq/faq.html" id="footer-faq" class="hover:text-white transition-colors">FAQ</a>
+        <a href="../privacy/index.html" id="footer-privacy" class="hover:text-white transition-colors">Privacy</a>
+        <a href="../terms/index.html" id="footer-terms" class="hover:text-white transition-colors">Terms</a>
+        <a href="../blog/index.html" id="footer-blog" class="hover:text-white transition-colors">Blog</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<div id="toast"
+     class="toast fixed bottom-5 left-1/2 -translate-x-1/2 z-50 rounded-xl border border-gray-700 bg-gray-900 px-4 py-3 text-sm text-gray-200 shadow-2xl"
+     role="status" aria-live="polite">
+  Copied
+</div>
+
+<script>
+const localizations = {
+  en: {
+    pageTitle: 'Free AI Text Humanizer Online | Toolcas',
+    metaDescription: 'Rewrite stiff or repetitive text into clearer, more natural language with the free Toolcas AI Text Humanizer.',
+    navHome: 'Home',
+    navAllTools: 'All Tools',
+    badge: 'Free AI Writing Tool',
+    title: 'AI Text Humanizer',
+    desc: 'Rewrite stiff, repetitive or robotic text into clearer and more natural language.',
+    toneLabel: 'Tone',
+    strengthLabel: 'Rewrite Strength',
+    lengthLabel: 'Length',
+    preserveLabel: 'Preserve line breaks',
+    inputLabel: 'Original Text',
+    outputLabel: 'Humanized Result',
+    inputPlaceholder: 'Paste the text you want to rewrite...',
+    outputPlaceholder: 'Your rewritten text will appear here...',
+    example: 'Load example',
+    humanize: 'Humanize Text',
+    copy: 'Copy Result',
+    download: 'Download TXT',
+    clear: 'Clear',
+    words: 'words',
+    ready: 'Ready',
+    working: 'Rewriting...',
+    done: 'Completed',
+    noInput: 'Enter some text first.',
+    noOutput: 'There is no result to copy.',
+    copied: 'Result copied',
+    downloaded: 'TXT file downloaded',
+    change: 'change',
+    note: 'This tool rewrites text using browser-based language rules. Results may need a final manual review.',
+    tones: {
+      natural: 'Natural',
+      casual: 'Casual',
+      professional: 'Professional',
+      simple: 'Simple'
+    },
+    strengths: {
+      light: 'Light',
+      balanced: 'Balanced',
+      strong: 'Strong'
+    },
+    lengths: {
+      same: 'Keep Similar',
+      shorter: 'Shorter',
+      longer: 'Slightly Longer'
+    },
+    howTo: 'How to use the AI Humanizer',
+    steps: [
+      'Paste your original text into the left-hand editor.',
+      'Choose a tone, rewrite strength and preferred length.',
+      'Select Humanize Text to generate a cleaner version.',
+      'Review the result, then copy or download it.'
+    ],
+    features: 'Main features',
+    featList: [
+      'Natural, casual, professional and simple tone options.',
+      'Light, balanced and strong rewrite modes.',
+      'Live word and character comparison.',
+      'Copy and TXT download actions for the final result.'
+    ],
+    seoTitle: 'Make stiff writing sound more natural',
+    seoBody: `
+      <p>Text can feel robotic when it repeats the same sentence patterns, relies on formal filler phrases or uses longer wording than necessary. A humanizer helps reshape those patterns into clearer and more varied language.</p>
+      <p>Toolcas AI Text Humanizer lets you choose the tone and rewrite strength before processing your draft. The result is designed to be easier to read while keeping the original meaning as close as possible.</p>
+      <p>No rewriting tool can guarantee that every sentence will be perfect or that automated detection systems will classify text in a particular way. Always review important academic, professional or published content before using it.</p>
+    `,
+    faqTitle: 'Frequently asked questions',
+    faqs: [
+      {
+        q: 'What does an AI text humanizer do?',
+        a: 'It rewrites stiff, repetitive or overly formal sentences into clearer and more natural wording.'
+      },
+      {
+        q: 'Does it preserve the original meaning?',
+        a: 'The tool tries to keep the main meaning, but strong rewrites can change nuance. Review the result before publishing.'
+      },
+      {
+        q: 'Can it guarantee an AI detector result?',
+        a: 'No. AI detectors can be inconsistent, and this tool does not guarantee any specific detector score.'
+      },
+      {
+        q: 'Which tone should I choose?',
+        a: 'Use Natural for general writing, Casual for friendly content, Professional for business text and Simple for easier wording.'
+      },
+      {
+        q: 'Can I use it for essays and articles?',
+        a: 'Yes, but important academic or professional work should always be checked and edited manually.'
+      },
+      {
+        q: 'Does the tool support Turkish?',
+        a: 'Yes. The interface detects Turkish browser language, and the rewrite engine includes Turkish language rules.'
+      }
+    ],
+    exampleText: `It is important to note that modern digital platforms are continuously evolving in a highly dynamic manner. For this reason, businesses should make an effort to regularly review their online content in order to ensure that it remains clear, useful, and relevant to the intended audience.`
+  },
+
+  tr: {
+    pageTitle: 'Ücretsiz AI Metin İnsanlaştırıcı | Toolcas',
+    metaDescription: 'Robotik veya tekrarlı metinleri daha açık ve doğal bir dille yeniden yazın. Toolcas AI Metin İnsanlaştırıcı ücretsizdir.',
+    navHome: 'Ana Sayfa',
+    navAllTools: 'Tüm Araçlar',
+    badge: 'Ücretsiz AI Yazı Aracı',
+    title: 'AI Metin İnsanlaştırıcı',
+    desc: 'Robotik, tekrarlı veya fazla resmi metinleri daha açık ve doğal bir dille yeniden yazın.',
+    toneLabel: 'Ton',
+    strengthLabel: 'Yeniden Yazma Gücü',
+    lengthLabel: 'Uzunluk',
+    preserveLabel: 'Satır aralarını koru',
+    inputLabel: 'Orijinal Metin',
+    outputLabel: 'Doğallaştırılmış Sonuç',
+    inputPlaceholder: 'Yeniden yazmak istediğiniz metni buraya yapıştırın...',
+    outputPlaceholder: 'Yeniden yazılmış metin burada görünecek...',
+    example: 'Örnek yükle',
+    humanize: 'Metni Doğallaştır',
+    copy: 'Sonucu Kopyala',
+    download: 'TXT İndir',
+    clear: 'Temizle',
+    words: 'kelime',
+    ready: 'Hazır',
+    working: 'Yeniden yazılıyor...',
+    done: 'Tamamlandı',
+    noInput: 'Önce bir metin girin.',
+    noOutput: 'Kopyalanacak bir sonuç bulunmuyor.',
+    copied: 'Sonuç kopyalandı',
+    downloaded: 'TXT dosyası indirildi',
+    change: 'değişim',
+    note: 'Bu araç, tarayıcı tabanlı dil kurallarıyla metni yeniden yazar. Sonuçların son kez elle kontrol edilmesi gerekebilir.',
+    tones: {
+      natural: 'Doğal',
+      casual: 'Samimi',
+      professional: 'Profesyonel',
+      simple: 'Sade'
+    },
+    strengths: {
+      light: 'Hafif',
+      balanced: 'Dengeli',
+      strong: 'Güçlü'
+    },
+    lengths: {
+      same: 'Benzer Uzunluk',
+      shorter: 'Daha Kısa',
+      longer: 'Biraz Daha Uzun'
+    },
+    howTo: 'AI Metin İnsanlaştırıcı nasıl kullanılır?',
+    steps: [
+      'Orijinal metninizi sol taraftaki alana yapıştırın.',
+      'Ton, yeniden yazma gücü ve uzunluk seçimini yapın.',
+      'Yeni sürümü oluşturmak için Metni Doğallaştır düğmesine basın.',
+      'Sonucu kontrol ettikten sonra kopyalayın veya indirin.'
+    ],
+    features: 'Temel özellikler',
+    featList: [
+      'Doğal, samimi, profesyonel ve sade ton seçenekleri.',
+      'Hafif, dengeli ve güçlü yeniden yazma modları.',
+      'Canlı kelime ve karakter karşılaştırması.',
+      'Sonuç için kopyalama ve TXT indirme seçenekleri.'
+    ],
+    seoTitle: 'Robotik metinleri daha doğal hâle getirin',
+    seoBody: `
+      <p>Bir metin aynı cümle yapılarını tekrarladığında, gereksiz derecede resmi kalıplar kullandığında veya anlatımı uzattığında robotik hissedilebilir. Metin insanlaştırıcı, bu kalıpları daha açık ve çeşitli bir anlatıma dönüştürmeye yardımcı olur.</p>
+      <p>Toolcas AI Metin İnsanlaştırıcı, taslağınızı işlemeden önce ton ve yeniden yazma gücü seçmenize imkân verir. Oluşturulan sonuç, ana anlamı mümkün olduğunca korurken metni daha rahat okunur hâle getirmeyi amaçlar.</p>
+      <p>Hiçbir yeniden yazma aracı her cümlenin kusursuz olacağını veya otomatik tespit sistemlerinin belirli bir sonuç vereceğini garanti edemez. Akademik, profesyonel veya yayımlanacak metinleri kullanmadan önce mutlaka kontrol edin.</p>
+    `,
+    faqTitle: 'Sıkça sorulan sorular',
+    faqs: [
+      {
+        q: 'AI metin insanlaştırıcı ne yapar?',
+        a: 'Robotik, tekrarlı veya gereğinden fazla resmi cümleleri daha açık ve doğal bir anlatımla yeniden yazar.'
+      },
+      {
+        q: 'Orijinal anlamı korur mu?',
+        a: 'Araç ana anlamı korumaya çalışır ancak güçlü yeniden yazma nüansı değiştirebilir. Yayımlamadan önce sonucu kontrol edin.'
+      },
+      {
+        q: 'AI detector sonucu garanti eder mi?',
+        a: 'Hayır. AI tespit araçları tutarsız sonuç verebilir ve bu araç belirli bir skor garanti etmez.'
+      },
+      {
+        q: 'Hangi tonu seçmeliyim?',
+        a: 'Genel metinler için Doğal, sıcak içerikler için Samimi, iş metinleri için Profesyonel, kolay anlatım için Sade tonu kullanın.'
+      },
+      {
+        q: 'Makale ve ödevlerde kullanılabilir mi?',
+        a: 'Evet, ancak önemli akademik veya profesyonel çalışmalar mutlaka elle kontrol edilmeli ve düzenlenmelidir.'
+      },
+      {
+        q: 'Türkçe metinleri destekliyor mu?',
+        a: 'Evet. Arayüz Türkçe tarayıcı dilini algılar ve yeniden yazma motorunda Türkçe dil kuralları bulunur.'
+      }
+    ],
+    exampleText: `Günümüz dijital platformlarının son derece dinamik bir biçimde sürekli gelişmekte olduğunu belirtmek önemlidir. Bu nedenle işletmeler, çevrim içi içeriklerinin açık, yararlı ve hedef kitle açısından güncel kalmasını sağlamak için düzenli olarak gözden geçirme çabası göstermelidir.`
+  }
+};
+
+let currentLang = 'en';
+
+function detectLanguage() {
+  const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+  return browserLang.startsWith('tr') ? 'tr' : 'en';
+}
+
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = value;
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+function renderSelectOptions(selectId, values) {
+  const select = document.getElementById(selectId);
+  [...select.options].forEach(option => {
+    if (values[option.value]) option.textContent = values[option.value];
+  });
+}
+
+function renderPage(lang) {
+  currentLang = lang;
+  const data = localizations[lang] || localizations.en;
+
+  document.documentElement.lang = lang;
+  document.title = data.pageTitle;
+  document.querySelector('meta[name="description"]').setAttribute('content', data.metaDescription);
+
+  setText('nav-home', data.navHome);
+  setText('nav-all-tools', data.navAllTools);
+  setText('tool-badge', data.badge);
+  setText('tool-title', data.title);
+  setText('tool-desc', data.desc);
+  setText('tone-label', data.toneLabel);
+  setText('strength-label', data.strengthLabel);
+  setText('length-label', data.lengthLabel);
+  setText('preserve-label', data.preserveLabel);
+  setText('input-label', data.inputLabel);
+  setText('output-label', data.outputLabel);
+  setText('btn-example', data.example);
+  setText('btn-humanize', data.humanize);
+  setText('btn-copy', data.copy);
+  setText('btn-download', data.download);
+  setText('btn-clear', data.clear);
+  setText('words-label-a', data.words);
+  setText('words-label-b', data.words);
+  setText('output-status', data.ready);
+  setText('tool-note', data.note);
+  setText('how-to-title', data.howTo);
+  setText('features-title', data.features);
+  setText('seo-content-title', data.seoTitle);
+  setText('faq-section-title', data.faqTitle);
+  setText('footer-faq', lang === 'tr' ? 'SSS' : 'FAQ');
+  setText('footer-privacy', lang === 'tr' ? 'Gizlilik' : 'Privacy');
+  setText('footer-terms', lang === 'tr' ? 'Kullanım Şartları' : 'Terms');
+  setText('footer-blog', 'Blog');
+
+  document.getElementById('input-text').placeholder = data.inputPlaceholder;
+  document.getElementById('output-text').placeholder = data.outputPlaceholder;
+  document.getElementById('seo-content-body').innerHTML = data.seoBody;
+
+  renderSelectOptions('tone-select', data.tones);
+  renderSelectOptions('strength-select', data.strengths);
+  renderSelectOptions('length-select', data.lengths);
+
+  const steps = document.getElementById('how-to-steps');
+  steps.innerHTML = '';
+  data.steps.forEach((step, index) => {
+    const li = document.createElement('li');
+    li.className = 'flex gap-3';
+    li.innerHTML = `<span class="shrink-0 w-7 h-7 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 flex items-center justify-center text-xs font-bold">${index + 1}</span><span class="pt-1">${escapeHtml(step)}</span>`;
+    steps.appendChild(li);
+  });
+
+  const features = document.getElementById('features-list');
+  features.innerHTML = '';
+  data.featList.forEach(feature => {
+    const li = document.createElement('li');
+    li.className = 'flex gap-3';
+    li.innerHTML = `<span class="text-cyan-400 mt-0.5">✓</span><span>${escapeHtml(feature)}</span>`;
+    features.appendChild(li);
+  });
+
+  renderFaq(data.faqs);
+  updateStats();
+}
+
+function renderFaq(faqs) {
+  const container = document.getElementById('faq-container');
+  container.innerHTML = '';
+
+  faqs.forEach((faq, index) => {
+    const item = document.createElement('div');
+    item.className = 'bg-gray-900/35 border border-gray-800 rounded-2xl overflow-hidden';
+    item.innerHTML = `
+      <button type="button" class="w-full p-5 flex justify-between items-center gap-4 text-left"
+              aria-expanded="false" aria-controls="faq-answer-${index}">
+        <span class="text-sm sm:text-base font-semibold text-white">${escapeHtml(faq.q)}</span>
+        <span class="faq-icon shrink-0 text-gray-500">+</span>
+      </button>
+      <div id="faq-answer-${index}" class="hidden px-5 pb-5">
+        <p class="text-sm text-gray-400 leading-7">${escapeHtml(faq.a)}</p>
+      </div>`;
+
+    const button = item.querySelector('button');
+    const answer = item.querySelector(`#faq-answer-${index}`);
+    const icon = item.querySelector('.faq-icon');
+
+    button.addEventListener('click', () => {
+      const open = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!open));
+      answer.classList.toggle('hidden');
+      icon.textContent = open ? '+' : '−';
+    });
+
+    container.appendChild(item);
+  });
+
+  document.getElementById('faq-schema').textContent = JSON.stringify({
+    '@context':'https://schema.org',
+    '@type':'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type':'Question',
+      name:faq.q,
+      acceptedAnswer:{
+        '@type':'Answer',
+        text:faq.a
+      }
+    }))
+  });
+}
+
+function countWords(text) {
+  const matches = text.trim().match(/\S+/g);
+  return matches ? matches.length : 0;
+}
+
+function capitalizeSentence(text) {
+  return text.replace(/(^|[.!?]\s+)([a-zçğıöşü])/g, (m, prefix, letter) => prefix + letter.toUpperCase());
+}
+
+function normalizeSpacing(text) {
+  return text
+    .replace(/[ \t]+/g, ' ')
+    .replace(/\s+([,.;!?])/g, '$1')
+    .replace(/([,.;!?])([^\s\n])/g, '$1 $2')
+    .replace(/ *\n */g, '\n')
+    .trim();
+}
+
+const replacements = {
+  en: {
+    common: [
+      [/\bit is important to note that\b/gi, 'notably'],
+      [/\bin order to\b/gi, 'to'],
+      [/\bdue to the fact that\b/gi, 'because'],
+      [/\bfor the purpose of\b/gi, 'to'],
+      [/\bat this point in time\b/gi, 'now'],
+      [/\ba large number of\b/gi, 'many'],
+      [/\bmake an effort to\b/gi, 'try to'],
+      [/\bhas the ability to\b/gi, 'can'],
+      [/\bin the event that\b/gi, 'if'],
+      [/\bwith regard to\b/gi, 'about'],
+      [/\bin a highly dynamic manner\b/gi, 'quickly'],
+      [/\bcontinuously evolving\b/gi, 'always changing'],
+      [/\butilize\b/gi, 'use'],
+      [/\bcommence\b/gi, 'start'],
+      [/\bterminate\b/gi, 'end'],
+      [/\bapproximately\b/gi, 'about'],
+      [/\badditional\b/gi, 'extra']
+    ],
+    casual: [
+      [/\btherefore\b/gi, 'so'],
+      [/\bhowever\b/gi, 'but'],
+      [/\bmoreover\b/gi, 'also'],
+      [/\bnevertheless\b/gi, 'still'],
+      [/\bdo not\b/gi, "don't"],
+      [/\bcannot\b/gi, "can't"],
+      [/\bwill not\b/gi, "won't"],
+      [/\bit is\b/gi, "it's"],
+      [/\bthey are\b/gi, "they're"]
+    ],
+    professional: [
+      [/\bso\b/gi, 'therefore'],
+      [/\ba lot of\b/gi, 'many'],
+      [/\bget\b/gi, 'obtain'],
+      [/\bhelp\b/gi, 'support']
+    ],
+    simple: [
+      [/\bfacilitate\b/gi, 'help'],
+      [/\bimplement\b/gi, 'use'],
+      [/\bdemonstrate\b/gi, 'show'],
+      [/\bregarding\b/gi, 'about'],
+      [/\bsubsequently\b/gi, 'later']
+    ]
+  },
+  tr: {
+    common: [
+      [/\bbelirtmek önemlidir ki\b/gi, 'özellikle'],
+      [/\bbu nedenle\b/gi, 'bu yüzden'],
+      [/\bamacıyla\b/gi, 'için'],
+      [/\bçaba göstermelidir\b/gi, 'çalışmalıdır'],
+      [/\bson derece\b/gi, 'oldukça'],
+      [/\bsürekli olarak\b/gi, 'sürekli'],
+      [/\bgerçekleştirmek\b/gi, 'yapmak'],
+      [/\bgerçekleştirilmektedir\b/gi, 'yapılıyor'],
+      [/\bsağlamak için\b/gi, 'için'],
+      [/\bmevcut durumda\b/gi, 'şu anda'],
+      [/\bgöz önünde bulundurmak\b/gi, 'düşünmek'],
+      [/\bçevrim içi\b/gi, 'online']
+    ],
+    casual: [
+      [/\bancak\b/gi, 'ama'],
+      [/\bfakat\b/gi, 'ama'],
+      [/\bdolayısıyla\b/gi, 'bu yüzden'],
+      [/\bgerçekten\b/gi, 'cidden']
+    ],
+    professional: [
+      [/\bama\b/gi, 'ancak'],
+      [/\bçok\b/gi, 'oldukça'],
+      [/\byardım eder\b/gi, 'destek sağlar']
+    ],
+    simple: [
+      [/\bdeğerlendirmek\b/gi, 'incelemek'],
+      [/\bgerçekleştirmek\b/gi, 'yapmak'],
+      [/\bfaydalanmak\b/gi, 'kullanmak'],
+      [/\btemin etmek\b/gi, 'almak']
+    ]
+  }
+};
+
+function applyReplacements(text, tone, lang, strength) {
+  const sets = replacements[lang] || replacements.en;
+  const all = [...sets.common, ...(sets[tone] || [])];
+  let result = text;
+
+  const limit = strength === 'light'
+    ? Math.ceil(all.length * .45)
+    : strength === 'balanced'
+      ? Math.ceil(all.length * .75)
+      : all.length;
+
+  all.slice(0, limit).forEach(([pattern, replacement]) => {
+    result = result.replace(pattern, replacement);
+  });
+
+  return result;
+}
+
+function varySentenceOpenings(text, lang, strength) {
+  if (strength === 'light') return text;
+
+  const transitions = lang === 'tr'
+    ? ['Ayrıca,', 'Bunun yanında,', 'Kısacası,', 'Öte yandan,']
+    : ['Also,', 'In addition,', 'In short,', 'On the other hand,'];
+
+  let sentenceIndex = 0;
+  return text.replace(/(^|[.!?]\s+)([A-ZÇĞİÖŞÜ])/g, (match, prefix, letter) => {
+    sentenceIndex++;
+    if (sentenceIndex > 1 && sentenceIndex % 3 === 0) {
+      const transition = transitions[(sentenceIndex / 3 - 1) % transitions.length];
+      return `${prefix}${transition} ${letter.toLowerCase()}`;
+    }
+    return match;
+  });
+}
+
+function shortenText(text, lang) {
+  let result = text;
+  const fillers = lang === 'tr'
+    ? [/\btemel olarak\b/gi, /\baslında\b/gi, /\bgenel olarak\b/gi, /\bbir bakıma\b/gi]
+    : [/\bbasically\b/gi, /\bactually\b/gi, /\bgenerally speaking\b/gi, /\bin many ways\b/gi];
+
+  fillers.forEach(pattern => {
+    result = result.replace(pattern, '');
+  });
+
+  return normalizeSpacing(result);
+}
+
+function lengthenText(text, lang) {
+  const extra = lang === 'tr'
+    ? ' Bu yaklaşım, anlatımın daha açık ve okuyucu açısından daha rahat takip edilir olmasına yardımcı olur.'
+    : ' This approach can make the message clearer and easier for the reader to follow.';
+
+  const paragraphs = text.split(/\n\s*\n/);
+  return paragraphs.map((p, i) => {
+    if (!p.trim()) return p;
+    return i === paragraphs.length - 1 ? p.trim() + extra : p.trim();
+  }).join('\n\n');
+}
+
+function humanizeText() {
+  const data = localizations[currentLang];
+  const input = document.getElementById('input-text').value.trim();
+
+  if (!input) {
+    showToast(data.noInput);
+    document.getElementById('input-text').focus();
+    return;
+  }
+
+  setText('output-status', data.working);
+
+  const tone = document.getElementById('tone-select').value;
+  const strength = document.getElementById('strength-select').value;
+  const length = document.getElementById('length-select').value;
+  const preserveLines = document.getElementById('preserve-lines').checked;
+
+  let result = input;
+  result = normalizeSpacing(result);
+  result = applyReplacements(result, tone, currentLang, strength);
+  result = varySentenceOpenings(result, currentLang, strength);
+
+  if (length === 'shorter') result = shortenText(result, currentLang);
+  if (length === 'longer') result = lengthenText(result, currentLang);
+
+  result = capitalizeSentence(normalizeSpacing(result));
+
+  if (preserveLines) {
+    const sourceParagraphs = input.split(/\n\s*\n/).filter(Boolean);
+    if (sourceParagraphs.length > 1 && !result.includes('\n\n')) {
+      const sentences = result.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [result];
+      const perParagraph = Math.max(1, Math.ceil(sentences.length / sourceParagraphs.length));
+      const groups = [];
+      for (let i = 0; i < sentences.length; i += perParagraph) {
+        groups.push(sentences.slice(i, i + perParagraph).join(' ').trim());
+      }
+      result = groups.join('\n\n');
+    }
+  } else {
+    result = result.replace(/\n+/g, ' ');
+  }
+
+  document.getElementById('output-text').value = result;
+  setText('output-status', data.done);
+  updateStats();
+}
+
+function updateStats() {
+  const data = localizations[currentLang];
+  const input = document.getElementById('input-text').value;
+  const output = document.getElementById('output-text').value;
+
+  const inputWords = countWords(input);
+  const outputWords = countWords(output);
+
+  setText('input-word-count', inputWords);
+  setText('input-char-count', input.length);
+  setText('output-word-count', outputWords);
+
+  const base = Math.max(1, inputWords);
+  const percent = output ? Math.round(((outputWords - inputWords) / base) * 100) : 0;
+  const sign = percent > 0 ? '+' : '';
+  setText('change-label', `${sign}${percent}% ${data.change}`);
+}
+
+async function copyResult() {
+  const data = localizations[currentLang];
+  const output = document.getElementById('output-text').value;
+
+  if (!output) {
+    showToast(data.noOutput);
+    return;
+  }
+
+  try {
+    await navigator.clipboard.writeText(output);
+  } catch (error) {
+    const temp = document.createElement('textarea');
+    temp.value = output;
+    temp.style.position = 'fixed';
+    temp.style.opacity = '0';
+    document.body.appendChild(temp);
+    temp.select();
+    document.execCommand('copy');
+    temp.remove();
+  }
+
+  showToast(data.copied);
+}
+
+function downloadResult() {
+  const data = localizations[currentLang];
+  const output = document.getElementById('output-text').value;
+
+  if (!output) {
+    showToast(data.noOutput);
+    return;
+  }
+
+  const blob = new Blob([output], { type:'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = currentLang === 'tr' ? 'dogallastirilmis-metin.txt' : 'humanized-text.txt';
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+  showToast(data.downloaded);
+}
+
+function clearWorkspace() {
+  document.getElementById('input-text').value = '';
+  document.getElementById('output-text').value = '';
+  setText('output-status', localizations[currentLang].ready);
+  updateStats();
+  document.getElementById('input-text').focus();
+}
+
+function loadExample() {
+  document.getElementById('input-text').value = localizations[currentLang].exampleText;
+  document.getElementById('output-text').value = '';
+  updateStats();
+  document.getElementById('input-text').focus();
+}
+
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.classList.add('show');
+
+  clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(() => {
+    toast.classList.remove('show');
+  }, 1800);
+}
+
+document.getElementById('input-text').addEventListener('input', updateStats);
+document.getElementById('btn-humanize').addEventListener('click', humanizeText);
+document.getElementById('btn-copy').addEventListener('click', copyResult);
+document.getElementById('btn-download').addEventListener('click', downloadResult);
+document.getElementById('btn-clear').addEventListener('click', clearWorkspace);
+document.getElementById('btn-example').addEventListener('click', loadExample);
+
+document.addEventListener('keydown', event => {
+  if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+    event.preventDefault();
+    humanizeText();
+  }
+});
+
+renderPage(detectLanguage());
+</script>
+</body>
+</html>
