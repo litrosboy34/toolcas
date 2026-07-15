@@ -9,70 +9,987 @@
 
   gtag('config', 'G-3NNQ6DL9K1');
 </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toolcas - Free AI Tools Platform</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .glow-bg { background-color: #0b0f19; }
-    </style>
-</head>
-<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen">
 
-    <!-- Arka Plan Efektleri -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] pointer-events-none overflow-hidden opacity-20 z-0">
-        <div class="absolute top-[-10%] left-[20%] w-[600px] h-[600px] bg-indigo-600 rounded-full blur-[150px]"></div>
-        <div class="absolute top-[-5%] right-[20%] w-[400px] h-[400px] bg-purple-600 rounded-full blur-[130px]"></div>
+    <title>Toolcas - Free AI Tools for Writing, Coding and Productivity</title>
+
+    <meta
+        name="description"
+        content="Use free AI-powered tools for coding, writing, summarizing, prompt generation, JSON validation and productivity. No registration required."
+    >
+
+    <meta
+        name="keywords"
+        content="free AI tools, AI tools online, code helper, JSON validator, prompt generator, text summarizer, word counter"
+    >
+
+    <meta name="author" content="Toolcas">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0b0f19">
+
+    <link rel="canonical" href="https://www.toolcas.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Toolcas - Free AI Tools Platform">
+    <meta
+        property="og:description"
+        content="Free AI tools for writing, coding and everyday productivity. Fast, simple and available without registration."
+    >
+    <meta property="og:url" content="https://www.toolcas.com/">
+    <meta property="og:site_name" content="Toolcas">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Toolcas - Free AI Tools Platform">
+    <meta
+        name="twitter:description"
+        content="Free AI tools for writing, coding and everyday productivity."
+    >
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        toolcas: {
+                            dark: '#0b0f19',
+                            panel: '#111827',
+                            indigo: '#6366f1',
+                            purple: '#a855f7'
+                        }
+                    },
+                    boxShadow: {
+                        glow: '0 0 40px rgba(99, 102, 241, 0.15)'
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0b0f19;
+        }
+
+        ::selection {
+            background: rgba(99, 102, 241, 0.45);
+            color: #ffffff;
+        }
+
+        .glow-bg {
+            background-color: #0b0f19;
+        }
+
+        .tool-card {
+            content-visibility: auto;
+            contain-intrinsic-size: 210px;
+        }
+
+        .glass {
+            background: rgba(17, 24, 39, 0.55);
+            border: 1px solid rgba(75, 85, 99, 0.35);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #818cf8, #c084fc, #67e8f9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .skip-link {
+            position: fixed;
+            top: -100px;
+            left: 16px;
+            z-index: 9999;
+            padding: 10px 16px;
+            border-radius: 10px;
+            background: #ffffff;
+            color: #111827;
+            font-weight: 700;
+            transition: top 0.2s ease;
+        }
+
+        .skip-link:focus {
+            top: 16px;
+        }
+
+        .faq-item[open] .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Toolcas",
+        "url": "https://www.toolcas.com/",
+        "description": "Free AI tools for coding, writing and productivity.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.toolcas.com/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Toolcas",
+        "url": "https://www.toolcas.com/",
+        "logo": "https://www.toolcas.com/favicon.png"
+    }
+    </script>
+
+    <script type="application/ld+json" id="faq-schema">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Are Toolcas tools free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Toolcas provides free online tools for coding, writing and productivity."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to create an account?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. You can use the available tools without creating an account."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use Toolcas on mobile devices?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Toolcas is designed to work on phones, tablets and desktop computers."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body class="glow-bg text-gray-100 font-sans antialiased relative min-h-screen overflow-x-hidden">
+
+    <a href="#main-content" class="skip-link" data-i18n="skipContent">
+        Skip to content
+    </a>
+
+    <!-- Background Effects -->
+    <div
+        aria-hidden="true"
+        class="fixed inset-0 pointer-events-none overflow-hidden opacity-20 z-0"
+    >
+        <div class="absolute top-[-220px] left-[5%] md:left-[20%] w-[500px] md:w-[700px] h-[500px] md:h-[700px] bg-indigo-600 rounded-full blur-[150px]"></div>
+        <div class="absolute top-[-120px] right-[-180px] md:right-[10%] w-[380px] md:w-[500px] h-[380px] md:h-[500px] bg-purple-600 rounded-full blur-[140px]"></div>
+        <div class="absolute top-[650px] left-[-200px] w-[450px] h-[450px] bg-cyan-700 rounded-full blur-[160px] opacity-40"></div>
     </div>
 
     <!-- Header -->
-    <header class="relative z-10 border-b border-gray-800/80 bg-[#0b0f19]/70 backdrop-blur-md sticky top-0">
+    <header class="relative z-50 border-b border-gray-800/80 bg-[#0b0f19]/80 backdrop-blur-xl sticky top-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <a href="index.html" class="text-2xl font-black tracking-tight text-white bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">TOOLCAS</a>
-            </div>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
-                <a href="#tools" class="hover:text-white transition-colors">Tools</a>
-                <a href="blog/index.html" class="hover:text-white transition-colors">Blog</a>
+
+            <a
+                href="index.html"
+                class="flex items-center gap-3"
+                aria-label="Toolcas homepage"
+            >
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                    <span class="text-white font-black text-lg" aria-hidden="true">T</span>
+                </div>
+
+                <span class="text-2xl font-black tracking-tight gradient-text">
+                    TOOLCAS
+                </span>
+            </a>
+
+            <nav
+                class="flex items-center gap-4 sm:gap-7 text-sm font-medium text-gray-400"
+                aria-label="Main navigation"
+            >
+                <a
+                    href="#tools"
+                    class="hover:text-white transition-colors"
+                    data-i18n="navTools"
+                >
+                    Tools
+                </a>
+
+                <a
+                    href="#faq"
+                    class="hidden sm:inline hover:text-white transition-colors"
+                    data-i18n="navFaq"
+                >
+                    FAQ
+                </a>
+
+                <a
+                    href="blog/index.html"
+                    class="hover:text-white transition-colors"
+                    data-i18n="navBlog"
+                >
+                    Blog
+                </a>
             </nav>
         </div>
     </header>
 
-    <!-- Ana İçerik -->
-    <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-        <div class="text-center max-w-3xl mx-auto mb-20">
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">Discover the Power of AI</h1>
-            <p class="text-lg text-gray-400">Access your professional tools from a single platform.</p>
-        </div>
+    <!-- Main -->
+    <main
+        id="main-content"
+        class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-20"
+    >
+        <!-- Hero -->
+        <section class="text-center max-w-4xl mx-auto mb-16 sm:mb-24">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 text-indigo-300 text-xs sm:text-sm font-semibold mb-7">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                <span data-i18n="heroBadge">Free tools. No registration required.</span>
+            </div>
 
-        <!-- Araçlar Grid -->
-        <section id="tools">
-            <div id="tools-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Araçlar JS ile buraya gelecek -->
+            <h1
+                class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight mb-6"
+                data-i18n="heroTitle"
+            >
+                Powerful tools for smarter work
+            </h1>
+
+            <p
+                class="text-base sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
+                data-i18n="heroDescription"
+            >
+                Use fast and simple AI-powered tools for coding, writing, analysis and everyday productivity.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-9">
+                <a
+                    href="#tools"
+                    class="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition-all shadow-lg shadow-indigo-600/20 hover:-translate-y-0.5"
+                >
+                    <span data-i18n="exploreTools">Explore tools</span>
+                    <span aria-hidden="true">↓</span>
+                </a>
+
+                <a
+                    href="blog/index.html"
+                    class="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3.5 rounded-xl border border-gray-700 bg-gray-900/40 hover:bg-gray-800/70 hover:border-gray-600 text-gray-200 font-semibold transition-all"
+                    data-i18n="readBlog"
+                >
+                    Read the blog
+                </a>
+            </div>
+
+            <div class="grid grid-cols-3 gap-3 sm:gap-6 max-w-xl mx-auto mt-12 text-center">
+                <div class="glass rounded-2xl py-4 px-2">
+                    <strong class="block text-xl sm:text-2xl text-white">5+</strong>
+                    <span class="text-xs sm:text-sm text-gray-500" data-i18n="statTools">
+                        Free tools
+                    </span>
+                </div>
+
+                <div class="glass rounded-2xl py-4 px-2">
+                    <strong class="block text-xl sm:text-2xl text-white">0</strong>
+                    <span class="text-xs sm:text-sm text-gray-500" data-i18n="statSignup">
+                        Sign-ups
+                    </span>
+                </div>
+
+                <div class="glass rounded-2xl py-4 px-2">
+                    <strong class="block text-xl sm:text-2xl text-white">24/7</strong>
+                    <span class="text-xs sm:text-sm text-gray-500" data-i18n="statAccess">
+                        Access
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools -->
+        <section id="tools" class="scroll-mt-24" aria-labelledby="tools-title">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
+                <div>
+                    <p
+                        class="text-indigo-400 text-sm font-bold uppercase tracking-widest mb-2"
+                        data-i18n="toolsEyebrow"
+                    >
+                        Tool library
+                    </p>
+
+                    <h2
+                        id="tools-title"
+                        class="text-3xl sm:text-4xl font-bold text-white"
+                        data-i18n="toolsTitle"
+                    >
+                        Choose a tool and get started
+                    </h2>
+
+                    <p
+                        class="text-gray-400 mt-3 max-w-2xl"
+                        data-i18n="toolsDescription"
+                    >
+                        Fast online utilities designed to save time and simplify your work.
+                    </p>
+                </div>
+
+                <div class="w-full lg:w-80">
+                    <label for="tool-search" class="sr-only" data-i18n="searchLabel">
+                        Search tools
+                    </label>
+
+                    <div class="relative">
+                        <span
+                            aria-hidden="true"
+                            class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"
+                        >
+                            🔎
+                        </span>
+
+                        <input
+                            id="tool-search"
+                            type="search"
+                            autocomplete="off"
+                            placeholder="Search tools..."
+                            class="w-full bg-gray-900/70 border border-gray-800 rounded-xl py-3.5 pl-11 pr-4 text-sm text-white placeholder:text-gray-500 outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition"
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div
+                id="tools-grid"
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
+            >
+                <!-- Tools are rendered with JavaScript -->
+            </div>
+
+            <p
+                id="no-results"
+                class="hidden text-center text-gray-400 py-14"
+                data-i18n="noResults"
+            >
+                No matching tools were found.
+            </p>
+        </section>
+
+        <!-- AdSense-ready placement -->
+        <section
+            class="mt-16"
+            aria-label="Advertisement"
+        >
+            <!--
+                GOOGLE ADSENSE KODUN ONAYLANDIKTAN SONRA
+                REKLAM KODUNU BU ALANA EKLEYEBİLİRSİN.
+            -->
+
+            <div class="min-h-[120px] sm:min-h-[150px] rounded-2xl border border-dashed border-gray-800 bg-gray-900/20 flex items-center justify-center">
+                <span class="text-xs uppercase tracking-widest text-gray-700">
+                    Advertisement
+                </span>
+            </div>
+        </section>
+
+        <!-- Why Toolcas -->
+        <section class="mt-20 sm:mt-28" aria-labelledby="benefits-title">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <p
+                    class="text-indigo-400 text-sm font-bold uppercase tracking-widest mb-2"
+                    data-i18n="benefitsEyebrow"
+                >
+                    Why Toolcas?
+                </p>
+
+                <h2
+                    id="benefits-title"
+                    class="text-3xl sm:text-4xl font-bold text-white"
+                    data-i18n="benefitsTitle"
+                >
+                    Simple, fast and accessible
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-5">
+                <article class="glass rounded-2xl p-6">
+                    <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-indigo-500/10 text-xl mb-5">
+                        ⚡
+                    </div>
+                    <h3 class="text-lg font-bold text-white" data-i18n="benefitFastTitle">
+                        Fast to use
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-6 mt-2" data-i18n="benefitFastDesc">
+                        Open a tool and start working immediately without complicated steps.
+                    </p>
+                </article>
+
+                <article class="glass rounded-2xl p-6">
+                    <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-purple-500/10 text-xl mb-5">
+                        🔓
+                    </div>
+                    <h3 class="text-lg font-bold text-white" data-i18n="benefitFreeTitle">
+                        No registration
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-6 mt-2" data-i18n="benefitFreeDesc">
+                        Use the available tools without creating an account or signing in.
+                    </p>
+                </article>
+
+                <article class="glass rounded-2xl p-6">
+                    <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-cyan-500/10 text-xl mb-5">
+                        📱
+                    </div>
+                    <h3 class="text-lg font-bold text-white" data-i18n="benefitMobileTitle">
+                        Mobile friendly
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-6 mt-2" data-i18n="benefitMobileDesc">
+                        Access Toolcas comfortably from phones, tablets and computers.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section
+            id="faq"
+            class="mt-20 sm:mt-28 scroll-mt-24 max-w-4xl mx-auto"
+            aria-labelledby="faq-title"
+        >
+            <div class="text-center mb-10">
+                <p
+                    class="text-indigo-400 text-sm font-bold uppercase tracking-widest mb-2"
+                    data-i18n="faqEyebrow"
+                >
+                    Frequently asked questions
+                </p>
+
+                <h2
+                    id="faq-title"
+                    class="text-3xl sm:text-4xl font-bold text-white"
+                    data-i18n="faqTitle"
+                >
+                    Everything you need to know
+                </h2>
+            </div>
+
+            <div class="space-y-4">
+                <details class="faq-item glass rounded-2xl p-5 sm:p-6 group">
+                    <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-semibold text-white">
+                        <span data-i18n="faq1Question">Are Toolcas tools free?</span>
+                        <span class="faq-icon text-2xl text-indigo-400 transition-transform" aria-hidden="true">
+                            +
+                        </span>
+                    </summary>
+
+                    <p
+                        class="text-gray-400 text-sm sm:text-base leading-7 mt-4 pr-8"
+                        data-i18n="faq1Answer"
+                    >
+                        Yes. Toolcas provides free online tools for coding, writing and productivity.
+                    </p>
+                </details>
+
+                <details class="faq-item glass rounded-2xl p-5 sm:p-6 group">
+                    <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-semibold text-white">
+                        <span data-i18n="faq2Question">Do I need to create an account?</span>
+                        <span class="faq-icon text-2xl text-indigo-400 transition-transform" aria-hidden="true">
+                            +
+                        </span>
+                    </summary>
+
+                    <p
+                        class="text-gray-400 text-sm sm:text-base leading-7 mt-4 pr-8"
+                        data-i18n="faq2Answer"
+                    >
+                        No. You can use the available tools without creating an account.
+                    </p>
+                </details>
+
+                <details class="faq-item glass rounded-2xl p-5 sm:p-6 group">
+                    <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-semibold text-white">
+                        <span data-i18n="faq3Question">Does Toolcas work on mobile devices?</span>
+                        <span class="faq-icon text-2xl text-indigo-400 transition-transform" aria-hidden="true">
+                            +
+                        </span>
+                    </summary>
+
+                    <p
+                        class="text-gray-400 text-sm sm:text-base leading-7 mt-4 pr-8"
+                        data-i18n="faq3Answer"
+                    >
+                        Yes. The website is designed to work on phones, tablets and desktop computers.
+                    </p>
+                </details>
+
+                <details class="faq-item glass rounded-2xl p-5 sm:p-6 group">
+                    <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-semibold text-white">
+                        <span data-i18n="faq4Question">Which tools are available?</span>
+                        <span class="faq-icon text-2xl text-indigo-400 transition-transform" aria-hidden="true">
+                            +
+                        </span>
+                    </summary>
+
+                    <p
+                        class="text-gray-400 text-sm sm:text-base leading-7 mt-4 pr-8"
+                        data-i18n="faq4Answer"
+                    >
+                        Toolcas currently includes tools for coding, JSON validation, prompt generation, summarization and text analysis.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Blog CTA -->
+        <section class="mt-20 sm:mt-28">
+            <div class="relative overflow-hidden rounded-3xl border border-indigo-500/20 bg-gradient-to-br from-indigo-950/70 to-purple-950/50 p-7 sm:p-12 text-center shadow-glow">
+                <div aria-hidden="true" class="absolute inset-0 opacity-30">
+                    <div class="absolute -top-24 -right-24 w-72 h-72 bg-indigo-500 rounded-full blur-[100px]"></div>
+                    <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-purple-500 rounded-full blur-[100px]"></div>
+                </div>
+
+                <div class="relative z-10 max-w-2xl mx-auto">
+                    <h2 class="text-2xl sm:text-4xl font-bold text-white" data-i18n="blogCtaTitle">
+                        Learn how to work smarter
+                    </h2>
+
+                    <p class="text-gray-300 mt-4 leading-7" data-i18n="blogCtaDescription">
+                        Discover practical guides, AI tips and productivity articles on the Toolcas blog.
+                    </p>
+
+                    <a
+                        href="blog/index.html"
+                        class="inline-flex items-center gap-2 mt-7 px-6 py-3 rounded-xl bg-white text-gray-950 font-bold hover:bg-gray-100 transition"
+                    >
+                        <span data-i18n="visitBlog">Visit the blog</span>
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-gray-800/80 bg-gray-950/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-7">
+                <div>
+                    <a href="index.html" class="text-xl font-black gradient-text">
+                        TOOLCAS
+                    </a>
+
+                    <p
+                        class="text-sm text-gray-500 mt-2 max-w-md"
+                        data-i18n="footerDescription"
+                    >
+                        Free online tools for coding, writing and everyday productivity.
+                    </p>
+                </div>
+
+                <nav class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-500" aria-label="Footer navigation">
+                    <a href="#tools" class="hover:text-white transition" data-i18n="navTools">
+                        Tools
+                    </a>
+                    <a href="blog/index.html" class="hover:text-white transition" data-i18n="navBlog">
+                        Blog
+                    </a>
+                 <a href="faq/faq.html" class="hover:text-white transition" data-i18n="navFaq">
+                        FAQ
+                    </a>
+                    <a href="privacy/index.html" class="hover:text-white transition" data-i18n="privacy">
+                        Privacy Policy
+                    </a>
+                    <a href="terms/index.html" class="hover:text-white transition" data-i18n="terms">
+                        Terms
+                    </a>
+                </nav>
+            </div>
+
+            <div class="border-t border-gray-800/70 mt-8 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-gray-600">
+                <p>
+                    © <span id="current-year"></span> Toolcas.
+                    <span data-i18n="rights">All rights reserved.</span>
+                </p>
+
+                <p data-i18n="madeFor">
+                    Built for faster and smarter work.
+                </p>
+            </div>
+        </div>
+    </footer>
+
     <script>
+        /*
+         * Otomatik dil algılama:
+         * Tarayıcı dili Türkçe ise Türkçe,
+         * diğer tüm dillerde İngilizce gösterilir.
+         * Manuel dil seçici bulunmamaktadır.
+         */
+
+        const translations = {
+            en: {
+                pageTitle: 'Toolcas - Free AI Tools for Writing, Coding and Productivity',
+                pageDescription: 'Use free AI-powered tools for coding, writing, summarizing, prompt generation, JSON validation and productivity. No registration required.',
+                skipContent: 'Skip to content',
+                navTools: 'Tools',
+                navFaq: 'FAQ',
+                navBlog: 'Blog',
+                heroBadge: 'Free tools. No registration required.',
+                heroTitle: 'Powerful tools for smarter work',
+                heroDescription: 'Use fast and simple AI-powered tools for coding, writing, analysis and everyday productivity.',
+                exploreTools: 'Explore tools',
+                readBlog: 'Read the blog',
+                statTools: 'Free tools',
+                statSignup: 'Sign-ups',
+                statAccess: 'Access',
+                toolsEyebrow: 'Tool library',
+                toolsTitle: 'Choose a tool and get started',
+                toolsDescription: 'Fast online utilities designed to save time and simplify your work.',
+                searchLabel: 'Search tools',
+                searchPlaceholder: 'Search tools...',
+                noResults: 'No matching tools were found.',
+                benefitsEyebrow: 'Why Toolcas?',
+                benefitsTitle: 'Simple, fast and accessible',
+                benefitFastTitle: 'Fast to use',
+                benefitFastDesc: 'Open a tool and start working immediately without complicated steps.',
+                benefitFreeTitle: 'No registration',
+                benefitFreeDesc: 'Use the available tools without creating an account or signing in.',
+                benefitMobileTitle: 'Mobile friendly',
+                benefitMobileDesc: 'Access Toolcas comfortably from phones, tablets and computers.',
+                faqEyebrow: 'Frequently asked questions',
+                faqTitle: 'Everything you need to know',
+                faq1Question: 'Are Toolcas tools free?',
+                faq1Answer: 'Yes. Toolcas provides free online tools for coding, writing and productivity.',
+                faq2Question: 'Do I need to create an account?',
+                faq2Answer: 'No. You can use the available tools without creating an account.',
+                faq3Question: 'Does Toolcas work on mobile devices?',
+                faq3Answer: 'Yes. The website is designed to work on phones, tablets and desktop computers.',
+                faq4Question: 'Which tools are available?',
+                faq4Answer: 'Toolcas currently includes tools for coding, JSON validation, prompt generation, summarization and text analysis.',
+                blogCtaTitle: 'Learn how to work smarter',
+                blogCtaDescription: 'Discover practical guides, AI tips and productivity articles on the Toolcas blog.',
+                visitBlog: 'Visit the blog',
+                footerDescription: 'Free online tools for coding, writing and everyday productivity.',
+                privacy: 'Privacy Policy',
+                terms: 'Terms',
+                rights: 'All rights reserved.',
+                madeFor: 'Built for faster and smarter work.',
+                openTool: 'Open tool',
+                categories: {
+                    development: 'Development',
+                    writing: 'Writing',
+                    productivity: 'Productivity'
+                },
+                tools: {
+                    codeHelper: {
+                        name: 'Code Helper',
+                        desc: 'Debug, explain and optimize your code quickly.'
+                    },
+                    jsonValidator: {
+                        name: 'JSON Validator',
+                        desc: 'Validate, format and clean your JSON data.'
+                    },
+                    promptGenerator: {
+                        name: 'Prompt Generator',
+                        desc: 'Create clearer and more effective AI prompts.'
+                    },
+                    textSummarizer: {
+                        name: 'Text Summarizer',
+                        desc: 'Turn long content into clear and concise summaries.'
+                    },
+                    wordCounter: {
+                        name: 'Word Counter',
+                        desc: 'Analyze words, characters, sentences and reading time.'
+                    }
+                }
+            },
+
+            tr: {
+                pageTitle: 'Toolcas - Ücretsiz Yapay Zekâ ve Üretkenlik Araçları',
+                pageDescription: 'Kodlama, yazı yazma, metin özetleme, prompt oluşturma, JSON doğrulama ve üretkenlik için ücretsiz çevrim içi araçlar.',
+                skipContent: 'İçeriğe geç',
+                navTools: 'Araçlar',
+                navFaq: 'SSS',
+                navBlog: 'Blog',
+                heroBadge: 'Ücretsiz araçlar. Kayıt olmanız gerekmez.',
+                heroTitle: 'Daha akıllı çalışmak için güçlü araçlar',
+                heroDescription: 'Kodlama, yazı yazma, analiz ve günlük işleriniz için hızlı ve kullanımı kolay araçlara erişin.',
+                exploreTools: 'Araçları keşfet',
+                readBlog: 'Blogu incele',
+                statTools: 'Ücretsiz araç',
+                statSignup: 'Üyelik',
+                statAccess: 'Erişim',
+                toolsEyebrow: 'Araç kütüphanesi',
+                toolsTitle: 'Bir araç seçin ve hemen başlayın',
+                toolsDescription: 'Zaman kazanmanız ve işlerinizi kolaylaştırmanız için tasarlanan hızlı çevrim içi araçlar.',
+                searchLabel: 'Araçlarda ara',
+                searchPlaceholder: 'Araçlarda ara...',
+                noResults: 'Aramanızla eşleşen bir araç bulunamadı.',
+                benefitsEyebrow: 'Neden Toolcas?',
+                benefitsTitle: 'Basit, hızlı ve erişilebilir',
+                benefitFastTitle: 'Hızlı kullanım',
+                benefitFastDesc: 'Karmaşık adımlarla uğraşmadan bir aracı açın ve hemen kullanmaya başlayın.',
+                benefitFreeTitle: 'Üyelik gerekmez',
+                benefitFreeDesc: 'Hesap oluşturmadan veya giriş yapmadan mevcut araçları kullanın.',
+                benefitMobileTitle: 'Mobil uyumlu',
+                benefitMobileDesc: 'Toolcas araçlarına telefon, tablet ve bilgisayardan rahatça erişin.',
+                faqEyebrow: 'Sıkça sorulan sorular',
+                faqTitle: 'Merak ettiğiniz her şey',
+                faq1Question: 'Toolcas araçları ücretsiz mi?',
+                faq1Answer: 'Evet. Toolcas; kodlama, yazı yazma ve üretkenlik için ücretsiz çevrim içi araçlar sunar.',
+                faq2Question: 'Hesap oluşturmam gerekiyor mu?',
+                faq2Answer: 'Hayır. Mevcut araçları hesap oluşturmadan kullanabilirsiniz.',
+                faq3Question: 'Toolcas mobil cihazlarda çalışıyor mu?',
+                faq3Answer: 'Evet. Site telefon, tablet ve masaüstü bilgisayarlarda çalışacak şekilde tasarlanmıştır.',
+                faq4Question: 'Hangi araçlar bulunuyor?',
+                faq4Answer: 'Toolcas üzerinde kodlama, JSON doğrulama, prompt oluşturma, metin özetleme ve metin analizi araçları bulunmaktadır.',
+                blogCtaTitle: 'Daha verimli çalışmanın yollarını öğrenin',
+                blogCtaDescription: 'Toolcas blogunda faydalı rehberleri, yapay zekâ ipuçlarını ve üretkenlik içeriklerini keşfedin.',
+                visitBlog: 'Blogu ziyaret et',
+                footerDescription: 'Kodlama, yazı yazma ve günlük üretkenlik için ücretsiz çevrim içi araçlar.',
+                privacy: 'Gizlilik Politikası',
+                terms: 'Kullanım Koşulları',
+                rights: 'Tüm hakları saklıdır.',
+                madeFor: 'Daha hızlı ve akıllı çalışma için geliştirildi.',
+                openTool: 'Aracı aç',
+                categories: {
+                    development: 'Yazılım',
+                    writing: 'Yazı',
+                    productivity: 'Üretkenlik'
+                },
+                tools: {
+                    codeHelper: {
+                        name: 'Kod Yardımcısı',
+                        desc: 'Kodunuzu hızlıca analiz edin, açıklayın ve iyileştirin.'
+                    },
+                    jsonValidator: {
+                        name: 'JSON Doğrulayıcı',
+                        desc: 'JSON verilerinizi doğrulayın, biçimlendirin ve temizleyin.'
+                    },
+                    promptGenerator: {
+                        name: 'Prompt Oluşturucu',
+                        desc: 'Daha açık ve etkili yapay zekâ komutları oluşturun.'
+                    },
+                    textSummarizer: {
+                        name: 'Metin Özetleyici',
+                        desc: 'Uzun içerikleri açık ve kısa özetlere dönüştürün.'
+                    },
+                    wordCounter: {
+                        name: 'Kelime Sayacı',
+                        desc: 'Kelime, karakter, cümle ve okuma süresini analiz edin.'
+                    }
+                }
+            }
+        };
+
+        const browserLanguage = (
+            navigator.languages &&
+            navigator.languages.length
+                ? navigator.languages[0]
+                : navigator.language
+        ).toLowerCase();
+
+        const currentLanguage = browserLanguage.startsWith('tr') ? 'tr' : 'en';
+        const languageData = translations[currentLanguage];
+
+        document.documentElement.lang = currentLanguage;
+        document.title = languageData.pageTitle;
+
+        const descriptionMeta = document.querySelector('meta[name="description"]');
+
+        if (descriptionMeta) {
+            descriptionMeta.setAttribute('content', languageData.pageDescription);
+        }
+
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const translationKey = element.dataset.i18n;
+
+            if (languageData[translationKey]) {
+                element.textContent = languageData[translationKey];
+            }
+        });
+
+        const searchInput = document.getElementById('tool-search');
+
+        if (searchInput) {
+            searchInput.placeholder = languageData.searchPlaceholder;
+        }
+
         const tools = [
-            { name: 'Code Helper', slug: 'code-helper', desc: 'Debug and optimize your code.', icon: '💻' },
-            { name: 'JSON Validator', slug: 'json-validator', desc: 'Validate and format JSON.', icon: '📋' },
-            { name: 'Prompt Generator', slug: 'prompt-generator', desc: 'Craft perfect AI prompts.', icon: '⚡' },
-            { name: 'Text Summarizer', slug: 'text-summarizer', desc: 'Condense long texts.', icon: '📝' },
-            { name: 'Word Counter', slug: 'word-counter', desc: 'Analyze text statistics.', icon: '🔢' }
+            {
+                translationKey: 'codeHelper',
+                slug: 'code-helper',
+                icon: '💻',
+                category: 'development',
+                accent: 'from-blue-500/20 to-indigo-500/10',
+                border: 'hover:border-blue-500/40'
+            },
+            {
+                translationKey: 'jsonValidator',
+                slug: 'json-validator',
+                icon: '📋',
+                category: 'development',
+                accent: 'from-emerald-500/20 to-cyan-500/10',
+                border: 'hover:border-emerald-500/40'
+            },
+            {
+                translationKey: 'promptGenerator',
+                slug: 'prompt-generator',
+                icon: '⚡',
+                category: 'productivity',
+                accent: 'from-amber-500/20 to-orange-500/10',
+                border: 'hover:border-amber-500/40'
+            },
+            {
+                translationKey: 'textSummarizer',
+                slug: 'text-summarizer',
+                icon: '📝',
+                category: 'writing',
+                accent: 'from-purple-500/20 to-fuchsia-500/10',
+                border: 'hover:border-purple-500/40'
+            },
+            {
+                translationKey: 'wordCounter',
+                slug: 'word-counter',
+                icon: '🔢',
+                category: 'writing',
+                accent: 'from-pink-500/20 to-rose-500/10',
+                border: 'hover:border-pink-500/40'
+            }
         ];
 
-        const grid = document.getElementById('tools-grid');
-        
-        tools.forEach(t => {
-            // Linkler tools/ klasörüne yönlendirilecek şekilde ayarlandı
-            grid.innerHTML += `
-                <a href="tools/${t.slug}.html" class="group p-6 bg-gray-900/40 border border-gray-800 rounded-2xl hover:border-indigo-500/30 transition-all hover:bg-gray-900/70">
-                    <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">${t.icon}</div>
-                    <h3 class="text-lg font-semibold text-white group-hover:text-indigo-400">${t.name}</h3>
-                    <p class="text-sm text-gray-400 mt-1">${t.desc}</p>
-                </a>`;
-        });
+        const toolsGrid = document.getElementById('tools-grid');
+        const noResults = document.getElementById('no-results');
+
+        function escapeHtml(value) {
+            return String(value)
+                .replaceAll('&', '&amp;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('>', '&gt;')
+                .replaceAll('"', '&quot;')
+                .replaceAll("'", '&#039;');
+        }
+
+        function renderTools(searchTerm = '') {
+            const normalizedSearch = searchTerm.trim().toLocaleLowerCase(currentLanguage);
+
+            const filteredTools = tools.filter(tool => {
+                const translatedTool = languageData.tools[tool.translationKey];
+                const categoryName = languageData.categories[tool.category];
+
+                const searchableText = [
+                    translatedTool.name,
+                    translatedTool.desc,
+                    categoryName
+                ].join(' ').toLocaleLowerCase(currentLanguage);
+
+                return searchableText.includes(normalizedSearch);
+            });
+
+            toolsGrid.innerHTML = filteredTools.map(tool => {
+                const translatedTool = languageData.tools[tool.translationKey];
+                const categoryName = languageData.categories[tool.category];
+
+                return `
+                    <article class="tool-card group relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/45 ${tool.border} transition-all duration-300 hover:-translate-y-1 hover:bg-gray-900/75 hover:shadow-2xl hover:shadow-indigo-950/30">
+                        <div class="absolute inset-0 bg-gradient-to-br ${tool.accent} opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+
+                        <a
+                            href="tools/${escapeHtml(tool.slug)}.html"
+                            class="relative z-10 block h-full p-6 sm:p-7"
+                            aria-label="${escapeHtml(translatedTool.name)}"
+                        >
+                            <div class="flex items-start justify-between gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-gray-800/80 border border-gray-700/70 flex items-center justify-center text-2xl group-hover:scale-110 group-hover:border-gray-600 transition-all">
+                                    ${escapeHtml(tool.icon)}
+                                </div>
+
+                                <span class="text-gray-600 group-hover:text-indigo-300 group-hover:translate-x-1 transition-all text-xl" aria-hidden="true">
+                                    →
+                                </span>
+                            </div>
+
+                            <div class="mt-6">
+                                <span class="inline-block text-[11px] font-bold uppercase tracking-widest text-indigo-400 mb-2">
+                                    ${escapeHtml(categoryName)}
+                                </span>
+
+                                <h3 class="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors">
+                                    ${escapeHtml(translatedTool.name)}
+                                </h3>
+
+                                <p class="text-sm text-gray-400 leading-6 mt-2 min-h-[48px]">
+                                    ${escapeHtml(translatedTool.desc)}
+                                </p>
+
+                                <span class="inline-flex items-center gap-2 text-sm font-semibold text-gray-300 mt-5 group-hover:text-white">
+                                    ${escapeHtml(languageData.openTool)}
+                                    <span aria-hidden="true">→</span>
+                                </span>
+                            </div>
+                        </a>
+                    </article>
+                `;
+            }).join('');
+
+            noResults.classList.toggle('hidden', filteredTools.length !== 0);
+        }
+
+        renderTools();
+
+        if (searchInput) {
+            searchInput.addEventListener('input', event => {
+                renderTools(event.target.value);
+            });
+        }
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('search');
+
+        if (searchQuery && searchInput) {
+            searchInput.value = searchQuery;
+            renderTools(searchQuery);
+
+            document.getElementById('tools').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     </script>
 </body>
 </html>
